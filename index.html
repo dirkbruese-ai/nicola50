@@ -24,13 +24,8 @@
   --f-head: "Anton", Impact, "Arial Narrow", sans-serif;
   --f-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-hand: "Caveat", "Comic Sans MS", cursive;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --page: #121012; --paper: #1c181b; --ink: #f6f0f2; --muted: #b5a9b0; --rule: #352d33;
-  --red: #ff4d5a; --yellow: #ffd60a; --blue: #7aa7e6; --ph-a: #3d2629; --ph-b: #2d2a3d; color-scheme: dark } }
-:root[data-theme="dark"] {
-  --page: #121012; --paper: #1c181b; --ink: #f6f0f2; --muted: #b5a9b0; --rule: #352d33;
-  --red: #ff4d5a; --yellow: #ffd60a; --blue: #7aa7e6; --ph-a: #3d2629; --ph-b: #2d2a3d; color-scheme: dark }
 
 body { background: var(--page); color: var(--ink); font: 400 1rem/1.6 var(--f-body); }
 .wrap { max-width: 1100px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
