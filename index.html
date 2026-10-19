@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>NICOLA Jubiläumsausgabe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,800;1,6..96,500&family=Anton&family=Instrument+Sans:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap">
+<style>
+/* Layout: People-Magazin "NICOLA, Nr. 50" mit Luftpost-Elementen. Titelseite mit Stickern, Luftpost-Band Düsseldorf nach Gold Coast, "Stars gratulieren" als Karten, Fotostrecke, Podcast, Diashow, Impressum. */
+:root {
+  --page: #ffffff;
+  --paper: #fbf7f5;
+  --ink: #141114;
+  --muted: #6b6168;
+  --rule: #ebe3e3;
+  --red: #d1101f;
+  --yellow: #ffd60a;
+  --blue: #22508f;
+  --ph-a: #f1d9d9; --ph-b: #e2dced;
+  --f-mast: "Bodoni Moda", Didot, "Bodoni 72", Georgia, serif;
+  --f-head: "Anton", Impact, "Arial Narrow", sans-serif;
+  --f-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-hand: "Caveat", "Comic Sans MS", cursive;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #121012; --paper: #1c181b; --ink: #f6f0f2; --muted: #b5a9b0; --rule: #352d33;
+  --red: #ff4d5a; --yellow: #ffd60a; --blue: #7aa7e6; --ph-a: #3d2629; --ph-b: #2d2a3d; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --page: #121012; --paper: #1c181b; --ink: #f6f0f2; --muted: #b5a9b0; --rule: #352d33;
+  --red: #ff4d5a; --yellow: #ffd60a; --blue: #7aa7e6; --ph-a: #3d2629; --ph-b: #2d2a3d; color-scheme: dark }
+
+body { background: var(--page); color: var(--ink); font: 400 1rem/1.6 var(--f-body); }
+.wrap { max-width: 1100px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.draft { font-size: .82rem; color: var(--muted); border-bottom: 1px solid var(--rule); }
+.draft .wrap { padding-block: 8px; }
+.btn { font: 700 .95rem/1 var(--f-body); border-radius: 999px; padding: 13px 22px; border: 0; background: var(--red); color: #fff; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+.btn:focus-visible, .chip:focus-visible, .play:focus-visible, a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+/* Titelseite */
+.cover { padding-block: 20px 36px; }
+.strip { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font: 700 .72rem/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; }
+.strip span:nth-child(2) { color: var(--red); }
+.masthead { font: 800 clamp(4.4rem, 20vw, 13.5rem)/.85 var(--f-mast); letter-spacing: -.03em; color: var(--red); margin: 8px 0 0; }
+.cover-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; margin-top: 14px; }
+.cover-grid > * { min-width: 0 }
+.cover-photo { position: relative; aspect-ratio: 4/5; max-width: 100%; background: linear-gradient(165deg, var(--ph-a), var(--ph-b)); display: grid; place-items: end start; padding: 18px; overflow: hidden; }
+.cover-photo .lbl { font: 600 .75rem/1.3 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.cover-photo .hl { position: absolute; left: 0; right: 0; bottom: 48px; padding: 0 18px; font: 400 clamp(2rem, 5.4vw, 3.6rem)/.95 var(--f-head); text-transform: uppercase; color: var(--ink); text-wrap: balance; }
+.cover-photo .hl mark { background: var(--yellow); color: #141114; padding: 0 .15em; }
+.sticker { position: absolute; top: 16px; right: 16px; width: 116px; aspect-ratio: 1; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center; text-align: center; transform: rotate(12deg); box-shadow: 0 6px 16px rgb(0 0 0 / .18); }
+.sticker b { display: block; font: 400 2.8rem/1 var(--f-head); }
+.sticker small { font: 700 .62rem/1.2 var(--f-body); letter-spacing: .1em; text-transform: uppercase; }
+.lines { display: grid; gap: 18px; align-content: start; }
+.line { border-top: 3px solid var(--ink); padding-top: 10px; }
+.kicker { font: 700 .72rem/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+.line h3 { font: 400 clamp(1.4rem, 2.6vw, 1.95rem)/1.05 var(--f-head); text-transform: uppercase; margin: 6px 0 0; text-wrap: balance; }
+.line p { margin: 4px 0 0; color: var(--muted); font-size: .92rem; }
+.bubble { background: var(--yellow); color: #141114; padding: 14px 16px; font: 700 1rem/1.3 var(--f-body); transform: rotate(-1.5deg); }
+.cover-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+
+/* Luftpost-Band */
+.airmail { position: relative; background: var(--paper); margin-top: 40px; }
+.airmail::before, .airmail::after { content: ""; position: absolute; left: 0; right: 0; height: 8px;
+  background: repeating-linear-gradient(-45deg, var(--red) 0 16px, var(--paper) 16px 26px, var(--blue) 26px 42px, var(--paper) 42px 52px); }
+.airmail::before { top: 0 } .airmail::after { bottom: 0 }
+.airmail .wrap { padding-block: 34px; display: grid; gap: 18px; }
+.legs { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; }
+.end b { display: block; font: 400 clamp(1.4rem, 3.4vw, 2.2rem)/1 var(--f-head); text-transform: uppercase; }
+.end span { font-size: .8rem; color: var(--muted); }
+.end.to { text-align: right; }
+.path { height: 2px; min-width: 40px; background: repeating-linear-gradient(90deg, var(--blue) 0 10px, transparent 10px 18px); position: relative; }
+.path::after { content: "✈"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -58%); font-size: 1.5rem; color: var(--red); background: var(--paper); padding: 0 6px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.stats div { min-width: 0; }
+.stats b { display: block; font: 400 clamp(1.7rem, 4.5vw, 2.6rem)/1 var(--f-head); color: var(--red); font-variant-numeric: tabular-nums; }
+.stats span { font-size: .85rem; color: var(--muted); }
+
+section { padding-block: 56px 8px; }
+.sec-head { display: flex; align-items: end; gap: 14px; flex-wrap: wrap; border-bottom: 3px solid var(--ink); padding-bottom: 8px; margin-bottom: 24px; }
+.sec-head h2 { font: 400 clamp(2rem, 5.5vw, 3.4rem)/.95 var(--f-head); text-transform: uppercase; margin: 0; }
+.sec-head h2 em { font: italic 500 .62em/1 var(--f-mast); text-transform: none; color: var(--red); }
+.sec-head .tag { margin-left: auto; font: 700 .72rem/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; background: var(--red); color: #fff; padding: 6px 10px; }
+
+/* Stars gratulieren */
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.chip { font: 600 .86rem/1 var(--f-body); padding: 9px 14px; border-radius: 999px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.stars { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
+.star { min-width: 0; display: grid; gap: 12px; align-content: start; }
+.star .pic { position: relative; aspect-ratio: 4/3; max-width: 100%; background: linear-gradient(140deg, var(--ph-a), var(--ph-b)); display: grid; place-items: end start; padding: 10px; }
+.star .pic span { font: 600 .7rem/1.2 var(--f-body); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.star .pic .count { position: absolute; top: 10px; left: 10px; background: var(--yellow); color: #141114; font: 700 .72rem/1 var(--f-body); padding: 5px 8px; }
+.star .who { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.star .name { font: 700 2rem/1 var(--f-hand); color: var(--blue); }
+.postmark { font: 700 .66rem/1.2 var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--red); border: 1.5px solid var(--red); border-radius: 999px; padding: 4px 9px; white-space: nowrap; }
+.star blockquote { margin: 0; font: 400 1.3rem/1.15 var(--f-head); text-transform: uppercase; text-wrap: balance; }
+.star blockquote::before { content: "„"; color: var(--red); }
+.star blockquote::after { content: "“"; color: var(--red); }
+.letter { background: var(--paper); padding: 12px 14px; font: 600 1.3rem/1.3 var(--f-hand); transform: rotate(-.6deg); border-left: 3px solid var(--blue); }
+.voice { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; background: var(--paper); border-radius: 999px; padding: 6px 14px 6px 6px; }
+.play { width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--red); color: #fff; font-size: .9rem; cursor: pointer; }
+.wave { display: flex; gap: 3px; align-items: center; height: 26px; min-width: 0; overflow: hidden; }
+.wave i { flex: 1; min-width: 2px; max-width: 4px; background: var(--muted); border-radius: 2px; opacity: .6; }
+.voice small, .dur { font: 600 .8rem/1 var(--f-body); color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* Fotostrecke */
+.spread { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.ph { background: linear-gradient(140deg, var(--ph-a), var(--ph-b)); display: grid; place-items: end start; padding: 12px; max-width: 100%; position: relative; }
+.ph span { font: 400 1rem/1.1 var(--f-head); text-transform: uppercase; }
+.ph small { position: absolute; top: 10px; left: 12px; font: 600 .7rem/1 var(--f-body); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.spread .ph:nth-child(1) { grid-column: span 4; aspect-ratio: 16/10; }
+.spread .ph:nth-child(2) { grid-column: span 2; }
+.spread .ph:nth-child(3), .spread .ph:nth-child(4), .spread .ph:nth-child(5) { grid-column: span 2; aspect-ratio: 1; }
+
+/* Podcast */
+.pod { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+.pod > * { min-width: 0; }
+.pod-intro p { font: italic 500 1.35rem/1.4 var(--f-mast); margin: 0; }
+.episodes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.episodes li { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding-block: 14px; border-bottom: 1px solid var(--rule); }
+.episodes li > div { min-width: 0; }
+.ep-title { font-weight: 700; }
+.ep-who { font-size: .88rem; color: var(--muted); }
+
+/* Impressum */
+.imprint { margin-top: 64px; background: var(--red); color: #fff; }
+.imprint .wrap { padding-block: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; }
+.imprint .end { grid-column: 1 / -1; font: 700 2.6rem/1 var(--f-hand); }
+.imprint b { display: block; font: 700 .7rem/1.4 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); }
+
+/* Diashow */
+.show { position: fixed; inset: 0; z-index: 20; background: #141114; color: #fff; display: grid; place-items: center; padding: max(24px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.slide { text-align: center; max-width: 44rem; display: grid; gap: 16px; }
+.slide .k { font: 700 .8rem/1 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--yellow); }
+.slide .n { font: 700 clamp(3rem, 10vw, 6rem)/1 var(--f-hand); }
+.slide .q { font: 400 clamp(1.6rem, 4vw, 2.8rem)/1.05 var(--f-head); text-transform: uppercase; }
+.show .close { position: absolute; top: max(16px, env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); }
+.show .nav { position: absolute; bottom: max(24px, env(safe-area-inset-bottom, 0px)); left: 0; right: 0; display: flex; justify-content: center; gap: 12px; }
+.show .btn.ghost { color: #fff; border-color: #fff; }
+
+@media (max-width: 760px) {
+  .cover-grid, .pod { grid-template-columns: 1fr; }
+  .spread { grid-template-columns: repeat(2, 1fr); }
+  .spread .ph:nth-child(n) { grid-column: span 1; aspect-ratio: 1; }
+  .spread .ph:nth-child(1) { grid-column: span 2; aspect-ratio: 16/10; }
+  .sticker { width: 88px; } .sticker b { font-size: 2.1rem; }
+  .legs { gap: 10px; }
+  .stars { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="draft"><div class="wrap"><strong>Entwurf 3</strong> · People-Magazin mit Luftpost · alle Namen und Texte sind Beispiele</div></div>
+
+<header class="wrap cover">
+  <div class="strip"><span>Nr. 50 · 22. November 2026</span><span>Sonderausgabe</span><span>Düsseldorf ✈ Gold Coast</span></div>
+  <h1 class="masthead">NICOLA</h1>
+  <div class="cover-grid">
+    <div class="cover-photo">
+      <div class="sticker"><div><b>50!</b><small>Jubiläums&shy;ausgabe</small></div></div>
+      <div class="hl">Nicola wird 50 und <mark>strahlt</mark> wie nie</div>
+      <span class="lbl">Coverfoto von Nicola</span>
+    </div>
+    <div class="lines">
+      <div class="line"><div class="kicker">Exklusiv</div><h3>Stars aus Düsseldorf gratulieren</h3><p>Liebeserklärungen aus Oberkassel, Bilk und Kaiserswerth</p></div>
+      <div class="line"><div class="kicker">Das Geheimnis</div><h3>Von der Kö an die Gold Coast</h3><p>16.000 Kilometer, und trotzdem ganz nah</p></div>
+      <div class="line"><div class="kicker">Fotostrecke</div><h3>Die schönsten Momente</h3><p>Altstadt, Rheinufer, Rosenmontag</p></div>
+      <div class="bubble">NEU: Mit Podcast zum Anhören! Stimmen von zu Hause</div>
+      <div class="cover-actions">
+        <button class="btn" id="start-show" type="button">Diashow starten</button>
+        <a class="btn ghost" href="#stars">Zu den Grüßen</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="airmail" aria-label="Luftpost von Düsseldorf zur Gold Coast">
+  <div class="wrap">
+    <div class="legs">
+      <div class="end"><b>Düsseldorf</b><span>Absender: Eure Freunde</span></div>
+      <div class="path" aria-hidden="true"></div>
+      <div class="end to"><b>Gold Coast</b><span>Empfängerin: Nicola</span></div>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="stars" aria-labelledby="h-stars">
+    <div class="sec-head"><h2 id="h-stars">Stars gratulieren <em>Your Story with Her</em></h2><span class="tag">Exklusiv</span></div>
+    <div class="chips" id="chips" role="group" aria-label="Nach Art des Beitrags filtern"></div>
+    <div class="stars" id="star-list"></div>
+  </section>
+
+  <section id="fotos" aria-labelledby="h-fotos">
+    <div class="sec-head"><h2 id="h-fotos">Die schönsten Momente</h2><span class="tag">Fotostrecke</span></div>
+    <div class="spread">
+      <div class="ph"><small>von Claudia</small><span>Sommer am Rheinufer: Hier entstand das Foto des Jahres</span></div>
+      <div class="ph"><small>von Markus</small><span>Rosenmontag: Nicola als Prinzessin</span></div>
+      <div class="ph"><small>von Petra</small><span>Der 40. Geburtstag</span></div>
+      <div class="ph"><small>von Anna</small><span>Shopping auf der Kö</span></div>
+      <div class="ph"><small>Video · 0:58</small><span>Grüße aus Köln</span></div>
+    </div>
+  </section>
+
+  <section id="podcast" aria-labelledby="h-podcast">
+    <div class="sec-head"><h2 id="h-podcast">Der Podcast</h2><span class="tag">Zum Anhören</span></div>
+    <div class="pod">
+      <div class="pod-intro"><p>Kopfhörer auf: Stimmen von zu Hause, aufgenommen in Küchen, auf Balkonen und am Rhein.</p></div>
+      <ol class="episodes" id="episodes"></ol>
+    </div>
+  </section>
+</main>
+
+<footer class="imprint">
+  <div class="wrap">
+    <span class="end">Happy Birthday, Nicola!</span>
+    <div><b>Herausgeber</b>Dirk</div>
+    <div><b>Redaktion</b>Eure Freunde aus Düsseldorf und darüber hinaus</div>
+    <div><b>Erscheinungstag</b>22. November 2026, LaLuna Beachclub</div>
+    <div><b>Auflage</b>Ein einziges Exemplar</div>
+  </div>
+</footer>
+
+<div class="show" id="show" hidden role="dialog" aria-label="Diashow">
+  <button class="btn ghost close" id="close-show" type="button">Schließen</button>
+  <div class="slide" id="slide"></div>
+  <div class="nav"><button class="btn ghost" id="prev" type="button">Zurück</button><button class="btn" id="next" type="button">Weiter</button></div>
+</div>
+
+<script>
+const DUS = [51.2277, 6.7735], GOLD = [-28.0167, 153.4000];
+const friends = [
+  { name: "Anna", city: "Oberkassel", dus: true, photos: 5, note: "Unser erster Altbier-Abend in der Altstadt: Ab da war klar, wir bleiben Freundinnen!", voice: "0:42" },
+  { name: "Markus & Steffi", city: "Pempelfort", dus: true, photos: 3, video: "1:35", note: "Helau und Happy Birthday! Am Rosenmontag fehlst du uns jedes Jahr." },
+  { name: "Familie Weber", city: "Benrath", dus: true, photos: 2, letter: "Liebe Nicola, unser Gartenzaun ist seit Eurem Umzug viel zu ruhig geworden …" },
+  { name: "Claudia", city: "Bilk", dus: true, photos: 4, voice: "1:10", note: "Unsere Sonntage am Rhein vermisse ich am meisten. Komm bald heim auf Besuch!" },
+  { name: "Petra & Uwe", city: "Kaiserswerth", dus: true, photos: 6, note: "Dreißig Jahre Freundschaft, und jetzt liegen 16.000 Kilometer dazwischen. Gefühlt ist es keiner." },
+  { name: "Jens", city: "Köln", photos: 1, video: "0:58", note: "Ausnahmsweise ein Gruß von der anderen Rheinseite!" },
+  { name: "Tom & Jess", city: "Brisbane", photos: 8, voice: "0:35", note: "See you at LaLuna! First round's on us." }
+];
+const fmt = n => n.toLocaleString("de-DE");
+const km = ([a,b],[c,d]) => { const r = Math.PI/180;
+  const h = Math.sin((c-a)*r/2)**2 + Math.cos(a*r)*Math.cos(c*r)*Math.sin((d-b)*r/2)**2;
+  return Math.round(2*6371*Math.asin(Math.sqrt(h))); };
+friends.forEach(f => { f.kinds = ["Fotos"]; if (f.video) f.kinds.push("Videos"); if (f.voice) f.kinds.push("Sprachnachrichten"); if (f.letter) f.kinds.push("Briefe"); });
+
+const dusCount = friends.filter(f => f.dus).length;
+document.getElementById("stats").innerHTML =
+  `<div><b>${fmt(Math.round(km(DUS, GOLD) / 100) * 100)} km</b><span>Luftlinie</span></div>` +
+  `<div><b>${friends.length}</b><span>Grüße (Beispiel)</span></div>` +
+  `<div><b>${Math.round(dusCount / friends.length * 100)} %</b><span>aus Düsseldorf</span></div>`;
+
+const wave = () => Array.from({length: 36}, () => `<i style="height:${20 + Math.random()*80}%"></i>`).join("");
+const card = f => `<article class="star">
+  <div class="pic"><span class="count">${f.photos} Foto${f.photos > 1 ? "s" : ""}${f.video ? " · Video " + f.video : ""}</span><span>Foto von ${f.name}</span></div>
+  <div class="who"><span class="name">${f.name}</span><span class="postmark">${f.city}</span></div>
+  ${f.note ? `<blockquote>${f.note}</blockquote>` : ""}
+  ${f.letter ? `<div class="letter">${f.letter}</div>` : ""}
+  ${f.voice ? `<div class="voice"><button class="play" type="button" aria-label="Sprachnachricht von ${f.name} (Beispiel)">▶</button><span class="wave" aria-hidden="true">${wave()}</span><small>${f.voice}</small></div>` : ""}
+</article>`;
+const kinds = ["Alle", "Fotos", "Videos", "Sprachnachrichten", "Briefe"];
+const chips = document.getElementById("chips"), list = document.getElementById("star-list");
+const render = k => { list.innerHTML = friends.filter(f => k === "Alle" || f.kinds.includes(k)).map(card).join("");
+  chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.k === k)); };
+chips.innerHTML = kinds.map(k => `<button class="chip" type="button" data-k="${k}">${k}</button>`).join("");
+chips.addEventListener("click", e => { const c = e.target.closest(".chip"); if (c) render(c.dataset.k); });
+render("Alle");
+
+const eps = friends.filter(f => f.voice).map(f => [`Gruß aus ${f.city}`, f.name, f.voice]);
+const epList = document.getElementById("episodes");
+epList.innerHTML = eps.map(([t, w, d]) => `<li><button class="play" type="button" aria-pressed="false" aria-label="${t} abspielen (Beispiel)">▶</button><div><div class="ep-title">${t}</div><div class="ep-who">${w}</div></div><span class="dur">${d}</span></li>`).join("");
+epList.addEventListener("click", e => { const b = e.target.closest(".play"); if (!b) return;
+  const on = b.getAttribute("aria-pressed") !== "true";
+  epList.querySelectorAll(".play").forEach(x => { x.setAttribute("aria-pressed", "false"); x.textContent = "▶"; });
+  b.setAttribute("aria-pressed", on); b.textContent = on ? "❚❚" : "▶"; });
+
+const show = document.getElementById("show"), slide = document.getElementById("slide");
+let i = 0, timer;
+const draw = () => { const f = friends[i];
+  slide.innerHTML = `<div class="k">Gruß aus ${f.city}</div><div class="n">${f.name}</div><div class="q">${f.note || f.letter}</div>`; };
+const go = d => { i = (i + d + friends.length) % friends.length; draw(); };
+const auto = () => { clearInterval(timer); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => go(1), 7000); };
+const close = () => { show.hidden = true; clearInterval(timer); };
+document.getElementById("start-show").onclick = () => { i = 0; draw(); show.hidden = false; auto(); };
+document.getElementById("close-show").onclick = close;
+document.getElementById("next").onclick = () => { go(1); auto(); };
+document.getElementById("prev").onclick = () => { go(-1); auto(); };
+document.addEventListener("keydown", e => { if (show.hidden) return;
+  if (e.key === "Escape") close(); if (e.key === "ArrowRight") { go(1); auto(); } if (e.key === "ArrowLeft") { go(-1); auto(); } });
+</script>
+</body>
+</html>
