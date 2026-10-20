@@ -47,14 +47,14 @@ body { background: var(--page); color: var(--ink); font: 400 1rem/1.6 var(--f-bo
 .cover-grid > * { min-width: 0 }
 .cover-photo { position: relative; aspect-ratio: 4/5; max-width: 100%; background: linear-gradient(165deg, var(--ph-a), var(--ph-b)); display: grid; place-items: end start; padding: 18px; overflow: hidden; }
 .cover-photo .lbl { font: 600 .75rem/1.3 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-.cover-photo .hl { position: absolute; left: 0; right: 0; bottom: 48px; padding: 0 18px; font: 400 clamp(2rem, 5.4vw, 3.6rem)/.95 var(--f-head); text-transform: uppercase; color: var(--ink); text-wrap: balance; }
-.cover-photo .hl mark { background: var(--yellow); color: #141114; padding: 0 .15em; }
+.cover-photo .hl { position: absolute; left: 0; right: 0; bottom: 48px; padding: 0 18px; font: 400 clamp(2rem, 5.4vw, 3.6rem)/1.12 var(--f-head); text-transform: uppercase; color: var(--ink); text-wrap: balance; }
+.cover-photo .hl mark { background: var(--yellow); color: #141114; padding: .02em .15em 0; -webkit-box-decoration-break: clone; box-decoration-break: clone; text-shadow: none; }
 .cover-photo.has-img { background: #1a1416 url("img/cover.jpg") center top / cover no-repeat; }
 .cover-photo.has-img::after { content: ""; position: absolute; inset: 62% 0 0; background: linear-gradient(to bottom, transparent, rgba(0,0,0,.45)); pointer-events: none; }
 .cover-photo.has-img .hl { color: #fff; z-index: 1; text-shadow: 0 2px 12px rgba(0,0,0,.35); }
 .sticker { position: absolute; top: 16px; right: 16px; width: 116px; aspect-ratio: 1; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center; text-align: center; transform: rotate(12deg); box-shadow: 0 6px 16px rgb(0 0 0 / .18); }
 .sticker b { display: block; font: 400 2.8rem/1 var(--f-head); }
-.sticker small { font: 700 .62rem/1.2 var(--f-body); letter-spacing: .1em; text-transform: uppercase; }
+.sticker small { display: block; font: 700 .62rem/1.25 var(--f-body); letter-spacing: .08em; text-transform: uppercase; }
 .lines { display: grid; gap: 18px; align-content: start; }
 .line { border-top: 3px solid var(--ink); padding-top: 10px; }
 .kicker { font: 700 .72rem/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
@@ -156,7 +156,7 @@ section { padding-block: 56px 8px; }
   .spread { grid-template-columns: repeat(2, 1fr); }
   .spread .ph:nth-child(n) { grid-column: span 1; aspect-ratio: 1; }
   .spread .ph:nth-child(1) { grid-column: span 2; aspect-ratio: 16/10; }
-  .sticker { width: 88px; } .sticker b { font-size: 2.1rem; }
+  .sticker { width: 92px; top: 12px; right: 12px; } .sticker b { font-size: 2.1rem; } .sticker small { font-size: .5rem; letter-spacing: .06em; }
   .legs { gap: 10px; }
   .stars { grid-template-columns: 1fr; }
 }
@@ -172,7 +172,7 @@ section { padding-block: 56px 8px; }
   <h1 class="masthead">NICOLA</h1>
   <div class="cover-grid">
     <div class="cover-photo has-img">
-      <div class="sticker"><div><b>50!</b><small>Anniversary Issue</small></div></div>
+      <div class="sticker"><div><b>50!</b><small>Anniversary<br>Issue</small></div></div>
       <div class="hl">You’re the <mark>sunshine</mark> of our world</div>
     </div>
     <div class="lines">
