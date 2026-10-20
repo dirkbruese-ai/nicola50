@@ -176,7 +176,7 @@ section { padding-block: 56px 8px; }
       <div class="hl">The best <mark>smile</mark> on both sides of the world</div>
     </div>
     <div class="lines">
-      <div class="line"><div class="kicker">Exclusive</div><h3>Düsseldorf’s Stars Send Their Love</h3><p>Love letters from Oberkassel, Bilk and Kaiserswerth</p></div>
+      <div class="line"><div class="kicker">Exclusive</div><h3>Düsseldorf’s Stars Send Their Love</h3><p>Love letters from Düsseldorf, Hamburg and Munich</p></div>
       <div class="line"><div class="kicker">The Secret</div><h3>From the Kö to the Gold Coast</h3><p>16,000 kilometres away, and still so close</p></div>
       <div class="line"><div class="kicker">Photo Special</div><h3>The Best Moments</h3><p>Old Town, the Rhine, Carnival Monday</p></div>
       <div class="line"><div class="kicker">G’day from Down Under</div><h3>New Friends from the Gold Coast</h3><p>Burleigh, Broadbeach and the beach club crowd</p></div>
@@ -231,7 +231,7 @@ section { padding-block: 56px 8px; }
   <div class="wrap">
     <span class="end">Happy Birthday, Nicola!</span>
     <div><b>Publisher</b>Dirk</div>
-    <div><b>Editorial team</b>Your friends from Düsseldorf, the Gold Coast and beyond</div>
+    <div><b>Editorial team</b>Your friends from Düsseldorf, Hamburg, Munich, the Gold Coast and beyond</div>
     <div><b>Published</b>November 22, 2026, LaLuna Beachclub</div>
     <div><b>Print run</b>One single copy</div>
   </div>
@@ -251,6 +251,8 @@ const friends = [
   { name: "The Webers", city: "Benrath", dus: true, photos: 2, letter: "Dear Nicola, our garden fence has been far too quiet since you moved away …" },
   { name: "Claudia", city: "Bilk", dus: true, photos: 4, voice: "1:10", note: "I miss our Sundays by the Rhine the most. Come home for a visit soon!" },
   { name: "Petra & Uwe", city: "Kaiserswerth", dus: true, photos: 6, note: "Thirty years of friendship, and now 16,000 kilometres between us. It doesn’t feel like a single one." },
+  { name: "Sabine", city: "Hamburg", bff: true, photos: 7, voice: "1:24", note: "Best friends since school, and still the first one I call. Nobody laughs like you!" },
+  { name: "Katrin", city: "Munich", bff: true, photos: 4, video: "1:12", note: "From the Wiesn to the Gold Coast: wherever you are, it’s a party. Love you!" },
   { name: "Jens", city: "Cologne", photos: 1, video: "0:58", note: "For once, a greeting from the other side of the Rhine!" },
   { name: "Tom & Jess", city: "Burleigh Heads", gc: true, photos: 8, voice: "0:35", note: "See you at LaLuna! First round's on us." },
   { name: "Mel", city: "Broadbeach", gc: true, photos: 2, note: "We’ve only known you for a year, but it feels like forever. Welcome to the Gold Coast family!" },
@@ -279,7 +281,7 @@ const card = f => `<article class="star">
 </article>`;
 const kinds = ["All", "Photos", "Videos", "Voice messages", "Letters"];
 const chips = document.getElementById("chips"), list = document.getElementById("star-list");
-const groups = [["From home", "Düsseldorf & beyond", f => !f.gc], ["New friends", "from the Gold Coast", f => f.gc]];
+const groups = [["From home", "Düsseldorf & beyond", f => !f.gc && !f.bff], ["Best friends", "from Hamburg & Munich", f => f.bff], ["New friends", "from the Gold Coast", f => f.gc]];
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG]) => { const g = shown.filter(inG);
     return g.length ? `<div class="group-head"><h3>${h}</h3><span>${sub}</span></div>` + g.map(card).join("") : ""; }).join("");
