@@ -99,6 +99,15 @@ section { padding-block: 56px 8px; }
 .star .pic { position: relative; aspect-ratio: 4/3; max-width: 100%; background: linear-gradient(140deg, var(--ph-a), var(--ph-b)); display: grid; place-items: end start; padding: 10px; }
 .star .pic span { font: 600 .7rem/1.2 var(--f-body); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
 .star .pic .count { position: absolute; top: 10px; left: 10px; background: var(--yellow); color: #141114; font: 700 .72rem/1 var(--f-body); padding: 5px 8px; }
+.star .pic.has-img { background: #1a1416 center / cover no-repeat; transition: background-image .2s; }
+.thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: -6px; }
+.thumbs button { aspect-ratio: 1; border: 0; padding: 0; background: center / cover no-repeat; cursor: pointer; opacity: .6; outline-offset: 2px; }
+.thumbs button[aria-pressed="true"] { opacity: 1; outline: 2px solid var(--red); }
+.star .clip { width: 100%; max-height: 420px; background: #000; display: block; }
+.post-title { margin: -4px 0 0; font: 700 .8rem/1.2 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+.facts { margin: 0; display: grid; gap: 6px; border-left: 3px solid var(--yellow); padding-left: 12px; }
+.facts dt { font: 600 .72rem/1.2 var(--f-body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0 0 4px; font: 700 1.5rem/1.05 var(--f-hand); color: var(--blue); }
 .star .who { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
 .star .name { font: 700 2rem/1 var(--f-hand); color: var(--blue); }
 .postmark { font: 700 .66rem/1.2 var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--red); border: 1.5px solid var(--red); border-radius: 999px; padding: 4px 9px; white-space: nowrap; }
@@ -246,6 +255,10 @@ section { padding-block: 56px 8px; }
 <script>
 const DUS = [51.2277, 6.7735], GOLD = [-28.0167, 153.4000];
 const friends = [
+  { name: "Sonja & Christian", city: "Gerresheim", dus: true, padlet: true, title: "Happy Birthday aus Gerresheim",
+    imgs: ["sc1", "sc2", "sc3", "sc4"], note: "Wir freuen uns mit Dir so viel tolle Erinnerungen zu teilen und vor allem freuen wir uns auf die nächsten 50 Jahre mit Dir. Eine ganz dicke Umarmung von Sonja und Christian" },
+  { name: "Dirk", padlet: true, title: "Happy Birthday!!!", imgs: ["d1", "d2", "d3", "d4"], clip: "d-video",
+    note: "You are my star. Alles Liebe für Dich!", isFor: "The best woman", moment: "Damals in Wien", wish: "Nur das Beste" },
   { name: "Anna", city: "Oberkassel", dus: true, photos: 5, note: "Our first Altbier night in the Old Town: from then on we knew we’d be friends for life!", voice: "0:42" },
   { name: "Markus & Steffi", city: "Pempelfort", dus: true, photos: 3, video: "1:35", note: "Helau and happy birthday! We miss you every Carnival Monday." },
   { name: "The Webers", city: "Benrath", dus: true, photos: 2, letter: "Dear Nicola, our garden fence has been far too quiet since you moved away …" },
@@ -262,7 +275,7 @@ const fmt = n => n.toLocaleString("en-GB");
 const km = ([a,b],[c,d]) => { const r = Math.PI/180;
   const h = Math.sin((c-a)*r/2)**2 + Math.cos(a*r)*Math.cos(c*r)*Math.sin((d-b)*r/2)**2;
   return Math.round(2*6371*Math.asin(Math.sqrt(h))); };
-friends.forEach(f => { f.kinds = ["Photos"]; if (f.video) f.kinds.push("Videos"); if (f.voice) f.kinds.push("Voice messages"); if (f.letter) f.kinds.push("Letters"); });
+friends.forEach(f => { if (f.imgs) f.photos = f.imgs.length; if (f.clip) f.video = "▶"; f.kinds = ["Photos"]; if (f.video) f.kinds.push("Videos"); if (f.voice) f.kinds.push("Voice messages"); if (f.letter) f.kinds.push("Letters"); });
 
 const dusCount = friends.filter(f => f.dus).length;
 document.getElementById("stats").innerHTML =
@@ -272,10 +285,15 @@ document.getElementById("stats").innerHTML =
   `<div><b>${friends.filter(f => f.gc).length}</b><span>new friends from the Gold Coast</span></div>`;
 
 const wave = () => Array.from({length: 36}, () => `<i style="height:${20 + Math.random()*80}%"></i>`).join("");
+const img = k => `img/posts/${k}.jpg`;
 const card = f => `<article class="star">
-  <div class="pic"><span class="count">${f.photos} photo${f.photos > 1 ? "s" : ""}${f.video ? " · Video " + f.video : ""}</span><span>Photo from ${f.name}</span></div>
-  <div class="who"><span class="name">${f.name}</span><span class="postmark">${f.city}</span></div>
-  ${f.note ? `<blockquote>${f.note}</blockquote>` : ""}
+  <div class="pic${f.imgs ? " has-img" : ""}"${f.imgs ? ` style="background-image:url('${img(f.imgs[0])}')"` : ""}><span class="count">${f.photos} photo${f.photos > 1 ? "s" : ""}${f.clip ? " · Video" : f.video ? " · Video " + f.video : ""}</span>${f.imgs ? "" : `<span>Photo from ${f.name}</span>`}</div>
+  ${f.imgs && f.imgs.length > 1 ? `<div class="thumbs">${f.imgs.map((k, j) => `<button type="button" aria-label="Show photo ${j + 1} from ${f.name}" aria-pressed="${j === 0}" data-src="${img(k)}" style="background-image:url('${img(k)}')"></button>`).join("")}</div>` : ""}
+  ${f.clip ? `<video class="clip" src="img/posts/${f.clip}.mp4" poster="img/posts/${f.clip}.jpg" controls playsinline preload="none"></video>` : ""}
+  <div class="who"><span class="name">${f.name}</span>${f.city ? `<span class="postmark">${f.city}</span>` : ""}</div>
+  ${f.title ? `<h4 class="post-title">${f.title}</h4>` : ""}
+  ${f.note ? (f.note.length > 100 ? `<div class="letter">${f.note}</div>` : `<blockquote>${f.note}</blockquote>`) : ""}
+  ${f.isFor || f.moment || f.wish ? `<dl class="facts">${[["Nici is for me …", f.isFor], ["My special moment with her …", f.moment], ["I wish Nici …", f.wish]].filter(x => x[1]).map(([t, v]) => `<dt>${t}</dt><dd>${v}</dd>`).join("")}</dl>` : ""}
   ${f.letter ? `<div class="letter">${f.letter}</div>` : ""}
   ${f.voice ? `<div class="voice"><button class="play" type="button" aria-label="Voice message from ${f.name} (example)">▶</button><span class="wave" aria-hidden="true">${wave()}</span><small>${f.voice}</small></div>` : ""}
 </article>`;
@@ -288,6 +306,9 @@ const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.i
   chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.k === k)); };
 chips.innerHTML = kinds.map(k => `<button class="chip" type="button" data-k="${k}">${k}</button>`).join("");
 chips.addEventListener("click", e => { const c = e.target.closest(".chip"); if (c) render(c.dataset.k); });
+list.addEventListener("click", e => { const t = e.target.closest(".thumbs button"); if (!t) return;
+  t.closest(".star").querySelector(".pic").style.backgroundImage = `url('${t.dataset.src}')`;
+  t.parentNode.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b === t)); });
 render("All");
 
 const eps = friends.filter(f => f.voice).map(f => [`Greetings from ${f.city}`, f.name, f.voice]);
