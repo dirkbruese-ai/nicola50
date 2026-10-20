@@ -75,7 +75,7 @@ body { background: var(--page); color: var(--ink); font: 400 1rem/1.6 var(--f-bo
 .end.to { text-align: right; }
 .path { height: 2px; min-width: 40px; background: repeating-linear-gradient(90deg, var(--blue) 0 10px, transparent 10px 18px); position: relative; }
 .path::after { content: "✈"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -58%); font-size: 1.5rem; color: var(--red); background: var(--paper); padding: 0 6px; }
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
 .stats div { min-width: 0; }
 .stats b { display: block; font: 400 clamp(1.7rem, 4.5vw, 2.6rem)/1 var(--f-head); color: var(--red); font-variant-numeric: tabular-nums; }
 .stats span { font-size: .85rem; color: var(--muted); }
@@ -91,6 +91,10 @@ section { padding-block: 56px 8px; }
 .chip { font: 600 .86rem/1 var(--f-body); padding: 9px 14px; border-radius: 999px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--page); }
 .stars { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
+.group-head { grid-column: 1 / -1; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; border-top: 1px solid var(--rule); padding-top: 16px; margin-top: 10px; }
+.group-head:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+.group-head h3 { font: 400 1.7rem/1 var(--f-head); text-transform: uppercase; margin: 0; }
+.group-head span { font: 700 1.7rem/1 var(--f-hand); color: var(--blue); }
 .star { min-width: 0; display: grid; gap: 12px; align-content: start; }
 .star .pic { position: relative; aspect-ratio: 4/3; max-width: 100%; background: linear-gradient(140deg, var(--ph-a), var(--ph-b)); display: grid; place-items: end start; padding: 10px; }
 .star .pic span { font: 600 .7rem/1.2 var(--f-body); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
@@ -171,6 +175,7 @@ section { padding-block: 56px 8px; }
       <div class="line"><div class="kicker">Exclusive</div><h3>Düsseldorf’s Stars Send Their Love</h3><p>Love letters from Oberkassel, Bilk and Kaiserswerth</p></div>
       <div class="line"><div class="kicker">The Secret</div><h3>From the Kö to the Gold Coast</h3><p>16,000 kilometres away, and still so close</p></div>
       <div class="line"><div class="kicker">Photo Special</div><h3>The Best Moments</h3><p>Old Town, the Rhine, Carnival Monday</p></div>
+      <div class="line"><div class="kicker">G’day from Down Under</div><h3>New Friends from the Gold Coast</h3><p>Burleigh, Broadbeach and the beach club crowd</p></div>
       <div class="bubble">NEW: With a podcast to listen to! Voices from home</div>
       <div class="cover-actions">
         <button class="btn" id="start-show" type="button">Start slideshow</button>
@@ -222,7 +227,7 @@ section { padding-block: 56px 8px; }
   <div class="wrap">
     <span class="end">Happy Birthday, Nicola!</span>
     <div><b>Publisher</b>Dirk</div>
-    <div><b>Editorial team</b>Your friends from Düsseldorf and beyond</div>
+    <div><b>Editorial team</b>Your friends from Düsseldorf, the Gold Coast and beyond</div>
     <div><b>Published</b>November 22, 2026, LaLuna Beachclub</div>
     <div><b>Print run</b>One single copy</div>
   </div>
@@ -243,7 +248,9 @@ const friends = [
   { name: "Claudia", city: "Bilk", dus: true, photos: 4, voice: "1:10", note: "I miss our Sundays by the Rhine the most. Come home for a visit soon!" },
   { name: "Petra & Uwe", city: "Kaiserswerth", dus: true, photos: 6, note: "Thirty years of friendship, and now 16,000 kilometres between us. It doesn’t feel like a single one." },
   { name: "Jens", city: "Cologne", photos: 1, video: "0:58", note: "For once, a greeting from the other side of the Rhine!" },
-  { name: "Tom & Jess", city: "Brisbane", photos: 8, voice: "0:35", note: "See you at LaLuna! First round's on us." }
+  { name: "Tom & Jess", city: "Burleigh Heads", gc: true, photos: 8, voice: "0:35", note: "See you at LaLuna! First round's on us." },
+  { name: "Mel", city: "Broadbeach", gc: true, photos: 2, note: "We’ve only known you for a year, but it feels like forever. Welcome to the Gold Coast family!" },
+  { name: "Sam & Kylie", city: "Palm Beach", gc: true, photos: 3, video: "0:47", note: "From the school gate to Sunday sundowners. Happy 50th, legend!" }
 ];
 const fmt = n => n.toLocaleString("en-GB");
 const km = ([a,b],[c,d]) => { const r = Math.PI/180;
@@ -255,7 +262,8 @@ const dusCount = friends.filter(f => f.dus).length;
 document.getElementById("stats").innerHTML =
   `<div><b>${fmt(Math.round(km(DUS, GOLD) / 100) * 100)} km</b><span>as the crow flies</span></div>` +
   `<div><b>${friends.length}</b><span>messages (example)</span></div>` +
-  `<div><b>${Math.round(dusCount / friends.length * 100)} %</b><span>from Düsseldorf</span></div>`;
+  `<div><b>${Math.round(dusCount / friends.length * 100)} %</b><span>from Düsseldorf</span></div>` +
+  `<div><b>${friends.filter(f => f.gc).length}</b><span>new friends from the Gold Coast</span></div>`;
 
 const wave = () => Array.from({length: 36}, () => `<i style="height:${20 + Math.random()*80}%"></i>`).join("");
 const card = f => `<article class="star">
@@ -267,7 +275,10 @@ const card = f => `<article class="star">
 </article>`;
 const kinds = ["All", "Photos", "Videos", "Voice messages", "Letters"];
 const chips = document.getElementById("chips"), list = document.getElementById("star-list");
-const render = k => { list.innerHTML = friends.filter(f => k === "All" || f.kinds.includes(k)).map(card).join("");
+const groups = [["From home", "Düsseldorf & beyond", f => !f.gc], ["New friends", "from the Gold Coast", f => f.gc]];
+const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
+  list.innerHTML = groups.map(([h, sub, inG]) => { const g = shown.filter(inG);
+    return g.length ? `<div class="group-head"><h3>${h}</h3><span>${sub}</span></div>` + g.map(card).join("") : ""; }).join("");
   chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.k === k)); };
 chips.innerHTML = kinds.map(k => `<button class="chip" type="button" data-k="${k}">${k}</button>`).join("");
 chips.addEventListener("click", e => { const c = e.target.closest(".chip"); if (c) render(c.dataset.k); });
