@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>NICOLA Jubiläumsausgabe</title>
+<title>NICOLA Anniversary Issue</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,800;1,6..96,500&family=Anton&family=Instrument+Sans:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap">
@@ -12,7 +12,7 @@
 [hidden] { display: none !important; }
 body { margin: 0; }
 img { max-width: 100%; }
-/* Layout: People-Magazin "NICOLA, Nr. 50" mit Luftpost-Elementen. Titelseite mit Stickern, Luftpost-Band Düsseldorf nach Gold Coast, "Stars gratulieren" als Karten, Fotostrecke, Podcast, Diashow, Impressum. */
+/* Layout: people magazine "NICOLA, No. 50" with airmail elements. Cover with stickers, airmail band Düsseldorf to Gold Coast, "Stars Send Their Love" cards, photo spread, podcast, slideshow, imprint. */
 :root {
   --page: #ffffff;
   --paper: #fbf7f5;
@@ -99,8 +99,8 @@ section { padding-block: 56px 8px; }
 .star .name { font: 700 2rem/1 var(--f-hand); color: var(--blue); }
 .postmark { font: 700 .66rem/1.2 var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--red); border: 1.5px solid var(--red); border-radius: 999px; padding: 4px 9px; white-space: nowrap; }
 .star blockquote { margin: 0; font: 400 1.3rem/1.15 var(--f-head); text-transform: uppercase; text-wrap: balance; }
-.star blockquote::before { content: "„"; color: var(--red); }
-.star blockquote::after { content: "“"; color: var(--red); }
+.star blockquote::before { content: "“"; color: var(--red); }
+.star blockquote::after { content: "”"; color: var(--red); }
 .letter { background: var(--paper); padding: 12px 14px; font: 600 1.3rem/1.3 var(--f-hand); transform: rotate(-.6deg); border-left: 3px solid var(--blue); }
 .voice { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; background: var(--paper); border-radius: 999px; padding: 6px 14px 6px 6px; }
 .play { width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--red); color: #fff; font-size: .9rem; cursor: pointer; }
@@ -157,35 +157,35 @@ section { padding-block: 56px 8px; }
 </head>
 <body>
 
-<div class="draft"><div class="wrap"><strong>Entwurf 3</strong> · People-Magazin mit Luftpost · alle Namen und Texte sind Beispiele</div></div>
+<div class="draft"><div class="wrap"><strong>Draft 3</strong> · People magazine with airmail · all names and texts are examples</div></div>
 
 <header class="wrap cover">
-  <div class="strip"><span>Nr. 50 · 22. November 2026</span><span>Sonderausgabe</span><span>Düsseldorf ✈ Gold Coast</span></div>
+  <div class="strip"><span>No. 50 · November 22, 2026</span><span>Special Edition</span><span>Düsseldorf ✈ Gold Coast</span></div>
   <h1 class="masthead">NICOLA</h1>
   <div class="cover-grid">
     <div class="cover-photo has-img">
-      <div class="sticker"><div><b>50!</b><small>Jubiläums&shy;ausgabe</small></div></div>
-      <div class="hl">Nicola wird 50 und <mark>strahlt</mark> wie nie</div>
+      <div class="sticker"><div><b>50!</b><small>Anniversary Issue</small></div></div>
+      <div class="hl">Nicola turns 50 and <mark>shines</mark> like never before</div>
     </div>
     <div class="lines">
-      <div class="line"><div class="kicker">Exklusiv</div><h3>Stars aus Düsseldorf gratulieren</h3><p>Liebeserklärungen aus Oberkassel, Bilk und Kaiserswerth</p></div>
-      <div class="line"><div class="kicker">Das Geheimnis</div><h3>Von der Kö an die Gold Coast</h3><p>16.000 Kilometer, und trotzdem ganz nah</p></div>
-      <div class="line"><div class="kicker">Fotostrecke</div><h3>Die schönsten Momente</h3><p>Altstadt, Rheinufer, Rosenmontag</p></div>
-      <div class="bubble">NEU: Mit Podcast zum Anhören! Stimmen von zu Hause</div>
+      <div class="line"><div class="kicker">Exclusive</div><h3>Düsseldorf’s Stars Send Their Love</h3><p>Love letters from Oberkassel, Bilk and Kaiserswerth</p></div>
+      <div class="line"><div class="kicker">The Secret</div><h3>From the Kö to the Gold Coast</h3><p>16,000 kilometres away, and still so close</p></div>
+      <div class="line"><div class="kicker">Photo Special</div><h3>The Best Moments</h3><p>Old Town, the Rhine, Carnival Monday</p></div>
+      <div class="bubble">NEW: With a podcast to listen to! Voices from home</div>
       <div class="cover-actions">
-        <button class="btn" id="start-show" type="button">Diashow starten</button>
-        <a class="btn ghost" href="#stars">Zu den Grüßen</a>
+        <button class="btn" id="start-show" type="button">Start slideshow</button>
+        <a class="btn ghost" href="#stars">Read the messages</a>
       </div>
     </div>
   </div>
 </header>
 
-<div class="airmail" aria-label="Luftpost von Düsseldorf zur Gold Coast">
+<div class="airmail" aria-label="Airmail from Düsseldorf to the Gold Coast">
   <div class="wrap">
     <div class="legs">
-      <div class="end"><b>Düsseldorf</b><span>Absender: Eure Freunde</span></div>
+      <div class="end"><b>Düsseldorf</b><span>From: Your friends</span></div>
       <div class="path" aria-hidden="true"></div>
-      <div class="end to"><b>Gold Coast</b><span>Empfängerin: Nicola</span></div>
+      <div class="end to"><b>Gold Coast</b><span>To: Nicola</span></div>
     </div>
     <div class="stats" id="stats"></div>
   </div>
@@ -193,26 +193,26 @@ section { padding-block: 56px 8px; }
 
 <main class="wrap">
   <section id="stars" aria-labelledby="h-stars">
-    <div class="sec-head"><h2 id="h-stars">Stars gratulieren <em>Your Story with Her</em></h2><span class="tag">Exklusiv</span></div>
-    <div class="chips" id="chips" role="group" aria-label="Nach Art des Beitrags filtern"></div>
+    <div class="sec-head"><h2 id="h-stars">Stars Send Their Love <em>Your Story with Her</em></h2><span class="tag">Exclusive</span></div>
+    <div class="chips" id="chips" role="group" aria-label="Filter by type of message"></div>
     <div class="stars" id="star-list"></div>
   </section>
 
   <section id="fotos" aria-labelledby="h-fotos">
-    <div class="sec-head"><h2 id="h-fotos">Die schönsten Momente</h2><span class="tag">Fotostrecke</span></div>
+    <div class="sec-head"><h2 id="h-fotos">The Best Moments</h2><span class="tag">Photo Special</span></div>
     <div class="spread">
-      <div class="ph"><small>von Claudia</small><span>Sommer am Rheinufer: Hier entstand das Foto des Jahres</span></div>
-      <div class="ph"><small>von Markus</small><span>Rosenmontag: Nicola als Prinzessin</span></div>
-      <div class="ph"><small>von Petra</small><span>Der 40. Geburtstag</span></div>
-      <div class="ph"><small>von Anna</small><span>Shopping auf der Kö</span></div>
-      <div class="ph"><small>Video · 0:58</small><span>Grüße aus Köln</span></div>
+      <div class="ph"><small>from Claudia</small><span>Summer on the Rhine: the photo of the year</span></div>
+      <div class="ph"><small>from Markus</small><span>Carnival Monday: Nicola as a princess</span></div>
+      <div class="ph"><small>from Petra</small><span>The 40th birthday</span></div>
+      <div class="ph"><small>from Anna</small><span>Shopping on the Kö</span></div>
+      <div class="ph"><small>Video · 0:58</small><span>Greetings from Cologne</span></div>
     </div>
   </section>
 
   <section id="podcast" aria-labelledby="h-podcast">
-    <div class="sec-head"><h2 id="h-podcast">Der Podcast</h2><span class="tag">Zum Anhören</span></div>
+    <div class="sec-head"><h2 id="h-podcast">The Podcast</h2><span class="tag">Listen in</span></div>
     <div class="pod">
-      <div class="pod-intro"><p>Kopfhörer auf: Stimmen von zu Hause, aufgenommen in Küchen, auf Balkonen und am Rhein.</p></div>
+      <div class="pod-intro"><p>Headphones on: voices from home, recorded in kitchens, on balconies and by the Rhine.</p></div>
       <ol class="episodes" id="episodes"></ol>
     </div>
   </section>
@@ -221,61 +221,61 @@ section { padding-block: 56px 8px; }
 <footer class="imprint">
   <div class="wrap">
     <span class="end">Happy Birthday, Nicola!</span>
-    <div><b>Herausgeber</b>Dirk</div>
-    <div><b>Redaktion</b>Eure Freunde aus Düsseldorf und darüber hinaus</div>
-    <div><b>Erscheinungstag</b>22. November 2026, LaLuna Beachclub</div>
-    <div><b>Auflage</b>Ein einziges Exemplar</div>
+    <div><b>Publisher</b>Dirk</div>
+    <div><b>Editorial team</b>Your friends from Düsseldorf and beyond</div>
+    <div><b>Published</b>November 22, 2026, LaLuna Beachclub</div>
+    <div><b>Print run</b>One single copy</div>
   </div>
 </footer>
 
-<div class="show" id="show" hidden role="dialog" aria-label="Diashow">
-  <button class="btn ghost close" id="close-show" type="button">Schließen</button>
+<div class="show" id="show" hidden role="dialog" aria-label="Slideshow">
+  <button class="btn ghost close" id="close-show" type="button">Close</button>
   <div class="slide" id="slide"></div>
-  <div class="nav"><button class="btn ghost" id="prev" type="button">Zurück</button><button class="btn" id="next" type="button">Weiter</button></div>
+  <div class="nav"><button class="btn ghost" id="prev" type="button">Back</button><button class="btn" id="next" type="button">Next</button></div>
 </div>
 
 <script>
 const DUS = [51.2277, 6.7735], GOLD = [-28.0167, 153.4000];
 const friends = [
-  { name: "Anna", city: "Oberkassel", dus: true, photos: 5, note: "Unser erster Altbier-Abend in der Altstadt: Ab da war klar, wir bleiben Freundinnen!", voice: "0:42" },
-  { name: "Markus & Steffi", city: "Pempelfort", dus: true, photos: 3, video: "1:35", note: "Helau und Happy Birthday! Am Rosenmontag fehlst du uns jedes Jahr." },
-  { name: "Familie Weber", city: "Benrath", dus: true, photos: 2, letter: "Liebe Nicola, unser Gartenzaun ist seit Eurem Umzug viel zu ruhig geworden …" },
-  { name: "Claudia", city: "Bilk", dus: true, photos: 4, voice: "1:10", note: "Unsere Sonntage am Rhein vermisse ich am meisten. Komm bald heim auf Besuch!" },
-  { name: "Petra & Uwe", city: "Kaiserswerth", dus: true, photos: 6, note: "Dreißig Jahre Freundschaft, und jetzt liegen 16.000 Kilometer dazwischen. Gefühlt ist es keiner." },
-  { name: "Jens", city: "Köln", photos: 1, video: "0:58", note: "Ausnahmsweise ein Gruß von der anderen Rheinseite!" },
+  { name: "Anna", city: "Oberkassel", dus: true, photos: 5, note: "Our first Altbier night in the Old Town: from then on we knew we’d be friends for life!", voice: "0:42" },
+  { name: "Markus & Steffi", city: "Pempelfort", dus: true, photos: 3, video: "1:35", note: "Helau and happy birthday! We miss you every Carnival Monday." },
+  { name: "The Webers", city: "Benrath", dus: true, photos: 2, letter: "Dear Nicola, our garden fence has been far too quiet since you moved away …" },
+  { name: "Claudia", city: "Bilk", dus: true, photos: 4, voice: "1:10", note: "I miss our Sundays by the Rhine the most. Come home for a visit soon!" },
+  { name: "Petra & Uwe", city: "Kaiserswerth", dus: true, photos: 6, note: "Thirty years of friendship, and now 16,000 kilometres between us. It doesn’t feel like a single one." },
+  { name: "Jens", city: "Cologne", photos: 1, video: "0:58", note: "For once, a greeting from the other side of the Rhine!" },
   { name: "Tom & Jess", city: "Brisbane", photos: 8, voice: "0:35", note: "See you at LaLuna! First round's on us." }
 ];
-const fmt = n => n.toLocaleString("de-DE");
+const fmt = n => n.toLocaleString("en-GB");
 const km = ([a,b],[c,d]) => { const r = Math.PI/180;
   const h = Math.sin((c-a)*r/2)**2 + Math.cos(a*r)*Math.cos(c*r)*Math.sin((d-b)*r/2)**2;
   return Math.round(2*6371*Math.asin(Math.sqrt(h))); };
-friends.forEach(f => { f.kinds = ["Fotos"]; if (f.video) f.kinds.push("Videos"); if (f.voice) f.kinds.push("Sprachnachrichten"); if (f.letter) f.kinds.push("Briefe"); });
+friends.forEach(f => { f.kinds = ["Photos"]; if (f.video) f.kinds.push("Videos"); if (f.voice) f.kinds.push("Voice messages"); if (f.letter) f.kinds.push("Letters"); });
 
 const dusCount = friends.filter(f => f.dus).length;
 document.getElementById("stats").innerHTML =
-  `<div><b>${fmt(Math.round(km(DUS, GOLD) / 100) * 100)} km</b><span>Luftlinie</span></div>` +
-  `<div><b>${friends.length}</b><span>Grüße (Beispiel)</span></div>` +
-  `<div><b>${Math.round(dusCount / friends.length * 100)} %</b><span>aus Düsseldorf</span></div>`;
+  `<div><b>${fmt(Math.round(km(DUS, GOLD) / 100) * 100)} km</b><span>as the crow flies</span></div>` +
+  `<div><b>${friends.length}</b><span>messages (example)</span></div>` +
+  `<div><b>${Math.round(dusCount / friends.length * 100)} %</b><span>from Düsseldorf</span></div>`;
 
 const wave = () => Array.from({length: 36}, () => `<i style="height:${20 + Math.random()*80}%"></i>`).join("");
 const card = f => `<article class="star">
-  <div class="pic"><span class="count">${f.photos} Foto${f.photos > 1 ? "s" : ""}${f.video ? " · Video " + f.video : ""}</span><span>Foto von ${f.name}</span></div>
+  <div class="pic"><span class="count">${f.photos} photo${f.photos > 1 ? "s" : ""}${f.video ? " · Video " + f.video : ""}</span><span>Photo from ${f.name}</span></div>
   <div class="who"><span class="name">${f.name}</span><span class="postmark">${f.city}</span></div>
   ${f.note ? `<blockquote>${f.note}</blockquote>` : ""}
   ${f.letter ? `<div class="letter">${f.letter}</div>` : ""}
-  ${f.voice ? `<div class="voice"><button class="play" type="button" aria-label="Sprachnachricht von ${f.name} (Beispiel)">▶</button><span class="wave" aria-hidden="true">${wave()}</span><small>${f.voice}</small></div>` : ""}
+  ${f.voice ? `<div class="voice"><button class="play" type="button" aria-label="Voice message from ${f.name} (example)">▶</button><span class="wave" aria-hidden="true">${wave()}</span><small>${f.voice}</small></div>` : ""}
 </article>`;
-const kinds = ["Alle", "Fotos", "Videos", "Sprachnachrichten", "Briefe"];
+const kinds = ["All", "Photos", "Videos", "Voice messages", "Letters"];
 const chips = document.getElementById("chips"), list = document.getElementById("star-list");
-const render = k => { list.innerHTML = friends.filter(f => k === "Alle" || f.kinds.includes(k)).map(card).join("");
+const render = k => { list.innerHTML = friends.filter(f => k === "All" || f.kinds.includes(k)).map(card).join("");
   chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.k === k)); };
 chips.innerHTML = kinds.map(k => `<button class="chip" type="button" data-k="${k}">${k}</button>`).join("");
 chips.addEventListener("click", e => { const c = e.target.closest(".chip"); if (c) render(c.dataset.k); });
-render("Alle");
+render("All");
 
-const eps = friends.filter(f => f.voice).map(f => [`Gruß aus ${f.city}`, f.name, f.voice]);
+const eps = friends.filter(f => f.voice).map(f => [`Greetings from ${f.city}`, f.name, f.voice]);
 const epList = document.getElementById("episodes");
-epList.innerHTML = eps.map(([t, w, d]) => `<li><button class="play" type="button" aria-pressed="false" aria-label="${t} abspielen (Beispiel)">▶</button><div><div class="ep-title">${t}</div><div class="ep-who">${w}</div></div><span class="dur">${d}</span></li>`).join("");
+epList.innerHTML = eps.map(([t, w, d]) => `<li><button class="play" type="button" aria-pressed="false" aria-label="Play ${t} (example)">▶</button><div><div class="ep-title">${t}</div><div class="ep-who">${w}</div></div><span class="dur">${d}</span></li>`).join("");
 epList.addEventListener("click", e => { const b = e.target.closest(".play"); if (!b) return;
   const on = b.getAttribute("aria-pressed") !== "true";
   epList.querySelectorAll(".play").forEach(x => { x.setAttribute("aria-pressed", "false"); x.textContent = "▶"; });
@@ -284,7 +284,7 @@ epList.addEventListener("click", e => { const b = e.target.closest(".play"); if 
 const show = document.getElementById("show"), slide = document.getElementById("slide");
 let i = 0, timer;
 const draw = () => { const f = friends[i];
-  slide.innerHTML = `<div class="k">Gruß aus ${f.city}</div><div class="n">${f.name}</div><div class="q">${f.note || f.letter}</div>`; };
+  slide.innerHTML = `<div class="k">Greetings from ${f.city}</div><div class="n">${f.name}</div><div class="q">${f.note || f.letter}</div>`; };
 const go = d => { i = (i + d + friends.length) % friends.length; draw(); };
 const auto = () => { clearInterval(timer); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => go(1), 7000); };
 const close = () => { show.hidden = true; clearInterval(timer); };
