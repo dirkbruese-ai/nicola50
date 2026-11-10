@@ -78,12 +78,18 @@ h1 .fifty{display:block;font-weight:300;font-size:.42em;letter-spacing:.5em;marg
 
 /* menu */
 h2{font:300 22px/1.2 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;margin:0;text-align:center}
-.menu{display:flex;flex-direction:column;gap:26px}
-.course h3{font:400 15px/1.2 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;margin:0 0 10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.course h3 .pick{font:500 10px/1 var(--f-body);letter-spacing:.14em;color:var(--card);background:var(--taupe);padding:5px 8px;border-radius:2px}
-.course ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
-.course li{font:400 13.5px/1.5 var(--f-disp);letter-spacing:.08em;text-transform:uppercase}
-.tag{font:400 10px var(--f-disp);letter-spacing:.06em;color:var(--taupe);white-space:nowrap}
+.menu{display:flex;flex-direction:column;gap:30px}
+.course h3{font:600 15px/1.2 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:12px;color:var(--ink)}
+.course h3::after{content:"";flex:1;height:1px;background:var(--taupe-soft);min-width:20px}
+.course h3>span:first-child{white-space:nowrap}
+.choose{margin:-6px 0 14px;font:500 11px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--taupe)}
+.course h3 .pick{order:3;white-space:nowrap;flex-shrink:0;font:500 10px/1 var(--f-body);letter-spacing:.14em;color:var(--card);background:var(--taupe);padding:5px 8px;border-radius:2px}
+.course ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.course li{position:relative;padding-left:22px;display:flex;flex-direction:column;gap:1px}
+.course li::before{content:"";position:absolute;left:3px;top:.62em;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--taupe)}
+.dn{font:500 16.5px/1.35 var(--f-body);color:var(--ink);display:flex;align-items:baseline;flex-wrap:wrap;gap:6px}
+.dd{font:300 14px/1.45 var(--f-body);color:var(--mute)}
+.tag{font:500 9.5px/1 var(--f-body);letter-spacing:.08em;color:var(--taupe);border:1px solid var(--taupe-soft);border-radius:2px;padding:3px 5px;white-space:nowrap;position:relative;top:-2px}
 .legend{font-size:12px;color:var(--mute);text-align:center;letter-spacing:.04em}
 .mainsnote{font-size:14px;color:var(--mute);margin:8px 0 0}
 
@@ -185,41 +191,42 @@ input:focus,textarea:focus{outline:none;border-color:var(--taupe)}
         <h2 id="menu-h" data-i18n="menuH">The menu</h2>
 
         <div class="course">
-          <h3>To start</h3>
+          <h3><span>To start</span></h3>
           <ul>
-            <li>Freshly baked baguette with house made butter <span class="tag">(V)</span></li>
-            <li>Byron Bay small production of fresh stracciatella + truffle honey <span class="tag">(GF) (V)</span></li>
-            <li>Warm marinated Mediterranean olives <span class="tag">(GF) (VE)</span></li>
-            <li>San Daniele prosciutto <span class="tag">(GF) (DF)</span></li>
+            <li><span class="dn">Freshly baked baguette<span class="tag">V</span></span><span class="dd">with house made butter</span></li>
+            <li><span class="dn">Fresh stracciatella<span class="tag">GF</span><span class="tag">V</span></span><span class="dd">Byron Bay small production, truffle honey</span></li>
+            <li><span class="dn">Warm marinated olives<span class="tag">GF</span><span class="tag">VE</span></span><span class="dd">Mediterranean</span></li>
+            <li><span class="dn">San Daniele prosciutto<span class="tag">GF</span><span class="tag">DF</span></span></li>
           </ul>
         </div>
         <div class="course">
-          <h3>Shared entrees</h3>
+          <h3><span>Shared entrees</span></h3>
           <ul>
-            <li>Large Mooloolaba grilled prawns, ’nduja butter, charred lemon <span class="tag">(GF) (A)</span></li>
-            <li>Wagyu beef tataki, semi dried tomato, confit onion, chives <span class="tag">(GF) (DF)</span></li>
+            <li><span class="dn">Mooloolaba grilled prawns<span class="tag">GF</span><span class="tag">A</span></span><span class="dd">Large, ’nduja butter, charred lemon</span></li>
+            <li><span class="dn">Wagyu beef tataki<span class="tag">GF</span><span class="tag">DF</span></span><span class="dd">Semi dried tomato, confit onion, chives</span></li>
           </ul>
         </div>
         <div class="course">
-          <h3>Your choice of main <span class="pick" data-i18n="pickTag">Choose below</span></h3>
+          <h3><span>Your choice of main</span></h3>
+          <p class="choose">Pick yours in the RSVP below</p>
           <ul>
-            <li>300gr Black Angus striploin, cooked medium, 120 days grass fed, served with whipped mustard butter <span class="tag">(GF)</span></li>
-            <li>Fresh catch of the day, braised fennel, saffron emulsion, confit tomatoes, orange oil <span class="tag">(GF) (M)</span></li>
-            <li>Burnt butter mushroom open raviolo, whipped ricotta, sage <span class="tag">(V)</span></li>
+            <li><span class="dn">Black Angus striploin<span class="tag">GF</span></span><span class="dd">300 g, cooked medium, 120 days grass fed, whipped mustard butter</span></li>
+            <li><span class="dn">Fresh catch of the day<span class="tag">GF</span><span class="tag">M</span></span><span class="dd">Braised fennel, saffron emulsion, confit tomatoes, orange oil</span></li>
+            <li><span class="dn">Mushroom open raviolo<span class="tag">V</span></span><span class="dd">Burnt butter, whipped ricotta, sage</span></li>
           </ul>
         </div>
         <div class="course">
-          <h3>Sides to share for the table</h3>
+          <h3><span>Sides for the table</span></h3>
           <ul>
-            <li>Shoestring truffle fries, pecorino <span class="tag">(GF) (VEO)</span></li>
-            <li>Baby cos, onion, extra virgin olive oil, dill, squeezed lemon <span class="tag">(GF) (VE)</span></li>
+            <li><span class="dn">Shoestring truffle fries<span class="tag">GF</span><span class="tag">VEO</span></span><span class="dd">Pecorino</span></li>
+            <li><span class="dn">Baby cos salad<span class="tag">GF</span><span class="tag">VE</span></span><span class="dd">Onion, extra virgin olive oil, dill, squeezed lemon</span></li>
           </ul>
         </div>
         <div class="course">
-          <h3>Dessert or cheese</h3>
+          <h3><span>Dessert or cheese</span></h3>
           <ul>
-            <li>Lemon curd tart, vanilla meringue <span class="tag">(V)</span></li>
-            <li>Selection of cheeses served with crostinis, truffled honey + fresh grapes <span class="tag">(V)</span></li>
+            <li><span class="dn">Lemon curd tart<span class="tag">V</span></span><span class="dd">Vanilla meringue</span></li>
+            <li><span class="dn">Selection of cheeses<span class="tag">V</span></span><span class="dd">Crostinis, truffled honey, fresh grapes</span></li>
           </ul>
         </div>
         <p class="legend">GF gluten free · V vegetarian · VE vegan · VEO vegan option · DF dairy free · A Australian seafood · M mixed origin seafood</p>
