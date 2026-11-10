@@ -137,10 +137,6 @@ input:focus,textarea:focus{outline:none;border-color:var(--taupe)}
 <div class="wrap">
   <div class="topbar">
     <a href="/" data-i18n="back">← Birthday album</a>
-    <div class="lang" role="group" aria-label="Language">
-      <button type="button" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
-      <button type="button" id="lang-de" data-lang="de" aria-pressed="false">DE</button>
-    </div>
   </div>
 
   <main class="card">
@@ -345,31 +341,8 @@ input:focus,textarea:focus{outline:none;border-color:var(--taupe)}
       thYes:"See you on the 22nd",thYesT:"Wonderful. Your table is set. We can't wait to celebrate with you.",
       thMaybe:"Fingers crossed",thMaybeT:"Thank you. We've pencilled you in. Please send a final yes or no by 15 November.",
       thNo:"You'll be missed",thNoT:"Thank you for letting us know. We'll pass your wishes on to Nicola."},
-    de:{back:"← Zum Geburtstagsalbum",eyebrow:"Lunch am Wasser · Ihr seid eingeladen",
-      lede:"Ein halbes Jahrhundert Nicola verdient einen langen, sonnigen Lunch mit den Menschen, die sie liebt. Feiert mit uns am Wasser im MĀRE.",
-      kDate:"Datum",vDate:"Sonntag, 22. November 2026",kTime:"Ankunft",vTime:"14 Uhr",kRsvp:"Antwort bis",vRsvp:"Sonntag, 15. November",
-      t1:"Welcome Drinks auf dem Ponton",t2:"Gesetztes Essen mit Shared Plates und eurem Hauptgang",
-      kDress:"Dresscode",vDress:"Coastal Chic",dressNote:"Weiß, Sand und Leinen. Gefeiert wird auf einem Ponton, die Stilettos also besser zu Hause lassen.",
-      menuH:"Das Menü",pickTag:"Unten wählen",
-      qComing:"Seid ihr dabei?",aYes:"Ja, ich komme / wir kommen!",aYesSub:"Das lassen wir uns nicht entgehen.",
-      aMaybe:"Wir versuchen es, sind aber noch nicht 100 % sicher",aMaybeSub:"Wir bestätigen, sobald wir können.",
-      aNo:"Leider können wir nicht kommen",aNoSub:"Wir stoßen aus der Ferne an.",
-      qCount:"Antwort für",c1:"Nur mich",c2:"Uns beide",g1h:"Gast eins",g2h:"Gast zwei",name:"Name",
-      qMain:"Hauptgang",m1:"Black Angus Striploin",m1s:"300 g, medium gegart, Senfbutter · GF",
-      m2:"Pilz-Raviolo",m2s:"Braune Butter, Ricotta, Salbei · V",m3:"Fang des Tages",m3s:"Geschmorter Fenchel, Safran-Emulsion, Orangenöl · GF",
-      qDiet:"Ernährung",dVeg:"Vegetarisch",dVegan:"Vegan",dGf:"Glutenfrei",allergy:"Weitere Allergien oder Unverträglichkeiten",allergyPh:"z. B. Nüsse, Schalentiere, Laktose",
-      veganHint:"Das Menü hat keinen veganen Hauptgang. Kreuzt vegan an, wir klären eine Alternative mit der Küche.",
-      email:"E-Mail oder Handy, damit wir euch erreichen (optional)",msg:"Ein paar Worte für Nicola (optional)",
-      send:"Antwort senden",sending:"Wird gesendet…",again:"Antwort ändern",
-      errAtt:"Bitte sagt uns, ob ihr kommen könnt.",errName:"Bitte einen Namen eintragen.",errMain:"Bitte einen Hauptgang wählen.",
-      errSend:"Das hat nicht geklappt. Bitte Verbindung prüfen und erneut senden.",
-      thYes:"Bis zum 22.!",thYesT:"Wunderbar, euer Platz ist gedeckt. Wir freuen uns sehr, mit euch zu feiern.",
-      thMaybe:"Daumen gedrückt",thMaybeT:"Danke! Wir haben euch vorgemerkt. Bitte gebt uns bis zum 15. November final Bescheid.",
-      thNo:"Ihr werdet fehlen",thNoT:"Danke für die Rückmeldung. Wir richten Nicola eure Grüße aus."}
   };
   var lang = "en";
-  try{ var s = localStorage.getItem("n50-lang"); if(s && T[s]) lang = s; else if((navigator.language||"").toLowerCase().indexOf("de")===0) lang="de"; }
-  catch(e){ if((navigator.language||"").toLowerCase().indexOf("de")===0) lang="de"; }
 
   var $ = function(id){return document.getElementById(id)};
   function apply(l){
@@ -377,12 +350,9 @@ input:focus,textarea:focus{outline:none;border-color:var(--taupe)}
     document.documentElement.lang = l;
     document.querySelectorAll("[data-i18n]").forEach(function(el){ var k=el.getAttribute("data-i18n"); if(d[k]!=null) el.textContent=d[k]; });
     document.querySelectorAll("[data-i18n-ph]").forEach(function(el){ el.placeholder = d[el.getAttribute("data-i18n-ph")]; });
-    $("lang-en").setAttribute("aria-pressed", l==="en"); $("lang-de").setAttribute("aria-pressed", l==="de");
     $("f-lang").value = l;
-    try{ localStorage.setItem("n50-lang", l); }catch(e){}
     if(!$("thanks").hidden) showThanks(lastAtt);
   }
-  document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ apply(b.dataset.lang); }); });
 
   var form = $("rsvp");
   function val(name){ var el = form.querySelector('input[name="'+name+'"]:checked'); return el ? el.value : ""; }
