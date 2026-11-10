@@ -20,7 +20,7 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Josefin+Sans:wght@200;300;400;600&family=Jost:wght@300;400;500&display=swap">
 <style>
 /* Layout: one narrow menu card, framed by a hairline with triangle marks like the MĀRE card; invitation → menu → RSVP form → thanks. */
 :root{
@@ -66,6 +66,9 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:linear-grad
 .inner{position:relative;display:flex;flex-direction:column;gap:40px}
 
 .eyebrow{font:400 12px/1.4 var(--f-disp);letter-spacing:.32em;text-transform:uppercase;color:var(--taupe);text-align:center}
+.logo-h{margin:4px auto 0;width:min(340px,86%)}
+.logo-h .logo{display:block;width:100%;height:auto;overflow:visible}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 h1{font:200 clamp(52px,14vw,96px)/1 var(--f-disp);letter-spacing:.14em;margin:6px 0 0;text-align:center;color:var(--taupe);text-indent:.14em}
 h1 .fifty{display:block;font-weight:300;font-size:.42em;letter-spacing:.5em;margin-top:14px;color:var(--ink);text-indent:.5em}
 .invite p{margin:0;text-align:center}
@@ -171,15 +174,15 @@ input:focus,textarea:focus{outline:none;border-color:var(--taupe)}
 
       <section class="invite" style="display:flex;flex-direction:column;gap:22px">
         <div class="eyebrow" data-i18n="eyebrow">Lunch by the water · You're invited</div>
-        <h1>NICOLA<span class="fifty">FIFTY</span></h1>
-        <p class="lede" data-i18n="lede">Half a century of Nicola deserves a long, sunny lunch with the people she loves. Join us on the water at MĀRE.</p>
+        <h1 class="logo-h"><span class="sr">Nicola 50</span><svg class="logo" viewBox="0 0 240 120" aria-hidden="true"><polygon points="73,10 133,10 103,62" fill="none" stroke="var(--taupe)" stroke-width="1.2"/><polygon points="108,62 138,10 168,62" fill="var(--taupe)"/><text x="103" y="35" text-anchor="middle" font-family="Italiana, serif" font-size="24" fill="var(--ink)">5</text><text x="138" y="53" text-anchor="middle" font-family="Italiana, serif" font-size="24" fill="var(--card)">0</text><text x="123" y="96" text-anchor="middle" font-family="Italiana, serif" font-size="21" letter-spacing="6" fill="var(--ink)">NICOLA</text><text x="121" y="114" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-weight="300" font-size="8" letter-spacing="3" fill="var(--taupe)">22 · 11 · 2026</text></svg></h1>
+        <p class="lede" data-i18n="lede">Half a century of Nicola deserves a long, sunny lunch with the people she loves.</p>
 
         <div class="facts">
           <div><span class="k" data-i18n="kDate">Date</span><span class="v" data-i18n="vDate">Sunday, 22 November 2026</span></div>
           <div><span class="k" data-i18n="kTime">Arrival</span><span class="v" data-i18n="vTime">2 pm</span></div>
           <div><span class="k" data-i18n="kRsvp">Reply by</span><span class="v" data-i18n="vRsvp">Thursday, 12 November</span></div>
         </div>
-        <p class="venue">MĀRE by La Luna Beach Club · Pool Pontoon, Marina Mirage<br>74 Seaworld Drive, Main Beach QLD 4217</p>
+        <p class="venue">MĀRE by La Luna Beach Club<br>74 Seaworld Drive, Main Beach QLD 4217</p>
 
         <div class="timeline">
           <div><span class="t">2:00</span><span data-i18n="t1">Welcome drinks at the pool cabanas</span></div>
@@ -345,7 +348,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--taupe)}
 (function(){
   var T = {
     en:{eyebrow:"Lunch by the water · You're invited",
-      lede:"Half a century of Nicola deserves a long, sunny lunch with the people she loves. Join us on the water at MĀRE.",
+      lede:"Half a century of Nicola deserves a long, sunny lunch with the people she loves.",
       kDate:"Date",vDate:"Sunday, 22 November 2026",kTime:"Arrival",vTime:"2 pm",kRsvp:"Reply by",vRsvp:"Thursday, 12 November",
       t1:"Welcome drinks at the pool cabanas",t2:"Seated lunch, shared plates and your chosen main",t3:"Drinks into the sunset by the pool",
       kDress:"Dress code",vDress:"Coastal Chic",dressNote:"The lunch is on a pontoon, so leave the stilettos at home.",
