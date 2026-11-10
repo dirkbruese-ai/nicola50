@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nicola 50 · RSVP</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: one narrow menu card, framed by a hairline with triangle marks like the MĀRE card; invitation → menu → RSVP form → thanks. */
+:root{
+  --sand:#f6f2ec;      /* page ground */
+  --card:#fdfbf8;      /* menu-card paper */
+  --ink:#2a2521;       /* text */
+  --taupe:#8f7d6f;     /* La Luna taupe, lines + accent */
+  --taupe-soft:#d9cfc5;
+  --mute:#7a6f66;
+  --sel:#efe7de;       /* selected option fill */
+  --err:#a8432f;
+  --f-disp:"Josefin Sans","Futura","Century Gothic",system-ui,sans-serif;
+  --f-body:"Jost","Futura","Helvetica Neue",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --sand:#171513;--card:#1f1c19;--ink:#ece5dc;--taupe:#c2ad9b;--taupe-soft:#4a413a;--mute:#a99d92;--sel:#2c2723;--err:#e08a73;color-scheme:dark}}
+:root[data-theme="dark"]{--sand:#171513;--card:#1f1c19;--ink:#ece5dc;--taupe:#c2ad9b;--taupe-soft:#4a413a;--mute:#a99d92;--sel:#2c2723;--err:#e08a73;color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--sand);color:var(--ink);font:300 16px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;font:400 12px/1 var(--f-disp);letter-spacing:.18em;text-transform:uppercase}
+.topbar a{color:var(--mute);text-decoration:none}
+.topbar a:hover{color:var(--ink)}
+.lang{display:flex;gap:4px}
+.lang button{font:inherit;letter-spacing:inherit;background:none;border:1px solid transparent;color:var(--mute);padding:7px 9px;cursor:pointer;border-radius:2px}
+.lang button[aria-pressed="true"]{border-color:var(--taupe);color:var(--ink)}
+
+/* the framed card */
+.card{position:relative;background:var(--card);padding:56px clamp(20px,6vw,52px) 52px}
+.frame{position:absolute;inset:18px;border:1px solid var(--taupe-soft);pointer-events:none}
+.tri{position:absolute;width:0;height:0;pointer-events:none}
+.tri.down{right:10px;top:46%;border-left:9px solid transparent;border-right:9px solid transparent;border-top:15px solid var(--taupe)}
+.inner{position:relative;display:flex;flex-direction:column;gap:40px}
+
+.eyebrow{font:400 12px/1.4 var(--f-disp);letter-spacing:.32em;text-transform:uppercase;color:var(--taupe);text-align:center}
+h1{font:200 clamp(52px,14vw,96px)/1 var(--f-disp);letter-spacing:.14em;margin:6px 0 0;text-align:center;color:var(--taupe);text-indent:.14em}
+h1 .fifty{display:block;font-weight:300;font-size:.42em;letter-spacing:.5em;margin-top:14px;color:var(--ink);text-indent:.5em}
+.invite p{margin:0;text-align:center}
+.lede{max-width:34em;margin:0 auto!important;color:var(--mute)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--taupe-soft);border-bottom:1px solid var(--taupe-soft);margin-top:8px}
+.facts>div{padding:16px 8px;text-align:center;display:flex;flex-direction:column;gap:4px;min-width:0}
+.facts>div+div{border-left:1px solid var(--taupe-soft)}
+.k{font:400 11px/1.3 var(--f-disp);letter-spacing:.24em;text-transform:uppercase;color:var(--taupe)}
+.v{font:400 15px/1.4 var(--f-body)}
+.venue{font-size:14px;color:var(--mute)}
+.venue a{color:inherit}
+.timeline{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:0 auto;width:100%}
+.timeline div{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:baseline}
+.timeline .t{font:400 15px/1 var(--f-disp);letter-spacing:.12em;color:var(--taupe);text-align:right;font-variant-numeric:tabular-nums}
+.dress{border:1px solid var(--taupe-soft);padding:16px 18px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.dress .v{font:300 20px/1.3 var(--f-disp);letter-spacing:.14em;text-transform:uppercase}
+.dress small{color:var(--mute);font-size:14px}
+
+/* menu */
+h2{font:300 22px/1.2 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;margin:0;text-align:center}
+.menu{display:flex;flex-direction:column;gap:26px}
+.course h3{font:400 15px/1.2 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;margin:0 0 10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.course h3 .pick{font:500 10px/1 var(--f-body);letter-spacing:.14em;color:var(--card);background:var(--taupe);padding:5px 8px;border-radius:2px}
+.course ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.course li{font:400 13.5px/1.5 var(--f-disp);letter-spacing:.08em;text-transform:uppercase}
+.tag{font:400 10px var(--f-disp);letter-spacing:.06em;color:var(--taupe);white-space:nowrap}
+.legend{font-size:12px;color:var(--mute);text-align:center;letter-spacing:.04em}
+.mainsnote{font-size:14px;color:var(--mute);margin:8px 0 0}
+
+/* form */
+.divider{display:flex;align-items:center;gap:14px;color:var(--taupe)}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--taupe-soft)}
+.divider span{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:10px solid var(--taupe)}
+form{display:flex;flex-direction:column;gap:30px}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+legend,.label{font:400 13px/1.3 var(--f-disp);letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);padding:0;margin-bottom:12px}
+.label{margin:0}
+.opts{display:grid;gap:10px}
+.opts.three{grid-template-columns:1fr}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{position:relative;display:block}
+.opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opt .box{display:flex;flex-direction:column;gap:3px;border:1px solid var(--taupe-soft);padding:14px 16px;min-height:100%;transition:border-color .15s,background .15s}
+.opt .box b{font:400 15px/1.35 var(--f-body)}
+.opt .box em{font-style:normal;font-size:13.5px;color:var(--mute)}
+.opt input:checked+.box{border-color:var(--taupe);background:var(--sel);box-shadow:inset 3px 0 0 var(--taupe)}
+.opt input:focus-visible+.box{outline:2px solid var(--taupe);outline-offset:2px}
+.opt:hover .box{border-color:var(--taupe)}
+.guest{border-top:1px solid var(--taupe-soft);padding-top:22px;display:flex;flex-direction:column;gap:18px}
+.guest-h{font:300 18px/1 var(--f-disp);letter-spacing:.2em;text-transform:uppercase}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--mute)}
+input[type=text],input[type=email],textarea{font:400 16px/1.4 var(--f-body);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--taupe-soft);padding:8px 2px;border-radius:0;width:100%}
+textarea{border:1px solid var(--taupe-soft);padding:10px 12px;min-height:96px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--taupe)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-block;border:1px solid var(--taupe-soft);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:400}
+.chip input:checked+span{background:var(--taupe);border-color:var(--taupe);color:var(--card)}
+.chip input:focus-visible+span{outline:2px solid var(--taupe);outline-offset:2px}
+.hint{font-size:13px;color:var(--mute);margin:0}
+.error{color:var(--err);font-size:14px;margin:0}
+.submit{font:400 14px/1 var(--f-disp);letter-spacing:.28em;text-transform:uppercase;background:var(--ink);color:var(--card);border:0;padding:19px 24px;cursor:pointer;width:100%}
+.submit:hover{background:var(--taupe)}
+.submit:disabled{opacity:.6;cursor:wait}
+.submit:focus-visible{outline:2px solid var(--taupe);outline-offset:3px}
+.bot{position:absolute;left:-9999px}
+
+.thanks{text-align:center;display:flex;flex-direction:column;gap:14px;padding:12px 0}
+.thanks .big{font:200 clamp(30px,8vw,44px)/1.15 var(--f-disp);letter-spacing:.1em;text-transform:uppercase;color:var(--taupe);margin:0}
+.thanks p{margin:0}
+.thanks button{font:400 12px var(--f-disp);letter-spacing:.2em;text-transform:uppercase;background:none;border:1px solid var(--taupe-soft);color:var(--ink);padding:12px 16px;cursor:pointer;justify-self:center;margin:8px auto 0}
+.foot{text-align:center;font:400 11px/1.6 var(--f-disp);letter-spacing:.26em;text-transform:uppercase;color:var(--mute)}
+
+@media (max-width:520px){
+  .facts{grid-template-columns:1fr}
+  .facts>div+div{border-left:0;border-top:1px solid var(--taupe-soft)}
+  .opts.two{grid-template-columns:1fr}
+  .frame{inset:10px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="/" data-i18n="back">← Birthday album</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" id="lang-de" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+  </div>
+
+  <main class="card">
+    <span class="frame" aria-hidden="true"></span>
+    <span class="tri down" aria-hidden="true"></span>
+    <div class="inner">
+
+      <section class="invite" style="display:flex;flex-direction:column;gap:22px">
+        <div class="eyebrow" data-i18n="eyebrow">Lunch by the water · You're invited</div>
+        <h1>NICOLA<span class="fifty">FIFTY</span></h1>
+        <p class="lede" data-i18n="lede">Half a century of Nicola deserves a long, sunny lunch with the people she loves. Join us on the water at MĀRE.</p>
+
+        <div class="facts">
+          <div><span class="k" data-i18n="kDate">Date</span><span class="v" data-i18n="vDate">Sunday, 22 November 2026</span></div>
+          <div><span class="k" data-i18n="kTime">Arrival</span><span class="v" data-i18n="vTime">2 pm</span></div>
+          <div><span class="k" data-i18n="kRsvp">Reply by</span><span class="v" data-i18n="vRsvp">Sunday, 15 November</span></div>
+        </div>
+        <p class="venue">MĀRE by La Luna Beach Club · Pool Pontoon, Marina Mirage<br>74 Seaworld Drive, Main Beach QLD 4217</p>
+
+        <div class="timeline">
+          <div><span class="t">2:00</span><span data-i18n="t1">Welcome drinks on the pontoon</span></div>
+          <div><span class="t">3:00</span><span data-i18n="t2">Seated lunch, shared plates and your chosen main</span></div>
+        </div>
+
+        <div class="dress">
+          <span class="k" data-i18n="kDress">Dress code</span>
+          <span class="v" data-i18n="vDress">Coastal Chic</span>
+          <small data-i18n="dressNote">Whites, sand and linen. The lunch is on a pontoon, so leave the stilettos at home.</small>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true"><span></span></div>
+
+      <section class="menu" aria-labelledby="menu-h">
+        <h2 id="menu-h" data-i18n="menuH">The menu</h2>
+
+        <div class="course">
+          <h3>To start</h3>
+          <ul>
+            <li>Freshly baked baguette with house made butter <span class="tag">(V)</span></li>
+            <li>Byron Bay small production of fresh stracciatella + truffle honey <span class="tag">(GF) (V)</span></li>
+            <li>Warm marinated Mediterranean olives <span class="tag">(GF) (VE)</span></li>
+            <li>San Daniele prosciutto <span class="tag">(GF) (DF)</span></li>
+          </ul>
+        </div>
+        <div class="course">
+          <h3>Shared entrees</h3>
+          <ul>
+            <li>Large Mooloolaba grilled prawns, ’nduja butter, charred lemon <span class="tag">(GF) (A)</span></li>
+            <li>Wagyu beef tataki, semi dried tomato, confit onion, chives <span class="tag">(GF) (DF)</span></li>
+          </ul>
+        </div>
+        <div class="course">
+          <h3>Your choice of main <span class="pick" data-i18n="pickTag">Choose below</span></h3>
+          <ul>
+            <li>300gr Black Angus striploin, cooked medium, 120 days grass fed, served with whipped mustard butter <span class="tag">(GF)</span></li>
+            <li>Burnt butter mushroom open raviolo, whipped ricotta, sage <span class="tag">(V)</span></li>
+            <li>Fresh catch of the day, braised fennel, saffron emulsion, confit tomatoes, orange oil <span class="tag">(GF) (M)</span></li>
+          </ul>
+        </div>
+        <div class="course">
+          <h3>Sides to share for the table</h3>
+          <ul>
+            <li>Shoestring truffle fries, pecorino <span class="tag">(GF) (VEO)</span></li>
+            <li>Baby cos, onion, extra virgin olive oil, dill, squeezed lemon <span class="tag">(GF) (VE)</span></li>
+          </ul>
+        </div>
+        <div class="course">
+          <h3>Dessert or cheese</h3>
+          <ul>
+            <li>Lemon curd tart, vanilla meringue <span class="tag">(V)</span></li>
+            <li>Selection of cheeses served with crostinis, truffled honey + fresh grapes <span class="tag">(V)</span></li>
+          </ul>
+        </div>
+        <p class="legend">GF gluten free · V vegetarian · VE vegan · VEO vegan option · DF dairy free · A Australian seafood · M mixed origin seafood</p>
+      </section>
+
+      <div class="divider" aria-hidden="true"><span></span></div>
+
+      <section aria-labelledby="rsvp-h" id="rsvp-section" style="display:flex;flex-direction:column;gap:26px">
+        <h2 id="rsvp-h">RSVP</h2>
+
+        <form name="rsvp" id="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="rsvp">
+          <input type="hidden" name="lang" id="f-lang" value="en">
+          <p class="bot"><label>Leave empty <input name="bot-field" id="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <fieldset>
+            <legend data-i18n="qComing">Will you join us?</legend>
+            <div class="opts three">
+              <label class="opt"><input type="radio" name="attending" id="att-yes" value="yes"><span class="box"><b data-i18n="aYes">Yes, count me / us in!</b><em data-i18n="aYesSub">We wouldn't miss it.</em></span></label>
+              <label class="opt"><input type="radio" name="attending" id="att-maybe" value="maybe"><span class="box"><b data-i18n="aMaybe">We'll try, but we're not 100% sure yet</b><em data-i18n="aMaybeSub">We'll confirm as soon as we can.</em></span></label>
+              <label class="opt"><input type="radio" name="attending" id="att-no" value="no"><span class="box"><b data-i18n="aNo">Sadly, we can't make it</b><em data-i18n="aNoSub">We'll raise a glass from afar.</em></span></label>
+            </div>
+            <p class="error" id="err-att" hidden data-i18n="errAtt">Please let us know whether you can come.</p>
+          </fieldset>
+
+          <fieldset id="fs-count">
+            <legend data-i18n="qCount">Replying for</legend>
+            <div class="opts two">
+              <label class="opt"><input type="radio" name="party_size" id="size-1" value="1" checked><span class="box"><b data-i18n="c1">Just me</b></span></label>
+              <label class="opt"><input type="radio" name="party_size" id="size-2" value="2"><span class="box"><b data-i18n="c2">The two of us</b></span></label>
+            </div>
+          </fieldset>
+
+          <div class="guest" id="g1">
+            <div class="guest-h" data-i18n="g1h">Guest one</div>
+            <label class="f"><span data-i18n="name">Name</span><input type="text" name="guest1_name" id="g1-name" autocomplete="name"></label>
+            <p class="error" id="err-g1-name" hidden data-i18n="errName">Please add a name.</p>
+            <div class="meal" style="display:flex;flex-direction:column;gap:18px">
+              <fieldset>
+                <legend data-i18n="qMain">Main course</legend>
+                <div class="opts">
+                  <label class="opt"><input type="radio" name="guest1_main" id="g1-main-beef" value="Black Angus striploin"><span class="box"><b data-i18n="m1">Black Angus striploin</b><em data-i18n="m1s">300 g, cooked medium, whipped mustard butter · GF</em></span></label>
+                  <label class="opt"><input type="radio" name="guest1_main" id="g1-main-ravi" value="Mushroom open raviolo"><span class="box"><b data-i18n="m2">Mushroom open raviolo</b><em data-i18n="m2s">Burnt butter, whipped ricotta, sage · V</em></span></label>
+                  <label class="opt"><input type="radio" name="guest1_main" id="g1-main-fish" value="Fresh catch of the day"><span class="box"><b data-i18n="m3">Fresh catch of the day</b><em data-i18n="m3s">Braised fennel, saffron emulsion, orange oil · GF</em></span></label>
+                </div>
+                <p class="error" id="err-g1-main" hidden data-i18n="errMain">Please choose a main.</p>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="qDiet">Dietary needs</legend>
+                <div class="chips">
+                  <label class="chip"><input type="checkbox" name="guest1_vegetarian" id="g1-veg" value="yes"><span data-i18n="dVeg">Vegetarian</span></label>
+                  <label class="chip"><input type="checkbox" name="guest1_vegan" id="g1-vegan" value="yes"><span data-i18n="dVegan">Vegan</span></label>
+                  <label class="chip"><input type="checkbox" name="guest1_glutenfree" id="g1-gf" value="yes"><span data-i18n="dGf">Gluten-free</span></label>
+                </div>
+                <label class="f"><span data-i18n="allergy">Other allergies or intolerances</span><input type="text" name="guest1_allergies" id="g1-allergies" data-i18n-ph="allergyPh" placeholder="e.g. nuts, shellfish, lactose"></label>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="guest" id="g2" hidden>
+            <div class="guest-h" data-i18n="g2h">Guest two</div>
+            <label class="f"><span data-i18n="name">Name</span><input type="text" name="guest2_name" id="g2-name" autocomplete="off"></label>
+            <p class="error" id="err-g2-name" hidden data-i18n="errName">Please add a name.</p>
+            <div class="meal" style="display:flex;flex-direction:column;gap:18px">
+              <fieldset>
+                <legend data-i18n="qMain">Main course</legend>
+                <div class="opts">
+                  <label class="opt"><input type="radio" name="guest2_main" id="g2-main-beef" value="Black Angus striploin"><span class="box"><b data-i18n="m1">Black Angus striploin</b><em data-i18n="m1s">300 g, cooked medium, whipped mustard butter · GF</em></span></label>
+                  <label class="opt"><input type="radio" name="guest2_main" id="g2-main-ravi" value="Mushroom open raviolo"><span class="box"><b data-i18n="m2">Mushroom open raviolo</b><em data-i18n="m2s">Burnt butter, whipped ricotta, sage · V</em></span></label>
+                  <label class="opt"><input type="radio" name="guest2_main" id="g2-main-fish" value="Fresh catch of the day"><span class="box"><b data-i18n="m3">Fresh catch of the day</b><em data-i18n="m3s">Braised fennel, saffron emulsion, orange oil · GF</em></span></label>
+                </div>
+                <p class="error" id="err-g2-main" hidden data-i18n="errMain">Please choose a main.</p>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="qDiet">Dietary needs</legend>
+                <div class="chips">
+                  <label class="chip"><input type="checkbox" name="guest2_vegetarian" id="g2-veg" value="yes"><span data-i18n="dVeg">Vegetarian</span></label>
+                  <label class="chip"><input type="checkbox" name="guest2_vegan" id="g2-vegan" value="yes"><span data-i18n="dVegan">Vegan</span></label>
+                  <label class="chip"><input type="checkbox" name="guest2_glutenfree" id="g2-gf" value="yes"><span data-i18n="dGf">Gluten-free</span></label>
+                </div>
+                <label class="f"><span data-i18n="allergy">Other allergies or intolerances</span><input type="text" name="guest2_allergies" id="g2-allergies" data-i18n-ph="allergyPh" placeholder="e.g. nuts, shellfish, lactose"></label>
+              </fieldset>
+            </div>
+          </div>
+
+          <p class="hint" id="vegan-hint" hidden data-i18n="veganHint">There's no vegan main on the set menu. Tick vegan and we'll arrange an alternative with the kitchen.</p>
+
+          <fieldset>
+            <label class="f"><span data-i18n="email">Email or mobile, so we can reach you (optional)</span><input type="text" name="contact" id="contact" autocomplete="email"></label>
+            <label class="f"><span data-i18n="msg">A few words for Nicola (optional)</span><textarea name="message" id="message"></textarea></label>
+          </fieldset>
+
+          <p class="error" id="err-send" hidden data-i18n="errSend">That didn't go through. Please check your connection and try again.</p>
+          <button type="submit" class="submit" id="submit" data-i18n="send">Send reply</button>
+        </form>
+
+        <div class="thanks" id="thanks" hidden>
+          <p class="big" id="th-big"></p>
+          <p id="th-text"></p>
+          <button type="button" id="again" data-i18n="again">Change my reply</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="foot">Nicola · 50 · 22.11.2026</div>
+</div>
+
+<script>
+(function(){
+  var T = {
+    en:{back:"← Birthday album",eyebrow:"Lunch by the water · You're invited",
+      lede:"Half a century of Nicola deserves a long, sunny lunch with the people she loves. Join us on the water at MĀRE.",
+      kDate:"Date",vDate:"Sunday, 22 November 2026",kTime:"Arrival",vTime:"2 pm",kRsvp:"Reply by",vRsvp:"Sunday, 15 November",
+      t1:"Welcome drinks on the pontoon",t2:"Seated lunch, shared plates and your chosen main",
+      kDress:"Dress code",vDress:"Coastal Chic",dressNote:"Whites, sand and linen. The lunch is on a pontoon, so leave the stilettos at home.",
+      menuH:"The menu",pickTag:"Choose below",
+      qComing:"Will you join us?",aYes:"Yes, count me / us in!",aYesSub:"We wouldn't miss it.",
+      aMaybe:"We'll try, but we're not 100% sure yet",aMaybeSub:"We'll confirm as soon as we can.",
+      aNo:"Sadly, we can't make it",aNoSub:"We'll raise a glass from afar.",
+      qCount:"Replying for",c1:"Just me",c2:"The two of us",g1h:"Guest one",g2h:"Guest two",name:"Name",
+      qMain:"Main course",m1:"Black Angus striploin",m1s:"300 g, cooked medium, whipped mustard butter · GF",
+      m2:"Mushroom open raviolo",m2s:"Burnt butter, whipped ricotta, sage · V",m3:"Fresh catch of the day",m3s:"Braised fennel, saffron emulsion, orange oil · GF",
+      qDiet:"Dietary needs",dVeg:"Vegetarian",dVegan:"Vegan",dGf:"Gluten-free",allergy:"Other allergies or intolerances",allergyPh:"e.g. nuts, shellfish, lactose",
+      veganHint:"There's no vegan main on the set menu. Tick vegan and we'll arrange an alternative with the kitchen.",
+      email:"Email or mobile, so we can reach you (optional)",msg:"A few words for Nicola (optional)",
+      send:"Send reply",sending:"Sending…",again:"Change my reply",
+      errAtt:"Please let us know whether you can come.",errName:"Please add a name.",errMain:"Please choose a main.",
+      errSend:"That didn't go through. Please check your connection and try again.",
+      thYes:"See you on the 22nd",thYesT:"Wonderful. Your table is set. We can't wait to celebrate with you.",
+      thMaybe:"Fingers crossed",thMaybeT:"Thank you. We've pencilled you in. Please send a final yes or no by 15 November.",
+      thNo:"You'll be missed",thNoT:"Thank you for letting us know. We'll pass your wishes on to Nicola."},
+    de:{back:"← Zum Geburtstagsalbum",eyebrow:"Lunch am Wasser · Ihr seid eingeladen",
+      lede:"Ein halbes Jahrhundert Nicola verdient einen langen, sonnigen Lunch mit den Menschen, die sie liebt. Feiert mit uns am Wasser im MĀRE.",
+      kDate:"Datum",vDate:"Sonntag, 22. November 2026",kTime:"Ankunft",vTime:"14 Uhr",kRsvp:"Antwort bis",vRsvp:"Sonntag, 15. November",
+      t1:"Welcome Drinks auf dem Ponton",t2:"Gesetztes Essen mit Shared Plates und eurem Hauptgang",
+      kDress:"Dresscode",vDress:"Coastal Chic",dressNote:"Weiß, Sand und Leinen. Gefeiert wird auf einem Ponton, die Stilettos also besser zu Hause lassen.",
+      menuH:"Das Menü",pickTag:"Unten wählen",
+      qComing:"Seid ihr dabei?",aYes:"Ja, ich komme / wir kommen!",aYesSub:"Das lassen wir uns nicht entgehen.",
+      aMaybe:"Wir versuchen es, sind aber noch nicht 100 % sicher",aMaybeSub:"Wir bestätigen, sobald wir können.",
+      aNo:"Leider können wir nicht kommen",aNoSub:"Wir stoßen aus der Ferne an.",
+      qCount:"Antwort für",c1:"Nur mich",c2:"Uns beide",g1h:"Gast eins",g2h:"Gast zwei",name:"Name",
+      qMain:"Hauptgang",m1:"Black Angus Striploin",m1s:"300 g, medium gegart, Senfbutter · GF",
+      m2:"Pilz-Raviolo",m2s:"Braune Butter, Ricotta, Salbei · V",m3:"Fang des Tages",m3s:"Geschmorter Fenchel, Safran-Emulsion, Orangenöl · GF",
+      qDiet:"Ernährung",dVeg:"Vegetarisch",dVegan:"Vegan",dGf:"Glutenfrei",allergy:"Weitere Allergien oder Unverträglichkeiten",allergyPh:"z. B. Nüsse, Schalentiere, Laktose",
+      veganHint:"Das Menü hat keinen veganen Hauptgang. Kreuzt vegan an, wir klären eine Alternative mit der Küche.",
+      email:"E-Mail oder Handy, damit wir euch erreichen (optional)",msg:"Ein paar Worte für Nicola (optional)",
+      send:"Antwort senden",sending:"Wird gesendet…",again:"Antwort ändern",
+      errAtt:"Bitte sagt uns, ob ihr kommen könnt.",errName:"Bitte einen Namen eintragen.",errMain:"Bitte einen Hauptgang wählen.",
+      errSend:"Das hat nicht geklappt. Bitte Verbindung prüfen und erneut senden.",
+      thYes:"Bis zum 22.!",thYesT:"Wunderbar, euer Platz ist gedeckt. Wir freuen uns sehr, mit euch zu feiern.",
+      thMaybe:"Daumen gedrückt",thMaybeT:"Danke! Wir haben euch vorgemerkt. Bitte gebt uns bis zum 15. November final Bescheid.",
+      thNo:"Ihr werdet fehlen",thNoT:"Danke für die Rückmeldung. Wir richten Nicola eure Grüße aus."}
+  };
+  var lang = "en";
+  try{ var s = localStorage.getItem("n50-lang"); if(s && T[s]) lang = s; else if((navigator.language||"").toLowerCase().indexOf("de")===0) lang="de"; }
+  catch(e){ if((navigator.language||"").toLowerCase().indexOf("de")===0) lang="de"; }
+
+  var $ = function(id){return document.getElementById(id)};
+  function apply(l){
+    lang = l; var d = T[l];
+    document.documentElement.lang = l;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){ var k=el.getAttribute("data-i18n"); if(d[k]!=null) el.textContent=d[k]; });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function(el){ el.placeholder = d[el.getAttribute("data-i18n-ph")]; });
+    $("lang-en").setAttribute("aria-pressed", l==="en"); $("lang-de").setAttribute("aria-pressed", l==="de");
+    $("f-lang").value = l;
+    try{ localStorage.setItem("n50-lang", l); }catch(e){}
+    if(!$("thanks").hidden) showThanks(lastAtt);
+  }
+  document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ apply(b.dataset.lang); }); });
+
+  var form = $("rsvp");
+  function val(name){ var el = form.querySelector('input[name="'+name+'"]:checked'); return el ? el.value : ""; }
+  function sync(){
+    var att = val("attending"), two = val("party_size")==="2";
+    $("g2").hidden = !two;
+    var showMeal = att !== "no";
+    document.querySelectorAll(".meal").forEach(function(m){ m.hidden = !showMeal; });
+    var vegan = $("g1-vegan").checked || (two && $("g2-vegan").checked);
+    $("vegan-hint").hidden = !(vegan && showMeal);
+  }
+  form.addEventListener("change", function(e){ sync(); var err = e.target.closest("fieldset"); if(err){ err.querySelectorAll(".error").forEach(function(x){x.hidden=true}); } if(e.target.name==="attending") $("err-att").hidden=true; });
+  form.addEventListener("input", function(e){ var m = e.target.id.match(/^(g[12])-name$/); if(m && e.target.value.trim()) $("err-"+m[1]+"-name").hidden = true; });
+
+  function validate(){
+    var ok = true, first = null, att = val("attending"), two = val("party_size")==="2";
+    function fail(errId, focusEl){ $(errId).hidden=false; ok=false; if(!first) first=focusEl; }
+    if(!att) fail("err-att", $("att-yes"));
+    ["g1"].concat(two?["g2"]:[]).forEach(function(g){
+      if(!$(g+"-name").value.trim()) fail("err-"+g+"-name", $(g+"-name"));
+      if(att==="yes" && !val((g==="g1"?"guest1":"guest2")+"_main")) fail("err-"+g+"-main", $(g+"-main-beef"));
+    });
+    if(first){ first.focus({preventScroll:true}); first.scrollIntoView({block:"center",behavior:"smooth"}); }
+    return ok;
+  }
+
+  var lastAtt = "yes";
+  function showThanks(att){
+    var d = T[lang], k = att==="yes"?"thYes":att==="maybe"?"thMaybe":"thNo";
+    $("th-big").textContent = d[k]; $("th-text").textContent = d[k+"T"];
+    form.hidden = true; $("thanks").hidden = false;
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    $("err-send").hidden = true;
+    if(!validate()) return;
+    var fd = new FormData(form);
+    if(val("party_size")!=="2"){ ["guest2_name","guest2_main","guest2_vegetarian","guest2_vegan","guest2_glutenfree","guest2_allergies"].forEach(function(n){ fd.delete(n); }); }
+    if(val("attending")==="no"){ ["1","2"].forEach(function(i){ ["_main","_vegetarian","_vegan","_glutenfree","_allergies"].forEach(function(s){ fd.delete("guest"+i+s); }); }); }
+    var btn = $("submit"); btn.disabled = true; btn.textContent = T[lang].sending;
+    fetch("/", {method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body:new URLSearchParams(fd).toString()})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); lastAtt = val("attending"); showThanks(lastAtt); $("thanks").scrollIntoView({block:"center",behavior:"smooth"}); })
+      .catch(function(){ $("err-send").hidden = false; })
+      .then(function(){ btn.disabled = false; btn.textContent = T[lang].send; });
+  });
+  $("again").addEventListener("click", function(){ $("thanks").hidden = true; form.hidden = false; });
+
+  apply(lang); sync();
+})();
+</script>
+</body>
+</html>
