@@ -328,9 +328,10 @@ const card = f => `<article class="star">
 const voice = f => `<div class="voice"><button class="play" type="button" aria-pressed="false" aria-label="Play voice message from ${esc(f.name)}">▶</button><span class="wave" aria-hidden="true">${wave()}</span><small>${f.voice}</small><audio src="${media(f.audio)}.mp3" preload="none"></audio></div>`;
 const kinds = ["All", "Photos", "Videos", "Voice messages"];
 const chips = document.getElementById("chips"), list = document.getElementById("star-list");
-// Interne Labels: family, old (Münster-Mädels), new (Freunde von zuhause), aus (Gold Coast)
+// Interne Labels: family, old (Münster-Mädels), close (engster Kreis), new (Freunde von zuhause), aus (Gold Coast)
 const groups = [["Family", "where it all began", f => f.group === "family"],
   ["The Münster Girls", "from Münster to all of Germany and the world, still close as ever, and reunited at every year’s revival", f => f.group === "old"],
+  ["Friends for Life", "the inner circle from the Rhineland", f => f.group === "close"],
   ["From home", "Düsseldorf & beyond", f => f.group === "new"],
   ["G’day, Gold Coast", "your Australian crew", f => f.group === "aus"]];
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));

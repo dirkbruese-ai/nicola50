@@ -1,9 +1,85 @@
 // Erzeugt mit tools/build_posts.py aus dem Padlet-Export
 const friends = [
  {
+  "n": 37,
+  "name": "Sylvie",
+  "group": "old",
+  "title": "🎶wie schön dass du geboren bist, ich hätte dich sonst sehr vermisst 🎶",
+  "note": "HAPPY BIRTHDAY, liebe Nici! Nu ist sie da – die große 50. Ich wünsche Dir einen großartigen Tag und eine tolle Party!\n50 Jahre Nici – und ungefähr 35 davon auch Nici &amp; Sylvie. Da kommen viele Erinnerungen zusammen. Ich bin sehr glücklich und dankbar, Dich immer in meinem Leben zu wissen.\nOb Australien oder Düsseldorf macht für unsere Freundschaft zum Glück kaum einen Unterschied. Oder na ja – ein bisschen vielleicht doch. In Düsseldorf könnte ich heute mit Dir feiern. Und das würde ich wirklich wahnsinnig gerne!\nIch bin so stolz auf Dich, dass Du Dir und Euch diesen Australien-Traum erfüllt hast. Zu sehen, wie Ihr Euch dort ein neues Zuhause aufgebaut habt, freut mich riesig. Dass Du auch dort tolle Freunde gefunden hast, wundert mich überhaupt nicht. Du hast diese besondere Gabe, auf Menschen zuzugehen und echte, tiefe Verbindungen entstehen zu lassen. Du fragst nach, hörst zu und möchtest wirklich wissen, wie es dem anderen geht. Das ist so etwas wie Deine Superkraft – und etwas sehr Besonderes an Dir.\nFür Dein neues Lebensjahr wünsche ich Dir ganz viel Freude an Deinem Leben dort. Genieß die Zeit mit Dirk und den Jungs! Macht spannende Pläne, erlebt tolle Dinge zusammen und sammelt Erinnerungen fürs Leben. Ihr macht das genau richtig. Und ich freue mich schon auf noch viele weitere Jahre Nici &amp; Sylvie – und dass zu diesen Fotos noch viele weitere dazu kommen!\nLass Dich heute ordentlich feiern und fühl Dich von mir ganz fest umarmt. Das gemeinsame Feiern holen wir nach! Dicken Kuss ❤️\nDeine Sylvie",
+  "imgs": [
+   "p37-1",
+   "p37-2",
+   "p37-3",
+   "p37-4",
+   "p37-5",
+   "p37-6"
+  ]
+ },
+ {
+  "n": 14,
+  "name": "Ena + Esa",
+  "group": "old",
+  "title": "From Olching with Love",
+  "note": "Beste!!!",
+  "isFor": "beste Freundin und ganz wunderbare Patentante!",
+  "moment": "Meine Hochzeit, ihr Beistand, ihre Begleitung...",
+  "wish": "... dass sie sehr viele schöne Momente erlebt. Sich an ihren Söhnen mehr erfreuen als die Zähne ausbeißen kann und von Dirk so gehegt und gepflegt wird, wie es ihr gebührt!!! Ganz besonders einen unvergesslichen 50. Geburtstag mit vielen Menschen, die nur für Nici da sind!",
+  "city": "Olching",
+  "clip": "v14",
+  "video": "0:55"
+ },
+ {
+  "n": 15,
+  "name": "Ena",
+  "group": "old",
+  "title": "From Olching with Love... II",
+  "note": "auf die guten alten Zeiten!!! Ich würde jeden Urlaub wieder mit Dir machen. Jede WG wieder mit Dir erleben!! Jede Hochzeit mit Dir erleben!",
+  "isFor": "Vertrautes Ohr, helfende Hand, liebevolle Freundin",
+  "moment": "siehe anderer Post... und noch so viele mehr!!",
+  "wish": "to see me again soon. :-)",
+  "city": "Olching",
+  "imgs": [
+   "p15-1",
+   "p15-2",
+   "p15-3",
+   "p15-4",
+   "p15-5",
+   "p15-6"
+  ]
+ },
+ {
+  "n": 22,
+  "name": "Catherine",
+  "group": "old",
+  "note": "Liebe Nici, deine Herzlichkeit, Lebensfreude, Fürsorge, strahlendes Lachen und unglaubliche Ausstrahlung sind in 50 Jahren nicht weniger sondern jedes Jahr mehr geworden!! Bleib die fantastische Frau die Du schon bist! Ich schicke die\nallerherzlichsten Geburtstagsgrüße aus Hamburg nach Australien 😘💖🎈🥳🎂💐☀️🍀\nDeine Catherine",
+  "isFor": "Die Frau mit dem strahlendsten Lächeln aus dem\nMünsteraner Hühnerhaufen :-)",
+  "moment": "Diverse parties in Münster und definitiv die jährlichen Münster Mädels Wochenenden",
+  "wish": "Gesundheit, Liebe, Zufriedenheit und ganz ganz viel wunderbare Zeit mit den Menschen und Dingen die Du liebst! Auf das die nächsten 50 Jahre noch unfassbar viele Glücksmomente bringen ✨",
+  "city": "Hamburg",
+  "imgs": [
+   "p22-1",
+   "p22-2",
+   "p22-3",
+   "p22-4",
+   "p22-5",
+   "p22-6"
+  ]
+ },
+ {
+  "n": 33,
+  "name": "Catherine",
+  "group": "old",
+  "note": "So schief wie der Hut, aber von Herzen ♥️ : happy Birthday liebe Nici  🥳",
+  "isFor": "🩷",
+  "moment": "☀️",
+  "wish": "🍀",
+  "clip": "v33",
+  "video": "0:26"
+ },
+ {
   "n": 2,
   "name": "Sonja & Christian",
-  "group": "new",
+  "group": "old",
   "title": "Happy Birthday aus Gerresheim",
   "note": "Wir freuen uns mit Dir so viel tolle Erinnerungen zu teilen und vor allem freuen wir uns auf die nächsten 50 Jahre mit Dir. Eine ganz dicke Umarmung von Sonja und Christian",
   "city": "Gerresheim",
@@ -14,6 +90,123 @@ const friends = [
    "p2-4",
    "p2-5"
   ]
+ },
+ {
+  "n": 31,
+  "name": "Claudi",
+  "group": "close",
+  "title": "Hey Nici, Du bes e Jeföhl",
+  "note": "Von ganzem Herzen alles Gute zum 50. Geburtstag. Genieß es, Dich heute hochleben und feiern zu lassen von den vielen Menschen, denen Du so viel bedeutest. Du bist der Inbegriff von rheinischer Lebensfreude, eine Menschenfängerin, echte Zuhörerin, weise Ratgeberin, mutige, attraktive, wissbegierige, fleissige Frau, coole, liebevolle Mutter, sportliches Energiebündel, verlässliche Freundin, neugierige Weltenbummlerin, wunderbare Trauzeugin, fürsorgliche Patentante….. Die Welt ist reicher, weil es Dich gibt und Deinen Spirit versprühst. Du gibst so viel, nimm heute mal. Und blicke stolz und dankbar auf das zurück, was in 50 Jahren Nici steckt. Klopf Dir selber auf die Schulter. Und schau in die Gesichter Deiner 3 Männer und Du wirst auch dort das Strahlen von Stolz und Dankbarkeit entdecken. Dein Mut, mit den Jungs nach Australien zu gehen, sucht seinesgleichen. Wie schön, dass Ihr heute zu viert downunder feiern könnt. Ich bin ein bisschen neidisch, Würde Dich nämlich sehr gerne selber in den Arm nehmen😊. \nIch vermisse Dich sehr, Dein Strahlen, unsere Gespräche. Den 60. feiern wir dann wieder zusammen 😎.\n\nHeut ist Dein Tag, lass es krachen und Du kannst Dir sicher sein, im Rheinland wirst Du heute auch gefeiert 🥳.",
+  "isFor": "Personal VIP",
+  "moment": "Wo soll ich anfangen? Es waren so viele und werden hoffentlich noch weitere. Für jeden einzelnen bin ich dankbar, u.a. \nUni Münster, Skifahren inkl. lustiger Bekanntschaften, Karneval in Köln und Düsseldorf ( live bei Brings im Abendkleid 🥳), Waldfeste, Muggel, Hochzeiten (unvergessen und dafür bin ich Dir auf ewig dankbar: Euer Kommen zur Schneehochzeit in Laax), Reisen, Rotwein, philosophische Abende, Telefonate, Umarmungen…",
+  "wish": "Bleib wie Du bist, Du Herzensmensch und dabei gesund.",
+  "imgs": [
+   "p31-1",
+   "p31-2",
+   "p31-3",
+   "p31-4",
+   "p31-5",
+   "p31-6"
+  ]
+ },
+ {
+  "n": 18,
+  "name": "Susi & Corinna",
+  "group": "close",
+  "note": "Liebe Nici! \nWe miss u! Happy Birthday zum Geburtstag! Auf weitere glorreiche 50 Jahre! \nxoxo Susi &amp; Corinna",
+  "isFor": "Eine Sportskanone, mit der man Pferde stehlen kann",
+  "wish": "Nur das Beste für die nächsten 50 Jahre! Gesundheit, Liebe und ganz viel Glück!",
+  "audio": "a18",
+  "voice": "0:50"
+ },
+ {
+  "n": 20,
+  "name": "Susi & Corinna",
+  "group": "close",
+  "note": "Venedig, Salzburg, Berge… mit Dir ist es immer schön!",
+  "isFor": "eine tolle Freundin",
+  "imgs": [
+   "p20-1",
+   "p20-2",
+   "p20-3",
+   "p20-4",
+   "p20-5",
+   "p20-6"
+  ]
+ },
+ {
+  "n": 6,
+  "name": "Petra",
+  "group": "close",
+  "title": "Happy Birthday",
+  "note": "Liebe Nicola,\nAlles, alles Liebe zum Geburtstag. Zum runden, Specialgeburtstag. Bleib ein so besonderer Mensch, wie Du bist 😘",
+  "isFor": "Eine ganz besondere Freundin",
+  "moment": "Unsere gemeinsamen Abende und Gespräche",
+  "clip": "v6",
+  "video": "3:41"
+ },
+ {
+  "n": 29,
+  "name": "Nadja",
+  "group": "close",
+  "note": "Happy happy Birthday",
+  "isFor": "… der warmherzigste Mensch den es gibt 🩷",
+  "moment": "… jeder einzelne unserer gemeinsamen Momente, egal wo auch immer auf der Erde!",
+  "wish": "…. von Herzen nur das Beste und unendliches Glück!\n\nLiebe Nicola, alles alles Liebe zu diesem ganz besonderen Geburtstag heute! \nBleib wie du bist, nämlich was ganz besonderes 😘 \nMiss you",
+  "clip": "v29",
+  "video": "0:31"
+ },
+ {
+  "n": 19,
+  "name": "Sandra",
+  "group": "close",
+  "note": "🎈Happy Birthday und alles Liebe und Gute zu Deinem 50. Geburtstag🎈\n\n\nDu fehlst - \n• beim Eierlikör\nDas letzte mal gemeinsam am zugefrorenen Hochwasser-Rhein, einmalig! 🧊\nMein letztes Mal bei der Zwischenrunde in HH mit den Jungs, erst in der Bahn mit Mitreisenden, dann mit den Mädels beim Ausklang nach dem Spiel - ich bin mir sicher, Du wärst dabei gewesen und hättest es in vollen Zügen genauso genossen, es wäre eine Freude gewesen! \n• beim Anfeuern an der Seite\nNicht immer nur Spaß, aber zusammen mit ganz viel Freude und Elan dabei, wir haben aufgerüstet, Du wärst begeistert 🤩\n• beim Feiern in geselliger Runde\nDas geht immer: nach dem Spiel, vor dem Spiel oder auch ohne Spiel, wir finden einen Anlass. Wenn Du wieder einmal dabei wärst, wäre das Anlass genug 😍🥂 \n• im Karneval\nHerrlich unsere gemeinsamen Kostüme, immer ein Spaß und große Freude, Du darfst jederzeit wieder einsteigen, wir erwarten Dich! 🤡\n• und überhaupt! ❤️\n\n\n\nWir freuen uns sehr auf neue Gelegenheiten! Jetzt wünsche ich Dir einen unvergesslichen Geburtstag. Lass Dich ordentlich feiern und genieße Deinen Tag!",
+  "imgs": [
+   "p19-1",
+   "p19-2",
+   "p19-3",
+   "p19-4",
+   "p19-5"
+  ]
+ },
+ {
+  "n": 24,
+  "name": "DEHNS",
+  "group": "close",
+  "note": "…. FROM OBK TO DOWN UNDER!!!",
+  "moment": "…. always funny, special and amazing!",
+  "wish": "… all the best!!!",
+  "city": "Oberkassel",
+  "clip": "v24",
+  "video": "0:34"
+ },
+ {
+  "n": 26,
+  "name": "Nicola (DEHNS)",
+  "group": "close",
+  "note": "Happiest, happy Birthday!!!",
+  "isFor": "Beste Zuhörerin, Macherin, ehrlich, Sonnenschein und voller Lebensfreude!",
+  "moment": "… sehr viele unvergessliche Momente und Erinnerungen und hoffentlich noch unendliche viele, die dazu kommen! Werde nie vergessen, wie wir nach meinem Ring im Ossiacher See gefischt haben  … er liegt wahrscheinlich immer noch in den Tiefen des Sees, da müssen wir irgendwann nochmal hin :-)",
+  "wish": "… nur das Beste und all das Glück dieser Welt! Danke dass es dich gibt, alles Liebe Deine Nicola",
+  "city": "Oberkassel",
+  "imgs": [
+   "p26-1",
+   "p26-2",
+   "p26-3",
+   "p26-4",
+   "p26-5",
+   "p26-6"
+  ]
+ },
+ {
+  "n": 27,
+  "name": "DEHNS",
+  "group": "close",
+  "title": "From OBK to DOWN UNDER part 2",
+  "note": "Happy Birthday!",
+  "city": "Oberkassel",
+  "clip": "v27",
+  "video": "0:38"
  },
  {
   "n": 3,
@@ -52,17 +245,6 @@ const friends = [
   "wish": "Only the best😊🍀",
   "audio": "a5",
   "voice": "0:37"
- },
- {
-  "n": 6,
-  "name": "Petra",
-  "group": "new",
-  "title": "Happy Birthday",
-  "note": "Liebe Nicola,\nAlles, alles Liebe zum Geburtstag. Zum runden, Specialgeburtstag. Bleib ein so besonderer Mensch, wie Du bist 😘",
-  "isFor": "Eine ganz besondere Freundin",
-  "moment": "Unsere gemeinsamen Abende und Gespräche",
-  "clip": "v6",
-  "video": "3:41"
  },
  {
   "n": 7,
@@ -144,38 +326,6 @@ const friends = [
   "video": "0:11"
  },
  {
-  "n": 14,
-  "name": "Ena + Esa",
-  "group": "old",
-  "title": "From Olching with Love",
-  "note": "Beste!!!",
-  "isFor": "beste Freundin und ganz wunderbare Patentante!",
-  "moment": "Meine Hochzeit, ihr Beistand, ihre Begleitung...",
-  "wish": "... dass sie sehr viele schöne Momente erlebt. Sich an ihren Söhnen mehr erfreuen als die Zähne ausbeißen kann und von Dirk so gehegt und gepflegt wird, wie es ihr gebührt!!! Ganz besonders einen unvergesslichen 50. Geburtstag mit vielen Menschen, die nur für Nici da sind!",
-  "city": "Olching",
-  "clip": "v14",
-  "video": "0:55"
- },
- {
-  "n": 15,
-  "name": "Ena",
-  "group": "old",
-  "title": "From Olching with Love... II",
-  "note": "auf die guten alten Zeiten!!! Ich würde jeden Urlaub wieder mit Dir machen. Jede WG wieder mit Dir erleben!! Jede Hochzeit mit Dir erleben!",
-  "isFor": "Vertrautes Ohr, helfende Hand, liebevolle Freundin",
-  "moment": "siehe anderer Post... und noch so viele mehr!!",
-  "wish": "to see me again soon. :-)",
-  "city": "Olching",
-  "imgs": [
-   "p15-1",
-   "p15-2",
-   "p15-3",
-   "p15-4",
-   "p15-5",
-   "p15-6"
-  ]
- },
- {
   "n": 16,
   "name": "Candz and Brent",
   "group": "aus",
@@ -202,44 +352,6 @@ const friends = [
   ]
  },
  {
-  "n": 18,
-  "name": "Susi & Corinna",
-  "group": "new",
-  "note": "Liebe Nici! \nWe miss u! Happy Birthday zum Geburtstag! Auf weitere glorreiche 50 Jahre! \nxoxo Susi &amp; Corinna",
-  "isFor": "Eine Sportskanone, mit der man Pferde stehlen kann",
-  "wish": "Nur das Beste für die nächsten 50 Jahre! Gesundheit, Liebe und ganz viel Glück!",
-  "audio": "a18",
-  "voice": "0:50"
- },
- {
-  "n": 19,
-  "name": "Sandra",
-  "group": "new",
-  "note": "🎈Happy Birthday und alles Liebe und Gute zu Deinem 50. Geburtstag🎈\n\n\nDu fehlst - \n• beim Eierlikör\nDas letzte mal gemeinsam am zugefrorenen Hochwasser-Rhein, einmalig! 🧊\nMein letztes Mal bei der Zwischenrunde in HH mit den Jungs, erst in der Bahn mit Mitreisenden, dann mit den Mädels beim Ausklang nach dem Spiel - ich bin mir sicher, Du wärst dabei gewesen und hättest es in vollen Zügen genauso genossen, es wäre eine Freude gewesen! \n• beim Anfeuern an der Seite\nNicht immer nur Spaß, aber zusammen mit ganz viel Freude und Elan dabei, wir haben aufgerüstet, Du wärst begeistert 🤩\n• beim Feiern in geselliger Runde\nDas geht immer: nach dem Spiel, vor dem Spiel oder auch ohne Spiel, wir finden einen Anlass. Wenn Du wieder einmal dabei wärst, wäre das Anlass genug 😍🥂 \n• im Karneval\nHerrlich unsere gemeinsamen Kostüme, immer ein Spaß und große Freude, Du darfst jederzeit wieder einsteigen, wir erwarten Dich! 🤡\n• und überhaupt! ❤️\n\n\n\nWir freuen uns sehr auf neue Gelegenheiten! Jetzt wünsche ich Dir einen unvergesslichen Geburtstag. Lass Dich ordentlich feiern und genieße Deinen Tag!",
-  "imgs": [
-   "p19-1",
-   "p19-2",
-   "p19-3",
-   "p19-4",
-   "p19-5"
-  ]
- },
- {
-  "n": 20,
-  "name": "Susi & Corinna",
-  "group": "new",
-  "note": "Venedig, Salzburg, Berge… mit Dir ist es immer schön!",
-  "isFor": "eine tolle Freundin",
-  "imgs": [
-   "p20-1",
-   "p20-2",
-   "p20-3",
-   "p20-4",
-   "p20-5",
-   "p20-6"
-  ]
- },
- {
   "n": 21,
   "name": "Mark",
   "group": "aus",
@@ -249,24 +361,6 @@ const friends = [
   "wish": "Another 50 years of fun, laughter and good health",
   "imgs": [
    "p21-1"
-  ]
- },
- {
-  "n": 22,
-  "name": "Catherine",
-  "group": "old",
-  "note": "Liebe Nici, deine Herzlichkeit, Lebensfreude, Fürsorge, strahlendes Lachen und unglaubliche Ausstrahlung sind in 50 Jahren nicht weniger sondern jedes Jahr mehr geworden!! Bleib die fantastische Frau die Du schon bist! Ich schicke die\nallerherzlichsten Geburtstagsgrüße aus Hamburg nach Australien 😘💖🎈🥳🎂💐☀️🍀\nDeine Catherine",
-  "isFor": "Die Frau mit dem strahlendsten Lächeln aus dem\nMünsteraner Hühnerhaufen :-)",
-  "moment": "Diverse parties in Münster und definitiv die jährlichen Münster Mädels Wochenenden",
-  "wish": "Gesundheit, Liebe, Zufriedenheit und ganz ganz viel wunderbare Zeit mit den Menschen und Dingen die Du liebst! Auf das die nächsten 50 Jahre noch unfassbar viele Glücksmomente bringen ✨",
-  "city": "Hamburg",
-  "imgs": [
-   "p22-1",
-   "p22-2",
-   "p22-3",
-   "p22-4",
-   "p22-5",
-   "p22-6"
   ]
  },
  {
@@ -282,17 +376,6 @@ const friends = [
   ]
  },
  {
-  "n": 24,
-  "name": "DEHNS",
-  "group": "new",
-  "note": "…. FROM OBK TO DOWN UNDER!!!",
-  "moment": "…. always funny, special and amazing!",
-  "wish": "… all the best!!!",
-  "city": "Oberkassel",
-  "clip": "v24",
-  "video": "0:34"
- },
- {
   "n": 25,
   "name": "Tina und Andreas",
   "group": "new",
@@ -305,34 +388,6 @@ const friends = [
   ]
  },
  {
-  "n": 26,
-  "name": "Nicola (DEHNS)",
-  "group": "new",
-  "note": "Happiest, happy Birthday!!!",
-  "isFor": "Beste Zuhörerin, Macherin, ehrlich, Sonnenschein und voller Lebensfreude!",
-  "moment": "… sehr viele unvergessliche Momente und Erinnerungen und hoffentlich noch unendliche viele, die dazu kommen! Werde nie vergessen, wie wir nach meinem Ring im Ossiacher See gefischt haben  … er liegt wahrscheinlich immer noch in den Tiefen des Sees, da müssen wir irgendwann nochmal hin :-)",
-  "wish": "… nur das Beste und all das Glück dieser Welt! Danke dass es dich gibt, alles Liebe Deine Nicola",
-  "city": "Oberkassel",
-  "imgs": [
-   "p26-1",
-   "p26-2",
-   "p26-3",
-   "p26-4",
-   "p26-5",
-   "p26-6"
-  ]
- },
- {
-  "n": 27,
-  "name": "DEHNS",
-  "group": "new",
-  "title": "From OBK to DOWN UNDER part 2",
-  "note": "Happy Birthday!",
-  "city": "Oberkassel",
-  "clip": "v27",
-  "video": "0:38"
- },
- {
   "n": 28,
   "name": "Eva&eve&carla",
   "group": "new",
@@ -342,17 +397,6 @@ const friends = [
   "wish": "Glück Gesundheit Liebe !",
   "clip": "v28",
   "video": "0:45"
- },
- {
-  "n": 29,
-  "name": "Nadja",
-  "group": "old",
-  "note": "Happy happy Birthday",
-  "isFor": "… der warmherzigste Mensch den es gibt 🩷",
-  "moment": "… jeder einzelne unserer gemeinsamen Momente, egal wo auch immer auf der Erde!",
-  "wish": "…. von Herzen nur das Beste und unendliches Glück!\n\nLiebe Nicola, alles alles Liebe zu diesem ganz besonderen Geburtstag heute! \nBleib wie du bist, nämlich was ganz besonderes 😘 \nMiss you",
-  "clip": "v29",
-  "video": "0:31"
  },
  {
   "n": 30,
@@ -367,24 +411,6 @@ const friends = [
   ]
  },
  {
-  "n": 31,
-  "name": "Claudi",
-  "group": "new",
-  "title": "Hey Nici, Du bes e Jeföhl",
-  "note": "Von ganzem Herzen alles Gute zum 50. Geburtstag. Genieß es, Dich heute hochleben und feiern zu lassen von den vielen Menschen, denen Du so viel bedeutest. Du bist der Inbegriff von rheinischer Lebensfreude, eine Menschenfängerin, echte Zuhörerin, weise Ratgeberin, mutige, attraktive, wissbegierige, fleissige Frau, coole, liebevolle Mutter, sportliches Energiebündel, verlässliche Freundin, neugierige Weltenbummlerin, wunderbare Trauzeugin, fürsorgliche Patentante….. Die Welt ist reicher, weil es Dich gibt und Deinen Spirit versprühst. Du gibst so viel, nimm heute mal. Und blicke stolz und dankbar auf das zurück, was in 50 Jahren Nici steckt. Klopf Dir selber auf die Schulter. Und schau in die Gesichter Deiner 3 Männer und Du wirst auch dort das Strahlen von Stolz und Dankbarkeit entdecken. Dein Mut, mit den Jungs nach Australien zu gehen, sucht seinesgleichen. Wie schön, dass Ihr heute zu viert downunder feiern könnt. Ich bin ein bisschen neidisch, Würde Dich nämlich sehr gerne selber in den Arm nehmen😊. \nIch vermisse Dich sehr, Dein Strahlen, unsere Gespräche. Den 60. feiern wir dann wieder zusammen 😎.\n\nHeut ist Dein Tag, lass es krachen und Du kannst Dir sicher sein, im Rheinland wirst Du heute auch gefeiert 🥳.",
-  "isFor": "Personal VIP",
-  "moment": "Wo soll ich anfangen? Es waren so viele und werden hoffentlich noch weitere. Für jeden einzelnen bin ich dankbar, u.a. \nUni Münster, Skifahren inkl. lustiger Bekanntschaften, Karneval in Köln und Düsseldorf ( live bei Brings im Abendkleid 🥳), Waldfeste, Muggel, Hochzeiten (unvergessen und dafür bin ich Dir auf ewig dankbar: Euer Kommen zur Schneehochzeit in Laax), Reisen, Rotwein, philosophische Abende, Telefonate, Umarmungen…",
-  "wish": "Bleib wie Du bist, Du Herzensmensch und dabei gesund.",
-  "imgs": [
-   "p31-1",
-   "p31-2",
-   "p31-3",
-   "p31-4",
-   "p31-5",
-   "p31-6"
-  ]
- },
- {
   "n": 32,
   "name": "Jo",
   "group": "new",
@@ -392,17 +418,6 @@ const friends = [
   "city": "Christchurch",
   "clip": "v32",
   "video": "4:11"
- },
- {
-  "n": 33,
-  "name": "Catherine",
-  "group": "old",
-  "note": "So schief wie der Hut, aber von Herzen ♥️ : happy Birthday liebe Nici  🥳",
-  "isFor": "🩷",
-  "moment": "☀️",
-  "wish": "🍀",
-  "clip": "v33",
-  "video": "0:26"
  },
  {
   "n": 34,
@@ -431,24 +446,9 @@ const friends = [
   ]
  },
  {
-  "n": 37,
-  "name": "Sylvie",
-  "group": "new",
-  "title": "🎶wie schön dass du geboren bist, ich hätte dich sonst sehr vermisst 🎶",
-  "note": "HAPPY BIRTHDAY, liebe Nici! Nu ist sie da – die große 50. Ich wünsche Dir einen großartigen Tag und eine tolle Party!\n50 Jahre Nici – und ungefähr 35 davon auch Nici &amp; Sylvie. Da kommen viele Erinnerungen zusammen. Ich bin sehr glücklich und dankbar, Dich immer in meinem Leben zu wissen.\nOb Australien oder Düsseldorf macht für unsere Freundschaft zum Glück kaum einen Unterschied. Oder na ja – ein bisschen vielleicht doch. In Düsseldorf könnte ich heute mit Dir feiern. Und das würde ich wirklich wahnsinnig gerne!\nIch bin so stolz auf Dich, dass Du Dir und Euch diesen Australien-Traum erfüllt hast. Zu sehen, wie Ihr Euch dort ein neues Zuhause aufgebaut habt, freut mich riesig. Dass Du auch dort tolle Freunde gefunden hast, wundert mich überhaupt nicht. Du hast diese besondere Gabe, auf Menschen zuzugehen und echte, tiefe Verbindungen entstehen zu lassen. Du fragst nach, hörst zu und möchtest wirklich wissen, wie es dem anderen geht. Das ist so etwas wie Deine Superkraft – und etwas sehr Besonderes an Dir.\nFür Dein neues Lebensjahr wünsche ich Dir ganz viel Freude an Deinem Leben dort. Genieß die Zeit mit Dirk und den Jungs! Macht spannende Pläne, erlebt tolle Dinge zusammen und sammelt Erinnerungen fürs Leben. Ihr macht das genau richtig. Und ich freue mich schon auf noch viele weitere Jahre Nici &amp; Sylvie – und dass zu diesen Fotos noch viele weitere dazu kommen!\nLass Dich heute ordentlich feiern und fühl Dich von mir ganz fest umarmt. Das gemeinsame Feiern holen wir nach! Dicken Kuss ❤️\nDeine Sylvie",
-  "imgs": [
-   "p37-1",
-   "p37-2",
-   "p37-3",
-   "p37-4",
-   "p37-5",
-   "p37-6"
-  ]
- },
- {
   "n": 38,
   "name": "Die Buddenbergs",
-  "group": "family",
+  "group": "new",
   "note": "Liebe Nicola,\nZu Deinem runden Geburtstag alles Liebe und Gute,\nviel lieber würden wir persönlich mit Dir feiern, aber umso herzlicher der Glückwunsch Deiner Buddenbergs",
   "isFor": "die beste Läuferin!",
   "clip": "v38",
