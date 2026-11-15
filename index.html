@@ -194,8 +194,14 @@ section { padding-block: 56px 8px; }
 .intro { position: absolute; inset: 0; overflow: hidden; cursor: pointer; }
 .intro-heart { position: absolute; inset: 0; transform-origin: 50% 46%; }
 .intro-tile { position: absolute; background: var(--paper) center / cover; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
-.intro-msg { position: absolute; left: 0; right: 0; text-align: center; font: 400 clamp(2rem, 8vw, 3.4rem)/1 var(--f-head); text-transform: uppercase; color: var(--ink); }
+.intro-msg { position: absolute; left: 0; right: 0; text-align: center; font: 400 clamp(1.8rem, 7.4vw, 3.2rem)/1.02 var(--f-head); text-transform: uppercase; color: var(--ink); }
 .intro-msg em { font-style: normal; color: var(--red); }
+.intro-sun { position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(255,214,10,.95) 0 18%, rgba(255,214,10,.55) 30%, rgba(255,214,10,0) 62%),
+    repeating-conic-gradient(rgba(255,196,0,.28) 0 6deg, rgba(255,196,0,0) 6deg 18deg);
+  -webkit-mask: radial-gradient(circle, #000 35%, transparent 70%); mask: radial-gradient(circle, #000 35%, transparent 70%); }
+.intro-msg mark { background: var(--yellow); color: var(--ink); padding: 0 .12em; }
+.intro-msg small { display: block; margin-top: 10px; font: 700 clamp(1.1rem, 4.4vw, 1.6rem)/1 var(--f-hand); color: var(--red); text-transform: none; letter-spacing: 0; }
 .intro-card { position: absolute; background: #fff; border: 1px solid var(--rule); border-top: 4px solid var(--red); padding: 6px 10px 8px; box-shadow: 0 8px 22px rgba(0,0,0,.18); text-align: left; min-width: 100px; max-width: 44vw; }
 .intro-card small { display: block; margin: 0; padding: 0; font: 700 .58rem/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .intro-card b { display: block; font: 700 1.3rem/1.05 var(--f-hand); color: var(--blue); margin-top: 4px; }
@@ -525,8 +531,14 @@ const playIntro = done => {
   });
   heartBox.animate([{ transform: "scale(1)" }, { transform: "scale(1.07)" }, { transform: "scale(1)" }, { transform: "scale(1.07)" }, { transform: "scale(1)" }],
     { duration: 1100, delay: 11200, easing: "ease-in-out" });
-  const msg = document.createElement("div"); msg.className = "intro-msg"; msg.innerHTML = "Happy 50th, <em>Nici</em>"; msg.style.top = `${y0 + size + 14}px`; stage.appendChild(msg);
-  msg.animate([{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "none", offset: .15 }, { opacity: 1, offset: .85 }, { opacity: 0 }], { duration: 5000, delay: 10200, fill: "both" });
+  // Sonne: hinter dem fertigen Herz geht eine Sonne mit Strahlen auf (Thema "The Sunshine of our World")
+  const sun = document.createElement("div"); sun.className = "intro-sun"; sun.style.cssText = `left:${W / 2}px;top:${y0 + size * .46}px;width:${size * 2.4}px;height:${size * 2.4}px`;
+  stage.insertBefore(sun, heartBox);
+  sun.animate([{ opacity: 0, transform: "translate(-50%,-50%) scale(.2) rotate(0deg)" }, { opacity: 1, transform: "translate(-50%,-50%) scale(1) rotate(40deg)", offset: .35 },
+    { opacity: 1, transform: "translate(-50%,-50%) scale(1.05) rotate(110deg)", offset: .8 }, { opacity: 0, transform: "translate(-50%,-50%) scale(1.6) rotate(140deg)" }],
+    { duration: 7600, delay: 9000, easing: "ease-out", fill: "both" });
+  const msg = document.createElement("div"); msg.className = "intro-msg"; msg.innerHTML = "You’re the <mark>sunshine</mark><br>of our world<small>Happy 50th, Nici</small>"; msg.style.top = `${y0 + size + 14}px`; stage.appendChild(msg);
+  msg.animate([{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "none", offset: .15 }, { opacity: 1, offset: .85 }, { opacity: 0 }], { duration: 5600, delay: 9800, fill: "both" });
   INTRO.cards.forEach((f, i) => {
     const k = document.createElement("div"); k.className = "intro-card";
     k.innerHTML = `<small>With love from</small><b>${esc(f.name)}</b>${f.city ? `<span>${esc(f.city)}</span>` : ""}`;
