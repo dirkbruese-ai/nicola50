@@ -216,6 +216,8 @@ section { padding-block: 56px 8px; }
 .collage { display: flex; flex-wrap: wrap; gap: 6px; }
 .collage::after { content: ""; flex-grow: 999; }
 .tile { --h: 190px; flex: var(--r) 1 calc(var(--r) * var(--h)); aspect-ratio: var(--r); max-height: calc(var(--h) * 1.6); padding: 0; border: 0; background: var(--paper); cursor: zoom-in; overflow: hidden; min-width: 0; }
+.tile { position: relative; }
+.tcap { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 10px 8px; background: linear-gradient(transparent, rgba(0,0,0,.65)); color: #fff; font: 400 .95rem/1.05 var(--f-head); text-transform: uppercase; text-align: left; pointer-events: none; }
 .tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
 .tile:hover img { transform: scale(1.04); }
 .tile:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
@@ -512,17 +514,32 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
     family: ["cover", [[281, "Helicopter to the glacier"], [50, "Sunday best"], [173, "Boat trip through the karst"], [263, "Centre court"], [245, "Golden hour, all together"]]],
     friends: ["spread", [[309, "The girls are back in town"], ["p26-3", "Frog squad"], [72, "Carnival sparkle"], [46, "Race day"], ["p37-4", "Way back when"]]]
   };
-  const capOf = {}; Object.values(FEAT).forEach(([, it]) => it.forEach(([n, c]) => { capOf[n] = c; }));
+  // Weitere Schlagzeilen in den Collagen
+  const TCAP = {
+    20: "Glacier selfie", 30: "Christmas lights", 84: "Ciao, Venezia", 97: "Gym buddies", 152: "Big city, big smiles", 204: "Beach mornings", 219: "Ocean view", 273: "Sunset garden party", 352: "Black tie, big night", 378: "Red wall, red wine",
+    12: "Carnival kids", 24: "View from the top", 40: "Ski day", 87: "Pasta, please", 156: "New York, New York", 366: "Beach pile-up", 380: "Selfie squad", 451: "Night out with Mum",
+    4: "Birthday crown", 13: "Ski lift grins", 38: "Proud catch", 49: "Hockey hero", 56: "Punk rock carnival", 111: "Lake swim", 160: "Sharp-dressed", 189: "Palma nights", 291: "Helicopter heroes",
+    2: "The baptism candle", 109: "Yoga on the lawn", 127: "Barefoot on the beach", 190: "Captain Nici", 205: "Hands up, sun out", 251: "Breakfast of champions", 308: "Beach day laugh", 324: "Gold Coast glow",
+    6: "First ski lessons", 236: "Big hug", 340: "Concert night", 447: "Piano selfie", 417: "Lookout",
+    3: "Birthday cake", 14: "Après-ski", 66: "In the crowd", 246: "Palm trees", 349: "Sunset swing", 361: "Splash!", 420: "Cuddle selfie",
+    16: "Waterfall walk", 115: "Ski day", 215: "Low tide", 276: "Golf boys", 307: "Certified!", 331: "Life jackets on", 372: "Opera House nights", 443: "Hot chocolate break",
+    18: "Waterfall", 106: "Chairlift crew", 169: "Temple run", 223: "Boat picnic", 240: "Lunch on deck", 244: "Island time", 279: "Waterfall hunters", 290: "Snow landing",
+    21: "Sea breeze", 191: "Ciao, Venezia", 310: "Trail runners", 328: "Ski gang", 348: "Party wigs", 395: "Hit parade", 455: "Carnival crew", "p31-6": "Fifty!", "p19-2": "Glitter squad", "p2-4": "Carnival forever"
+  };
+  const capOf = { ...TCAP }; Object.values(FEAT).forEach(([, it]) => it.forEach(([n, c]) => { capOf[n] = c; }));
   const FIRST = 12, box = document.getElementById("chapters");
   const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
   let cur = [], at = 0, title = "";
   // Fotos aus den Padlet-Beiträgen (mit Absender) stehen vorne im Kapitel
   const byN = Object.fromEntries(ALBUM.map(p => [p.n, p]));
   const featOf = k => (FEAT[k] ? FEAT[k][1] : []).map(([n]) => byN[n]).filter(p => p && p.c === k);
-  const restOf = k => { const f = new Set(featOf(k)); return ALBUM.filter(p => p.c === k && !f.has(p)).sort((a, b) => !!b.by - !!a.by); };
+  // Rest: Beitragsfotos vorne, Fotos mit Schlagzeile gleichmäßig verteilt (jedes dritte)
+  const restOf = k => { const f = new Set(featOf(k)), r = ALBUM.filter(p => p.c === k && !f.has(p));
+    const posts = r.filter(p => p.by && !capOf[p.n]), cap = r.filter(p => capOf[p.n]), plain = r.filter(p => !p.by && !capOf[p.n]), out = [...posts];
+    while (cap.length || plain.length) { if (cap.length) out.push(cap.shift()); out.push(...plain.splice(0, 2)); } return out; };
   const chap = k => [...featOf(k), ...restOf(k)];
   const big = p => p.by ? `img/posts/${p.n}.jpg` : `img/album/${p.n}.jpg`;
-  const tile = p => `<button class="tile" type="button" data-n="${p.n}" style="--r:${p.r}"><img src="img/album/${p.n}s.jpg" alt="" loading="lazy" decoding="async"></button>`;
+  const tile = p => `<button class="tile" type="button" data-n="${p.n}" style="--r:${p.r}"><img src="img/album/${p.n}s.jpg" alt="" loading="lazy" decoding="async">${capOf[p.n] ? `<span class="tcap">${capOf[p.n]}</span>` : ""}</button>`;
   const from = p => p.by ? `<small>from ${p.by}</small>` : "";
   const ROT = ["-3deg", "2deg", "-1.5deg", "2.5deg", "-2deg"];
   const feat = k => { const fs = featOf(k); if (!fs.length) return ""; const lay = FEAT[k][0];
