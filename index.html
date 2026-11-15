@@ -484,7 +484,7 @@ document.addEventListener("play", e => { if (e.target.tagName === "VIDEO") docum
 // Startseite: NICOLA 50 mit Play-Knopf, nach Tippen läuft das Ständchen und das Magazin erscheint (Autoplay mit Ton geht nur nach Tippen)
 const welcome = document.getElementById("welcome"), serenade = document.getElementById("serenade"), np = document.getElementById("now-playing");
 document.documentElement.style.overflow = "hidden";
-// Übergang (ca. 6 s): Fotokacheln fliegen zu einem Herz zusammen, Grüße ploppen auf, dann öffnet sich alles zum Magazin
+// Übergang (ca. 17 s): Fotokacheln fliegen zu einem Herz zusammen, Grüße ploppen auf, dann öffnet sich alles zum Magazin
 const INTRO = (() => {
   // Mischung aus allen Kapiteln: Freunde (auch Beitragsfotos), Familie, ihr vier, die Jungs
   const mix = ["friends", "youme", "family", "life", "youboys", "friends", "boys", "niciphili", "nicimori", "family", "nici"];
@@ -507,20 +507,26 @@ const playIntro = done => {
   const W = innerWidth, H = innerHeight, size = Math.min(W * .9, H * .62, 560), cell = size / INTRO.cols;
   const x0 = (W - size) / 2, y0 = (H - size) / 2 - H * .04, anims = [];
   const heartBox = document.createElement("div"); heartBox.className = "intro-heart"; stage.appendChild(heartBox);
+  // Fotos fliegen einzeln und groß herein und setzen sich nacheinander ins Herz (Gesamtdauer ca. 17 s)
+  const OUT = 15000, big = Math.min(W, H) * .58 / cell, order = INTRO.cells.map((_, i) => i).sort(() => Math.random() - .5);
+  const step = Math.min(160, 8800 / INTRO.cells.length);
   INTRO.cells.forEach(([c, r], i) => {
     const t = document.createElement("div"); t.className = "intro-tile";
-    t.style.cssText = `left:${x0 + c * cell}px;top:${y0 + r * cell}px;width:${cell - 3}px;height:${cell - 3}px;background-image:url('${INTRO.pics[i % INTRO.pics.length]}')`;
+    const tx = x0 + c * cell, ty = y0 + r * cell;
+    t.style.cssText = `left:${tx}px;top:${ty}px;width:${cell - 3}px;height:${cell - 3}px;z-index:${order[i]};background-image:url('${INTRO.pics[i % INTRO.pics.length]}')`;
     heartBox.appendChild(t);
-    const a = rnd(0, Math.PI * 2), d = Math.max(W, H) * rnd(.7, 1.1);
-    const from = `translate(${Math.cos(a) * d}px, ${Math.sin(a) * d}px) rotate(${rnd(-180, 180)}deg) scale(.4)`;
-    const away = `translate(${(x0 + c * cell - W / 2) * 4}px, ${(y0 + r * cell - H / 2) * 4}px) rotate(${rnd(-90, 90)}deg) scale(1.6)`;
-    anims.push(t.animate([{ transform: from, opacity: 0, easing: "cubic-bezier(.2,.8,.2,1)" }, { transform: "none", opacity: 1, offset: .2 }, { transform: "none", opacity: 1, offset: .78, easing: "cubic-bezier(.5,0,.8,.4)" }, { transform: away, opacity: 0 }],
-      { duration: 5400, delay: rnd(0, 600), fill: "both" }));
+    const delay = 500 + order[i] * step, total = OUT + 1300 - delay, inT = 1700;
+    const sx = W / 2 + rnd(-W * .25, W * .25) - tx - cell / 2, sy = H / 2 + rnd(-H * .2, H * .2) - ty - cell / 2;
+    const from = `translate(${sx}px, ${sy}px) rotate(${rnd(-14, 14)}deg) scale(${big})`;
+    const away = `translate(${(tx - W / 2) * 4}px, ${(ty - H / 2) * 4}px) rotate(${rnd(-90, 90)}deg) scale(1.6)`;
+    t.animate([{ transform: from, opacity: 0, easing: "ease-out" }, { transform: from, opacity: 1, offset: 250 / total, easing: "cubic-bezier(.5,0,.2,1)" },
+      { transform: "none", opacity: 1, offset: inT / total }, { transform: "none", opacity: 1, offset: (OUT - delay) / total, easing: "cubic-bezier(.5,0,.8,.4)" }, { transform: away, opacity: 0 }],
+      { duration: total, delay, fill: "both" });
   });
   heartBox.animate([{ transform: "scale(1)" }, { transform: "scale(1.07)" }, { transform: "scale(1)" }, { transform: "scale(1.07)" }, { transform: "scale(1)" }],
-    { duration: 900, delay: 2000, easing: "ease-in-out" });
+    { duration: 1100, delay: 11200, easing: "ease-in-out" });
   const msg = document.createElement("div"); msg.className = "intro-msg"; msg.innerHTML = "Happy 50th, <em>Nici</em>"; msg.style.top = `${y0 + size + 14}px`; stage.appendChild(msg);
-  msg.animate([{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "none", offset: .3 }, { opacity: 1, offset: .8 }, { opacity: 0 }], { duration: 3000, delay: 1500, fill: "both" });
+  msg.animate([{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "none", offset: .15 }, { opacity: 1, offset: .85 }, { opacity: 0 }], { duration: 5000, delay: 10200, fill: "both" });
   INTRO.cards.forEach((f, i) => {
     const k = document.createElement("div"); k.className = "intro-card";
     k.innerHTML = `<small>With love from</small><b>${esc(f.name)}</b>${f.city ? `<span>${esc(f.city)}</span>` : ""}`;
@@ -529,12 +535,12 @@ const playIntro = done => {
     const cx = W / 2 + ((i >> 1) % 2 ? 1 : -1) * rnd(0, W * .3), cy = rnd(band[0] + 30, band[1] - 30);
     k.style.left = `${Math.min(Math.max(cx, 80), W - 80)}px`; k.style.top = `${cy}px`; stage.appendChild(k);
     const rot = rnd(-10, 10);
-    k.animate([{ transform: `translate(-50%,-50%) scale(0) rotate(${rot * 3}deg)`, opacity: 0 }, { transform: `translate(-50%,-50%) scale(1.08) rotate(${rot}deg)`, opacity: 1, offset: .18 },
-      { transform: `translate(-50%,-50%) scale(1) rotate(${rot}deg)`, opacity: 1, offset: .7 }, { transform: `translate(-50%,-50%) translateY(-40px) scale(.9) rotate(${rot}deg)`, opacity: 0 }],
-      { duration: 2400, delay: 900 + i * 360, fill: "both" });
+    k.animate([{ transform: `translate(-50%,-50%) scale(0) rotate(${rot * 3}deg)`, opacity: 0 }, { transform: `translate(-50%,-50%) scale(1.08) rotate(${rot}deg)`, opacity: 1, offset: .12 },
+      { transform: `translate(-50%,-50%) scale(1) rotate(${rot}deg)`, opacity: 1, offset: .8 }, { transform: `translate(-50%,-50%) translateY(-40px) scale(.9) rotate(${rot}deg)`, opacity: 0 }],
+      { duration: 3600, delay: 1500 + i * 1700, fill: "both" });
   });
   let ended = false; const finish = () => { if (ended) return; ended = true; done(); };
-  welcome.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 700, delay: 5300, fill: "forwards" }).onfinish = finish;
+  welcome.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 900, delay: 16200, fill: "forwards" }).onfinish = finish;
   stage.addEventListener("click", () => { welcome.getAnimations({ subtree: true }).forEach(a => a.finish()); finish(); });
 };
 document.getElementById("welcome-start").onclick = () => { serenade.play().catch(() => {}); np.hidden = false;
