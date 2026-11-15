@@ -155,6 +155,13 @@ section { padding-block: 56px 8px; }
 .quotes.moments blockquote::before, .quotes.moments blockquote::after { content: none; }
 .quotes.moments figcaption { font: 600 .72rem/1.2 var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
 .lead { font: italic 500 1.35rem/1.4 var(--f-mast); margin: 0 0 24px; max-width: 46rem; }
+/* Zeitleiste */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 24px 0; }
+.timeline li { padding: 16px 16px 18px 0; position: relative; min-width: 0; border-top: 3px solid var(--red); }
+.timeline li::before { content: ""; position: absolute; top: -9px; left: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--red); border: 3px solid var(--page); }
+.timeline b { display: block; font: 400 2rem/1 var(--f-head); color: var(--red); margin-bottom: 6px; }
+.timeline span { font: 600 1.35rem/1.15 var(--f-hand); color: var(--ink); }
+
 /* Gedicht */
 .poem { background: var(--paper); padding: clamp(20px, 5vw, 48px); border-top: 6px solid var(--red); }
 .poem h3 { font: italic 500 clamp(1.8rem, 5vw, 2.8rem)/1 var(--f-mast); margin: 0 0 18px; }
@@ -251,6 +258,22 @@ section { padding-block: 56px 8px; }
     <div class="sec-head"><h2 id="h-stars">Stars Send Their Love <em>Your Story with Her</em></h2><span class="tag">Exclusive</span></div>
     <div class="chips" id="chips" role="group" aria-label="Filter by type of message"></div>
     <div class="stars" id="star-list"></div>
+  </section>
+
+  <section id="story" aria-labelledby="h-story">
+    <div class="sec-head"><h2 id="h-story">50 Years of Nici <em>her story in dates</em></h2><span class="tag">Biography</span></div>
+    <ol class="timeline">
+      <li><b>1976</b><span>Born on November 22 in Krefeld, daughter of two teachers and Katja’s little sister</span></li>
+      <li><b>Münster</b><span>Studies business and meets the girls who become friends for life</span></li>
+      <li><b>2006</b><span>The start of 18½ years at Vodafone in Düsseldorf</span></li>
+      <li><b>2007</b><span>Meets Dirk</span></li>
+      <li><b>2009</b><span>Moritz is born</span></li>
+      <li><b>2012</b><span>Philip is born</span></li>
+      <li><b>2013</b><span>The wedding in Düsseldorf, with lots of friends</span></li>
+      <li><b>2019</b><span>A farmhouse in the mountains of Carinthia</span></li>
+      <li><b>2025</b><span>G’day, Gold Coast! A new life in Australia</span></li>
+      <li><b>2026</b><span>Fifty, and shining brighter than ever</span></li>
+    </ol>
   </section>
 
   <section id="who" aria-labelledby="h-who">
