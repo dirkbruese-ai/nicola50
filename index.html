@@ -471,8 +471,9 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
 // Fotoalbum: Kapitel aus Dirks Sortierung, erst 12 Fotos je Kapitel, der Rest auf Wunsch
 (() => {
   if (typeof ALBUM === "undefined") return;
-  const CH = [["youme", "You & Me", "just the two of us"], ["youboys", "You & the Boys", "Moritz, Philip and their mum"],
+  const CH = [["youme", "You & Me", "just the two of us"], ["youboys", "You & the Boys", "Nici, Moritz & Philip"],
     ["boys", "Your Boys", "Moritz & Philip, growing up"], ["nici", "Just You", "Nici in her element"],
+    ["life", "Family Life", "all of us, in every combination"],
     ["family", "Our Family", "the whole clan"], ["friends", "Friends", "the people who make every party"]];
   const FIRST = 12, box = document.getElementById("chapters");
   const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
