@@ -4,18 +4,20 @@ import csv, json, os, sys
 
 # Gruppe pro Padlet-Beitragsnummer: family, old (Münster Girls), new (From home), aus (Gold Coast)
 GROUP = {12: "family", 13: "family",
-         37: "old", 14: "old", 15: "old", 22: "old", 33: "old", 2: "old",
-         31: "close", 18: "close", 20: "close", 6: "close", 29: "close", 19: "close", 24: "close", 26: "close", 27: "close",
+         37: "old", 14: "old", 15: "old", 31: "old", 18: "old", 20: "old", 2: "old", 22: "old", 33: "old",
+         6: "close", 29: "close", 24: "close", 26: "close", 27: "close", 28: "close", 19: "close",
          3: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 21: "aus", 23: "aus", 30: "aus",
          35: "aus", 36: "aus", 40: "aus"}
-# Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang
-ORDER = [37, 14, 15, 22, 33, 2, 31, 18, 20, 6, 29, 19, 24, 26, 27]
+# Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang, LAST ganz ans Ende
+ORDER = [37, 14, 15, 31, 18, 20, 2, 22, 33, 6, 29, 24, 26, 27, 28, 19]
+LAST = [4, 7, 5]
 NAME = {2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",
         26: "Nicola (DEHNS)", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs"}
 SKIP = {1}
 CITY = {2: "Gerresheim", 12: "Viersen", 13: "Viersen", 14: "Olching", 15: "Olching", 22: "Hamburg",
-        24: "Oberkassel", 26: "Oberkassel", 27: "Oberkassel", 32: "Christchurch", 34: "Düsseldorf"}
+        24: "Oberkassel", 26: "Oberkassel", 27: "Oberkassel", 32: "Munich · Christchurch", 34: "Düsseldorf",
+        8: "Cologne", 9: "Cologne", 37: "Hamburg", 31: "Düsseldorf", 29: "Düsseldorf", 6: "Düsseldorf"}
 
 csv_path, photos_path, media = sys.argv[1:4]
 photos = json.load(open(photos_path))
@@ -39,7 +41,7 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     if os.path.exists(v): p["clip"] = f"v{n}"; p["video"] = mmss(dur(v))
     if os.path.exists(a): p["audio"] = f"a{n}"; p["voice"] = mmss(dur(a))
     out.append(p)
-out.sort(key=lambda p: ORDER.index(p["n"]) if p["n"] in ORDER else 100 + p["n"])
+out.sort(key=lambda p: ORDER.index(p["n"]) if p["n"] in ORDER else 1000 + LAST.index(p["n"]) if p["n"] in LAST else 100 + p["n"])
 open("posts.js", "w").write("// Erzeugt mit tools/build_posts.py aus dem Padlet-Export\nconst friends = " +
                             json.dumps(out, ensure_ascii=False, indent=1) + ";\n")
 print(len(out), "Beiträge")

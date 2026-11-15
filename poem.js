@@ -7,12 +7,12 @@ const POEM = {
 two teachers got a lucky mix:
 a girl whose eyes were not a pair,
 and a laugh that filled the air.`,
-`Katja's little sister grew,
-went off to Münster, studied too,
-and found a henhouse full of girls
-who'd stay her friends across the world.`,
+`Katja's little sister grew
+with Ena and with Sylvie too,
+to Münster then, where henhouse girls
+became her friends across the world.`,
 `Then Düsseldorf became her home,
-eighteen years at Vodafone,
+her years at Vodafone,
 the Rhine, the Altstadt, Carnival,
 and friends who'd answer any call.`,
 `In two thousand seven, Dirk appeared,

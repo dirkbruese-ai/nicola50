@@ -6,6 +6,7 @@ const friends = [
   "group": "old",
   "title": "🎶wie schön dass du geboren bist, ich hätte dich sonst sehr vermisst 🎶",
   "note": "HAPPY BIRTHDAY, liebe Nici! Nu ist sie da – die große 50. Ich wünsche Dir einen großartigen Tag und eine tolle Party!\n50 Jahre Nici – und ungefähr 35 davon auch Nici &amp; Sylvie. Da kommen viele Erinnerungen zusammen. Ich bin sehr glücklich und dankbar, Dich immer in meinem Leben zu wissen.\nOb Australien oder Düsseldorf macht für unsere Freundschaft zum Glück kaum einen Unterschied. Oder na ja – ein bisschen vielleicht doch. In Düsseldorf könnte ich heute mit Dir feiern. Und das würde ich wirklich wahnsinnig gerne!\nIch bin so stolz auf Dich, dass Du Dir und Euch diesen Australien-Traum erfüllt hast. Zu sehen, wie Ihr Euch dort ein neues Zuhause aufgebaut habt, freut mich riesig. Dass Du auch dort tolle Freunde gefunden hast, wundert mich überhaupt nicht. Du hast diese besondere Gabe, auf Menschen zuzugehen und echte, tiefe Verbindungen entstehen zu lassen. Du fragst nach, hörst zu und möchtest wirklich wissen, wie es dem anderen geht. Das ist so etwas wie Deine Superkraft – und etwas sehr Besonderes an Dir.\nFür Dein neues Lebensjahr wünsche ich Dir ganz viel Freude an Deinem Leben dort. Genieß die Zeit mit Dirk und den Jungs! Macht spannende Pläne, erlebt tolle Dinge zusammen und sammelt Erinnerungen fürs Leben. Ihr macht das genau richtig. Und ich freue mich schon auf noch viele weitere Jahre Nici &amp; Sylvie – und dass zu diesen Fotos noch viele weitere dazu kommen!\nLass Dich heute ordentlich feiern und fühl Dich von mir ganz fest umarmt. Das gemeinsame Feiern holen wir nach! Dicken Kuss ❤️\nDeine Sylvie",
+  "city": "Hamburg",
   "imgs": [
    "p37-1",
    "p37-2",
@@ -48,6 +49,65 @@ const friends = [
   ]
  },
  {
+  "n": 31,
+  "name": "Claudi",
+  "group": "old",
+  "title": "Hey Nici, Du bes e Jeföhl",
+  "note": "Von ganzem Herzen alles Gute zum 50. Geburtstag. Genieß es, Dich heute hochleben und feiern zu lassen von den vielen Menschen, denen Du so viel bedeutest. Du bist der Inbegriff von rheinischer Lebensfreude, eine Menschenfängerin, echte Zuhörerin, weise Ratgeberin, mutige, attraktive, wissbegierige, fleissige Frau, coole, liebevolle Mutter, sportliches Energiebündel, verlässliche Freundin, neugierige Weltenbummlerin, wunderbare Trauzeugin, fürsorgliche Patentante….. Die Welt ist reicher, weil es Dich gibt und Deinen Spirit versprühst. Du gibst so viel, nimm heute mal. Und blicke stolz und dankbar auf das zurück, was in 50 Jahren Nici steckt. Klopf Dir selber auf die Schulter. Und schau in die Gesichter Deiner 3 Männer und Du wirst auch dort das Strahlen von Stolz und Dankbarkeit entdecken. Dein Mut, mit den Jungs nach Australien zu gehen, sucht seinesgleichen. Wie schön, dass Ihr heute zu viert downunder feiern könnt. Ich bin ein bisschen neidisch, Würde Dich nämlich sehr gerne selber in den Arm nehmen😊. \nIch vermisse Dich sehr, Dein Strahlen, unsere Gespräche. Den 60. feiern wir dann wieder zusammen 😎.\n\nHeut ist Dein Tag, lass es krachen und Du kannst Dir sicher sein, im Rheinland wirst Du heute auch gefeiert 🥳.",
+  "isFor": "Personal VIP",
+  "moment": "Wo soll ich anfangen? Es waren so viele und werden hoffentlich noch weitere. Für jeden einzelnen bin ich dankbar, u.a. \nUni Münster, Skifahren inkl. lustiger Bekanntschaften, Karneval in Köln und Düsseldorf ( live bei Brings im Abendkleid 🥳), Waldfeste, Muggel, Hochzeiten (unvergessen und dafür bin ich Dir auf ewig dankbar: Euer Kommen zur Schneehochzeit in Laax), Reisen, Rotwein, philosophische Abende, Telefonate, Umarmungen…",
+  "wish": "Bleib wie Du bist, Du Herzensmensch und dabei gesund.",
+  "city": "Düsseldorf",
+  "imgs": [
+   "p31-1",
+   "p31-2",
+   "p31-3",
+   "p31-4",
+   "p31-5",
+   "p31-6"
+  ]
+ },
+ {
+  "n": 18,
+  "name": "Susi & Corinna",
+  "group": "old",
+  "note": "Liebe Nici! \nWe miss u! Happy Birthday zum Geburtstag! Auf weitere glorreiche 50 Jahre! \nxoxo Susi &amp; Corinna",
+  "isFor": "Eine Sportskanone, mit der man Pferde stehlen kann",
+  "wish": "Nur das Beste für die nächsten 50 Jahre! Gesundheit, Liebe und ganz viel Glück!",
+  "audio": "a18",
+  "voice": "0:50"
+ },
+ {
+  "n": 20,
+  "name": "Susi & Corinna",
+  "group": "old",
+  "note": "Venedig, Salzburg, Berge… mit Dir ist es immer schön!",
+  "isFor": "eine tolle Freundin",
+  "imgs": [
+   "p20-1",
+   "p20-2",
+   "p20-3",
+   "p20-4",
+   "p20-5",
+   "p20-6"
+  ]
+ },
+ {
+  "n": 2,
+  "name": "Sonja & Christian",
+  "group": "old",
+  "title": "Happy Birthday aus Gerresheim",
+  "note": "Wir freuen uns mit Dir so viel tolle Erinnerungen zu teilen und vor allem freuen wir uns auf die nächsten 50 Jahre mit Dir. Eine ganz dicke Umarmung von Sonja und Christian",
+  "city": "Gerresheim",
+  "imgs": [
+   "p2-1",
+   "p2-2",
+   "p2-3",
+   "p2-4",
+   "p2-5"
+  ]
+ },
+ {
   "n": 22,
   "name": "Catherine",
   "group": "old",
@@ -77,64 +137,6 @@ const friends = [
   "video": "0:26"
  },
  {
-  "n": 2,
-  "name": "Sonja & Christian",
-  "group": "old",
-  "title": "Happy Birthday aus Gerresheim",
-  "note": "Wir freuen uns mit Dir so viel tolle Erinnerungen zu teilen und vor allem freuen wir uns auf die nächsten 50 Jahre mit Dir. Eine ganz dicke Umarmung von Sonja und Christian",
-  "city": "Gerresheim",
-  "imgs": [
-   "p2-1",
-   "p2-2",
-   "p2-3",
-   "p2-4",
-   "p2-5"
-  ]
- },
- {
-  "n": 31,
-  "name": "Claudi",
-  "group": "close",
-  "title": "Hey Nici, Du bes e Jeföhl",
-  "note": "Von ganzem Herzen alles Gute zum 50. Geburtstag. Genieß es, Dich heute hochleben und feiern zu lassen von den vielen Menschen, denen Du so viel bedeutest. Du bist der Inbegriff von rheinischer Lebensfreude, eine Menschenfängerin, echte Zuhörerin, weise Ratgeberin, mutige, attraktive, wissbegierige, fleissige Frau, coole, liebevolle Mutter, sportliches Energiebündel, verlässliche Freundin, neugierige Weltenbummlerin, wunderbare Trauzeugin, fürsorgliche Patentante….. Die Welt ist reicher, weil es Dich gibt und Deinen Spirit versprühst. Du gibst so viel, nimm heute mal. Und blicke stolz und dankbar auf das zurück, was in 50 Jahren Nici steckt. Klopf Dir selber auf die Schulter. Und schau in die Gesichter Deiner 3 Männer und Du wirst auch dort das Strahlen von Stolz und Dankbarkeit entdecken. Dein Mut, mit den Jungs nach Australien zu gehen, sucht seinesgleichen. Wie schön, dass Ihr heute zu viert downunder feiern könnt. Ich bin ein bisschen neidisch, Würde Dich nämlich sehr gerne selber in den Arm nehmen😊. \nIch vermisse Dich sehr, Dein Strahlen, unsere Gespräche. Den 60. feiern wir dann wieder zusammen 😎.\n\nHeut ist Dein Tag, lass es krachen und Du kannst Dir sicher sein, im Rheinland wirst Du heute auch gefeiert 🥳.",
-  "isFor": "Personal VIP",
-  "moment": "Wo soll ich anfangen? Es waren so viele und werden hoffentlich noch weitere. Für jeden einzelnen bin ich dankbar, u.a. \nUni Münster, Skifahren inkl. lustiger Bekanntschaften, Karneval in Köln und Düsseldorf ( live bei Brings im Abendkleid 🥳), Waldfeste, Muggel, Hochzeiten (unvergessen und dafür bin ich Dir auf ewig dankbar: Euer Kommen zur Schneehochzeit in Laax), Reisen, Rotwein, philosophische Abende, Telefonate, Umarmungen…",
-  "wish": "Bleib wie Du bist, Du Herzensmensch und dabei gesund.",
-  "imgs": [
-   "p31-1",
-   "p31-2",
-   "p31-3",
-   "p31-4",
-   "p31-5",
-   "p31-6"
-  ]
- },
- {
-  "n": 18,
-  "name": "Susi & Corinna",
-  "group": "close",
-  "note": "Liebe Nici! \nWe miss u! Happy Birthday zum Geburtstag! Auf weitere glorreiche 50 Jahre! \nxoxo Susi &amp; Corinna",
-  "isFor": "Eine Sportskanone, mit der man Pferde stehlen kann",
-  "wish": "Nur das Beste für die nächsten 50 Jahre! Gesundheit, Liebe und ganz viel Glück!",
-  "audio": "a18",
-  "voice": "0:50"
- },
- {
-  "n": 20,
-  "name": "Susi & Corinna",
-  "group": "close",
-  "note": "Venedig, Salzburg, Berge… mit Dir ist es immer schön!",
-  "isFor": "eine tolle Freundin",
-  "imgs": [
-   "p20-1",
-   "p20-2",
-   "p20-3",
-   "p20-4",
-   "p20-5",
-   "p20-6"
-  ]
- },
- {
   "n": 6,
   "name": "Petra",
   "group": "close",
@@ -142,6 +144,7 @@ const friends = [
   "note": "Liebe Nicola,\nAlles, alles Liebe zum Geburtstag. Zum runden, Specialgeburtstag. Bleib ein so besonderer Mensch, wie Du bist 😘",
   "isFor": "Eine ganz besondere Freundin",
   "moment": "Unsere gemeinsamen Abende und Gespräche",
+  "city": "Düsseldorf",
   "clip": "v6",
   "video": "3:41"
  },
@@ -153,21 +156,9 @@ const friends = [
   "isFor": "… der warmherzigste Mensch den es gibt 🩷",
   "moment": "… jeder einzelne unserer gemeinsamen Momente, egal wo auch immer auf der Erde!",
   "wish": "…. von Herzen nur das Beste und unendliches Glück!\n\nLiebe Nicola, alles alles Liebe zu diesem ganz besonderen Geburtstag heute! \nBleib wie du bist, nämlich was ganz besonderes 😘 \nMiss you",
+  "city": "Düsseldorf",
   "clip": "v29",
   "video": "0:31"
- },
- {
-  "n": 19,
-  "name": "Sandra",
-  "group": "close",
-  "note": "🎈Happy Birthday und alles Liebe und Gute zu Deinem 50. Geburtstag🎈\n\n\nDu fehlst - \n• beim Eierlikör\nDas letzte mal gemeinsam am zugefrorenen Hochwasser-Rhein, einmalig! 🧊\nMein letztes Mal bei der Zwischenrunde in HH mit den Jungs, erst in der Bahn mit Mitreisenden, dann mit den Mädels beim Ausklang nach dem Spiel - ich bin mir sicher, Du wärst dabei gewesen und hättest es in vollen Zügen genauso genossen, es wäre eine Freude gewesen! \n• beim Anfeuern an der Seite\nNicht immer nur Spaß, aber zusammen mit ganz viel Freude und Elan dabei, wir haben aufgerüstet, Du wärst begeistert 🤩\n• beim Feiern in geselliger Runde\nDas geht immer: nach dem Spiel, vor dem Spiel oder auch ohne Spiel, wir finden einen Anlass. Wenn Du wieder einmal dabei wärst, wäre das Anlass genug 😍🥂 \n• im Karneval\nHerrlich unsere gemeinsamen Kostüme, immer ein Spaß und große Freude, Du darfst jederzeit wieder einsteigen, wir erwarten Dich! 🤡\n• und überhaupt! ❤️\n\n\n\nWir freuen uns sehr auf neue Gelegenheiten! Jetzt wünsche ich Dir einen unvergesslichen Geburtstag. Lass Dich ordentlich feiern und genieße Deinen Tag!",
-  "imgs": [
-   "p19-1",
-   "p19-2",
-   "p19-3",
-   "p19-4",
-   "p19-5"
-  ]
  },
  {
   "n": 24,
@@ -209,6 +200,30 @@ const friends = [
   "video": "0:38"
  },
  {
+  "n": 28,
+  "name": "Eva&eve&carla",
+  "group": "close",
+  "note": "Alles Gute für Dich liebe Nicola",
+  "isFor": "Eine ganz besondere Freundin",
+  "moment": "Tauchen in Thailand & Apres Ski an Silvester",
+  "wish": "Glück Gesundheit Liebe !",
+  "clip": "v28",
+  "video": "0:45"
+ },
+ {
+  "n": 19,
+  "name": "Sandra",
+  "group": "close",
+  "note": "🎈Happy Birthday und alles Liebe und Gute zu Deinem 50. Geburtstag🎈\n\n\nDu fehlst - \n• beim Eierlikör\nDas letzte mal gemeinsam am zugefrorenen Hochwasser-Rhein, einmalig! 🧊\nMein letztes Mal bei der Zwischenrunde in HH mit den Jungs, erst in der Bahn mit Mitreisenden, dann mit den Mädels beim Ausklang nach dem Spiel - ich bin mir sicher, Du wärst dabei gewesen und hättest es in vollen Zügen genauso genossen, es wäre eine Freude gewesen! \n• beim Anfeuern an der Seite\nNicht immer nur Spaß, aber zusammen mit ganz viel Freude und Elan dabei, wir haben aufgerüstet, Du wärst begeistert 🤩\n• beim Feiern in geselliger Runde\nDas geht immer: nach dem Spiel, vor dem Spiel oder auch ohne Spiel, wir finden einen Anlass. Wenn Du wieder einmal dabei wärst, wäre das Anlass genug 😍🥂 \n• im Karneval\nHerrlich unsere gemeinsamen Kostüme, immer ein Spaß und große Freude, Du darfst jederzeit wieder einsteigen, wir erwarten Dich! 🤡\n• und überhaupt! ❤️\n\n\n\nWir freuen uns sehr auf neue Gelegenheiten! Jetzt wünsche ich Dir einen unvergesslichen Geburtstag. Lass Dich ordentlich feiern und genieße Deinen Tag!",
+  "imgs": [
+   "p19-1",
+   "p19-2",
+   "p19-3",
+   "p19-4",
+   "p19-5"
+  ]
+ },
+ {
   "n": 3,
   "name": "Vicky Stirling",
   "group": "aus",
@@ -223,45 +238,11 @@ const friends = [
   ]
  },
  {
-  "n": 4,
-  "name": "Anja",
-  "group": "new",
-  "title": "The prettiest smile in Düsseldorf got a Gold Coast glow. ☀️",
-  "note": "She’s taken her digital pharmacist and field hockey player from the Senftöpfe to Down Under. now the rest of us manage without them! 🇦🇺☀️",
-  "isFor": "A lovely smile and a heart of gold. 💛 looking like being in the thirties",
-  "moment": "Es ist gar nicht so leicht, die richtigen Worte für einen so besonderen Menschen und eine so besondere Zeit zu finden.\n\nUnsere Verbindung ist vor allem durch die enge Freundschaft zwischen Ole und Dirk gewachsen. Was Dirk in den vergangenen Monaten für uns getan hat und wie er Ole durch diese schwierige Zeit begleitet hat, werde ich nie vergessen.\n\nSeine Verlässlichkeit, sein Dasein und die Selbstverständlichkeit, mit der er immer an Oles Seite war, haben Ole unglaublich viel Halt gegeben. Gerade in einer Zeit, in der vieles ungewiss war, war es für Ole von unschätzbarem Wert, einen guten Freund zu haben, mit dem er auch über seine Ängste und Gedanken sprechen konnte.\n\nDu hast diese Freundschaft mit so viel Herz und Präsenz gelebt. Und obwohl uns eine unfassbar große Entfernung getrennt hat, war immer spürbar, wie nah du uns mental warst und wie sehr du mit uns durch diese Zeit gegangen bist.\n\nDafür möchte ich dir von Herzen danken. Für deine Freundschaft, deine Kraft und dafür, dass du einfach da warst und bestimmt Dirk in dieser schweren Zeit eine Stütze warst",
-  "wish": "dass sie weiterhin eine richtig geile Zeit in Australien hat, die Jungs happy sind und im Feldhockey ordentlich abräumen. Dass sie diesen ganz besonderen Gold-Coast-Vibe genießt, tolle Leute kennenlernt und richtig gute Freundschaften entstehen. Und natürlich, dass ganz viele von uns aus Düsseldorf immer wieder bei ihr einfallen, damit wir gemeinsam eine gute Zeit haben, die Sonne genießen und ein bisschen australisches Lebensgefühl mit nach Hause nehmen können. \nMeine eigene Erfahrung mit der 50+ ist: Es ist eine megacoole Zeit! Die besten Voraussetzungen dafür habt ihr ja schon. Also macht das Beste draus, genießt das Leben und lasst die Sonne nicht nur an der Gold Coast, sondern auch in euren Herzen scheinen! ☀️💛",
-  "imgs": [
-   "p4-1",
-   "p4-2"
-  ]
- },
- {
-  "n": 5,
-  "name": "Uwe",
-  "group": "new",
-  "isFor": "Friend",
-  "moment": "Medical Treatments",
-  "wish": "Only the best😊🍀",
-  "audio": "a5",
-  "voice": "0:37"
- },
- {
-  "n": 7,
-  "name": "Björn",
-  "group": "new",
-  "note": "Wow - du schon auch im Club der 50er⁉️ Anlass genug - sollte es denn wahr sein - der Einladung zu folgen und dir eine ganz persönliche Botschaft zu schicken. Entfernung kann manchmal dennoch ganz „nah sein“ bedeuten!",
-  "isFor": "the Super-Woman aus der “Nachbarschaft“",
-  "moment": "28.10.2023 und einige Momente… z.B. Noa‘s und mein Besuch am Ossiacher See",
-  "wish": "simply THE BEST gepaart mit Leichtigkeit voller Gesundheit, Leidenschaft und Liebe‼️",
-  "audio": "a7",
-  "voice": "2:33"
- },
- {
   "n": 8,
   "name": "Jana",
   "group": "new",
   "note": "Schön, dass es dich gibt 💛",
+  "city": "Cologne",
   "clip": "v8",
   "video": "0:24"
  },
@@ -271,6 +252,7 @@ const friends = [
   "group": "new",
   "title": "Happy Birthday 🥳",
   "note": "Alles Liebe für dich!💛",
+  "city": "Cologne",
   "clip": "v9",
   "video": "0:26"
  },
@@ -388,17 +370,6 @@ const friends = [
   ]
  },
  {
-  "n": 28,
-  "name": "Eva&eve&carla",
-  "group": "new",
-  "note": "Alles Gute für Dich liebe Nicola",
-  "isFor": "Eine ganz besondere Freundin",
-  "moment": "Tauchen in Thailand & Apres Ski an Silvester",
-  "wish": "Glück Gesundheit Liebe !",
-  "clip": "v28",
-  "video": "0:45"
- },
- {
   "n": 30,
   "name": "Alex and Lex",
   "group": "aus",
@@ -415,7 +386,7 @@ const friends = [
   "name": "Jo",
   "group": "new",
   "note": "Ein Gruss aus Christchurch",
-  "city": "Christchurch",
+  "city": "Munich · Christchurch",
   "clip": "v32",
   "video": "4:11"
  },
@@ -475,5 +446,40 @@ const friends = [
    "p40-4",
    "p40-5"
   ]
+ },
+ {
+  "n": 4,
+  "name": "Anja",
+  "group": "new",
+  "title": "The prettiest smile in Düsseldorf got a Gold Coast glow. ☀️",
+  "note": "She’s taken her digital pharmacist and field hockey player from the Senftöpfe to Down Under. now the rest of us manage without them! 🇦🇺☀️",
+  "isFor": "A lovely smile and a heart of gold. 💛 looking like being in the thirties",
+  "moment": "Es ist gar nicht so leicht, die richtigen Worte für einen so besonderen Menschen und eine so besondere Zeit zu finden.\n\nUnsere Verbindung ist vor allem durch die enge Freundschaft zwischen Ole und Dirk gewachsen. Was Dirk in den vergangenen Monaten für uns getan hat und wie er Ole durch diese schwierige Zeit begleitet hat, werde ich nie vergessen.\n\nSeine Verlässlichkeit, sein Dasein und die Selbstverständlichkeit, mit der er immer an Oles Seite war, haben Ole unglaublich viel Halt gegeben. Gerade in einer Zeit, in der vieles ungewiss war, war es für Ole von unschätzbarem Wert, einen guten Freund zu haben, mit dem er auch über seine Ängste und Gedanken sprechen konnte.\n\nDu hast diese Freundschaft mit so viel Herz und Präsenz gelebt. Und obwohl uns eine unfassbar große Entfernung getrennt hat, war immer spürbar, wie nah du uns mental warst und wie sehr du mit uns durch diese Zeit gegangen bist.\n\nDafür möchte ich dir von Herzen danken. Für deine Freundschaft, deine Kraft und dafür, dass du einfach da warst und bestimmt Dirk in dieser schweren Zeit eine Stütze warst",
+  "wish": "dass sie weiterhin eine richtig geile Zeit in Australien hat, die Jungs happy sind und im Feldhockey ordentlich abräumen. Dass sie diesen ganz besonderen Gold-Coast-Vibe genießt, tolle Leute kennenlernt und richtig gute Freundschaften entstehen. Und natürlich, dass ganz viele von uns aus Düsseldorf immer wieder bei ihr einfallen, damit wir gemeinsam eine gute Zeit haben, die Sonne genießen und ein bisschen australisches Lebensgefühl mit nach Hause nehmen können. \nMeine eigene Erfahrung mit der 50+ ist: Es ist eine megacoole Zeit! Die besten Voraussetzungen dafür habt ihr ja schon. Also macht das Beste draus, genießt das Leben und lasst die Sonne nicht nur an der Gold Coast, sondern auch in euren Herzen scheinen! ☀️💛",
+  "imgs": [
+   "p4-1",
+   "p4-2"
+  ]
+ },
+ {
+  "n": 7,
+  "name": "Björn",
+  "group": "new",
+  "note": "Wow - du schon auch im Club der 50er⁉️ Anlass genug - sollte es denn wahr sein - der Einladung zu folgen und dir eine ganz persönliche Botschaft zu schicken. Entfernung kann manchmal dennoch ganz „nah sein“ bedeuten!",
+  "isFor": "the Super-Woman aus der “Nachbarschaft“",
+  "moment": "28.10.2023 und einige Momente… z.B. Noa‘s und mein Besuch am Ossiacher See",
+  "wish": "simply THE BEST gepaart mit Leichtigkeit voller Gesundheit, Leidenschaft und Liebe‼️",
+  "audio": "a7",
+  "voice": "2:33"
+ },
+ {
+  "n": 5,
+  "name": "Uwe",
+  "group": "new",
+  "isFor": "Friend",
+  "moment": "Medical Treatments",
+  "wish": "Only the best😊🍀",
+  "audio": "a5",
+  "voice": "0:37"
  }
 ];
