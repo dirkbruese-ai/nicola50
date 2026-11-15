@@ -376,8 +376,7 @@ const chips = document.getElementById("chips"), list = document.getElementById("
 // Interne Labels: family, old (Münster-Mädels), close (Düsseldorfer Freundinnen), new (Freunde von zuhause), aus (Gold Coast)
 const groups = [["Family", "where it all began", f => f.group === "family"],
   ["The Münster Girls", "from Krefeld and Münster to Düsseldorf, Hamburg and Munich, still close as ever, and reunited at every year’s revival", f => f.group === "old"],
-  ["Friends for Life", "the Düsseldorf crew", f => f.group === "close"],
-  ["From home", "Düsseldorf & beyond", f => f.group === "new"],
+  ["From home", "Düsseldorf & beyond", f => f.group === "close" || f.group === "new"],
   ["G’day, Gold Coast", "your Australian crew", f => f.group === "aus"]];
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG]) => { const g = shown.filter(inG);
