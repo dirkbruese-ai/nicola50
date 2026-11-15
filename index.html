@@ -56,7 +56,11 @@ body { background: var(--page); color: var(--ink); font: 400 1rem/1.6 var(--f-bo
 .sticker b { display: block; font: 400 2.8rem/1 var(--f-head); }
 .sticker small { display: block; font: 700 .62rem/1.25 var(--f-body); letter-spacing: .08em; text-transform: uppercase; }
 .lines { display: grid; gap: 18px; align-content: start; }
-.line { border-top: 3px solid var(--ink); padding-top: 10px; }
+.line { border-top: 3px solid var(--ink); padding-top: 10px; display: block; color: inherit; text-decoration: none; }
+a.line:hover h3, a.line:focus-visible h3 { color: var(--red); }
+a.line h3::after { content: " →"; color: var(--red); }
+a.bubble { display: block; text-decoration: none; }
+.group-head { scroll-margin-top: 16px; }
 .kicker { font: 700 .72rem/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
 .line h3 { font: 400 clamp(1.4rem, 2.6vw, 1.95rem)/1.05 var(--f-head); text-transform: uppercase; margin: 6px 0 0; text-wrap: balance; }
 .line p { margin: 4px 0 0; color: var(--muted); font-size: .92rem; }
@@ -229,11 +233,11 @@ section { padding-block: 56px 8px; }
       <div class="hl">You’re the <mark>sunshine</mark> of our world</div>
     </div>
     <div class="lines">
-      <div class="line"><div class="kicker">Exclusive</div><h3>German Stars Send Their Love</h3><p>Love letters from Düsseldorf, Hamburg, Munich and more</p></div>
-      <div class="line"><div class="kicker">The Secret</div><h3>From the Kö to the Gold Coast</h3><p>16,000 kilometres away, and still so close</p></div>
-      <div class="line"><div class="kicker">Photo Special</div><h3>The Best Moments</h3><p>Xmas, Carnival, Après-Ski and more</p></div>
-      <div class="line"><div class="kicker">G’day from Down Under</div><h3>New Friends from the Gold Coast</h3><p>Burleigh, Broadbeach and the beach club crowd</p></div>
-      <div class="bubble">NEW: With a podcast to listen to! Voices from home</div>
+      <a class="line" href="#g-old"><div class="kicker">Exclusive</div><h3>The Münster Girls Tell All</h3><p>From Krefeld school days to the yearly revival</p></a>
+      <a class="line" href="#g-home"><div class="kicker">Home Sweet Home</div><h3>Düsseldorf Misses You!</h3><p>Love letters from the Rhine, Oberkassel and beyond</p></a>
+      <a class="line" href="#g-aus"><div class="kicker">G’day from Down Under</div><h3>The Gold Coast Crew Spills the Tea</h3><p>Padel, hockey and the beach club crowd</p></a>
+      <a class="line" href="#g-family"><div class="kicker">Family Affair</div><h3>Viersen Sings for You</h3><p>A serenade straight from the family</p></a>
+      <a class="bubble" href="#podcast">NEW: Watch &amp; listen! All the videos and voice messages in one place</a>
       <div class="cover-actions">
         <button class="btn" id="start-show" type="button">Start slideshow</button>
         <a class="btn ghost" href="#stars">Read the messages</a>
@@ -374,13 +378,13 @@ const voice = f => `<div class="voice"><button class="play" type="button" aria-p
 const kinds = ["All", "Photos", "Videos", "Voice messages"];
 const chips = document.getElementById("chips"), list = document.getElementById("star-list");
 // Interne Labels: family, old (Münster-Mädels), close (Düsseldorfer Freundinnen), new (Freunde von zuhause), aus (Gold Coast)
-const groups = [["Family", "where it all began", f => f.group === "family"],
-  ["The Münster Girls", "from Krefeld and Münster to Düsseldorf, Hamburg and Munich, still close as ever, and reunited at every year’s revival", f => f.group === "old"],
-  ["From home", "Düsseldorf & beyond", f => f.group === "close" || f.group === "new"],
-  ["G’day, Gold Coast", "your Australian crew", f => f.group === "aus"]];
+const groups = [["Family", "where it all began", f => f.group === "family", "g-family"],
+  ["The Münster Girls", "from Krefeld and Münster to Düsseldorf, Hamburg and Munich, still close as ever, and reunited at every year’s revival", f => f.group === "old", "g-old"],
+  ["From home", "Düsseldorf & beyond", f => f.group === "close" || f.group === "new", "g-home"],
+  ["G’day, Gold Coast", "your Australian crew", f => f.group === "aus", "g-aus"]];
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
-  list.innerHTML = groups.map(([h, sub, inG]) => { const g = shown.filter(inG);
-    return g.length ? `<div class="group-head"><h3>${h}</h3><span>${sub}</span></div>` + g.map(card).join("") : ""; }).join("");
+  list.innerHTML = groups.map(([h, sub, inG, id]) => { const g = shown.filter(inG);
+    return g.length ? `<div class="group-head" id="${id}"><h3>${h}</h3><span>${sub}</span></div>` + g.map(card).join("") : ""; }).join("");
   chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.k === k)); };
 chips.innerHTML = kinds.map(k => `<button class="chip" type="button" data-k="${k}">${k}</button>`).join("");
 chips.addEventListener("click", e => { const c = e.target.closest(".chip"); if (c) render(c.dataset.k); });

@@ -49,31 +49,6 @@ const friends = [
   ]
  },
  {
-  "n": 18,
-  "name": "Susi & Corinna",
-  "group": "old",
-  "note": "Liebe Nici! \nWe miss u! Happy Birthday zum Geburtstag! Auf weitere glorreiche 50 Jahre! \nxoxo Susi &amp; Corinna",
-  "isFor": "Eine Sportskanone, mit der man Pferde stehlen kann",
-  "wish": "Nur das Beste für die nächsten 50 Jahre! Gesundheit, Liebe und ganz viel Glück!",
-  "audio": "a18",
-  "voice": "0:50"
- },
- {
-  "n": 20,
-  "name": "Susi & Corinna",
-  "group": "old",
-  "note": "Venedig, Salzburg, Berge… mit Dir ist es immer schön!",
-  "isFor": "eine tolle Freundin",
-  "imgs": [
-   "p20-1",
-   "p20-2",
-   "p20-3",
-   "p20-4",
-   "p20-5",
-   "p20-6"
-  ]
- },
- {
   "n": 2,
   "name": "Sonja & Christian",
   "group": "old",
@@ -134,6 +109,31 @@ const friends = [
    "p31-4",
    "p31-5",
    "p31-6"
+  ]
+ },
+ {
+  "n": 18,
+  "name": "Susi & Corinna",
+  "group": "close",
+  "note": "Liebe Nici! \nWe miss u! Happy Birthday zum Geburtstag! Auf weitere glorreiche 50 Jahre! \nxoxo Susi &amp; Corinna",
+  "isFor": "Eine Sportskanone, mit der man Pferde stehlen kann",
+  "wish": "Nur das Beste für die nächsten 50 Jahre! Gesundheit, Liebe und ganz viel Glück!",
+  "audio": "a18",
+  "voice": "0:50"
+ },
+ {
+  "n": 20,
+  "name": "Susi & Corinna",
+  "group": "close",
+  "note": "Venedig, Salzburg, Berge… mit Dir ist es immer schön!",
+  "isFor": "eine tolle Freundin",
+  "imgs": [
+   "p20-1",
+   "p20-2",
+   "p20-3",
+   "p20-4",
+   "p20-5",
+   "p20-6"
   ]
  },
  {
