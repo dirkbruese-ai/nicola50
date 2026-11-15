@@ -4,9 +4,9 @@ const POEM = {
   by: "Written from all of your messages",
   stanzas: [
 `In Krefeld, nineteen seventy-six,
-a baby came with magic tricks:
-two eyes that never quite agree,
-one laugh that sets the whole room free.`,
+two teachers got a lucky mix:
+a girl whose eyes were not a pair,
+and a laugh that filled the air.`,
 `Ask anyone who knows her well,
 they all have the same tale to tell:
 she's first to hug and last to leave,
