@@ -179,14 +179,19 @@ section { padding-block: 56px 8px; }
 .vwall figcaption small { display: block; font: 600 .72rem/1.3 var(--f-body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .voice audio, .episodes audio { display: none; }
 
-/* Begrüßung für Nicola (?for=nicola) */
-.welcome { position: fixed; inset: 0; z-index: 30; display: grid; place-items: end center; padding-bottom: max(48px, env(safe-area-inset-bottom, 0px)) !important; text-align: center; color: #fff; padding: 24px 16px;
-  background: linear-gradient(transparent 35%, rgba(20,17,20,.85) 75%), url('img/cover.jpg') center / cover no-repeat; }
-.welcome > div { display: grid; gap: 18px; justify-items: center; max-width: 32rem; }
-.welcome .masthead { color: #fff; margin: 0; }
-.welcome p { font: italic 500 clamp(1.3rem, 4.5vw, 1.8rem)/1.3 var(--f-mast); margin: 0; }
-.welcome .btn { font-size: 1.1rem; padding: 16px 28px; }
-.welcome small { opacity: .8; }
+/* Startseite: NICOLA 50 + Play, dann Ständchen und Magazin */
+.welcome { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 24px 16px; text-align: center; background: var(--red); color: #fff; transition: opacity .7s, transform .7s; }
+.welcome.out { opacity: 0; transform: scale(1.04); pointer-events: none; }
+.welcome > div { display: grid; justify-items: center; gap: 0; }
+.welcome .kick { font: 700 .78rem/1 var(--f-body); letter-spacing: .3em; text-transform: uppercase; color: var(--yellow); margin-bottom: 14px; }
+.welcome .masthead { color: #fff; margin: 0; font-size: clamp(5rem, 24vw, 15rem); }
+.welcome .fifty { font: 400 clamp(4.5rem, 20vw, 11rem)/.8 var(--f-head); color: var(--yellow); margin-top: -.08em; }
+.welcome .play { margin-top: clamp(28px, 6vh, 56px); width: 104px; height: 104px; border-radius: 50%; border: 0; background: #fff; color: var(--red); cursor: pointer; display: grid; place-items: center; box-shadow: 0 10px 34px rgba(0,0,0,.25); animation: pulse 2.2s ease-in-out infinite; }
+.welcome .play svg { width: 40px; height: 40px; margin-left: 6px; }
+.welcome .play:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
+.welcome small { margin-top: 16px; font: 700 .78rem/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@media (prefers-reduced-motion: reduce) { .welcome .play { animation: none; } .welcome { transition: none; } }
 .now-playing { position: fixed; z-index: 25; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); display: flex; gap: 12px; align-items: center;
   background: var(--ink); color: #fff; border-radius: 999px; padding: 8px 8px 8px 18px; font: 600 .85rem/1.2 var(--f-body); max-width: calc(100% - 32px); box-shadow: 0 6px 24px rgba(0,0,0,.25); }
 .now-playing button { border: 0; border-radius: 999px; background: var(--red); color: #fff; font: 700 .8rem/1 var(--f-body); padding: 10px 14px; cursor: pointer; }
@@ -368,12 +373,13 @@ section { padding-block: 56px 8px; }
   </div>
 </footer>
 
-<div class="welcome" id="welcome" hidden role="dialog" aria-label="Welcome, Nicola">
+<div class="welcome" id="welcome" role="dialog" aria-label="NICOLA 50">
   <div>
+    <span class="kick">Special Edition</span>
     <h1 class="masthead">NICOLA</h1>
-    <p>Happy 50th Birthday! Your friends from all over the world have made something for you.</p>
-    <button class="btn" id="welcome-start" type="button">▶ Start (sound on 🔊)</button>
-    <small>Turn your sound up, there’s a birthday serenade waiting.</small>
+    <div class="fifty">50</div>
+    <button class="play" id="welcome-start" type="button" aria-label="Play, sound on"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 4l15 8-15 8z"/></svg></button>
+    <small>Sound on 🔊</small>
   </div>
 </div>
 <div class="now-playing" id="now-playing" hidden><span>♪ A serenade from Eva, Eve &amp; Carla, DEHNS &amp; Catherine</span><button type="button" id="np-stop">Stop</button></div>
@@ -465,10 +471,11 @@ document.addEventListener("click", e => { const b = e.target.closest(".play"); i
   a.onended = () => { b.setAttribute("aria-pressed", "false"); b.textContent = "▶"; }; });
 document.addEventListener("play", e => { if (e.target.tagName === "VIDEO") document.querySelectorAll("video, audio").forEach(x => { if (x !== e.target) x.pause(); }); }, true);
 
-// Begrüßung: nicola50.com/?for=nicola zeigt erst den Start-Knopf, dann spielt das Ständchen (Autoplay mit Ton geht nur nach Tippen)
+// Startseite: NICOLA 50 mit Play-Knopf, nach Tippen läuft das Ständchen und das Magazin erscheint (Autoplay mit Ton geht nur nach Tippen)
 const welcome = document.getElementById("welcome"), serenade = document.getElementById("serenade"), np = document.getElementById("now-playing");
-if (new URLSearchParams(location.search).get("for") === "nicola") welcome.hidden = false;
-document.getElementById("welcome-start").onclick = () => { welcome.hidden = true; serenade.play(); np.hidden = false; };
+document.documentElement.style.overflow = "hidden";
+document.getElementById("welcome-start").onclick = () => { serenade.play().catch(() => {}); np.hidden = false;
+  welcome.classList.add("out"); document.documentElement.style.overflow = ""; scrollTo(0, 0); setTimeout(() => { welcome.hidden = true; }, 700); };
 document.getElementById("np-stop").onclick = () => { serenade.pause(); np.hidden = true; };
 serenade.onended = () => { np.hidden = true; };
 
