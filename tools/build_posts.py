@@ -9,8 +9,8 @@ GROUP = {12: "family", 13: "family",
          3: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 21: "aus", 23: "aus", 30: "aus",
          35: "aus", 36: "aus", 40: "aus"}
 # Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang, LAST ganz ans Ende
-ORDER = [37, 14, 15, 2, 22, 33, 31, 18, 20, 6, 29, 24, 26, 27, 28, 19]
-LAST = [4, 7, 5]
+ORDER = [37, 14, 15, 2, 22, 33, 31, 18, 20, 6, 28, 24, 27, 26, 29, 19, 25, 34, 8, 9]
+LAST = [4, 7, 5, 32]
 NAME = {2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",
         26: "Nicola (DEHNS)", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs"}

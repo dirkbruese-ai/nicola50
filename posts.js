@@ -149,16 +149,15 @@ const friends = [
   "video": "3:41"
  },
  {
-  "n": 29,
-  "name": "Nadja",
+  "n": 28,
+  "name": "Eva&eve&carla",
   "group": "close",
-  "note": "Happy happy Birthday",
-  "isFor": "… der warmherzigste Mensch den es gibt 🩷",
-  "moment": "… jeder einzelne unserer gemeinsamen Momente, egal wo auch immer auf der Erde!",
-  "wish": "…. von Herzen nur das Beste und unendliches Glück!\n\nLiebe Nicola, alles alles Liebe zu diesem ganz besonderen Geburtstag heute! \nBleib wie du bist, nämlich was ganz besonderes 😘 \nMiss you",
-  "city": "Düsseldorf",
-  "clip": "v29",
-  "video": "0:31"
+  "note": "Alles Gute für Dich liebe Nicola",
+  "isFor": "Eine ganz besondere Freundin",
+  "moment": "Tauchen in Thailand & Apres Ski an Silvester",
+  "wish": "Glück Gesundheit Liebe !",
+  "clip": "v28",
+  "video": "0:45"
  },
  {
   "n": 24,
@@ -170,6 +169,16 @@ const friends = [
   "city": "Oberkassel",
   "clip": "v24",
   "video": "0:34"
+ },
+ {
+  "n": 27,
+  "name": "DEHNS",
+  "group": "close",
+  "title": "From OBK to DOWN UNDER part 2",
+  "note": "Happy Birthday!",
+  "city": "Oberkassel",
+  "clip": "v27",
+  "video": "0:38"
  },
  {
   "n": 26,
@@ -190,25 +199,16 @@ const friends = [
   ]
  },
  {
-  "n": 27,
-  "name": "DEHNS",
+  "n": 29,
+  "name": "Nadja",
   "group": "close",
-  "title": "From OBK to DOWN UNDER part 2",
-  "note": "Happy Birthday!",
-  "city": "Oberkassel",
-  "clip": "v27",
-  "video": "0:38"
- },
- {
-  "n": 28,
-  "name": "Eva&eve&carla",
-  "group": "close",
-  "note": "Alles Gute für Dich liebe Nicola",
-  "isFor": "Eine ganz besondere Freundin",
-  "moment": "Tauchen in Thailand & Apres Ski an Silvester",
-  "wish": "Glück Gesundheit Liebe !",
-  "clip": "v28",
-  "video": "0:45"
+  "note": "Happy happy Birthday",
+  "isFor": "… der warmherzigste Mensch den es gibt 🩷",
+  "moment": "… jeder einzelne unserer gemeinsamen Momente, egal wo auch immer auf der Erde!",
+  "wish": "…. von Herzen nur das Beste und unendliches Glück!\n\nLiebe Nicola, alles alles Liebe zu diesem ganz besonderen Geburtstag heute! \nBleib wie du bist, nämlich was ganz besonderes 😘 \nMiss you",
+  "city": "Düsseldorf",
+  "clip": "v29",
+  "video": "0:31"
  },
  {
   "n": 19,
@@ -224,18 +224,24 @@ const friends = [
   ]
  },
  {
-  "n": 3,
-  "name": "Vicky Stirling",
-  "group": "aus",
-  "title": "From grit to glamour, you have it covered!",
-  "note": "Happy Birthday 🎂 to an inspirational women! Your generosity, warmth and approach to life make you sparkle wherever you go ❤️.",
-  "isFor": "Such a genuine person and such a great listenner (she lets me talk too much) 😅.",
-  "moment": "Is anytime I spend with her, which is not often enough!",
-  "wish": "The happiest birthday and hope she knows how special she is xxx.",
+  "n": 25,
+  "name": "Tina und Andreas",
+  "group": "new",
+  "note": "Liebe Nici,\nSchon 50? Das kann doch gar nicht sein! Du bist neugierig aufs Leben, sehr abenteuerlustig und voller Ideen.\nDu hörst aufmerksam zu, interessierst Dich für andere und hast immer ein offenes Ohr. Wir vermissen Dich wirklich sehr im\nRheinland! Mit Deiner herzlichen, unkomplizierten Art und Deiner Lust auf Neues bist du ein toller Mensch, den man gerne um sich hat. Und du bist die beste Organisatorin wenn es darum geht, die Münster Mädels zu vereinen! Ohne Dich schaffen wir das gar nicht! \nBleib genauso, wie du bist, auch die nächsten 50 Jahre: neugierig, mutig, empathisch und voller Ideen.\nSehr gerne stoßen wir mit Dir an- wenn du wieder im Lande bist und dann freuen wir uns wieder auf jede Menge Münster Mädels Aktivitäten!",
+  "isFor": "Eine visionäre Macherin und beste Zuhörerin",
+  "moment": "Münster Mädels Treffen in Düsseldorf",
+  "wish": "eine phantastische Zeit an der Gold Coast mit Deinen Lieben",
   "imgs": [
-   "p3-1",
-   "p3-2"
+   "p25-1"
   ]
+ },
+ {
+  "n": 34,
+  "name": "Anna-Maria",
+  "group": "new",
+  "note": "Alles Liebe zum Geburtstag",
+  "wish": "Liebe Nicola,\n\nzu deinem Geburtstag wünsche ich dir von Herzen alles Liebe und Gute, ganz viel Gesundheit, Glück und viele schöne Momente im neuen Lebensjahr. Lass dich heute feiern und genieße deinen Ehrentag. \nWeiterhin eine tolle Zeit in Australien. \nViele Grüße aus Düsseldorf \nAnna-Maria",
+  "city": "Düsseldorf"
  },
  {
   "n": 8,
@@ -255,6 +261,20 @@ const friends = [
   "city": "Cologne",
   "clip": "v9",
   "video": "0:26"
+ },
+ {
+  "n": 3,
+  "name": "Vicky Stirling",
+  "group": "aus",
+  "title": "From grit to glamour, you have it covered!",
+  "note": "Happy Birthday 🎂 to an inspirational women! Your generosity, warmth and approach to life make you sparkle wherever you go ❤️.",
+  "isFor": "Such a genuine person and such a great listenner (she lets me talk too much) 😅.",
+  "moment": "Is anytime I spend with her, which is not often enough!",
+  "wish": "The happiest birthday and hope she knows how special she is xxx.",
+  "imgs": [
+   "p3-1",
+   "p3-2"
+  ]
  },
  {
   "n": 10,
@@ -358,18 +378,6 @@ const friends = [
   ]
  },
  {
-  "n": 25,
-  "name": "Tina und Andreas",
-  "group": "new",
-  "note": "Liebe Nici,\nSchon 50? Das kann doch gar nicht sein! Du bist neugierig aufs Leben, sehr abenteuerlustig und voller Ideen.\nDu hörst aufmerksam zu, interessierst Dich für andere und hast immer ein offenes Ohr. Wir vermissen Dich wirklich sehr im\nRheinland! Mit Deiner herzlichen, unkomplizierten Art und Deiner Lust auf Neues bist du ein toller Mensch, den man gerne um sich hat. Und du bist die beste Organisatorin wenn es darum geht, die Münster Mädels zu vereinen! Ohne Dich schaffen wir das gar nicht! \nBleib genauso, wie du bist, auch die nächsten 50 Jahre: neugierig, mutig, empathisch und voller Ideen.\nSehr gerne stoßen wir mit Dir an- wenn du wieder im Lande bist und dann freuen wir uns wieder auf jede Menge Münster Mädels Aktivitäten!",
-  "isFor": "Eine visionäre Macherin und beste Zuhörerin",
-  "moment": "Münster Mädels Treffen in Düsseldorf",
-  "wish": "eine phantastische Zeit an der Gold Coast mit Deinen Lieben",
-  "imgs": [
-   "p25-1"
-  ]
- },
- {
   "n": 30,
   "name": "Alex and Lex",
   "group": "aus",
@@ -380,23 +388,6 @@ const friends = [
   "imgs": [
    "p30-1"
   ]
- },
- {
-  "n": 32,
-  "name": "Jo",
-  "group": "new",
-  "note": "Ein Gruss aus Christchurch",
-  "city": "Munich · Christchurch",
-  "clip": "v32",
-  "video": "4:11"
- },
- {
-  "n": 34,
-  "name": "Anna-Maria",
-  "group": "new",
-  "note": "Alles Liebe zum Geburtstag",
-  "wish": "Liebe Nicola,\n\nzu deinem Geburtstag wünsche ich dir von Herzen alles Liebe und Gute, ganz viel Gesundheit, Glück und viele schöne Momente im neuen Lebensjahr. Lass dich heute feiern und genieße deinen Ehrentag. \nWeiterhin eine tolle Zeit in Australien. \nViele Grüße aus Düsseldorf \nAnna-Maria",
-  "city": "Düsseldorf"
  },
  {
   "n": 35,
@@ -481,5 +472,14 @@ const friends = [
   "wish": "Only the best😊🍀",
   "audio": "a5",
   "voice": "0:37"
+ },
+ {
+  "n": 32,
+  "name": "Jo",
+  "group": "new",
+  "note": "Ein Gruss aus Christchurch",
+  "city": "Munich · Christchurch",
+  "clip": "v32",
+  "video": "4:11"
  }
 ];
