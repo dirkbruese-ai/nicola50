@@ -144,6 +144,30 @@ section { padding-block: 56px 8px; }
 .ep-title { font-weight: 700; }
 .ep-who { font-size: .88rem; color: var(--muted); }
 
+/* Who is Nici / Best Moments */
+.quotes { columns: 3 260px; column-gap: 28px; }
+.quotes figure { break-inside: avoid; margin: 0 0 22px; }
+.quotes blockquote { margin: 0; font: 400 1.35rem/1.12 var(--f-head); text-transform: uppercase; text-wrap: balance; }
+.quotes blockquote::before { content: "“"; color: var(--red); }
+.quotes blockquote::after { content: "”"; color: var(--red); }
+.quotes figcaption { margin-top: 6px; font: 700 1.35rem/1 var(--f-hand); color: var(--blue); }
+.quotes.moments blockquote { font: 600 1.45rem/1.25 var(--f-hand); text-transform: none; color: var(--ink); background: var(--paper); padding: 12px 14px; border-left: 3px solid var(--yellow); }
+.quotes.moments blockquote::before, .quotes.moments blockquote::after { content: none; }
+.quotes.moments figcaption { font: 600 .72rem/1.2 var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+.lead { font: italic 500 1.35rem/1.4 var(--f-mast); margin: 0 0 24px; max-width: 46rem; }
+/* Gedicht */
+.poem { background: var(--paper); padding: clamp(20px, 5vw, 48px); border-top: 6px solid var(--red); }
+.poem h3 { font: italic 500 clamp(1.8rem, 5vw, 2.8rem)/1 var(--f-mast); margin: 0 0 18px; }
+.poem p { font: 600 clamp(1.3rem, 3.6vw, 1.7rem)/1.3 var(--f-hand); margin: 0 0 18px; white-space: pre-line; }
+.poem small { color: var(--muted); }
+/* Video-Wand */
+.vwall { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-bottom: 40px; }
+.vwall figure { margin: 0; min-width: 0; }
+.vwall video { width: 100%; aspect-ratio: 9/12; object-fit: cover; background: #000; display: block; }
+.vwall figcaption { margin-top: 6px; font: 700 1.5rem/1 var(--f-hand); color: var(--blue); }
+.vwall figcaption small { display: block; font: 600 .72rem/1.3 var(--f-body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.voice audio, .episodes audio { display: none; }
+
 /* Impressum */
 .imprint { margin-top: 64px; background: var(--red); color: #fff; }
 .imprint .wrap { padding-block: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; }
@@ -175,7 +199,7 @@ section { padding-block: 56px 8px; }
 </head>
 <body>
 
-<div class="draft"><div class="wrap"><strong>Draft 3</strong> · People magazine with airmail · all names and texts are examples</div></div>
+<div class="draft"><div class="wrap"><strong>Test version</strong> · with the real Padlet messages as of November 15</div></div>
 
 <header class="wrap cover">
   <div class="strip"><span>No. 50 · November 22, 2026</span><span>Special Edition</span><span>Düsseldorf ✈ Gold Coast</span></div>
@@ -217,6 +241,17 @@ section { padding-block: 56px 8px; }
     <div class="stars" id="star-list"></div>
   </section>
 
+  <section id="who" aria-labelledby="h-who">
+    <div class="sec-head"><h2 id="h-who">Who Is Nici? <em>in your own words</em></h2><span class="tag">Cover Story</span></div>
+    <p class="lead">We asked everyone to finish one sentence: “Nici is for me …”. Here is what they said.</p>
+    <div class="quotes" id="who-list"></div>
+  </section>
+
+  <section id="moments" aria-labelledby="h-moments">
+    <div class="sec-head"><h2 id="h-moments">Best Moments <em>with her</em></h2><span class="tag">Memories</span></div>
+    <div class="quotes moments" id="moment-list"></div>
+  </section>
+
   <section id="fotos" aria-labelledby="h-fotos">
     <div class="sec-head"><h2 id="h-fotos">The Best Moments</h2><span class="tag">Photo Special</span></div>
     <div class="spread">
@@ -228,10 +263,16 @@ section { padding-block: 56px 8px; }
     </div>
   </section>
 
+  <section id="poem" aria-labelledby="h-poem">
+    <div class="sec-head"><h2 id="h-poem">A Poem for Nici</h2><span class="tag">Draft</span></div>
+    <div class="poem" id="poem-box"></div>
+  </section>
+
   <section id="podcast" aria-labelledby="h-podcast">
-    <div class="sec-head"><h2 id="h-podcast">The Podcast</h2><span class="tag">Listen in</span></div>
+    <div class="sec-head"><h2 id="h-podcast">Happy Birthday on Air <em>videos &amp; voices</em></h2><span class="tag">Watch &amp; listen</span></div>
+    <div class="vwall" id="vwall"></div>
     <div class="pod">
-      <div class="pod-intro"><p>Headphones on: voices from home, recorded in kitchens, on balconies and by the Rhine.</p></div>
+      <div class="pod-intro"><p>Headphones on: voice messages from home, recorded in kitchens, on balconies and by the Rhine.</p></div>
       <ol class="episodes" id="episodes"></ol>
     </div>
   </section>
@@ -252,50 +293,40 @@ section { padding-block: 56px 8px; }
   <div class="nav"><button class="btn ghost" id="prev" type="button">Back</button><button class="btn" id="next" type="button">Next</button></div>
 </div>
 
+<script src="posts.js"></script>
+<script src="poem.js"></script>
 <script>
 const DUS = [51.2277, 6.7735], GOLD = [-28.0167, 153.4000];
-const friends = [
-  { name: "Sonja & Christian", city: "Gerresheim", group: "old", dus: true, padlet: true, title: "Happy Birthday aus Gerresheim",
-    imgs: ["sc1", "sc2", "sc3", "sc4", "sc5"], note: "Wir freuen uns mit Dir so viel tolle Erinnerungen zu teilen und vor allem freuen wir uns auf die nächsten 50 Jahre mit Dir. Eine ganz dicke Umarmung von Sonja und Christian" },
-  { name: "Anna", city: "Oberkassel", group: "old", dus: true, photos: 5, note: "Our first Altbier night in the Old Town: from then on we knew we’d be friends for life!", voice: "0:42" },
-  { name: "Markus & Steffi", city: "Pempelfort", group: "new", dus: true, photos: 3, video: "1:35", note: "Helau and happy birthday! We miss you every Carnival Monday." },
-  { name: "The Webers", city: "Benrath", group: "family", dus: true, photos: 2, letter: "Dear Nicola, our garden fence has been far too quiet since you moved away …" },
-  { name: "Claudia", city: "Bilk", group: "new", dus: true, photos: 4, voice: "1:10", note: "I miss our Sundays by the Rhine the most. Come home for a visit soon!" },
-  { name: "Petra & Uwe", city: "Kaiserswerth", group: "old", dus: true, photos: 6, note: "Thirty years of friendship, and now 16,000 kilometres between us. It doesn’t feel like a single one." },
-  { name: "Sabine", city: "Hamburg", group: "old", bff: true, photos: 7, voice: "1:24", note: "Best friends since school, and still the first one I call. Nobody laughs like you!" },
-  { name: "Katrin", city: "Munich", group: "old", bff: true, photos: 4, video: "1:12", note: "From the Wiesn to the Gold Coast: wherever you are, it’s a party. Love you!" },
-  { name: "Jens", city: "Cologne", group: "new", photos: 1, video: "0:58", note: "For once, a greeting from the other side of the Rhine!" },
-  { name: "Tom & Jess", city: "Burleigh Heads", group: "aus", gc: true, photos: 8, voice: "0:35", note: "See you at LaLuna! First round's on us." },
-  { name: "Mel", city: "Broadbeach", group: "aus", gc: true, photos: 2, note: "We’ve only known you for a year, but it feels like forever. Welcome to the Gold Coast family!" },
-  { name: "Sam & Kylie", city: "Palm Beach", group: "aus", gc: true, photos: 3, video: "0:47", note: "From the school gate to Sunday sundowners. Happy 50th, legend!" }
-];
 const fmt = n => n.toLocaleString("en-GB");
 const km = ([a,b],[c,d]) => { const r = Math.PI/180;
   const h = Math.sin((c-a)*r/2)**2 + Math.cos(a*r)*Math.cos(c*r)*Math.sin((d-b)*r/2)**2;
   return Math.round(2*6371*Math.asin(Math.sqrt(h))); };
-friends.forEach(f => { if (f.imgs) f.photos = f.imgs.length; if (f.clip) f.video = "▶"; f.kinds = ["Photos"]; if (f.video) f.kinds.push("Videos"); if (f.voice) f.kinds.push("Voice messages"); if (f.letter) f.kinds.push("Letters"); });
+friends.forEach(f => { f.photos = f.imgs ? f.imgs.length : 0; f.kinds = f.photos ? ["Photos"] : []; if (f.clip) f.kinds.push("Videos"); if (f.audio) f.kinds.push("Voice messages"); });
 
-const dusCount = friends.filter(f => f.dus).length;
+const people = new Set(friends.map(f => f.name)).size;
 document.getElementById("stats").innerHTML =
   `<div><b>${fmt(Math.round(km(DUS, GOLD) / 100) * 100)} km</b><span>as the crow flies</span></div>` +
-  `<div><b>${friends.length}</b><span>messages (example)</span></div>` +
-  `<div><b>${Math.round(dusCount / friends.length * 100)} %</b><span>from Düsseldorf</span></div>` +
-  `<div><b>${friends.filter(f => f.group === "aus").length}</b><span>friends from Australia</span></div>`;
+  `<div><b>${friends.length}</b><span>messages from ${people} senders</span></div>` +
+  `<div><b>${friends.reduce((a, f) => a + f.photos, 0)}</b><span>photos</span></div>` +
+  `<div><b>${friends.filter(f => f.clip || f.audio).length}</b><span>videos &amp; voice messages</span></div>`;
 
 const wave = () => Array.from({length: 36}, () => `<i style="height:${20 + Math.random()*80}%"></i>`).join("");
 const img = k => `img/posts/${k}.jpg`;
+const esc = t => String(t).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"})[c]);
+const media = k => `media/${k}`;
+const label = f => [f.photos ? `${f.photos} photo${f.photos > 1 ? "s" : ""}` : "", f.clip ? "Video" : "", f.audio ? "Voice" : ""].filter(Boolean).join(" · ");
 const card = f => `<article class="star">
-  <div class="pic${f.imgs ? " has-img" : ""}"${f.imgs ? ` style="background-image:url('${img(f.imgs[0])}')"` : ""}><span class="count">${f.photos} photo${f.photos > 1 ? "s" : ""}${f.clip ? " · Video" : f.video ? " · Video " + f.video : ""}</span>${f.imgs ? "" : `<span>Photo from ${f.name}</span>`}</div>
-  ${f.imgs && f.imgs.length > 1 ? `<div class="thumbs">${f.imgs.map((k, j) => `<button type="button" aria-label="Show photo ${j + 1} from ${f.name}" aria-pressed="${j === 0}" data-src="${img(k)}" style="background-image:url('${img(k)}')"></button>`).join("")}</div>` : ""}
-  ${f.clip ? `<video class="clip" src="img/posts/${f.clip}.mp4" poster="img/posts/${f.clip}.jpg" controls playsinline preload="none"></video>` : ""}
-  <div class="who"><span class="name">${f.name}</span>${f.city ? `<span class="postmark">${f.city}</span>` : ""}</div>
-  ${f.title ? `<h4 class="post-title">${f.title}</h4>` : ""}
-  ${f.note ? (f.note.length > 100 ? `<div class="letter">${f.note}</div>` : `<blockquote>${f.note}</blockquote>`) : ""}
-  ${f.isFor || f.moment || f.wish ? `<dl class="facts">${[["Nici is for me …", f.isFor], ["My special moment with her …", f.moment], ["I wish Nici …", f.wish]].filter(x => x[1]).map(([t, v]) => `<dt>${t}</dt><dd>${v}</dd>`).join("")}</dl>` : ""}
-  ${f.letter ? `<div class="letter">${f.letter}</div>` : ""}
-  ${f.voice ? `<div class="voice"><button class="play" type="button" aria-label="Voice message from ${f.name} (example)">▶</button><span class="wave" aria-hidden="true">${wave()}</span><small>${f.voice}</small></div>` : ""}
+  ${f.imgs ? `<div class="pic has-img" style="background-image:url('${img(f.imgs[0])}')"><span class="count">${label(f)}</span></div>` : ""}
+  ${f.imgs && f.imgs.length > 1 ? `<div class="thumbs">${f.imgs.map((k, j) => `<button type="button" aria-label="Show photo ${j + 1} from ${esc(f.name)}" aria-pressed="${j === 0}" data-src="${img(k)}" style="background-image:url('${img(k)}')"></button>`).join("")}</div>` : ""}
+  ${f.clip ? `<video class="clip" src="${media(f.clip)}.mp4" poster="${media(f.clip)}.jpg" controls playsinline preload="none"></video>` : ""}
+  <div class="who"><span class="name">${esc(f.name)}</span>${f.city ? `<span class="postmark">${esc(f.city)}</span>` : ""}</div>
+  ${f.title ? `<h4 class="post-title">${esc(f.title)}</h4>` : ""}
+  ${f.note ? (f.note.length > 100 ? `<div class="letter">${esc(f.note)}</div>` : `<blockquote>${esc(f.note)}</blockquote>`) : ""}
+  ${f.isFor || f.moment || f.wish ? `<dl class="facts">${[["Nici is for me …", f.isFor], ["My special moment with her …", f.moment], ["I wish Nici …", f.wish]].filter(x => x[1]).map(([t, v]) => `<dt>${t}</dt><dd>${esc(v)}</dd>`).join("")}</dl>` : ""}
+  ${f.audio ? voice(f) : ""}
 </article>`;
-const kinds = ["All", "Photos", "Videos", "Voice messages", "Letters"];
+const voice = f => `<div class="voice"><button class="play" type="button" aria-pressed="false" aria-label="Play voice message from ${esc(f.name)}">▶</button><span class="wave" aria-hidden="true">${wave()}</span><small>${f.voice}</small><audio src="${media(f.audio)}.mp3" preload="none"></audio></div>`;
+const kinds = ["All", "Photos", "Videos", "Voice messages"];
 const chips = document.getElementById("chips"), list = document.getElementById("star-list");
 // Interne Labels: family, old (Münster-Mädels), new (Freunde von zuhause), aus (Gold Coast)
 const groups = [["Family", "where it all began", f => f.group === "family"],
@@ -313,19 +344,34 @@ list.addEventListener("click", e => { const t = e.target.closest(".thumbs button
   t.parentNode.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b === t)); });
 render("All");
 
-const eps = friends.filter(f => f.voice).map(f => [`Greetings from ${f.city}`, f.name, f.voice]);
+// Who is Nici / Best Moments
+const quote = (t, who) => `<figure><blockquote>${esc(t)}</blockquote><figcaption>${esc(who)}</figcaption></figure>`;
+document.getElementById("who-list").innerHTML = friends.filter(f => f.isFor).map(f => quote(f.isFor.replace(/^[.…\s]+/, ""), f.name)).join("");
+document.getElementById("moment-list").innerHTML = friends.filter(f => f.moment).map(f => quote(f.moment.replace(/^[.…\s]+/, ""), f.name)).join("");
+const pb = document.getElementById("poem-box");
+if (typeof POEM !== "undefined") pb.innerHTML = `<h3>${esc(POEM.title)}</h3>` + POEM.stanzas.map(v => `<p>${esc(v)}</p>`).join("") + `<small>${esc(POEM.by)}</small>`;
+else pb.closest("section").hidden = true;
+
+// Videos & Voice
+document.getElementById("vwall").innerHTML = friends.filter(f => f.clip).map(f => `<figure><video src="${media(f.clip)}.mp4" poster="${media(f.clip)}.jpg" controls playsinline preload="none"></video><figcaption>${esc(f.name)}<small>${esc(f.title || f.city || "")}${f.video ? " · " + f.video : ""}</small></figcaption></figure>`).join("");
 const epList = document.getElementById("episodes");
-epList.innerHTML = eps.map(([t, w, d]) => `<li><button class="play" type="button" aria-pressed="false" aria-label="Play ${t} (example)">▶</button><div><div class="ep-title">${t}</div><div class="ep-who">${w}</div></div><span class="dur">${d}</span></li>`).join("");
-epList.addEventListener("click", e => { const b = e.target.closest(".play"); if (!b) return;
-  const on = b.getAttribute("aria-pressed") !== "true";
-  epList.querySelectorAll(".play").forEach(x => { x.setAttribute("aria-pressed", "false"); x.textContent = "▶"; });
-  b.setAttribute("aria-pressed", on); b.textContent = on ? "❚❚" : "▶"; });
+epList.innerHTML = friends.filter(f => f.audio).map(f => `<li><button class="play" type="button" aria-pressed="false" aria-label="Play voice message from ${esc(f.name)}">▶</button><div><div class="ep-title">${esc(f.title || "Happy Birthday, Nici!")}</div><div class="ep-who">${esc(f.name)}</div></div><span class="dur">${f.voice}</span><audio src="${media(f.audio)}.mp3" preload="none"></audio></li>`).join("");
+// Ein Player für alle Sprachnachrichten: Start stoppt die anderen
+document.addEventListener("click", e => { const b = e.target.closest(".play"); if (!b || b.id) return;
+  const a = b.parentNode.querySelector("audio"); if (!a) return;
+  const on = a.paused;
+  document.querySelectorAll("audio").forEach(x => { if (x !== a) x.pause(); });
+  document.querySelectorAll(".play[aria-pressed]").forEach(x => { x.setAttribute("aria-pressed", "false"); x.textContent = "▶"; });
+  if (on) { a.play(); b.setAttribute("aria-pressed", "true"); b.textContent = "❚❚"; } else a.pause();
+  a.onended = () => { b.setAttribute("aria-pressed", "false"); b.textContent = "▶"; }; });
+document.addEventListener("play", e => { if (e.target.tagName === "VIDEO") document.querySelectorAll("video, audio").forEach(x => { if (x !== e.target) x.pause(); }); }, true);
 
 const show = document.getElementById("show"), slide = document.getElementById("slide");
 let i = 0, timer;
-const draw = () => { const f = friends[i];
-  slide.innerHTML = `<div class="k">${f.city ? "Greetings from " + f.city : "Greetings"}</div><div class="n">${f.name}</div><div class="q">${f.note || f.letter}</div>`; };
-const go = d => { i = (i + d + friends.length) % friends.length; draw(); };
+const slides = friends.filter(f => f.note || f.isFor);
+const draw = () => { const f = slides[i];
+  slide.innerHTML = `<div class="k">${f.city ? "Greetings from " + f.city : "Greetings"}</div><div class="n">${esc(f.name)}</div><div class="q">${esc(f.isFor || f.title || f.note).replace(/^[.…\s]+/, "")}</div>`; };
+const go = d => { i = (i + d + slides.length) % slides.length; draw(); };
 const auto = () => { clearInterval(timer); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => go(1), 7000); };
 const close = () => { show.hidden = true; clearInterval(timer); };
 document.getElementById("start-show").onclick = () => { i = 0; draw(); show.hidden = false; auto(); };
