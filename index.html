@@ -180,21 +180,21 @@ section { padding-block: 56px 8px; }
 .voice audio, .episodes audio { display: none; }
 
 /* Startseite: NICOLA 50 + Play, dann Ständchen und Magazin */
-.welcome { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 24px 16px; text-align: center; background: var(--red); color: #fff; transition: opacity .7s, transform .7s; }
+.welcome { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 24px 16px; text-align: center; background: #fff; color: var(--red); transition: opacity .7s, transform .7s; }
 .welcome.out { opacity: 0; transform: scale(1.04); pointer-events: none; }
 .welcome > div { display: grid; justify-items: center; gap: 0; }
-.welcome .kick { font: 700 .78rem/1 var(--f-body); letter-spacing: .3em; text-transform: uppercase; color: var(--yellow); margin-bottom: 14px; }
-.welcome .masthead { color: #fff; margin: 0; font-size: clamp(5rem, 24vw, 15rem); }
-.welcome .fifty { font: 400 clamp(4.5rem, 20vw, 11rem)/.8 var(--f-head); color: var(--yellow); margin-top: -.08em; }
-.welcome .play { margin-top: clamp(28px, 6vh, 56px); width: 104px; height: 104px; border-radius: 50%; border: 0; background: #fff; color: var(--red); cursor: pointer; display: grid; place-items: center; box-shadow: 0 10px 34px rgba(0,0,0,.25); animation: pulse 2.2s ease-in-out infinite; }
+.welcome .kick { font: 700 .78rem/1 var(--f-body); letter-spacing: .3em; text-transform: uppercase; color: var(--ink); margin-bottom: 14px; }
+.welcome .masthead { color: var(--red); margin: 0; font-size: clamp(5rem, 24vw, 15rem); }
+.welcome .fifty { font: 400 clamp(4.5rem, 20vw, 11rem)/.8 var(--f-head); color: var(--ink); margin-top: -.08em; }
+.welcome .play { margin-top: clamp(28px, 6vh, 56px); width: 104px; height: 104px; border-radius: 50%; border: 0; background: var(--red); color: #fff; cursor: pointer; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(200,16,46,.3); animation: pulse 2.2s ease-in-out infinite; }
 .welcome .play svg { width: 40px; height: 40px; margin-left: 6px; }
-.welcome .play:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
-.welcome small { margin-top: 16px; font: 700 .78rem/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; }
+.welcome .play:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.welcome small { margin-top: 16px; font: 700 .78rem/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
 @media (prefers-reduced-motion: reduce) { .welcome .play { animation: none; } .welcome { transition: none; } }
-.now-playing { position: fixed; z-index: 25; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); display: flex; gap: 12px; align-items: center;
-  background: var(--ink); color: #fff; border-radius: 999px; padding: 8px 8px 8px 18px; font: 600 .85rem/1.2 var(--f-body); max-width: calc(100% - 32px); box-shadow: 0 6px 24px rgba(0,0,0,.25); }
-.now-playing button { border: 0; border-radius: 999px; background: var(--red); color: #fff; font: 700 .8rem/1 var(--f-body); padding: 10px 14px; cursor: pointer; }
+.now-playing { position: fixed; z-index: 25; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); }
+.now-playing button { width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--red); color: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.25); padding: 0; }
+.now-playing svg { width: 16px; height: 16px; }
 
 /* Impressum */
 .imprint { margin-top: 64px; background: var(--red); color: #fff; }
@@ -382,7 +382,7 @@ section { padding-block: 56px 8px; }
     <small>Sound on 🔊</small>
   </div>
 </div>
-<div class="now-playing" id="now-playing" hidden><span>♪ A serenade from Eva, Eve &amp; Carla, DEHNS &amp; Catherine</span><button type="button" id="np-stop">Stop</button></div>
+<div class="now-playing" id="now-playing" hidden><button type="button" id="np-stop" aria-label="Stop music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/></svg></button></div>
 <audio id="serenade" src="media/staendchen.mp3" preload="auto"></audio>
 
 <div class="show" id="show" hidden role="dialog" aria-label="Slideshow">
