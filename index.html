@@ -299,7 +299,11 @@ const card = f => `<article class="star">
 </article>`;
 const kinds = ["All", "Photos", "Videos", "Voice messages", "Letters"];
 const chips = document.getElementById("chips"), list = document.getElementById("star-list");
-const groups = [["Family", "the ones who were there from day one", f => f.group === "family"], ["Old friends", "decades of laughter", f => f.group === "old"], ["New friends", "and already like old ones", f => f.group === "new"], ["Australia", "your Gold Coast crew", f => f.group === "aus"]];
+// Interne Labels: family, old (Münster-Mädels), new (Freunde von zuhause), aus (Gold Coast)
+const groups = [["Family", "where it all began", f => f.group === "family"],
+  ["The Münster Girls", "from Münster to all of Germany and the world, still close as ever, and reunited at every year’s revival", f => f.group === "old"],
+  ["From home", "Düsseldorf & beyond", f => f.group === "new"],
+  ["G’day, Gold Coast", "your Australian crew", f => f.group === "aus"]];
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG]) => { const g = shown.filter(inG);
     return g.length ? `<div class="group-head"><h3>${h}</h3><span>${sub}</span></div>` + g.map(card).join("") : ""; }).join("");
