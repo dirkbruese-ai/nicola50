@@ -182,14 +182,14 @@ section { padding-block: 56px 8px; }
 /* Startseite: NICOLA 50 + Play, dann Ständchen und Magazin */
 .welcome { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 24px 16px; text-align: center; background: #fff; color: var(--red); transition: opacity .7s, transform .7s; }
 .welcome.out { opacity: 0; transform: scale(1.04); pointer-events: none; }
-.welcome > div { display: grid; justify-items: center; gap: 0; }
-.welcome .kick { font: 700 .78rem/1 var(--f-body); letter-spacing: .3em; text-transform: uppercase; color: var(--ink); margin-bottom: 14px; }
-.welcome .masthead { color: var(--red); margin: 0; font-size: clamp(5rem, 24vw, 15rem); }
+.welcome > div { display: grid; justify-items: center; gap: 0; width: 100%; }
+.welcome .kick { font: 700 .78rem/1 var(--f-body); letter-spacing: .3em; text-transform: uppercase; color: var(--ink); margin-bottom: 14px; padding-left: .3em; }
+.welcome .masthead { color: var(--red); margin: 0; font-size: min(18vw, 15rem); white-space: nowrap; text-align: center; }
 .welcome .fifty { font: 400 clamp(4.5rem, 20vw, 11rem)/.8 var(--f-head); color: var(--ink); margin-top: -.08em; }
 .welcome .play { margin-top: clamp(28px, 6vh, 56px); width: 104px; height: 104px; border-radius: 50%; border: 0; background: var(--red); color: #fff; cursor: pointer; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(200,16,46,.3); animation: pulse 2.2s ease-in-out infinite; }
 .welcome .play svg { width: 40px; height: 40px; margin-left: 6px; }
 .welcome .play:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
-.welcome small { margin-top: 16px; font: 700 .78rem/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
+.welcome small { margin-top: 16px; padding-left: .2em; font: 700 .78rem/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
 @media (prefers-reduced-motion: reduce) { .welcome .play { animation: none; } .welcome { transition: none; } }
 .now-playing { position: fixed; z-index: 25; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); }
