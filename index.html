@@ -207,6 +207,29 @@ section { padding-block: 56px 8px; }
 .show .nav { position: absolute; bottom: max(24px, env(safe-area-inset-bottom, 0px)); left: 0; right: 0; display: flex; justify-content: center; gap: 12px; }
 .show .btn.ghost { color: #fff; border-color: #fff; }
 
+/* Fotoalbum: Kapitel als Collage in Bildzeilen, Tippen öffnet die große Ansicht */
+.chapters { display: grid; gap: 44px; margin-top: 44px; }
+.chap-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; border-top: 3px solid var(--ink); padding-top: 10px; margin-bottom: 14px; }
+.chap-head h3 { font: 400 clamp(1.6rem, 4.4vw, 2.6rem)/1 var(--f-head); text-transform: uppercase; margin: 0; }
+.chap-head p { margin: 0; font: italic 500 1.05rem/1.2 var(--f-mast); color: var(--red); }
+.chap-head small { margin-left: auto; font: 700 .72rem/1 var(--f-body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.collage { display: flex; flex-wrap: wrap; gap: 6px; }
+.collage::after { content: ""; flex-grow: 999; }
+.tile { --h: 190px; flex: var(--r) 1 calc(var(--r) * var(--h)); aspect-ratio: var(--r); max-height: calc(var(--h) * 1.6); padding: 0; border: 0; background: var(--paper); cursor: zoom-in; overflow: hidden; min-width: 0; }
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+.tile:hover img { transform: scale(1.04); }
+.tile:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.more { margin-top: 12px; }
+.lb { position: fixed; inset: 0; z-index: 25; background: #141114; display: grid; grid-template-rows: auto 1fr auto; padding: max(14px, env(safe-area-inset-top, 0px)) max(14px, env(safe-area-inset-right, 0px)) max(18px, env(safe-area-inset-bottom, 0px)) max(14px, env(safe-area-inset-left, 0px)); color: #fff; }
+.lb[hidden] { display: none; }
+.lb-top { display: flex; align-items: center; gap: 12px; }
+.lb-top span { font: 700 .75rem/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); }
+.lb-top .btn { margin-left: auto; }
+.lb img { width: 100%; height: 100%; object-fit: contain; min-height: 0; }
+.lb .nav2 { display: flex; justify-content: center; gap: 12px; }
+.lb .btn.ghost { color: #fff; border-color: #fff; }
+@media (max-width: 760px) { .tile { --h: 120px; } .chapters { gap: 34px; } }
+
 @media (max-width: 760px) {
   .cover-grid, .pod { grid-template-columns: 1fr; }
   .spread { grid-template-columns: repeat(2, 1fr); }
@@ -299,6 +322,7 @@ section { padding-block: 56px 8px; }
       <div class="ph has-img" style="background-image:url('img/m4.jpg');background-position:60% 30%"><small>from Dirk</small><span>Cheers to Christmas</span></div>
       <div class="ph has-img" style="background-image:url('img/m5.jpg');background-position:50% 25%"><small>from Dirk</small><span>Golden hour in the garden</span></div>
     </div>
+    <div class="chapters" id="chapters"></div>
   </section>
 
   <section id="poem" aria-labelledby="h-poem">
@@ -342,7 +366,14 @@ section { padding-block: 56px 8px; }
   <div class="nav"><button class="btn ghost" id="prev" type="button">Back</button><button class="btn" id="next" type="button">Next</button></div>
 </div>
 
+<div class="lb" id="lb" hidden role="dialog" aria-label="Photo">
+  <div class="lb-top"><span id="lb-cap"></span><button class="btn ghost" id="lb-close" type="button">Close</button></div>
+  <img id="lb-img" alt="">
+  <div class="nav2"><button class="btn ghost" id="lb-prev" type="button">Back</button><button class="btn" id="lb-next" type="button">Next</button></div>
+</div>
+
 <script src="posts.js"></script>
+<script src="album.js"></script>
 <script src="poem.js"></script>
 <script>
 const DUS = [51.2277, 6.7735], GOLD = [-28.0167, 153.4000];
@@ -436,6 +467,38 @@ document.getElementById("next").onclick = () => { go(1); auto(); };
 document.getElementById("prev").onclick = () => { go(-1); auto(); };
 document.addEventListener("keydown", e => { if (show.hidden) return;
   if (e.key === "Escape") close(); if (e.key === "ArrowRight") { go(1); auto(); } if (e.key === "ArrowLeft") { go(-1); auto(); } });
+
+// Fotoalbum: Kapitel aus Dirks Sortierung, erst 12 Fotos je Kapitel, der Rest auf Wunsch
+(() => {
+  if (typeof ALBUM === "undefined") return;
+  const CH = [["youme", "You & Me", "just the two of us"], ["youboys", "You & the Boys", "Moritz, Philip and their mum"],
+    ["boys", "Your Boys", "Moritz & Philip, growing up"], ["nici", "Just You", "Nici in her element"],
+    ["family", "Our Family", "the whole clan"], ["friends", "Friends", "the people who make every party"]];
+  const FIRST = 12, box = document.getElementById("chapters");
+  const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
+  let cur = [], at = 0, title = "";
+  const tile = p => `<button class="tile" type="button" data-n="${p.n}" style="--r:${p.r}"><img src="img/album/${p.n}s.jpg" alt="" loading="lazy" decoding="async"></button>`;
+  box.innerHTML = CH.map(([k, t, sub]) => { const ps = ALBUM.filter(p => p.c === k); if (!ps.length) return "";
+    return `<div class="chap" data-c="${k}"><div class="chap-head"><h3>${t}</h3><p>${sub}</p><small>${ps.length} photos</small></div>
+      <div class="collage">${ps.slice(0, FIRST).map(tile).join("")}</div>
+      ${ps.length > FIRST ? `<button class="btn ghost more" type="button">Show all ${ps.length}</button>` : ""}</div>`; }).join("");
+  const showAt = j => { at = (j + cur.length) % cur.length; lbImg.src = `img/album/${cur[at].n}.jpg`; lbCap.textContent = `${title} · ${at + 1} / ${cur.length}`;
+    const nx = cur[(at + 1) % cur.length]; if (nx) new Image().src = `img/album/${nx.n}.jpg`; };
+  box.addEventListener("click", e => { const ch = e.target.closest(".chap"); if (!ch) return;
+    const k = ch.dataset.c, ps = ALBUM.filter(p => p.c === k);
+    if (e.target.closest(".more")) { ch.querySelector(".collage").innerHTML = ps.map(tile).join(""); e.target.closest(".more").remove(); return; }
+    const t = e.target.closest(".tile"); if (!t) return;
+    cur = ps; title = CH.find(c => c[0] === k)[1]; showAt(ps.findIndex(p => p.n == t.dataset.n)); lb.hidden = false; document.getElementById("lb-close").focus(); });
+  const shut = () => { lb.hidden = true; lbImg.removeAttribute("src"); };
+  document.getElementById("lb-close").onclick = shut;
+  document.getElementById("lb-prev").onclick = () => showAt(at - 1);
+  document.getElementById("lb-next").onclick = () => showAt(at + 1);
+  document.addEventListener("keydown", e => { if (lb.hidden) return;
+    if (e.key === "Escape") shut(); if (e.key === "ArrowRight") showAt(at + 1); if (e.key === "ArrowLeft") showAt(at - 1); });
+  let x0 = null; lb.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) showAt(at + (dx < 0 ? 1 : -1)); });
+})();
 </script>
 </body>
 </html>
