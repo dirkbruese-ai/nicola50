@@ -4,12 +4,12 @@ import csv, json, os, sys
 
 # Gruppe pro Padlet-Beitragsnummer: family, old (Münster Girls), new (From home), aus (Gold Coast)
 GROUP = {12: "family", 13: "family",
-         37: "old", 14: "old", 15: "old", 31: "old", 18: "old", 20: "old", 2: "old", 22: "old", 33: "old",
-         6: "close", 29: "close", 24: "close", 26: "close", 27: "close", 28: "close", 19: "close",
+         37: "old", 14: "old", 15: "old", 18: "old", 20: "old", 2: "old", 22: "old", 33: "old",
+         31: "close", 6: "close", 29: "close", 24: "close", 26: "close", 27: "close", 28: "close", 19: "close",
          3: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 21: "aus", 23: "aus", 30: "aus",
          35: "aus", 36: "aus", 40: "aus"}
 # Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang, LAST ganz ans Ende
-ORDER = [37, 14, 15, 31, 18, 20, 2, 22, 33, 6, 29, 24, 26, 27, 28, 19]
+ORDER = [37, 14, 15, 18, 20, 2, 22, 33, 31, 6, 29, 24, 26, 27, 28, 19]
 LAST = [4, 7, 5]
 NAME = {2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",

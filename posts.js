@@ -49,25 +49,6 @@ const friends = [
   ]
  },
  {
-  "n": 31,
-  "name": "Claudi",
-  "group": "old",
-  "title": "Hey Nici, Du bes e Jeföhl",
-  "note": "Von ganzem Herzen alles Gute zum 50. Geburtstag. Genieß es, Dich heute hochleben und feiern zu lassen von den vielen Menschen, denen Du so viel bedeutest. Du bist der Inbegriff von rheinischer Lebensfreude, eine Menschenfängerin, echte Zuhörerin, weise Ratgeberin, mutige, attraktive, wissbegierige, fleissige Frau, coole, liebevolle Mutter, sportliches Energiebündel, verlässliche Freundin, neugierige Weltenbummlerin, wunderbare Trauzeugin, fürsorgliche Patentante….. Die Welt ist reicher, weil es Dich gibt und Deinen Spirit versprühst. Du gibst so viel, nimm heute mal. Und blicke stolz und dankbar auf das zurück, was in 50 Jahren Nici steckt. Klopf Dir selber auf die Schulter. Und schau in die Gesichter Deiner 3 Männer und Du wirst auch dort das Strahlen von Stolz und Dankbarkeit entdecken. Dein Mut, mit den Jungs nach Australien zu gehen, sucht seinesgleichen. Wie schön, dass Ihr heute zu viert downunder feiern könnt. Ich bin ein bisschen neidisch, Würde Dich nämlich sehr gerne selber in den Arm nehmen😊. \nIch vermisse Dich sehr, Dein Strahlen, unsere Gespräche. Den 60. feiern wir dann wieder zusammen 😎.\n\nHeut ist Dein Tag, lass es krachen und Du kannst Dir sicher sein, im Rheinland wirst Du heute auch gefeiert 🥳.",
-  "isFor": "Personal VIP",
-  "moment": "Wo soll ich anfangen? Es waren so viele und werden hoffentlich noch weitere. Für jeden einzelnen bin ich dankbar, u.a. \nUni Münster, Skifahren inkl. lustiger Bekanntschaften, Karneval in Köln und Düsseldorf ( live bei Brings im Abendkleid 🥳), Waldfeste, Muggel, Hochzeiten (unvergessen und dafür bin ich Dir auf ewig dankbar: Euer Kommen zur Schneehochzeit in Laax), Reisen, Rotwein, philosophische Abende, Telefonate, Umarmungen…",
-  "wish": "Bleib wie Du bist, Du Herzensmensch und dabei gesund.",
-  "city": "Düsseldorf",
-  "imgs": [
-   "p31-1",
-   "p31-2",
-   "p31-3",
-   "p31-4",
-   "p31-5",
-   "p31-6"
-  ]
- },
- {
   "n": 18,
   "name": "Susi & Corinna",
   "group": "old",
@@ -135,6 +116,25 @@ const friends = [
   "wish": "🍀",
   "clip": "v33",
   "video": "0:26"
+ },
+ {
+  "n": 31,
+  "name": "Claudi",
+  "group": "close",
+  "title": "Hey Nici, Du bes e Jeföhl",
+  "note": "Von ganzem Herzen alles Gute zum 50. Geburtstag. Genieß es, Dich heute hochleben und feiern zu lassen von den vielen Menschen, denen Du so viel bedeutest. Du bist der Inbegriff von rheinischer Lebensfreude, eine Menschenfängerin, echte Zuhörerin, weise Ratgeberin, mutige, attraktive, wissbegierige, fleissige Frau, coole, liebevolle Mutter, sportliches Energiebündel, verlässliche Freundin, neugierige Weltenbummlerin, wunderbare Trauzeugin, fürsorgliche Patentante….. Die Welt ist reicher, weil es Dich gibt und Deinen Spirit versprühst. Du gibst so viel, nimm heute mal. Und blicke stolz und dankbar auf das zurück, was in 50 Jahren Nici steckt. Klopf Dir selber auf die Schulter. Und schau in die Gesichter Deiner 3 Männer und Du wirst auch dort das Strahlen von Stolz und Dankbarkeit entdecken. Dein Mut, mit den Jungs nach Australien zu gehen, sucht seinesgleichen. Wie schön, dass Ihr heute zu viert downunder feiern könnt. Ich bin ein bisschen neidisch, Würde Dich nämlich sehr gerne selber in den Arm nehmen😊. \nIch vermisse Dich sehr, Dein Strahlen, unsere Gespräche. Den 60. feiern wir dann wieder zusammen 😎.\n\nHeut ist Dein Tag, lass es krachen und Du kannst Dir sicher sein, im Rheinland wirst Du heute auch gefeiert 🥳.",
+  "isFor": "Personal VIP",
+  "moment": "Wo soll ich anfangen? Es waren so viele und werden hoffentlich noch weitere. Für jeden einzelnen bin ich dankbar, u.a. \nUni Münster, Skifahren inkl. lustiger Bekanntschaften, Karneval in Köln und Düsseldorf ( live bei Brings im Abendkleid 🥳), Waldfeste, Muggel, Hochzeiten (unvergessen und dafür bin ich Dir auf ewig dankbar: Euer Kommen zur Schneehochzeit in Laax), Reisen, Rotwein, philosophische Abende, Telefonate, Umarmungen…",
+  "wish": "Bleib wie Du bist, Du Herzensmensch und dabei gesund.",
+  "city": "Düsseldorf",
+  "imgs": [
+   "p31-1",
+   "p31-2",
+   "p31-3",
+   "p31-4",
+   "p31-5",
+   "p31-6"
+  ]
  },
  {
   "n": 6,
