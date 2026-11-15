@@ -228,6 +228,30 @@ section { padding-block: 56px 8px; }
 .lb img { width: 100%; height: 100%; object-fit: contain; min-height: 0; }
 .lb .nav2 { display: flex; justify-content: center; gap: 12px; }
 .lb .btn.ghost { color: #fff; border-color: #fff; }
+/* Kapitel-Aufmacher: wechselnde Magazin-Layouts mit Bildzeilen */
+.ft { border: 0; font: inherit; text-align: left; cursor: zoom-in; }
+.ft:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.feat { margin-bottom: 10px; }
+.feat.spread { margin-bottom: 10px; }
+.feat.spread .ph { min-height: 0; }
+.feat.cover { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.feat.cover .ph:first-child { grid-column: 1 / -1; aspect-ratio: 21/9; padding: 22px; }
+.feat.cover .ph:first-child span { font-size: clamp(1.7rem, 5vw, 3.6rem); line-height: .95; max-width: 14ch; text-shadow: 0 2px 14px rgba(0,0,0,.35); }
+.feat.cover .ph:first-child small { background: var(--yellow); color: var(--ink); padding: 5px 8px; top: 16px; left: 16px; }
+.feat.cover .ph:not(:first-child) { aspect-ratio: 1; }
+.feat.pola { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px 18px; padding: 18px 4px 26px; background: var(--paper); }
+.pol { position: relative; width: min(30%, 300px); background: #fff; padding: 10px 10px 0; box-shadow: 0 6px 18px rgba(0,0,0,.14); transform: rotate(var(--rot)); transition: transform .3s; }
+.pol:hover { transform: rotate(0deg) scale(1.03); z-index: 2; }
+.pol::before { content: ""; position: absolute; top: -10px; left: 50%; width: 76px; height: 22px; transform: translateX(-50%) rotate(-4deg); background: rgba(255,214,10,.75); }
+.pol img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.pol span { display: block; padding: 8px 2px 12px; font: 700 1.45rem/1.1 var(--f-hand); color: var(--blue); text-align: center; }
+.pol small { display: block; margin-top: -8px; padding-bottom: 10px; font: 600 .66rem/1 var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-align: center; }
+@media (max-width: 760px) {
+  .feat.cover { grid-template-columns: repeat(2, 1fr); }
+  .feat.cover .ph:first-child { aspect-ratio: 4/3; padding: 14px; }
+  .pol { width: 44%; padding: 6px 6px 0; }
+  .pol span { font-size: 1.15rem; }
+}
 @media (max-width: 760px) { .tile { --h: 120px; } .chapters { gap: 34px; } }
 
 @media (max-width: 760px) {
@@ -476,23 +500,44 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
     ["nicimori", "Moritz & Mum", "just the two of them"], ["niciphili", "Philip & Mum", "just the two of them"],
     ["life", "Family Life", "all of us, in every combination"],
     ["family", "Our Family", "the whole clan"], ["friends", "Friends", "the people who make every party"]];
+  // Aufmacher je Kapitel: Layout + 5 Fotos mit Schlagzeile (Reihenfolge = Lightbox-Reihenfolge)
+  const FEAT = {
+    youme: ["cover", [[288, "Top of the world, together"], [312, "Sealed with a kiss"], [277, "Dressed up, lit up"], [140, "Red wine o’clock"], [119, "Partners in carnival crime"]]],
+    youboys: ["pola", [[17, "Waterfall crew"], [358, "Squeeze!"], [9, "Ski school graduates"], [439, "No fear of heights"], [22, "Full throttle"]]],
+    boys: ["spread", [[211, "Surf’s up, Gold Coast"], [1, "Where it all began"], [184, "G’day, mate!"], [43, "Little ski champs"], [249, "Suited up"]]],
+    nici: ["cover", [[464, "Wild swimming, wild smile"], [196, "Queen of the slopes"], [110, "Water-skiing? Of course."], [75, "Those curls"], [401, "Game, set, Nici"]]],
+    nicimori: ["pola", [[208, "Harbour buddies"], [405, "Cheek to cheek"], [136, "Lunch date"], [286, "Wrapped up by the lake"], [299, "Feast mode"]]],
+    niciphili: ["spread", [[360, "Kiss attack!"], [179, "Sunset cuddles on board"], [416, "Bakers in the making"], [194, "Ski buddies"], [333, "Thumbs up, Mum"]]],
+    life: ["pola", [[327, "Garlands at sunset"], [450, "Harbour crew"], [400, "Game night"], [297, "Fore!"], [201, "Black tie night"]]],
+    family: ["cover", [[281, "Helicopter to the glacier"], [50, "Sunday best"], [173, "Boat trip through the karst"], [263, "Centre court"], [245, "Golden hour, all together"]]],
+    friends: ["spread", [[309, "The girls are back in town"], ["p26-3", "Frog squad"], [72, "Carnival sparkle"], [46, "Race day"], ["p37-4", "Way back when"]]]
+  };
+  const capOf = {}; Object.values(FEAT).forEach(([, it]) => it.forEach(([n, c]) => { capOf[n] = c; }));
   const FIRST = 12, box = document.getElementById("chapters");
   const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
   let cur = [], at = 0, title = "";
   // Fotos aus den Padlet-Beiträgen (mit Absender) stehen vorne im Kapitel
-  const chap = k => ALBUM.filter(p => p.c === k).sort((a, b) => !!b.by - !!a.by);
+  const byN = Object.fromEntries(ALBUM.map(p => [p.n, p]));
+  const featOf = k => (FEAT[k] ? FEAT[k][1] : []).map(([n]) => byN[n]).filter(p => p && p.c === k);
+  const restOf = k => { const f = new Set(featOf(k)); return ALBUM.filter(p => p.c === k && !f.has(p)).sort((a, b) => !!b.by - !!a.by); };
+  const chap = k => [...featOf(k), ...restOf(k)];
   const big = p => p.by ? `img/posts/${p.n}.jpg` : `img/album/${p.n}.jpg`;
   const tile = p => `<button class="tile" type="button" data-n="${p.n}" style="--r:${p.r}"><img src="img/album/${p.n}s.jpg" alt="" loading="lazy" decoding="async"></button>`;
-  box.innerHTML = CH.map(([k, t, sub]) => { const ps = chap(k); if (!ps.length) return "";
+  const from = p => p.by ? `<small>from ${p.by}</small>` : "";
+  const ROT = ["-3deg", "2deg", "-1.5deg", "2.5deg", "-2deg"];
+  const feat = k => { const fs = featOf(k); if (!fs.length) return ""; const lay = FEAT[k][0];
+    if (lay === "pola") return `<div class="feat pola">${fs.map((p, i) => `<button class="ft pol" type="button" data-n="${p.n}" style="--rot:${ROT[i % 5]}"><img src="${big(p)}" alt="" loading="lazy" decoding="async"><span>${capOf[p.n]}</span>${from(p)}</button>`).join("")}</div>`;
+    return `<div class="feat ${lay}">${fs.map(p => `<button class="ft ph has-img" type="button" data-n="${p.n}" style="background-image:url('${big(p)}')">${from(p)}<span>${capOf[p.n]}</span></button>`).join("")}</div>`; };
+  box.innerHTML = CH.map(([k, t, sub]) => { const ps = chap(k), rest = restOf(k); if (!ps.length) return "";
     return `<div class="chap" data-c="${k}"><div class="chap-head"><h3>${t}</h3><p>${sub}</p><small>${ps.length} photos</small></div>
-      <div class="collage">${ps.slice(0, FIRST).map(tile).join("")}</div>
-      ${ps.length > FIRST ? `<button class="btn ghost more" type="button">Show all ${ps.length}</button>` : ""}</div>`; }).join("");
-  const showAt = j => { at = (j + cur.length) % cur.length; lbImg.src = big(cur[at]); lbCap.textContent = `${title}${cur[at].by ? " · from " + cur[at].by : ""} · ${at + 1} / ${cur.length}`;
+      ${feat(k)}<div class="collage">${rest.slice(0, FIRST).map(tile).join("")}</div>
+      ${rest.length > FIRST ? `<button class="btn ghost more" type="button">Show all ${ps.length}</button>` : ""}</div>`; }).join("");
+  const showAt = j => { at = (j + cur.length) % cur.length; lbImg.src = big(cur[at]); lbCap.textContent = `${capOf[cur[at].n] ? capOf[cur[at].n] + " · " : ""}${title}${cur[at].by ? " · from " + cur[at].by : ""} · ${at + 1} / ${cur.length}`;
     const nx = cur[(at + 1) % cur.length]; if (nx) new Image().src = big(nx); };
   box.addEventListener("click", e => { const ch = e.target.closest(".chap"); if (!ch) return;
     const k = ch.dataset.c, ps = chap(k);
-    if (e.target.closest(".more")) { ch.querySelector(".collage").innerHTML = ps.map(tile).join(""); e.target.closest(".more").remove(); return; }
-    const t = e.target.closest(".tile"); if (!t) return;
+    if (e.target.closest(".more")) { ch.querySelector(".collage").innerHTML = restOf(k).map(tile).join(""); e.target.closest(".more").remove(); return; }
+    const t = e.target.closest(".tile, .ft"); if (!t) return;
     cur = ps; title = CH.find(c => c[0] === k)[1]; showAt(ps.findIndex(p => p.n == t.dataset.n)); lb.hidden = false; document.getElementById("lb-close").focus(); });
   const shut = () => { lb.hidden = true; lbImg.removeAttribute("src"); };
   document.getElementById("lb-close").onclick = shut;
