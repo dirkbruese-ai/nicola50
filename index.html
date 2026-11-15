@@ -255,21 +255,21 @@ section { padding-block: 56px 8px; }
 <script>
 const DUS = [51.2277, 6.7735], GOLD = [-28.0167, 153.4000];
 const friends = [
-  { name: "Sonja & Christian", city: "Gerresheim", dus: true, padlet: true, title: "Happy Birthday aus Gerresheim",
+  { name: "Sonja & Christian", city: "Gerresheim", group: "old", dus: true, padlet: true, title: "Happy Birthday aus Gerresheim",
     imgs: ["sc1", "sc2", "sc3", "sc4", "sc5"], note: "Wir freuen uns mit Dir so viel tolle Erinnerungen zu teilen und vor allem freuen wir uns auf die nächsten 50 Jahre mit Dir. Eine ganz dicke Umarmung von Sonja und Christian" },
-  { name: "Dirk", padlet: true, title: "Happy Birthday!!!", imgs: ["d1", "d2", "d3"], clip: "d-video",
+  { name: "Dirk", group: "family", padlet: true, title: "Happy Birthday!!!", imgs: ["d1", "d2", "d3"], clip: "d-video",
     note: "You are my star. Alles Liebe für Dich!", isFor: "The best woman", moment: "Damals in Wien", wish: "Nur das Beste" },
-  { name: "Anna", city: "Oberkassel", dus: true, photos: 5, note: "Our first Altbier night in the Old Town: from then on we knew we’d be friends for life!", voice: "0:42" },
-  { name: "Markus & Steffi", city: "Pempelfort", dus: true, photos: 3, video: "1:35", note: "Helau and happy birthday! We miss you every Carnival Monday." },
-  { name: "The Webers", city: "Benrath", dus: true, photos: 2, letter: "Dear Nicola, our garden fence has been far too quiet since you moved away …" },
-  { name: "Claudia", city: "Bilk", dus: true, photos: 4, voice: "1:10", note: "I miss our Sundays by the Rhine the most. Come home for a visit soon!" },
-  { name: "Petra & Uwe", city: "Kaiserswerth", dus: true, photos: 6, note: "Thirty years of friendship, and now 16,000 kilometres between us. It doesn’t feel like a single one." },
-  { name: "Sabine", city: "Hamburg", bff: true, photos: 7, voice: "1:24", note: "Best friends since school, and still the first one I call. Nobody laughs like you!" },
-  { name: "Katrin", city: "Munich", bff: true, photos: 4, video: "1:12", note: "From the Wiesn to the Gold Coast: wherever you are, it’s a party. Love you!" },
-  { name: "Jens", city: "Cologne", photos: 1, video: "0:58", note: "For once, a greeting from the other side of the Rhine!" },
-  { name: "Tom & Jess", city: "Burleigh Heads", gc: true, photos: 8, voice: "0:35", note: "See you at LaLuna! First round's on us." },
-  { name: "Mel", city: "Broadbeach", gc: true, photos: 2, note: "We’ve only known you for a year, but it feels like forever. Welcome to the Gold Coast family!" },
-  { name: "Sam & Kylie", city: "Palm Beach", gc: true, photos: 3, video: "0:47", note: "From the school gate to Sunday sundowners. Happy 50th, legend!" }
+  { name: "Anna", city: "Oberkassel", group: "old", dus: true, photos: 5, note: "Our first Altbier night in the Old Town: from then on we knew we’d be friends for life!", voice: "0:42" },
+  { name: "Markus & Steffi", city: "Pempelfort", group: "new", dus: true, photos: 3, video: "1:35", note: "Helau and happy birthday! We miss you every Carnival Monday." },
+  { name: "The Webers", city: "Benrath", group: "family", dus: true, photos: 2, letter: "Dear Nicola, our garden fence has been far too quiet since you moved away …" },
+  { name: "Claudia", city: "Bilk", group: "new", dus: true, photos: 4, voice: "1:10", note: "I miss our Sundays by the Rhine the most. Come home for a visit soon!" },
+  { name: "Petra & Uwe", city: "Kaiserswerth", group: "old", dus: true, photos: 6, note: "Thirty years of friendship, and now 16,000 kilometres between us. It doesn’t feel like a single one." },
+  { name: "Sabine", city: "Hamburg", group: "old", bff: true, photos: 7, voice: "1:24", note: "Best friends since school, and still the first one I call. Nobody laughs like you!" },
+  { name: "Katrin", city: "Munich", group: "old", bff: true, photos: 4, video: "1:12", note: "From the Wiesn to the Gold Coast: wherever you are, it’s a party. Love you!" },
+  { name: "Jens", city: "Cologne", group: "new", photos: 1, video: "0:58", note: "For once, a greeting from the other side of the Rhine!" },
+  { name: "Tom & Jess", city: "Burleigh Heads", group: "aus", gc: true, photos: 8, voice: "0:35", note: "See you at LaLuna! First round's on us." },
+  { name: "Mel", city: "Broadbeach", group: "aus", gc: true, photos: 2, note: "We’ve only known you for a year, but it feels like forever. Welcome to the Gold Coast family!" },
+  { name: "Sam & Kylie", city: "Palm Beach", group: "aus", gc: true, photos: 3, video: "0:47", note: "From the school gate to Sunday sundowners. Happy 50th, legend!" }
 ];
 const fmt = n => n.toLocaleString("en-GB");
 const km = ([a,b],[c,d]) => { const r = Math.PI/180;
@@ -282,7 +282,7 @@ document.getElementById("stats").innerHTML =
   `<div><b>${fmt(Math.round(km(DUS, GOLD) / 100) * 100)} km</b><span>as the crow flies</span></div>` +
   `<div><b>${friends.length}</b><span>messages (example)</span></div>` +
   `<div><b>${Math.round(dusCount / friends.length * 100)} %</b><span>from Düsseldorf</span></div>` +
-  `<div><b>${friends.filter(f => f.gc).length}</b><span>new friends from the Gold Coast</span></div>`;
+  `<div><b>${friends.filter(f => f.group === "aus").length}</b><span>friends from Australia</span></div>`;
 
 const wave = () => Array.from({length: 36}, () => `<i style="height:${20 + Math.random()*80}%"></i>`).join("");
 const img = k => `img/posts/${k}.jpg`;
@@ -299,7 +299,7 @@ const card = f => `<article class="star">
 </article>`;
 const kinds = ["All", "Photos", "Videos", "Voice messages", "Letters"];
 const chips = document.getElementById("chips"), list = document.getElementById("star-list");
-const groups = [["From home", "Düsseldorf & beyond", f => !f.gc && !f.bff], ["Best friends", "from Hamburg & Munich", f => f.bff], ["New friends", "from the Gold Coast", f => f.gc]];
+const groups = [["Family", "the ones who were there from day one", f => f.group === "family"], ["Old friends", "decades of laughter", f => f.group === "old"], ["New friends", "and already like old ones", f => f.group === "new"], ["Australia", "your Gold Coast crew", f => f.group === "aus"]];
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG]) => { const g = shown.filter(inG);
     return g.length ? `<div class="group-head"><h3>${h}</h3><span>${sub}</span></div>` + g.map(card).join("") : ""; }).join("");
@@ -322,7 +322,7 @@ epList.addEventListener("click", e => { const b = e.target.closest(".play"); if 
 const show = document.getElementById("show"), slide = document.getElementById("slide");
 let i = 0, timer;
 const draw = () => { const f = friends[i];
-  slide.innerHTML = `<div class="k">Greetings from ${f.city}</div><div class="n">${f.name}</div><div class="q">${f.note || f.letter}</div>`; };
+  slide.innerHTML = `<div class="k">${f.city ? "Greetings from " + f.city : "Greetings"}</div><div class="n">${f.name}</div><div class="q">${f.note || f.letter}</div>`; };
 const go = d => { i = (i + d + friends.length) % friends.length; draw(); };
 const auto = () => { clearInterval(timer); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => go(1), 7000); };
 const close = () => { show.hidden = true; clearInterval(timer); };
