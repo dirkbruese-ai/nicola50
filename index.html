@@ -479,15 +479,18 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
   const FIRST = 12, box = document.getElementById("chapters");
   const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
   let cur = [], at = 0, title = "";
+  // Fotos aus den Padlet-Beiträgen (mit Absender) stehen vorne im Kapitel
+  const chap = k => ALBUM.filter(p => p.c === k).sort((a, b) => !!b.by - !!a.by);
+  const big = p => p.by ? `img/posts/${p.n}.jpg` : `img/album/${p.n}.jpg`;
   const tile = p => `<button class="tile" type="button" data-n="${p.n}" style="--r:${p.r}"><img src="img/album/${p.n}s.jpg" alt="" loading="lazy" decoding="async"></button>`;
-  box.innerHTML = CH.map(([k, t, sub]) => { const ps = ALBUM.filter(p => p.c === k); if (!ps.length) return "";
+  box.innerHTML = CH.map(([k, t, sub]) => { const ps = chap(k); if (!ps.length) return "";
     return `<div class="chap" data-c="${k}"><div class="chap-head"><h3>${t}</h3><p>${sub}</p><small>${ps.length} photos</small></div>
       <div class="collage">${ps.slice(0, FIRST).map(tile).join("")}</div>
       ${ps.length > FIRST ? `<button class="btn ghost more" type="button">Show all ${ps.length}</button>` : ""}</div>`; }).join("");
-  const showAt = j => { at = (j + cur.length) % cur.length; lbImg.src = `img/album/${cur[at].n}.jpg`; lbCap.textContent = `${title} · ${at + 1} / ${cur.length}`;
-    const nx = cur[(at + 1) % cur.length]; if (nx) new Image().src = `img/album/${nx.n}.jpg`; };
+  const showAt = j => { at = (j + cur.length) % cur.length; lbImg.src = big(cur[at]); lbCap.textContent = `${title}${cur[at].by ? " · from " + cur[at].by : ""} · ${at + 1} / ${cur.length}`;
+    const nx = cur[(at + 1) % cur.length]; if (nx) new Image().src = big(nx); };
   box.addEventListener("click", e => { const ch = e.target.closest(".chap"); if (!ch) return;
-    const k = ch.dataset.c, ps = ALBUM.filter(p => p.c === k);
+    const k = ch.dataset.c, ps = chap(k);
     if (e.target.closest(".more")) { ch.querySelector(".collage").innerHTML = ps.map(tile).join(""); e.target.closest(".more").remove(); return; }
     const t = e.target.closest(".tile"); if (!t) return;
     cur = ps; title = CH.find(c => c[0] === k)[1]; showAt(ps.findIndex(p => p.n == t.dataset.n)); lb.hidden = false; document.getElementById("lb-close").focus(); });
