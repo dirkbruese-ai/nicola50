@@ -610,9 +610,9 @@ const playIntro = done => {
     const next = (CUES[i + 1] || [END / 1000])[0], dur = Math.max(2600, (next - at) * 1000 - 200);
     const k = document.createElement("div"); k.className = "intro-card";
     k.innerHTML = `<small>${label}</small><b>${esc(name)}</b>`;
-    const top = i % 2 === 0 || (at > 37 && at < 47), band = top ? [12, Math.max(y0 - 12, 60)] : [Math.min(y0 + size + 20, H - 70), H - 12];
-    const cx = W / 2 + (i % 4 < 2 ? -1 : 1) * rnd(W * .05, W * .22), cy = (band[0] + band[1]) / 2;
-    k.style.left = `${Math.min(Math.max(cx, 90), W - 90)}px`; k.style.top = `${cy}px`; stage.appendChild(k);
+    // Karte klebt unten auf dem großen Foto in der Mitte (Phase 1: einfliegende Fotos, Phase 2: herausspringende Fotos)
+    const half = Math.min(W, H) * (at < 37 ? .4 : .31), cx = W / 2 + (i % 2 ? 1 : -1) * half * .35, cy = H / 2 + half * .78 + (at < 37 ? 0 : 0);
+    k.style.left = `${Math.min(Math.max(cx, 90), W - 90)}px`; k.style.top = `${cy}px`; k.style.zIndex = 700; stage.appendChild(k);
     const rot = rnd(-8, 8);
     k.animate([{ transform: `translate(-50%,-50%) scale(0) rotate(${rot * 3}deg)`, opacity: 0 }, { transform: `translate(-50%,-50%) scale(1.08) rotate(${rot}deg)`, opacity: 1, offset: Math.min(.2, 500 / dur) },
       { transform: `translate(-50%,-50%) scale(1) rotate(${rot}deg)`, opacity: 1, offset: 1 - Math.min(.2, 500 / dur) }, { transform: `translate(-50%,-50%) translateY(-30px) scale(.9) rotate(${rot}deg)`, opacity: 0 }],
