@@ -198,7 +198,7 @@ section { padding-block: 56px 8px; }
 .welcome.playing > div:first-child { transition: opacity .4s, transform .4s; opacity: 0; transform: scale(.9); pointer-events: none; }
 .intro { position: absolute; inset: 0; overflow: hidden; cursor: pointer; }
 .intro-heart { position: absolute; inset: 0; transform-origin: 50% 46%; }
-.intro-tile { position: absolute; background: var(--paper) center / cover; transform-origin: 0 0; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
+.intro-tile { position: absolute; background: var(--paper) center / cover; transform-origin: 0 0; display: block; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
 .intro-msg { position: absolute; left: 0; right: 0; text-align: center; font: 400 clamp(1.8rem, 7.4vw, 3.2rem)/1.02 var(--f-head); text-transform: uppercase; color: var(--ink); }
 .intro-msg em { font-style: normal; color: var(--red); }
 .intro-sun { position: absolute; border-radius: 50%; pointer-events: none;
@@ -467,6 +467,7 @@ section { padding-block: 56px 8px; }
 <script src="album.js"></script>
 <script src="poem.js"></script>
 <script src="love.js"></script>
+<script src="intro.js"></script>
 <script>
 const DUS = [51.2277, 6.7735], GOLD = [-28.0167, 153.4000];
 const fmt = n => n.toLocaleString("en-GB");
@@ -547,15 +548,17 @@ const INTRO = (() => {
   // Herz aus Beitragsfotos (bzw. Standbild aus dem Video) mit Absender, reihum je Absender; jedes dritte Foto aus Familie / Moritz & Philip
   let seed = 50; const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
   const heart = (x, y) => { x *= 1.18; y = -y * 1.2 + .3; return (x * x + y * y - 1) ** 3 - x * x * y ** 3 <= 0; };
-  const cols = 9, rows = 9, cells = [];
+  const cols = 10, rows = 10, cells = [];
   for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) if (heart((c + .5) / cols * 2 - 1, (r + .5) / rows * 2 - 1)) cells.push([c, r]);
   const lists = (typeof friends !== "undefined" ? friends : []).map(f => (f.imgs ? f.imgs.map(k => [`img/posts/${k}.jpg`, `img/album/${k}s.jpg`]) : f.clip ? [[`media/${f.clip}.jpg`, `media/${f.clip}.jpg`]] : []).map(([src, th]) => [src, f.name, th])).filter(l => l.length);
   lists.sort(() => rand() - .5);
   const posts = []; for (let r = 0; r < 12; r++) lists.forEach(l => { if (l[r]) posts.push(l[r]); });
   const FAM = { family: "your family", youboys: "Moritz & Philip", boys: "Moritz & Philip", nicimori: "Moritz", niciphili: "Philip" };
   const fam = (typeof ALBUM !== "undefined" ? ALBUM : []).filter(e => typeof e.n === "number" && FAM[e.c]).map(e => [`img/album/${e.n}.jpg`, FAM[e.c], `img/album/${e.n}s.jpg`]).sort(() => rand() - .5);
-  const pool = []; let a = 0, b = 0;
+  let pool = []; let a = 0, b = 0;
   while (pool.length < cells.length && (a < posts.length || b < fam.length)) pool.push((pool.length % 3 === 2 && b < fam.length) || a >= posts.length ? fam[b++] : posts[a++]);
+  // Feste Auswahl als fertige Polaroids (Absender ins Bild geschrieben, gestochen scharf): tools/build_intro.py
+  if (typeof INTRO_TILES !== "undefined" && INTRO_TILES.length) pool = INTRO_TILES.map(src => [src, "", src]);
   return { cells, cols, rows, pool };
 })();
 const rnd = (a, b) => a + Math.random() * (b - a);
@@ -576,26 +579,28 @@ const playIntro = done => {
   const big = Math.min(W, H * .7) * .74 / cell, HOLD = 1300, FLY = 1700;
   const cellOrder = INTRO.cells.map((_, i) => i).sort(() => Math.random() - .5);
   cellOrder.forEach((ci, j) => {
-    const [c, r] = INTRO.cells[ci], [src, name, th] = INTRO.pool[j % INTRO.pool.length];
-    // Jede Fotokachel trägt ihren Absender; die Schrift wächst mit der Kachel und verblasst, sobald sie im Herz liegt
-    const t = document.createElement("div"); t.className = "intro-tile";
-    const tx = x0 + c * cell, ty = y0 + r * cell;
-    const B = cell * big, sc = (cell - 3) / B;
-    t.style.cssText = `left:${tx}px;top:${ty}px;width:${B}px;height:${B}px;z-index:${j};font-size:${B * .075}px;border-radius:${3 / sc}px;background-image:url('${th}')`;
-    const cap = document.createElement("div"); cap.className = "intro-cap"; cap.innerHTML = `<small>With love from</small>${esc(name)}`; t.appendChild(cap);
+    const [c, r] = INTRO.cells[ci], [src, name, th] = INTRO.pool[j % INTRO.pool.length], pol = !name;
+    // Kachel wird in voller Größe gebaut und fürs Herz nur verkleinert, damit sie groß gestochen scharf ist
+    const t = document.createElement(pol ? "img" : "div"); t.className = "intro-tile";
+    const tx = x0 + c * cell, ty = y0 + r * cell, ar = pol ? 900 / 1070 : 1;
+    const Bh = cell * big, Bw = Bh * ar, sc = (cell - 3) / Bh, txo = tx + (cell - 3 - (cell - 3) * ar) / 2;
+    const B = Bh;
+    t.style.cssText = `left:${txo}px;top:${ty}px;width:${Bw}px;height:${Bh}px;z-index:${j};font-size:${B * .075}px;border-radius:${3 / sc}px`;
+    if (pol) { t.alt = ""; t.src = src; } else { t.style.backgroundImage = `url('${th}')`;
+      const cap = document.createElement("div"); cap.className = "intro-cap"; cap.innerHTML = `<small>With love from</small>${esc(name)}`; t.appendChild(cap); }
     heartBox.appendChild(t);
-    setTimeout(() => { const im = new Image(); im.onload = () => { t.style.backgroundImage = `url('${src}')`; }; im.src = src; }, Math.max(0, 400 + j * step - 6000));
+    if (!pol) setTimeout(() => { const im = new Image(); im.onload = () => { t.style.backgroundImage = `url('${src}')`; }; im.src = src; }, Math.max(0, 400 + j * step - 8000));
     const delay = 400 + j * step, total = END - delay, hold = HOLD;
     const ox = rnd(-W * .05, W * .05), oy = rnd(-H * .03, H * .03);
-    const sx = W / 2 + ox - tx - B / 2, sy = y0 + size * .48 + oy - ty - B / 2, home = `scale(${sc})`;
+    const sx = W / 2 + ox - txo - Bw / 2, sy = y0 + size * .48 + oy - ty - Bh / 2, home = `scale(${sc})`;
     const from = `translate(${sx}px, ${sy}px) rotate(${rnd(-6, 6)}deg) scale(1)`;
-    const away = `translate(${(tx - W / 2) * 4}px, ${(ty - H / 2) * 4}px) rotate(${rnd(-90, 90)}deg) scale(${1.6 * sc})`;
+    const away = `translate(${(txo - W / 2) * 4}px, ${(ty - H / 2) * 4}px) rotate(${rnd(-90, 90)}deg) scale(${1.6 * sc})`;
     const f = x => Math.min(x / total, 1);
     t.animate([{ transform: from, opacity: 0, easing: "ease-out" }, { transform: from, opacity: 1, offset: f(250) },
       { transform: from, opacity: 1, offset: f(hold), easing: "cubic-bezier(.45,0,.2,1)" },
       { transform: home, opacity: 1, offset: f(hold + FLY) }, { transform: home, opacity: 1, offset: Math.max(f(hold + FLY), f(OUT - delay)), easing: "cubic-bezier(.5,0,.8,.4)" },
       { transform: away, opacity: 0 }], { duration: total, delay, fill: "both" });
-    cap.animate([{ opacity: 1 }, { opacity: 1, offset: .55 }, { opacity: 0 }], { duration: hold + FLY, delay, fill: "both" });
+    if (!pol) t.firstChild.animate([{ opacity: 1 }, { opacity: 1, offset: .55 }, { opacity: 0 }], { duration: hold + FLY, delay, fill: "both" });
   });
   // Kleine Kachel unten: wer gerade singt oder spricht, mit eigenem Bild
   const now = document.createElement("div"); now.className = "intro-now"; stage.appendChild(now);
