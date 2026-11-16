@@ -651,6 +651,18 @@ const friends = [
   ]
  },
  {
+  "n": 66,
+  "name": "Katrin & Tim",
+  "group": "close",
+  "title": "Happy happy Birthday🎈",
+  "note": "Liebe Nicola, zu Deinem Geburtstag wünschen wir Dir alles Liebe, Gesundheit und nur das Allerbeste.\nGenieße diesen besonderen Tag unter\nschönstem\nSonnenschein. Wir stoßen heute auf Dich an und schicken Dir eine dicke Umarmung.\nDie Gold Coast kann sich sehr glücklich schätzen, einen so liebenswerten, humorvollen und wunderbaren Menschen zu ihren Mitbürgern zu zahlen (aber nur ausgeliehen, ist klar;)). Alles Liebe aus Düsseldorf😘💕😘🎈",
+  "imgs": [
+   "p66-1",
+   "p66-2",
+   "p66-3"
+  ]
+ },
+ {
   "n": 39,
   "name": "Birgit, Caro, Olli und Uli",
   "group": "new",
@@ -815,17 +827,5 @@ const friends = [
   "city": "Munich · Christchurch",
   "clip": "v32",
   "video": "4:11"
- },
- {
-  "n": 66,
-  "name": "Katrin & Tim",
-  "group": "close",
-  "title": "Happy happy Birthday🎈",
-  "note": "Liebe Nicola, zu Deinem Geburtstag wünschen wir Dir alles Liebe, Gesundheit und nur das Allerbeste.\nGenieße diesen besonderen Tag unter\nschönstem\nSonnenschein. Wir stoßen heute auf Dich an und schicken Dir eine dicke Umarmung.\nDie Gold Coast kann sich sehr glücklich schätzen, einen so liebenswerten, humorvollen und wunderbaren Menschen zu ihren Mitbürgern zu zahlen (aber nur ausgeliehen, ist klar;)). Alles Liebe aus Düsseldorf😘💕😘🎈",
-  "imgs": [
-   "p66-1",
-   "p66-2",
-   "p66-3"
-  ]
  }
 ];

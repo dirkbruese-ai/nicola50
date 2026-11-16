@@ -17,8 +17,8 @@ ORDER = [50, 53, 12, 13, 55,
          17, 21, 11, 3, 41, 23, 10, 36, 30, 16, 35, 40,
          37, 14, 15, 2, 22, 33, 47, 49, 54, 25,
          # From home (Dirks Liste 16.11.); Platzhalter: Steffi & Hendrik Rinsche, Nicole & Jens Ritter nach 44
-         31, 18, 52, 44, 67, 28, 24, 27, 6, 62, 26, 29, 64, 19, 56, 59, 34, 51, 42, 43, 38, 45, 39, 60, 61,
-         46, 65, 58, 4, 57, 7, 5, 48, 8, 9, 63, 32, 66]
+         31, 18, 52, 44, 67, 28, 24, 27, 6, 62, 26, 29, 64, 19, 56, 59, 34, 51, 42, 43, 38, 45, 66, 39, 60, 61,
+         46, 65, 58, 4, 57, 7, 5, 48, 8, 9, 63, 32]
 LAST = []
 NAME = {10: "Lieke", 16: "Candice & Brent", 30: "Alex & Lex", 36: "Jess G", 2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",
