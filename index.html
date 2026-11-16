@@ -372,6 +372,11 @@ section { padding-block: 56px 8px; }
     <div class="stars" id="star-list"></div>
   </section>
 
+  <section id="poem" aria-labelledby="h-poem">
+    <div class="sec-head"><h2 id="h-poem">A Poem for Nici</h2><span class="tag">Draft</span></div>
+    <div class="poem" id="poem-box"></div>
+  </section>
+
   <section id="story" aria-labelledby="h-story">
     <div class="sec-head"><h2 id="h-story">50 Years of Nici <em>her story in dates</em></h2><span class="tag">Biography</span></div>
     <ol class="timeline">
@@ -387,6 +392,11 @@ section { padding-block: 56px 8px; }
     </ol>
   </section>
 
+  <section id="fotos" aria-labelledby="h-fotos">
+    <div class="sec-head"><h2 id="h-fotos">The Photo Album</h2><span class="tag">Photo Special</span></div>
+    <div class="chapters" id="chapters"></div>
+  </section>
+
   <section id="who" aria-labelledby="h-who">
     <div class="sec-head"><h2 id="h-who">Who Is Nici? <em>in your own words</em></h2><span class="tag">Cover Story</span></div>
     <p class="lead">We asked everyone to finish one sentence: “Nici is for me …”. Here is what they said.</p>
@@ -398,23 +408,9 @@ section { padding-block: 56px 8px; }
     <div class="quotes moments" id="moment-list"></div>
   </section>
 
-  <section id="fotos" aria-labelledby="h-fotos">
-    <div class="sec-head"><h2 id="h-fotos">The Photo Album</h2><span class="tag">Photo Special</span></div>
-    <div class="chapters" id="chapters"></div>
-  </section>
-
-  <section id="poem" aria-labelledby="h-poem">
-    <div class="sec-head"><h2 id="h-poem">A Poem for Nici</h2><span class="tag">Draft</span></div>
-    <div class="poem" id="poem-box"></div>
-  </section>
-
   <section id="podcast" aria-labelledby="h-podcast">
-    <div class="sec-head"><h2 id="h-podcast">Happy Birthday on Air <em>videos &amp; voices</em></h2><span class="tag">Watch &amp; listen</span></div>
+    <div class="sec-head"><h2 id="h-podcast">Happy Birthday on Air <em>videos</em></h2><span class="tag">Watch</span></div>
     <div class="vwall" id="vwall"></div>
-    <div class="pod">
-      <div class="pod-intro"><p>Headphones on: voice messages from home, recorded in kitchens, on balconies and by the Rhine.</p></div>
-      <ol class="episodes" id="episodes"></ol>
-    </div>
   </section>
 </main>
 
@@ -527,8 +523,7 @@ else pb.closest("section").hidden = true;
 
 // Videos & Voice
 document.getElementById("vwall").innerHTML = friends.filter(f => f.clip).map(f => `<figure><video src="${media(f.clip)}.mp4" poster="${media(f.clip)}.jpg" controls playsinline preload="none"></video><figcaption>${esc(f.name)}<small>${esc(f.title || f.city || "")}${f.video ? " · " + f.video : ""}</small></figcaption></figure>`).join("");
-const epList = document.getElementById("episodes");
-epList.innerHTML = friends.filter(f => f.audio).map(f => `<li><button class="play" type="button" aria-pressed="false" aria-label="Play voice message from ${esc(f.name)}">▶</button><div><div class="ep-title">${esc(f.title || "Happy Birthday, Nici!")}</div><div class="ep-who">${esc(f.name)}</div></div><span class="dur">${f.voice}</span><audio src="${media(f.audio)}.mp3" preload="none"></audio></li>`).join("");
+// Sprachnachrichten stecken in den Beiträgen, keine eigene Liste mehr am Ende
 // Ein Player für alle Sprachnachrichten: Start stoppt die anderen
 document.addEventListener("click", e => { const b = e.target.closest(".play"); if (!b || b.id) return;
   const a = b.parentNode.querySelector("audio"); if (!a) return;
