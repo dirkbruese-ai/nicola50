@@ -47,19 +47,6 @@ const friends = [
   "video": "0:11"
  },
  {
-  "n": 21,
-  "name": "Mark",
-  "group": "family",
-  "note": "Happy birthday Nicola! Hoping you have an amazing day",
-  "isFor": "A ray of sunshine wherever she goes",
-  "moment": "Many hours on the side of a hockey field 🤪. Piano Duels, dinners out, Gala balls and trail runs they all add up to fun times.",
-  "wish": "Another 50 years of fun, laughter and good health",
-  "city": "Viersen",
-  "imgs": [
-   "p21-1"
-  ]
- },
- {
   "n": 55,
   "name": "Viersen Brüses",
   "group": "family",
@@ -68,6 +55,165 @@ const friends = [
   "city": "Viersen",
   "clip": "v55",
   "video": "0:39"
+ },
+ {
+  "n": 17,
+  "name": "Sylvia",
+  "group": "aus",
+  "title": "To a Beautiful Soul Who Lights Up Every Room — Happy 50th Birthday!",
+  "note": "I’m so happy that our paths crossed when we both moved to Australia! At hockey, school events, running trails or sharing a bottle of wine, you are always radiant, genuine and fun-you’re impossible not to love!",
+  "isFor": "A ray of sunshine",
+  "moment": "Hockey tours are more fun with you!",
+  "wish": "Good health, happiness and excellent wine",
+  "team": "Hockey",
+  "imgs": [
+   "p17-1"
+  ]
+ },
+ {
+  "n": 21,
+  "name": "Mark",
+  "group": "aus",
+  "note": "Happy birthday Nicola! Hoping you have an amazing day",
+  "isFor": "A ray of sunshine wherever she goes",
+  "moment": "Many hours on the side of a hockey field 🤪. Piano Duels, dinners out, Gala balls and trail runs they all add up to fun times.",
+  "wish": "Another 50 years of fun, laughter and good health",
+  "team": "Hockey",
+  "imgs": [
+   "p21-1"
+  ]
+ },
+ {
+  "n": 11,
+  "name": "Mel & Lloyd",
+  "group": "aus",
+  "title": "50 & Thriving!",
+  "note": "Happy happy birthday!",
+  "isFor": "You’re one of the kindest, most generous people we know. You’ve welcomed us with open arms & every moment with you is a warm embrace! Your hospitality is effortless & determination to conquer any challenge speaks volumes. You’re a wonderful wife & mom, your family is so blessed to have you!",
+  "moment": "From hockey sidelines, to dinners together - each occasion is always met with a bright smile & kind eyes.",
+  "wish": "May all of your comings & goings over the next few decades be blessed!",
+  "team": "Hockey",
+  "imgs": [
+   "p11-1"
+  ]
+ },
+ {
+  "n": 3,
+  "name": "Vicky Stirling",
+  "group": "aus",
+  "title": "From grit to glamour, you have it covered!",
+  "note": "Happy Birthday 🎂 to an inspirational women! Your generosity, warmth and approach to life make you sparkle wherever you go ❤️.",
+  "isFor": "Such a genuine person and such a great listenner (she lets me talk too much) 😅.",
+  "moment": "Is anytime I spend with her, which is not often enough!",
+  "wish": "The happiest birthday and hope she knows how special she is xxx.",
+  "team": "School",
+  "imgs": [
+   "p3-1",
+   "p3-2"
+  ]
+ },
+ {
+  "n": 41,
+  "name": "Ainsley",
+  "group": "aus",
+  "note": "Happy 50th Nicola!\n\nIt’s actually very hard to reconcile the number 50 with someone who has quite as much energy, enthusiasm and zest for life as you do. I’m not entirely convinced there hasn’t been an administrative error somewhere!\n\nI’m so glad our paths crossed through the boys, but even happier that along the way their friendship led to one of our own. I have loved playing Padel with you and getting to know you over wine &amp; cheese, but look forward to sharing some adventures with you too!\n\nYou are such a warm, generous and genuinely fun person to be around, and I feel very lucky to call you my friend. Here’s to 50, to the adventures still to come, and hopefully to this being only the beginning of a very long and beautiful friendship.\n\nAlles Liebe zum Geburtstag Nicola!\nLove Ains xx",
+  "team": "School"
+ },
+ {
+  "n": 23,
+  "name": "Kate",
+  "group": "aus",
+  "note": "Ray of sunshine!☀️",
+  "isFor": "The warmest magnetic soul … the true meaning of radiant … someone you’re drawn to and immediately must be friends with …",
+  "moment": "So far .. hmm, it’s running .. but I think we need more wine and dancing together.",
+  "wish": "The very best of birthdays!  The very best of years!  And a long happy stay in Australia!  But I’m guessing her German friends are wishing her home too!",
+  "team": "School",
+  "imgs": [
+   "p23-1"
+  ]
+ },
+ {
+  "n": 10,
+  "name": "Lieke",
+  "group": "aus",
+  "title": "Best Padel Partner Ever 🏆",
+  "note": "Happy 50th Birthday, dear Nicola! \n\nOh jongens, I am so happy that padel brought us together! You are the best padel partner I could ever wish for. Your bright smile and positive energy makes every game more enjoyable!\n\nBut beyond being an amazing padel partner, you have also become a special friend. Someone who always listens and who is so easy to talk to.\n\nI feel very lucky to have you in my life and look forward to many more laughs, games, chats, dinners and hidden bar moments together.\n\nWishing you an amazing 50th birthday filled with love, laughter and everything that makes you happy. ❤️",
+  "team": "Padel",
+  "imgs": [
+   "p10-1",
+   "p10-2",
+   "p10-3",
+   "p10-4"
+  ]
+ },
+ {
+  "n": 30,
+  "name": "Alex & Lex",
+  "group": "aus",
+  "note": "Happy birthday beautiful Nicola!",
+  "isFor": "Padel pal and beautiful friend. 🌸🌸",
+  "moment": "I’m so lucky to have met Nicola. The most thoughtful and kind lady who has cemented her beautiful friendship from padel and beyond.  \nThe most beautiful and stylish 50 year old! Happy birthday Nic xxx",
+  "wish": "Absolute health and happiness (and a solid visa!)",
+  "team": "Padel",
+  "imgs": [
+   "p30-1"
+  ]
+ },
+ {
+  "n": 16,
+  "name": "Candice & Brent",
+  "group": "aus",
+  "title": "We love you Nicky Noo 😂😂😂",
+  "note": "“Statistically” it takes around 10 hours to become an acquaintance and 200 hours to become a close friend. Who ever did that study never met you. Your ability to connect and make people feel special is your super power. The number of friendships you’ve built in such a short space of time is a true testament to the wonderful person you are, and we are so grateful you choose to spend your time with us because you genuinely add so much light to our lives. \n\nThank you for for all the laughs, swing and misses, cheeseboards and fancy wine with this cork invention you cultured Europeans insist on using. \n\nBlessed to share your birthday with you.\n\nX \n\nCandz and brent",
+  "isFor": "Nicky Noo or Nic Nack",
+  "moment": "Every moment is special",
+  "wish": "The best of everything - you deserve it",
+  "team": "Padel",
+  "imgs": [
+   "p16-1"
+  ]
+ },
+ {
+  "n": 36,
+  "name": "Jess G",
+  "group": "aus",
+  "title": "The Gold Coast Gained a Supermodel",
+  "note": "And I gained a friend!\n\n\nI never thought a random Intro to Padel 18 months ago would bring such a wonderful group of people into my life. And Nicola, you are most definitely one of the best things to come out of it!\n\n\nNot only are you an absolute stunner, but you're an even more beautiful human on the inside. You're full of knowledge and wisdom, hilariously funny, and just one of those people I could happily sit and talk to for hours.\n\n\nI love our coffees and chats, and I love that when we get on the padel court, we're usually having just as much fun laughing as we are playing. There's something so lovely about having friends you can just be yourself with, have a laugh and not take life too seriously.\n\n\nI'm so glad that random game of padel brought you into my life. I feel very lucky to call you my friend, and I look forward to many more coffees, laughs and games together (maybe in NZ 🤔)\n\n\nHappy 50th birthday, Nic! Here's to a fabulous next chapter and plenty more fun along the way! ❤️🥂",
+  "isFor": "Padel Queen",
+  "team": "Padel",
+  "imgs": [
+   "p36-1"
+  ]
+ },
+ {
+  "n": 35,
+  "name": "Kristie",
+  "group": "aus",
+  "title": "Happy 50th birthday to our beautiful friend 🩷🩷",
+  "note": "When our little padel girl gang came together  eighteen months ago, you’ve become one of those rare friends who makes everything feel brighter.\n\n Every catch-up with you is so wonderful and grounding.  You’re a beautiful reminder in life of what is good. Your generosity, your kindness, and the genuine way you care and show up for people, always inspire me. I’m so grateful to celebrate your 50th with you and be a part of your wonderful GC Circle.  \n\nHappy birthday my dear friend.  xxxx",
+  "team": "Padel"
+ },
+ {
+  "n": 40,
+  "name": "Rach Saunders",
+  "group": "aus",
+  "note": "Nicola!!!! So grateful to have padel bring you into my life. Without a doubt one of the most caring, compassionate and considerate people I have ever met. You are always so positive and such a special person! Happy 50th - wishing you the best of the best 🤍🤍",
+  "team": "Padel",
+  "imgs": [
+   "p40-1",
+   "p40-2",
+   "p40-3",
+   "p40-4",
+   "p40-5"
+  ]
+ },
+ {
+  "n": 46,
+  "name": "Fee",
+  "group": "aus",
+  "title": "Schönste Woche an der GC😍",
+  "note": "Ich bin dir so dankbar, dass ich diese wunderschöne Woche mit euch verbringen durfte❤️. Ich habe mich direkt wie Zuhause gefühlt (geht ja auch kaum anders bei deiner herzlichen Art) und denke wirklich oft an die Zeit zurück. In der Woche habe ich wirklich nochmal gemerkt, was du für ein unglaublich toller Mensch bist und habe einfach jeden Moment mit dir genossen☺️. Acai Bowls, Kängurus füttern, Mega leckere Dinners, Paddlen, Spiele Abend, mein erster Koala, und einfach ganz ganz tolle Gespräche🫶🏼. Besonders toll war auch ein gemütliches Bettchen und leckeres Essen nach den ganzen Hostels😍😅. Ihr wart ein ganz besonderer Teil meiner Australien Reise!!! Auf ein Wiedersehen, hoffentlich in Australien🙏",
+  "team": "Visiting"
  },
  {
   "n": 37,
@@ -388,133 +534,6 @@ const friends = [
   "video": "0:26"
  },
  {
-  "n": 3,
-  "name": "Vicky Stirling",
-  "group": "aus",
-  "title": "From grit to glamour, you have it covered!",
-  "note": "Happy Birthday 🎂 to an inspirational women! Your generosity, warmth and approach to life make you sparkle wherever you go ❤️.",
-  "isFor": "Such a genuine person and such a great listenner (she lets me talk too much) 😅.",
-  "moment": "Is anytime I spend with her, which is not often enough!",
-  "wish": "The happiest birthday and hope she knows how special she is xxx.",
-  "imgs": [
-   "p3-1",
-   "p3-2"
-  ]
- },
- {
-  "n": 10,
-  "name": "Lieke xxx",
-  "group": "aus",
-  "title": "Best Padel Partner Ever 🏆",
-  "note": "Happy 50th Birthday, dear Nicola! \n\nOh jongens, I am so happy that padel brought us together! You are the best padel partner I could ever wish for. Your bright smile and positive energy makes every game more enjoyable!\n\nBut beyond being an amazing padel partner, you have also become a special friend. Someone who always listens and who is so easy to talk to.\n\nI feel very lucky to have you in my life and look forward to many more laughs, games, chats, dinners and hidden bar moments together.\n\nWishing you an amazing 50th birthday filled with love, laughter and everything that makes you happy. ❤️",
-  "imgs": [
-   "p10-1",
-   "p10-2",
-   "p10-3",
-   "p10-4"
-  ]
- },
- {
-  "n": 11,
-  "name": "Mel & Lloyd",
-  "group": "aus",
-  "title": "50 & Thriving!",
-  "note": "Happy happy birthday!",
-  "isFor": "You’re one of the kindest, most generous people we know. You’ve welcomed us with open arms & every moment with you is a warm embrace! Your hospitality is effortless & determination to conquer any challenge speaks volumes. You’re a wonderful wife & mom, your family is so blessed to have you!",
-  "moment": "From hockey sidelines, to dinners together - each occasion is always met with a bright smile & kind eyes.",
-  "wish": "May all of your comings & goings over the next few decades be blessed!",
-  "imgs": [
-   "p11-1"
-  ]
- },
- {
-  "n": 16,
-  "name": "Candz and Brent",
-  "group": "aus",
-  "title": "We love you Nicky Noo 😂😂😂",
-  "note": "“Statistically” it takes around 10 hours to become an acquaintance and 200 hours to become a close friend. Who ever did that study never met you. Your ability to connect and make people feel special is your super power. The number of friendships you’ve built in such a short space of time is a true testament to the wonderful person you are, and we are so grateful you choose to spend your time with us because you genuinely add so much light to our lives. \n\nThank you for for all the laughs, swing and misses, cheeseboards and fancy wine with this cork invention you cultured Europeans insist on using. \n\nBlessed to share your birthday with you.\n\nX \n\nCandz and brent",
-  "isFor": "Nicky Noo or Nic Nack",
-  "moment": "Every moment is special",
-  "wish": "The best of everything - you deserve it",
-  "imgs": [
-   "p16-1"
-  ]
- },
- {
-  "n": 17,
-  "name": "Sylvia",
-  "group": "aus",
-  "title": "To a Beautiful Soul Who Lights Up Every Room — Happy 50th Birthday!",
-  "note": "I’m so happy that our paths crossed when we both moved to Australia! At hockey, school events, running trails or sharing a bottle of wine, you are always radiant, genuine and fun-you’re impossible not to love!",
-  "isFor": "A ray of sunshine",
-  "moment": "Hockey tours are more fun with you!",
-  "wish": "Good health, happiness and excellent wine",
-  "imgs": [
-   "p17-1"
-  ]
- },
- {
-  "n": 23,
-  "name": "Kate",
-  "group": "aus",
-  "note": "Ray of sunshine!☀️",
-  "isFor": "The warmest magnetic soul … the true meaning of radiant … someone you’re drawn to and immediately must be friends with …",
-  "moment": "So far .. hmm, it’s running .. but I think we need more wine and dancing together.",
-  "wish": "The very best of birthdays!  The very best of years!  And a long happy stay in Australia!  But I’m guessing her German friends are wishing her home too!",
-  "imgs": [
-   "p23-1"
-  ]
- },
- {
-  "n": 30,
-  "name": "Alex and Lex",
-  "group": "aus",
-  "note": "Happy birthday beautiful Nicola!",
-  "isFor": "Padel pal and beautiful friend. 🌸🌸",
-  "moment": "I’m so lucky to have met Nicola. The most thoughtful and kind lady who has cemented her beautiful friendship from padel and beyond.  \nThe most beautiful and stylish 50 year old! Happy birthday Nic xxx",
-  "wish": "Absolute health and happiness (and a solid visa!)",
-  "imgs": [
-   "p30-1"
-  ]
- },
- {
-  "n": 35,
-  "name": "Kristie",
-  "group": "aus",
-  "title": "Happy 50th birthday to our beautiful friend 🩷🩷",
-  "note": "When our little padel girl gang came together  eighteen months ago, you’ve become one of those rare friends who makes everything feel brighter.\n\n Every catch-up with you is so wonderful and grounding.  You’re a beautiful reminder in life of what is good. Your generosity, your kindness, and the genuine way you care and show up for people, always inspire me. I’m so grateful to celebrate your 50th with you and be a part of your wonderful GC Circle.  \n\nHappy birthday my dear friend.  xxxx"
- },
- {
-  "n": 36,
-  "name": "Jess G",
-  "group": "aus",
-  "title": "The Gold Coast Gained a Supermodel",
-  "note": "And I gained a friend!\n\n\nI never thought a random Intro to Padel 18 months ago would bring such a wonderful group of people into my life. And Nicola, you are most definitely one of the best things to come out of it!\n\n\nNot only are you an absolute stunner, but you're an even more beautiful human on the inside. You're full of knowledge and wisdom, hilariously funny, and just one of those people I could happily sit and talk to for hours.\n\n\nI love our coffees and chats, and I love that when we get on the padel court, we're usually having just as much fun laughing as we are playing. There's something so lovely about having friends you can just be yourself with, have a laugh and not take life too seriously.\n\n\nI'm so glad that random game of padel brought you into my life. I feel very lucky to call you my friend, and I look forward to many more coffees, laughs and games together (maybe in NZ 🤔)\n\n\nHappy 50th birthday, Nic! Here's to a fabulous next chapter and plenty more fun along the way! ❤️🥂",
-  "isFor": "Padel Queen",
-  "imgs": [
-   "p36-1"
-  ]
- },
- {
-  "n": 40,
-  "name": "Rach Saunders",
-  "group": "aus",
-  "note": "Nicola!!!! So grateful to have padel bring you into my life. Without a doubt one of the most caring, compassionate and considerate people I have ever met. You are always so positive and such a special person! Happy 50th - wishing you the best of the best 🤍🤍",
-  "imgs": [
-   "p40-1",
-   "p40-2",
-   "p40-3",
-   "p40-4",
-   "p40-5"
-  ]
- },
- {
-  "n": 41,
-  "name": "Ainsley",
-  "group": "aus",
-  "note": "Happy 50th Nicola!\n\nIt’s actually very hard to reconcile the number 50 with someone who has quite as much energy, enthusiasm and zest for life as you do. I’m not entirely convinced there hasn’t been an administrative error somewhere!\n\nI’m so glad our paths crossed through the boys, but even happier that along the way their friendship led to one of our own. I have loved playing Padel with you and getting to know you over wine &amp; cheese, but look forward to sharing some adventures with you too!\n\nYou are such a warm, generous and genuinely fun person to be around, and I feel very lucky to call you my friend. Here’s to 50, to the adventures still to come, and hopefully to this being only the beginning of a very long and beautiful friendship.\n\nAlles Liebe zum Geburtstag Nicola!\nLove Ains xx"
- },
- {
   "n": 42,
   "name": "Ane und Marc",
   "group": "new",
@@ -545,13 +564,6 @@ const friends = [
   "title": "Happy Birthday",
   "note": "Liebe Nicola, mit unseren allerbesten Glückwünschen und lieben Grüßen aus der Düsseldorfer Heimat gratulieren wir dir sehr herzlich. Zum Geburtstag mögen Dankbarkeit für die vergangenen Jahre, Vorfreude auf das Kommende, Glück und Gelassenheit dich begleiten. Mögest du noch viele Gipfel erreichen.",
   "city": "Düsseldorf"
- },
- {
-  "n": 46,
-  "name": "Fee",
-  "group": "aus",
-  "title": "Schönste Woche an der GC😍",
-  "note": "Ich bin dir so dankbar, dass ich diese wunderschöne Woche mit euch verbringen durfte❤️. Ich habe mich direkt wie Zuhause gefühlt (geht ja auch kaum anders bei deiner herzlichen Art) und denke wirklich oft an die Zeit zurück. In der Woche habe ich wirklich nochmal gemerkt, was du für ein unglaublich toller Mensch bist und habe einfach jeden Moment mit dir genossen☺️. Acai Bowls, Kängurus füttern, Mega leckere Dinners, Paddlen, Spiele Abend, mein erster Koala, und einfach ganz ganz tolle Gespräche🫶🏼. Besonders toll war auch ein gemütliches Bettchen und leckeres Essen nach den ganzen Hostels😍😅. Ihr wart ein ganz besonderer Teil meiner Australien Reise!!! Auf ein Wiedersehen, hoffentlich in Australien🙏"
  },
  {
   "n": 48,

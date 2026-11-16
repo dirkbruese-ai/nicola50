@@ -3,18 +3,22 @@ Aufruf: python3 tools/build_posts.py <posts.csv> <photos.json> <media-dir>"""
 import csv, json, os, sys
 
 # Gruppe pro Padlet-Beitragsnummer: family, old (Münster Girls), new (From home), aus (Gold Coast)
-GROUP = {50: "family", 53: "family", 12: "family", 13: "family", 21: "family", 55: "family",
+GROUP = {50: "family", 53: "family", 12: "family", 13: "family", 55: "family",
          37: "old", 14: "old", 15: "old", 2: "old", 22: "old", 33: "old", 47: "old", 49: "old",
          31: "close", 18: "close", 20: "close", 52: "close", 6: "close", 62: "close", 29: "close", 64: "close",
          24: "close", 26: "close", 27: "close", 28: "close", 19: "close",
          3: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 23: "aus", 30: "aus",
-         35: "aus", 36: "aus", 40: "aus", 41: "aus", 46: "aus"}
+         35: "aus", 36: "aus", 40: "aus", 41: "aus", 46: "aus", 21: "aus"}
+# Gold Coast unterteilt (Dirk 16.11.)
+TEAM = {17: "Hockey", 21: "Hockey", 11: "Hockey", 3: "School", 41: "School", 23: "School",
+        10: "Padel", 30: "Padel", 16: "Padel", 36: "Padel", 35: "Padel", 40: "Padel", 46: "Visiting"}
 # Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang, LAST ganz ans Ende
-ORDER = [50, 53, 12, 13, 21, 55,
+ORDER = [50, 53, 12, 13, 55,
+         17, 21, 11, 3, 41, 23, 10, 30, 16, 36, 35, 40, 46,
          37, 14, 15, 2, 22, 33, 47, 49,
          31, 18, 20, 52, 6, 62, 28, 24, 27, 26, 29, 64, 19, 25, 34, 8, 9, 38, 39]
 LAST = [4, 57, 7, 5, 32, 63]
-NAME = {2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
+NAME = {10: "Lieke", 16: "Candice & Brent", 30: "Alex & Lex", 36: "Jess G", 2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",
         26: "Nicola (DEHNS)", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs",
         47: "K-Ro", 49: "Verena", 50: "Mami & Papi", 53: "Katja, Christian, Julia & Alexander",
@@ -24,7 +28,7 @@ SKIP = {1, 66}  # 66: Fotos von Lisa & Stefan, gehören zu 65
 CITY = {2: "Gerresheim", 12: "Viersen", 13: "Viersen", 14: "Olching", 15: "Olching", 22: "Hamburg",
         24: "Oberkassel", 26: "Oberkassel", 27: "Oberkassel", 32: "Munich · Christchurch", 34: "Düsseldorf",
         8: "Cologne", 9: "Cologne", 37: "Hamburg", 31: "Düsseldorf", 29: "Düsseldorf", 6: "Düsseldorf",
-        21: "Viersen", 55: "Viersen", 50: "Krefeld", 53: "Krefeld", 45: "Düsseldorf", 60: "Düsseldorf",
+        55: "Viersen", 50: "Krefeld", 53: "Krefeld", 45: "Düsseldorf", 60: "Düsseldorf",
         63: "Christchurch", 65: "Bonn"}
 
 csv_path, photos_path, media = sys.argv[1:4]
@@ -44,6 +48,7 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     if p.get("title") == p.get("note"): p.pop("title")
     if n == 5: p.pop("note", None)
     if n in CITY: p["city"] = CITY[n]
+    if n in TEAM: p["team"] = TEAM[n]
     if str(n) in photos: p["imgs"] = photos[str(n)]
     v, a = f"{media}/v{n}.mp4", f"{media}/a{n}.mp3"
     if os.path.exists(v): p["clip"] = f"v{n}"; p["video"] = mmss(dur(v))

@@ -97,6 +97,7 @@ section { padding-block: 56px 8px; }
 .stars { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
 .group-head { grid-column: 1 / -1; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; border-top: 1px solid var(--rule); padding-top: 16px; margin-top: 10px; }
 .group-head:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+.team-head { grid-column: 1 / -1; font: 700 1.35rem/1 var(--f-hand); color: var(--red, #c8102e); margin: 6px 0 -4px; }
 .group-head h3 { font: 400 1.7rem/1 var(--f-head); text-transform: uppercase; margin: 0; }
 .group-head span { font: 700 1.7rem/1 var(--f-hand); color: var(--blue); }
 .star { min-width: 0; display: grid; gap: 12px; align-content: start; }
@@ -454,9 +455,10 @@ const groups = [["Family", "where it all began", f => f.group === "family", "g-f
   ["The Münster Girls", "from Krefeld and Münster to Düsseldorf, Hamburg and Munich, still close as ever, and reunited at every year’s revival", f => f.group === "old", "g-old"],
   ["From home", "Düsseldorf & beyond", f => f.group === "close" || f.group === "new", "g-home"],
   ["G’day, Gold Coast", "your Australian crew", f => f.group === "aus", "g-aus"]];
+const TEAMS = { Hockey: "On the hockey field", School: "At the school gate", Padel: "On the padel court", Visiting: "Just passing through" };
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG, id]) => { const g = shown.filter(inG);
-    return g.length ? `<div class="group-head" id="${id}"><h3>${h}</h3><span>${sub}</span></div>` + g.map(card).join("") : ""; }).join("");
+    return g.length ? `<div class="group-head" id="${id}"><h3>${h}</h3><span>${sub}</span></div>` + g.map((f, i) => (f.team && f.team !== (g[i - 1] || {}).team ? `<div class="team-head">${TEAMS[f.team] || f.team}</div>` : "") + card(f)).join("") : ""; }).join("");
   chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.k === k)); };
 chips.innerHTML = kinds.map(k => `<button class="chip" type="button" data-k="${k}">${k}</button>`).join("");
 chips.addEventListener("click", e => { const c = e.target.closest(".chip"); if (c) render(c.dataset.k); });
