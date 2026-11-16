@@ -324,6 +324,18 @@ const friends = [
   "note": "Liebe Nici,\nich wünsche dir von ganzem Herzen alles Liebe zu deinem besonderen Geburtstag! Wie wunderbar, dass du diesen Tag zusammen mit Dirk, deinen Jungs und sicher vielen Freunden in dem wunderbaren Land feiern darfst! Genieß' deinen Ehrentag auf vollem Herzen.\nIch drücke dich aus der Ferne und hoffe, dass wir bald mal wieder den einen oder anderen Sauren in der Dille zusammen trinken, in Köln oder Düsseldorf frühstücken oder auch an das tolle Paddelevent vor eurem Abschied anknüpfen. Bleib' gesund und genauso, wie du bist und ich dich seit bald 30 Jahren kenne! ❤️"
  },
  {
+  "n": 54,
+  "name": "Suse",
+  "group": "old",
+  "note": "🤩 Auf dich 🥂🍾, das Leben und alles was noch kommt 🤩!",
+  "isFor": "Ein Mensch, der Spuren hinterlässt",
+  "moment": "Unsere Münstermädels-Hühnerhaufentreffen",
+  "wish": "Liebe Nici, happy Birthday zu deinem 50. Geburtstag 🥂🍾! Ich wünsche dir für dein neues Lebensjahrzehnt ganz viele schöne Momente, spannende Erlebnisse, Gesundheit und Menschen an deiner Seite mit denen du lachen und das Leben genießen kannst ❤️. Wie schön, dass es dich gibt! Lass dich feiern und genieße deinen besonderen Tag! Bis hoffentlich bald mal wieder, viele liebe Grüße, Suse 🫶",
+  "imgs": [
+   "p54-1"
+  ]
+ },
+ {
   "n": 31,
   "name": "Claudi",
   "group": "close",
@@ -375,6 +387,26 @@ const friends = [
   "isFor": "A fantastic and very reliable friend 👯‍♂️",
   "moment": "Münster, Waldfest, Karneval, Tegernsee, Muggel, Salzburg, Venedig, Wellness, etc. ❤️",
   "wish": "Love, health and great experiences all around the world 🌎"
+ },
+ {
+  "n": 44,
+  "name": "Sonja & Basti",
+  "group": "new",
+  "note": "Liebste Nici,\nwir senden dir von Herzen unseren Familien-Geburtstags-Jodler aus der Heimat nach Down Under.\nWir vermissen dich und denken an deinem Ehrentag ganz besonders an dich.\nFühl dich dolle gedrückt ❤️",
+  "clip": "v44",
+  "video": "1:02"
+ },
+ {
+  "n": 25,
+  "name": "Tina und Andreas",
+  "group": "new",
+  "note": "Liebe Nici,\nSchon 50? Das kann doch gar nicht sein! Du bist neugierig aufs Leben, sehr abenteuerlustig und voller Ideen.\nDu hörst aufmerksam zu, interessierst Dich für andere und hast immer ein offenes Ohr. Wir vermissen Dich wirklich sehr im\nRheinland! Mit Deiner herzlichen, unkomplizierten Art und Deiner Lust auf Neues bist du ein toller Mensch, den man gerne um sich hat. Und du bist die beste Organisatorin wenn es darum geht, die Münster Mädels zu vereinen! Ohne Dich schaffen wir das gar nicht! \nBleib genauso, wie du bist, auch die nächsten 50 Jahre: neugierig, mutig, empathisch und voller Ideen.\nSehr gerne stoßen wir mit Dir an- wenn du wieder im Lande bist und dann freuen wir uns wieder auf jede Menge Münster Mädels Aktivitäten!",
+  "isFor": "Eine visionäre Macherin und beste Zuhörerin",
+  "moment": "Münster Mädels Treffen in Düsseldorf",
+  "wish": "eine phantastische Zeit an der Gold Coast mit Deinen Lieben",
+  "imgs": [
+   "p25-1"
+  ]
  },
  {
   "n": 6,
@@ -477,18 +509,6 @@ const friends = [
   ]
  },
  {
-  "n": 25,
-  "name": "Tina und Andreas",
-  "group": "new",
-  "note": "Liebe Nici,\nSchon 50? Das kann doch gar nicht sein! Du bist neugierig aufs Leben, sehr abenteuerlustig und voller Ideen.\nDu hörst aufmerksam zu, interessierst Dich für andere und hast immer ein offenes Ohr. Wir vermissen Dich wirklich sehr im\nRheinland! Mit Deiner herzlichen, unkomplizierten Art und Deiner Lust auf Neues bist du ein toller Mensch, den man gerne um sich hat. Und du bist die beste Organisatorin wenn es darum geht, die Münster Mädels zu vereinen! Ohne Dich schaffen wir das gar nicht! \nBleib genauso, wie du bist, auch die nächsten 50 Jahre: neugierig, mutig, empathisch und voller Ideen.\nSehr gerne stoßen wir mit Dir an- wenn du wieder im Lande bist und dann freuen wir uns wieder auf jede Menge Münster Mädels Aktivitäten!",
-  "isFor": "Eine visionäre Macherin und beste Zuhörerin",
-  "moment": "Münster Mädels Treffen in Düsseldorf",
-  "wish": "eine phantastische Zeit an der Gold Coast mit Deinen Lieben",
-  "imgs": [
-   "p25-1"
-  ]
- },
- {
   "n": 34,
   "name": "Anna-Maria",
   "group": "new",
@@ -550,14 +570,6 @@ const friends = [
   "wish": "Dass du immer DEINE Entscheidungen triffst auch wenn sie manchmal vom „Standardweg“ abweichen 🦘☀️"
  },
  {
-  "n": 44,
-  "name": "Sonja & Basti",
-  "group": "new",
-  "note": "Liebste Nici,\nwir senden dir von Herzen unseren Familien-Geburtstags-Jodler aus der Heimat nach Down Under.\nWir vermissen dich und denken an deinem Ehrentag ganz besonders an dich.\nFühl dich dolle gedrückt ❤️",
-  "clip": "v44",
-  "video": "1:02"
- },
- {
   "n": 45,
   "name": "Ruth und Oliver",
   "group": "new",
@@ -585,18 +597,6 @@ const friends = [
   "wish": "Nur das Beste!!! ❤️❤️❤️",
   "imgs": [
    "p51-1"
-  ]
- },
- {
-  "n": 54,
-  "name": "Suse",
-  "group": "new",
-  "note": "🤩 Auf dich 🥂🍾, das Leben und alles was noch kommt 🤩!",
-  "isFor": "Ein Mensch, der Spuren hinterlässt",
-  "moment": "Unsere Münstermädels-Hühnerhaufentreffen",
-  "wish": "Liebe Nici, happy Birthday zu deinem 50. Geburtstag 🥂🍾! Ich wünsche dir für dein neues Lebensjahrzehnt ganz viele schöne Momente, spannende Erlebnisse, Gesundheit und Menschen an deiner Seite mit denen du lachen und das Leben genießen kannst ❤️. Wie schön, dass es dich gibt! Lass dich feiern und genieße deinen besonderen Tag! Bis hoffentlich bald mal wieder, viele liebe Grüße, Suse 🫶",
-  "imgs": [
-   "p54-1"
   ]
  },
  {
