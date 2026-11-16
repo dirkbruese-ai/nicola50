@@ -694,8 +694,8 @@ const friends = [
   "note": "Happy Birthday 🎁",
   "city": "Bonn",
   "imgs": [
-   "p65-1",
-   "p65-2"
+   "p65-2",
+   "p65-1"
   ],
   "clip": "v65",
   "video": "2:16"
