@@ -147,6 +147,18 @@ const friends = [
   ]
  },
  {
+  "n": 36,
+  "name": "Jess G",
+  "group": "aus",
+  "title": "The Gold Coast Gained a Supermodel",
+  "note": "And I gained a friend!\n\n\nI never thought a random Intro to Padel 18 months ago would bring such a wonderful group of people into my life. And Nicola, you are most definitely one of the best things to come out of it!\n\n\nNot only are you an absolute stunner, but you're an even more beautiful human on the inside. You're full of knowledge and wisdom, hilariously funny, and just one of those people I could happily sit and talk to for hours.\n\n\nI love our coffees and chats, and I love that when we get on the padel court, we're usually having just as much fun laughing as we are playing. There's something so lovely about having friends you can just be yourself with, have a laugh and not take life too seriously.\n\n\nI'm so glad that random game of padel brought you into my life. I feel very lucky to call you my friend, and I look forward to many more coffees, laughs and games together (maybe in NZ 🤔)\n\n\nHappy 50th birthday, Nic! Here's to a fabulous next chapter and plenty more fun along the way! ❤️🥂",
+  "isFor": "Padel Queen",
+  "team": "Padel",
+  "imgs": [
+   "p36-1"
+  ]
+ },
+ {
   "n": 30,
   "name": "Alex & Lex",
   "group": "aus",
@@ -171,18 +183,6 @@ const friends = [
   "team": "Padel",
   "imgs": [
    "p16-1"
-  ]
- },
- {
-  "n": 36,
-  "name": "Jess G",
-  "group": "aus",
-  "title": "The Gold Coast Gained a Supermodel",
-  "note": "And I gained a friend!\n\n\nI never thought a random Intro to Padel 18 months ago would bring such a wonderful group of people into my life. And Nicola, you are most definitely one of the best things to come out of it!\n\n\nNot only are you an absolute stunner, but you're an even more beautiful human on the inside. You're full of knowledge and wisdom, hilariously funny, and just one of those people I could happily sit and talk to for hours.\n\n\nI love our coffees and chats, and I love that when we get on the padel court, we're usually having just as much fun laughing as we are playing. There's something so lovely about having friends you can just be yourself with, have a laugh and not take life too seriously.\n\n\nI'm so glad that random game of padel brought you into my life. I feel very lucky to call you my friend, and I look forward to many more coffees, laughs and games together (maybe in NZ 🤔)\n\n\nHappy 50th birthday, Nic! Here's to a fabulous next chapter and plenty more fun along the way! ❤️🥂",
-  "isFor": "Padel Queen",
-  "team": "Padel",
-  "imgs": [
-   "p36-1"
   ]
  },
  {
@@ -394,25 +394,6 @@ const friends = [
   "video": "1:02"
  },
  {
-  "n": 6,
-  "name": "Petra",
-  "group": "close",
-  "title": "Happy Birthday",
-  "note": "Liebe Nicola,\nAlles, alles Liebe zum Geburtstag. Zum runden, Specialgeburtstag. Bleib ein so besonderer Mensch, wie Du bist 😘",
-  "isFor": "Eine ganz besondere Freundin",
-  "moment": "Unsere gemeinsamen Abende und Gespräche",
-  "city": "Düsseldorf",
-  "clip": "v6",
-  "video": "3:41"
- },
- {
-  "n": 62,
-  "name": "Corinna",
-  "group": "close",
-  "note": "Liebe Nicola\nseit der Geburt unserer großen Jungs sind wir gemeinsam schon durch so wunderbare, aber auch einige herausfordernde, bewegende Momente unserer Leben gemeinsam gegangen.\nObwohl wir nicht jeden Tag Kontakt haben, ist da immer eine besondere Vertrautheit, wenn wir uns sehen oder sprechen: Du bist für mich ein echter Herzensmensch.\n \nZu Deinem 50. Geburtstag wünsche ich Dir alles erdenklich Liebe, Gesundheit, Glück, viele unvergessliche Momente und vor allem die Gewissheit, wie sehr Du von den Menschen geschätzt wirst, die Dich begleiten.\nDanke, dass es Dich gibt!\nAlles Liebe zum Geburtstag",
-  "isFor": "Ein Herzensmensch"
- },
- {
   "n": 28,
   "name": "Eva&eve&carla",
   "group": "close",
@@ -443,6 +424,25 @@ const friends = [
   "city": "Oberkassel",
   "clip": "v27",
   "video": "0:38"
+ },
+ {
+  "n": 6,
+  "name": "Petra",
+  "group": "close",
+  "title": "Happy Birthday",
+  "note": "Liebe Nicola,\nAlles, alles Liebe zum Geburtstag. Zum runden, Specialgeburtstag. Bleib ein so besonderer Mensch, wie Du bist 😘",
+  "isFor": "Eine ganz besondere Freundin",
+  "moment": "Unsere gemeinsamen Abende und Gespräche",
+  "city": "Düsseldorf",
+  "clip": "v6",
+  "video": "3:41"
+ },
+ {
+  "n": 62,
+  "name": "Corinna",
+  "group": "close",
+  "note": "Liebe Nicola\nseit der Geburt unserer großen Jungs sind wir gemeinsam schon durch so wunderbare, aber auch einige herausfordernde, bewegende Momente unserer Leben gemeinsam gegangen.\nObwohl wir nicht jeden Tag Kontakt haben, ist da immer eine besondere Vertrautheit, wenn wir uns sehen oder sprechen: Du bist für mich ein echter Herzensmensch.\n \nZu Deinem 50. Geburtstag wünsche ich Dir alles erdenklich Liebe, Gesundheit, Glück, viele unvergessliche Momente und vor allem die Gewissheit, wie sehr Du von den Menschen geschätzt wirst, die Dich begleiten.\nDanke, dass es Dich gibt!\nAlles Liebe zum Geburtstag",
+  "isFor": "Ein Herzensmensch"
  },
  {
   "n": 26,
@@ -494,6 +494,31 @@ const friends = [
   ]
  },
  {
+  "n": 56,
+  "name": "Bea",
+  "group": "new",
+  "title": "Only The Very Best For You, Birthday Girl 🩷",
+  "note": "Liebe Nici,\nalles, alles Liebe und Gute zu deinem 50.  Geburtstag wünschen wir dir!\nWir freuen uns von Herzen auf ein Wiedersehen und grüßen dich, Dirk, Moritz und Philip sehr herzlich 🎂❤️🥂\nTorsten &amp; Beate",
+  "isFor": "Ganz viel, aber zum Beispiel  meine allerliebste Hülsmann-Begleitung 🍾🍽️🍷🍨☕️ . Ich vermisse unsere Mittagessen 🤗.",
+  "moment": "Mein schönster Tag mit dir war natürlich deine und Dirks Hochzeit 😍!",
+  "wish": "Weiterhin alles Liebe und Gute Down Under. \nMöge es euch in jeglicher Hinsicht gut gehen. \nUnd dass du zwischendurch auch immer wieder mal Zeit ganz für DICH findest . \nUnd dass ihr trotzdem irgendwann wieder hier seid - bitte wenigstens auf Stippvisite - und wir euch dann mal wieder sehen - ehrlicherweise wünsche ich das natürlich auch mir ☺️. \nUnd noch so viel mehr..",
+  "imgs": [
+   "p56-1"
+  ]
+ },
+ {
+  "n": 59,
+  "name": "Nina",
+  "group": "new",
+  "title": "HIP HIP HURRAY LIEBE NICOLA",
+  "note": "Wir hören uns sehr selten und sehen uns noch seltener!\nUnd trotzdem ist jeder Austausch sehr wertvoll und besonders,  und dafür bin ich sehr dankbar!",
+  "isFor": "a bright smile",
+  "moment": "every single conversation",
+  "wish": "simply all the best and lots of special moments more with her three boys",
+  "clip": "v59",
+  "video": "0:35"
+ },
+ {
   "n": 34,
   "name": "Anna-Maria",
   "group": "new",
@@ -502,41 +527,16 @@ const friends = [
   "city": "Düsseldorf"
  },
  {
-  "n": 8,
-  "name": "Jana",
+  "n": 51,
+  "name": "Jürgen & Tina",
   "group": "new",
-  "note": "Schön, dass es dich gibt 💛",
-  "city": "Cologne",
-  "clip": "v8",
-  "video": "0:24"
- },
- {
-  "n": 9,
-  "name": "Sami",
-  "group": "new",
-  "title": "Happy Birthday 🥳",
-  "note": "Alles Liebe für dich!💛",
-  "city": "Cologne",
-  "clip": "v9",
-  "video": "0:26"
- },
- {
-  "n": 38,
-  "name": "Die Buddenbergs",
-  "group": "new",
-  "note": "Liebe Nicola,\nZu Deinem runden Geburtstag alles Liebe und Gute,\nviel lieber würden wir persönlich mit Dir feiern, aber umso herzlicher der Glückwunsch Deiner Buddenbergs",
-  "isFor": "die beste Läuferin!",
-  "clip": "v38",
-  "video": "0:44"
- },
- {
-  "n": 39,
-  "name": "Birgit, Caro, Olli und Uli",
-  "group": "new",
-  "title": "Happy Birthday",
-  "note": "Liebe Nicola, zu Deinem Geburtstag gratulieren wir ganz herzlich und wünschen Dir einen wunderbaren Geburtstag und eine tolle Feier!🥳🚀🎁🤩",
-  "clip": "v39",
-  "video": "0:26"
+  "title": "HAPPY HAPPY BIRTHDAY!! 🎊🎁🎉🎂",
+  "note": "Liebe Nicola,\n\nzu Deinem 50. Geburtstag gratulieren wir Dir von ganzem Herzen ♥️ und wünschen Dir vor allem Gesundheit 💪, viel Glück 🍀, wenn Du es brauchst, noch viele schöne Reisen und viele unvergessliche Momente mit Deiner Familie und mit Euren Freunden!! 🥰 💖\n\nWir haben uns überlegt, wie ein gemeinsamer Geburtstagsabend mit Dir in Zukunft aussehen könnte: zum Beispiel auf unserer Terrasse in Kanada bei Sonnenuntergang, mit leckeren Getränken 🍾🥂, viel Hummer 🦞 und viel Lachen und Zeit für schöne Gespräche...  😎🥳\n\nAuf Dein nächstes Jahrzehnt – in dem wir hoffentlich wirklich eines Tag gemeinsam so sitzen!!! Ob in Kanada 🇨🇦 oder Australien 🇦🇺 oder sonstwo auf der Welt. 🫶\n\nAlles Liebe, Jürgen &amp; Tina ❤️",
+  "isFor": "purer Sonnenschein ☀️",
+  "wish": "Nur das Beste!!! ❤️❤️❤️",
+  "imgs": [
+   "p51-1"
+  ]
  },
  {
   "n": 42,
@@ -555,6 +555,15 @@ const friends = [
   "wish": "Dass du immer DEINE Entscheidungen triffst auch wenn sie manchmal vom „Standardweg“ abweichen 🦘☀️"
  },
  {
+  "n": 38,
+  "name": "Die Buddenbergs",
+  "group": "new",
+  "note": "Liebe Nicola,\nZu Deinem runden Geburtstag alles Liebe und Gute,\nviel lieber würden wir persönlich mit Dir feiern, aber umso herzlicher der Glückwunsch Deiner Buddenbergs",
+  "isFor": "die beste Läuferin!",
+  "clip": "v38",
+  "video": "0:44"
+ },
+ {
   "n": 45,
   "name": "Ruth und Oliver",
   "group": "new",
@@ -563,49 +572,13 @@ const friends = [
   "city": "Düsseldorf"
  },
  {
-  "n": 51,
-  "name": "Jürgen & Tina",
+  "n": 39,
+  "name": "Birgit, Caro, Olli und Uli",
   "group": "new",
-  "title": "HAPPY HAPPY BIRTHDAY!! 🎊🎁🎉🎂",
-  "note": "Liebe Nicola,\n\nzu Deinem 50. Geburtstag gratulieren wir Dir von ganzem Herzen ♥️ und wünschen Dir vor allem Gesundheit 💪, viel Glück 🍀, wenn Du es brauchst, noch viele schöne Reisen und viele unvergessliche Momente mit Deiner Familie und mit Euren Freunden!! 🥰 💖\n\nWir haben uns überlegt, wie ein gemeinsamer Geburtstagsabend mit Dir in Zukunft aussehen könnte: zum Beispiel auf unserer Terrasse in Kanada bei Sonnenuntergang, mit leckeren Getränken 🍾🥂, viel Hummer 🦞 und viel Lachen und Zeit für schöne Gespräche...  😎🥳\n\nAuf Dein nächstes Jahrzehnt – in dem wir hoffentlich wirklich eines Tag gemeinsam so sitzen!!! Ob in Kanada 🇨🇦 oder Australien 🇦🇺 oder sonstwo auf der Welt. 🫶\n\nAlles Liebe, Jürgen &amp; Tina ❤️",
-  "isFor": "purer Sonnenschein ☀️",
-  "wish": "Nur das Beste!!! ❤️❤️❤️",
-  "imgs": [
-   "p51-1"
-  ]
- },
- {
-  "n": 56,
-  "name": "Bea",
-  "group": "new",
-  "title": "Only The Very Best For You, Birthday Girl 🩷",
-  "note": "Liebe Nici,\nalles, alles Liebe und Gute zu deinem 50.  Geburtstag wünschen wir dir!\nWir freuen uns von Herzen auf ein Wiedersehen und grüßen dich, Dirk, Moritz und Philip sehr herzlich 🎂❤️🥂\nTorsten &amp; Beate",
-  "isFor": "Ganz viel, aber zum Beispiel  meine allerliebste Hülsmann-Begleitung 🍾🍽️🍷🍨☕️ . Ich vermisse unsere Mittagessen 🤗.",
-  "moment": "Mein schönster Tag mit dir war natürlich deine und Dirks Hochzeit 😍!",
-  "wish": "Weiterhin alles Liebe und Gute Down Under. \nMöge es euch in jeglicher Hinsicht gut gehen. \nUnd dass du zwischendurch auch immer wieder mal Zeit ganz für DICH findest . \nUnd dass ihr trotzdem irgendwann wieder hier seid - bitte wenigstens auf Stippvisite - und wir euch dann mal wieder sehen - ehrlicherweise wünsche ich das natürlich auch mir ☺️. \nUnd noch so viel mehr..",
-  "imgs": [
-   "p56-1"
-  ]
- },
- {
-  "n": 58,
-  "name": "Andrea & Geo",
-  "group": "new",
-  "note": "Happy happy Birthday liebe Nici! \n🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾",
-  "clip": "v58",
-  "video": "0:17"
- },
- {
-  "n": 59,
-  "name": "Nina",
-  "group": "new",
-  "title": "HIP HIP HURRAY LIEBE NICOLA",
-  "note": "Wir hören uns sehr selten und sehen uns noch seltener!\nUnd trotzdem ist jeder Austausch sehr wertvoll und besonders,  und dafür bin ich sehr dankbar!",
-  "isFor": "a bright smile",
-  "moment": "every single conversation",
-  "wish": "simply all the best and lots of special moments more with her three boys",
-  "clip": "v59",
-  "video": "0:35"
+  "title": "Happy Birthday",
+  "note": "Liebe Nicola, zu Deinem Geburtstag gratulieren wir ganz herzlich und wünschen Dir einen wunderbaren Geburtstag und eine tolle Feier!🥳🚀🎁🤩",
+  "clip": "v39",
+  "video": "0:26"
  },
  {
   "n": 60,
@@ -644,6 +617,14 @@ const friends = [
   "city": "Bonn",
   "clip": "v65",
   "video": "2:16"
+ },
+ {
+  "n": 58,
+  "name": "Andrea & Geo",
+  "group": "new",
+  "note": "Happy happy Birthday liebe Nici! \n🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾",
+  "clip": "v58",
+  "video": "0:17"
  },
  {
   "n": 4,
@@ -702,13 +683,23 @@ const friends = [
   ]
  },
  {
-  "n": 32,
-  "name": "Jo",
+  "n": 8,
+  "name": "Jana",
   "group": "new",
-  "note": "Ein Gruss aus Christchurch",
-  "city": "Munich · Christchurch",
-  "clip": "v32",
-  "video": "4:11"
+  "note": "Schön, dass es dich gibt 💛",
+  "city": "Cologne",
+  "clip": "v8",
+  "video": "0:24"
+ },
+ {
+  "n": 9,
+  "name": "Sami",
+  "group": "new",
+  "title": "Happy Birthday 🥳",
+  "note": "Alles Liebe für dich!💛",
+  "city": "Cologne",
+  "clip": "v9",
+  "video": "0:26"
  },
  {
   "n": 63,
@@ -720,5 +711,14 @@ const friends = [
   "moment": "anything from walks with our strollers when the boys were little to joined family celebrations and parties together to a boat cruise around Whitsundays 6 months ago",
   "wish": "fullfillment and happiness",
   "city": "Christchurch"
+ },
+ {
+  "n": 32,
+  "name": "Jo",
+  "group": "new",
+  "note": "Ein Gruss aus Christchurch",
+  "city": "Munich · Christchurch",
+  "clip": "v32",
+  "video": "4:11"
  }
 ];
