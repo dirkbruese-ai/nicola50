@@ -22,7 +22,7 @@ NAME = {10: "Lieke", 16: "Candice & Brent", 30: "Alex & Lex", 36: "Jess G", 2: "
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",
         26: "Nicola (DEHNS)", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs",
         47: "K-Ro", 49: "Verena", 50: "Mami & Papi", 53: "Katja, Christian, Julia & Alexander",
-        52: "Corinna & Marc", 54: "Suse", 55: "Viersen Brüses", 58: "Andrea & Geo", 59: "Nina",
+        54: "Suse", 55: "Viersen Brüses", 58: "Andrea & Geo", 59: "Nina",
         61: "Séchés & Kleins", 63: "Claudi", 65: "Lisa & Stefan"}
 SKIP = {1, 66}  # 66: Fotos von Lisa & Stefan, gehören zu 65
 CITY = {2: "Gerresheim", 12: "Viersen", 13: "Viersen", 14: "Olching", 15: "Olching", 22: "Hamburg",

@@ -373,7 +373,7 @@ const friends = [
  },
  {
   "n": 52,
-  "name": "Corinna & Marc",
+  "name": "Corinna",
   "group": "close",
   "note": "Liebe Nici,\nMarc und ich waren neulich in Oberkassel essen und haben an Dich gedacht! Wir vermissen Euch sehr! Alles Liebe und Gute zum Geburtstag und nur das Beste für Dein neues Lebensjahr mit ganz vielen großartigen Erlebnissen! Wir hoffen auf ein baldiges Wiedersehen! Fühl Dich ganz fest gedrückt 🥳🥂🍾🎁🥰!",
   "isFor": "A fantastic and very reliable friend 👯‍♂️",
