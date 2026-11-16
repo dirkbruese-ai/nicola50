@@ -330,7 +330,7 @@ const friends = [
  {
   "n": 31,
   "name": "Claudi",
-  "group": "close",
+  "group": "old",
   "title": "Hey Nici, Du bes e Jeföhl",
   "note": "Von ganzem Herzen alles Gute zum 50. Geburtstag. Genieß es, Dich heute hochleben und feiern zu lassen von den vielen Menschen, denen Du so viel bedeutest. Du bist der Inbegriff von rheinischer Lebensfreude, eine Menschenfängerin, echte Zuhörerin, weise Ratgeberin, mutige, attraktive, wissbegierige, fleissige Frau, coole, liebevolle Mutter, sportliches Energiebündel, verlässliche Freundin, neugierige Weltenbummlerin, wunderbare Trauzeugin, fürsorgliche Patentante….. Die Welt ist reicher, weil es Dich gibt und Deinen Spirit versprühst. Du gibst so viel, nimm heute mal. Und blicke stolz und dankbar auf das zurück, was in 50 Jahren Nici steckt. Klopf Dir selber auf die Schulter. Und schau in die Gesichter Deiner 3 Männer und Du wirst auch dort das Strahlen von Stolz und Dankbarkeit entdecken. Dein Mut, mit den Jungs nach Australien zu gehen, sucht seinesgleichen. Wie schön, dass Ihr heute zu viert downunder feiern könnt. Ich bin ein bisschen neidisch, Würde Dich nämlich sehr gerne selber in den Arm nehmen😊. \nIch vermisse Dich sehr, Dein Strahlen, unsere Gespräche. Den 60. feiern wir dann wieder zusammen 😎.\n\nHeut ist Dein Tag, lass es krachen und Du kannst Dir sicher sein, im Rheinland wirst Du heute auch gefeiert 🥳.",
   "isFor": "Personal VIP",
@@ -344,6 +344,18 @@ const friends = [
    "p31-4",
    "p31-5",
    "p31-6"
+  ]
+ },
+ {
+  "n": 25,
+  "name": "Tina und Andreas",
+  "group": "old",
+  "note": "Liebe Nici,\nSchon 50? Das kann doch gar nicht sein! Du bist neugierig aufs Leben, sehr abenteuerlustig und voller Ideen.\nDu hörst aufmerksam zu, interessierst Dich für andere und hast immer ein offenes Ohr. Wir vermissen Dich wirklich sehr im\nRheinland! Mit Deiner herzlichen, unkomplizierten Art und Deiner Lust auf Neues bist du ein toller Mensch, den man gerne um sich hat. Und du bist die beste Organisatorin wenn es darum geht, die Münster Mädels zu vereinen! Ohne Dich schaffen wir das gar nicht! \nBleib genauso, wie du bist, auch die nächsten 50 Jahre: neugierig, mutig, empathisch und voller Ideen.\nSehr gerne stoßen wir mit Dir an- wenn du wieder im Lande bist und dann freuen wir uns wieder auf jede Menge Münster Mädels Aktivitäten!",
+  "isFor": "Eine visionäre Macherin und beste Zuhörerin",
+  "moment": "Münster Mädels Treffen in Düsseldorf",
+  "wish": "eine phantastische Zeit an der Gold Coast mit Deinen Lieben",
+  "imgs": [
+   "p25-1"
   ]
  },
  {
@@ -387,18 +399,6 @@ const friends = [
   "note": "Liebste Nici,\nwir senden dir von Herzen unseren Familien-Geburtstags-Jodler aus der Heimat nach Down Under.\nWir vermissen dich und denken an deinem Ehrentag ganz besonders an dich.\nFühl dich dolle gedrückt ❤️",
   "clip": "v44",
   "video": "1:02"
- },
- {
-  "n": 25,
-  "name": "Tina und Andreas",
-  "group": "new",
-  "note": "Liebe Nici,\nSchon 50? Das kann doch gar nicht sein! Du bist neugierig aufs Leben, sehr abenteuerlustig und voller Ideen.\nDu hörst aufmerksam zu, interessierst Dich für andere und hast immer ein offenes Ohr. Wir vermissen Dich wirklich sehr im\nRheinland! Mit Deiner herzlichen, unkomplizierten Art und Deiner Lust auf Neues bist du ein toller Mensch, den man gerne um sich hat. Und du bist die beste Organisatorin wenn es darum geht, die Münster Mädels zu vereinen! Ohne Dich schaffen wir das gar nicht! \nBleib genauso, wie du bist, auch die nächsten 50 Jahre: neugierig, mutig, empathisch und voller Ideen.\nSehr gerne stoßen wir mit Dir an- wenn du wieder im Lande bist und dann freuen wir uns wieder auf jede Menge Münster Mädels Aktivitäten!",
-  "isFor": "Eine visionäre Macherin und beste Zuhörerin",
-  "moment": "Münster Mädels Treffen in Düsseldorf",
-  "wish": "eine phantastische Zeit an der Gold Coast mit Deinen Lieben",
-  "imgs": [
-   "p25-1"
-  ]
  },
  {
   "n": 6,
