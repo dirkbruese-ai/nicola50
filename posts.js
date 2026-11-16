@@ -208,14 +208,6 @@ const friends = [
   ]
  },
  {
-  "n": 46,
-  "name": "Fee",
-  "group": "aus",
-  "title": "Schönste Woche an der GC😍",
-  "note": "Ich bin dir so dankbar, dass ich diese wunderschöne Woche mit euch verbringen durfte❤️. Ich habe mich direkt wie Zuhause gefühlt (geht ja auch kaum anders bei deiner herzlichen Art) und denke wirklich oft an die Zeit zurück. In der Woche habe ich wirklich nochmal gemerkt, was du für ein unglaublich toller Mensch bist und habe einfach jeden Moment mit dir genossen☺️. Acai Bowls, Kängurus füttern, Mega leckere Dinners, Paddlen, Spiele Abend, mein erster Koala, und einfach ganz ganz tolle Gespräche🫶🏼. Besonders toll war auch ein gemütliches Bettchen und leckeres Essen nach den ganzen Hostels😍😅. Ihr wart ein ganz besonderer Teil meiner Australien Reise!!! Auf ein Wiedersehen, hoffentlich in Australien🙏",
-  "team": "Visiting"
- },
- {
   "n": 37,
   "name": "Sylvie",
   "group": "old",
@@ -652,6 +644,13 @@ const friends = [
   "note": "Mit den allerbesten Grüßen von Séchés und Kleins❤️ ❤️",
   "clip": "v61",
   "video": "1:29"
+ },
+ {
+  "n": 46,
+  "name": "Fee",
+  "group": "new",
+  "title": "Schönste Woche an der GC😍",
+  "note": "Ich bin dir so dankbar, dass ich diese wunderschöne Woche mit euch verbringen durfte❤️. Ich habe mich direkt wie Zuhause gefühlt (geht ja auch kaum anders bei deiner herzlichen Art) und denke wirklich oft an die Zeit zurück. In der Woche habe ich wirklich nochmal gemerkt, was du für ein unglaublich toller Mensch bist und habe einfach jeden Moment mit dir genossen☺️. Acai Bowls, Kängurus füttern, Mega leckere Dinners, Paddlen, Spiele Abend, mein erster Koala, und einfach ganz ganz tolle Gespräche🫶🏼. Besonders toll war auch ein gemütliches Bettchen und leckeres Essen nach den ganzen Hostels😍😅. Ihr wart ein ganz besonderer Teil meiner Australien Reise!!! Auf ein Wiedersehen, hoffentlich in Australien🙏"
  },
  {
   "n": 65,

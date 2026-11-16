@@ -8,13 +8,13 @@ GROUP = {50: "family", 53: "family", 12: "family", 13: "family", 55: "family",
          31: "close", 18: "close", 20: "close", 52: "close", 6: "close", 62: "close", 29: "close", 64: "close",
          24: "close", 26: "close", 27: "close", 28: "close", 19: "close",
          3: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 23: "aus", 30: "aus",
-         35: "aus", 36: "aus", 40: "aus", 41: "aus", 46: "aus", 21: "aus"}
+         35: "aus", 36: "aus", 40: "aus", 41: "aus", 21: "aus"}
 # Gold Coast unterteilt (Dirk 16.11.)
 TEAM = {17: "Hockey", 21: "Hockey", 11: "Hockey", 3: "School", 41: "School", 23: "School",
-        10: "Padel", 30: "Padel", 16: "Padel", 36: "Padel", 35: "Padel", 40: "Padel", 46: "Visiting"}
+        10: "Padel", 30: "Padel", 16: "Padel", 36: "Padel", 35: "Padel", 40: "Padel"}
 # Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang, LAST ganz ans Ende
 ORDER = [50, 53, 12, 13, 55,
-         17, 21, 11, 3, 41, 23, 10, 30, 16, 36, 35, 40, 46,
+         17, 21, 11, 3, 41, 23, 10, 30, 16, 36, 35, 40,
          37, 14, 15, 2, 22, 33, 47, 49, 54,
          31, 18, 20, 52, 44, 25, 6, 62, 28, 24, 27, 26, 29, 64, 19, 34, 8, 9, 38, 39]
 LAST = [4, 57, 7, 5, 32, 63]
@@ -54,7 +54,9 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     if os.path.exists(v): p["clip"] = f"v{n}"; p["video"] = mmss(dur(v))
     if os.path.exists(a): p["audio"] = f"a{n}"; p["voice"] = mmss(dur(a))
     out.append(p)
-out.sort(key=lambda p: ORDER.index(p["n"]) if p["n"] in ORDER else 1000 + LAST.index(p["n"]) if p["n"] in LAST else 100 + p["n"])
+BEFORE = {46: 65}  # Fee direkt vor Lisa & Stefan
+key = lambda n: ORDER.index(n) if n in ORDER else 1000 + LAST.index(n) if n in LAST else 100 + n
+out.sort(key=lambda p: key(BEFORE[p["n"]]) - 0.5 if p["n"] in BEFORE else key(p["n"]))
 open("posts.js", "w").write("// Erzeugt mit tools/build_posts.py aus dem Padlet-Export\nconst friends = " +
                             json.dumps(out, ensure_ascii=False, indent=1) + ";\n")
 print(len(out), "Beiträge")
