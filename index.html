@@ -341,7 +341,7 @@ section { padding-block: 56px 8px; }
       <a class="line" href="#g-home"><div class="kicker">Home Sweet Home</div><h3>Düsseldorf Misses You!</h3><p>Love letters from the Rhine, Oberkassel and beyond</p></a>
       <a class="line" href="#g-aus"><div class="kicker">G’day from Down Under</div><h3>The Gold Coast Crew Spills the Tea</h3><p>Padel, hockey and the beach club crowd</p></a>
       <a class="line" href="#g-family"><div class="kicker">Family Affair</div><h3>Krefeld &amp; Viersen Raise a Glass to You</h3><p>Mum, Dad, Katja and the whole clan cheer you on</p></a>
-      <a class="bubble love-open" href="#love">TOP SECRET 🔒 Dirk, Moritz &amp; Philip open their hearts. For Nici’s eyes only ♥</a>
+      <a class="bubble love-open" href="#love">Just for you, Nici ♥ A few personal words from Dirk, Moritz &amp; Philip</a>
       <div class="cover-actions">
         <button class="btn" id="start-show" type="button">Start slideshow</button>
         <a class="btn ghost" href="#stars">Read the messages</a>
@@ -501,7 +501,7 @@ const groups = [["Family", "where it all began", f => f.group === "family", "g-f
   ["From home", "Düsseldorf & beyond", f => f.group === "close" || f.group === "new", "g-home"],
   ["G’day, Gold Coast", "your Australian crew", f => f.group === "aus", "g-aus"]];
 const TEAMS = { Hockey: "On the hockey field", School: "At the school gate", Padel: "On the padel court", Visiting: "Just passing through" };
-const SECRET = `<article class="star secret-card"><div class="seal" aria-hidden="true">♥</div><div class="kicker">Top secret · for Nici’s eyes only</div><h4>Dirk, Moritz &amp; Philip</h4><p>Your three boys have sealed their most personal words in here. Only you have the key.</p><a class="btn love-open" href="#love">Unlock with your code ♥</a></article>`;
+const SECRET = `<article class="star secret-card"><div class="seal" aria-hidden="true">♥</div><div class="kicker">Just for you, Nici</div><h4>Dirk, Moritz &amp; Philip</h4><p>A few personal words from your three boys.</p><a class="btn love-open" href="#love">Open ♥</a></article>`;
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG, id]) => { const g = shown.filter(inG);
     return g.length ? `<div class="group-head" id="${id}"><h3>${h}</h3><span>${sub}</span></div>` + g.map((f, i) => (f.team && f.team !== (g[i - 1] || {}).team ? `<div class="team-head">${TEAMS[f.team] || f.team}</div>` : "") + card(f)).join("") + (id === "g-family" ? SECRET : "") : ""; }).join("");
