@@ -209,6 +209,13 @@ section { padding-block: 56px 8px; }
 .intro-card span { display: block; font: 600 .7rem/1.2 var(--f-body); color: var(--red); text-transform: uppercase; letter-spacing: .08em; }
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
 /* Geheime Herz-Seite nur für Nici */
+.secret-card { background: linear-gradient(160deg, #fff 0%, #ffe9ea 100%); border: 2px dashed var(--red); text-align: center; padding: 28px 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.secret-card .seal { width: 64px; height: 64px; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center; font-size: 1.9rem; box-shadow: 0 6px 16px rgba(209,16,31,.3); animation: lovebeat 2.4s ease-in-out infinite; }
+.secret-card .kicker { color: var(--red); }
+.secret-card h4 { font: 400 1.8rem/1 var(--f-head); text-transform: uppercase; margin: 4px 0; }
+.secret-card p { font: 700 1.3rem/1.3 var(--f-hand); margin: 0 0 8px; }
+.secret-card .btn { text-decoration: none; }
+
 .love-btn { position: fixed; z-index: 25; left: max(14px, env(safe-area-inset-left, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: var(--red); display: grid; place-items: center; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.22); padding: 0; animation: lovebeat 2.4s ease-in-out infinite; }
 .love-btn svg { width: 22px; height: 22px; }
 @keyframes lovebeat { 0%, 60%, 100% { transform: scale(1); } 70% { transform: scale(1.18); } 80% { transform: scale(1); } 90% { transform: scale(1.12); } }
@@ -334,7 +341,7 @@ section { padding-block: 56px 8px; }
       <a class="line" href="#g-home"><div class="kicker">Home Sweet Home</div><h3>Düsseldorf Misses You!</h3><p>Love letters from the Rhine, Oberkassel and beyond</p></a>
       <a class="line" href="#g-aus"><div class="kicker">G’day from Down Under</div><h3>The Gold Coast Crew Spills the Tea</h3><p>Padel, hockey and the beach club crowd</p></a>
       <a class="line" href="#g-family"><div class="kicker">Family Affair</div><h3>Krefeld &amp; Viersen Raise a Glass to You</h3><p>Mum, Dad, Katja and the whole clan cheer you on</p></a>
-      <a class="bubble" href="#podcast">NEW: Watch &amp; listen! All the videos and voice messages in one place</a>
+      <a class="bubble love-open" href="#love">TOP SECRET 🔒 Dirk, Moritz &amp; Philip open their hearts. For Nici’s eyes only ♥</a>
       <div class="cover-actions">
         <button class="btn" id="start-show" type="button">Start slideshow</button>
         <a class="btn ghost" href="#stars">Read the messages</a>
@@ -494,9 +501,10 @@ const groups = [["Family", "where it all began", f => f.group === "family", "g-f
   ["From home", "Düsseldorf & beyond", f => f.group === "close" || f.group === "new", "g-home"],
   ["G’day, Gold Coast", "your Australian crew", f => f.group === "aus", "g-aus"]];
 const TEAMS = { Hockey: "On the hockey field", School: "At the school gate", Padel: "On the padel court", Visiting: "Just passing through" };
+const SECRET = `<article class="star secret-card"><div class="seal" aria-hidden="true">♥</div><div class="kicker">Top secret · for Nici’s eyes only</div><h4>Dirk, Moritz &amp; Philip</h4><p>Your three boys have sealed their most personal words in here. Only you have the key.</p><a class="btn love-open" href="#love">Unlock with your code ♥</a></article>`;
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG, id]) => { const g = shown.filter(inG);
-    return g.length ? `<div class="group-head" id="${id}"><h3>${h}</h3><span>${sub}</span></div>` + g.map((f, i) => (f.team && f.team !== (g[i - 1] || {}).team ? `<div class="team-head">${TEAMS[f.team] || f.team}</div>` : "") + card(f)).join("") : ""; }).join("");
+    return g.length ? `<div class="group-head" id="${id}"><h3>${h}</h3><span>${sub}</span></div>` + g.map((f, i) => (f.team && f.team !== (g[i - 1] || {}).team ? `<div class="team-head">${TEAMS[f.team] || f.team}</div>` : "") + card(f)).join("") + (id === "g-family" ? SECRET : "") : ""; }).join("");
   chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.k === k)); };
 chips.innerHTML = kinds.map(k => `<button class="chip" type="button" data-k="${k}">${k}</button>`).join("");
 chips.addEventListener("click", e => { const c = e.target.closest(".chip"); if (c) render(c.dataset.k); });
@@ -714,6 +722,7 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
     lock.hidden = true; body.hidden = false; box.scrollTop = 0;
   }
   hearts.innerHTML = Array.from({ length: 18 }, (_, i) => `<span style="left:${(i * 53) % 100}%;font-size:${14 + (i * 7) % 22}px;animation-duration:${9 + (i * 5) % 9}s;animation-delay:-${(i * 3.1) % 14}s">♥</span>`).join("");
+  document.addEventListener("click", e => { const a = e.target.closest(".love-open"); if (a) { e.preventDefault(); btn.click(); } });
   btn.addEventListener("click", () => { box.hidden = false; document.body.style.overflow = "hidden"; if (!lock.hidden) setTimeout(() => word.focus(), 50); });
   document.getElementById("love-close").addEventListener("click", () => { box.hidden = true; document.body.style.overflow = ""; });
   form.addEventListener("submit", async e => { e.preventDefault();
