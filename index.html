@@ -627,7 +627,7 @@ const playIntro = done => {
   msg.animate([{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "none", offset: .06 }, { opacity: 1, offset: .94 }, { opacity: 0 }], { duration: OUT - 38000, delay: 38000, fill: "both" });
   let ended = false; const finish = () => { if (ended) return; ended = true; done(); };
   welcome.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 900, delay: END - 600, fill: "forwards" }).onfinish = finish;
-  stage.addEventListener("click", () => { welcome.getAnimations({ subtree: true }).forEach(a => { try { a.finish(); } catch (e) { a.cancel(); } }); finish(); });
+  stage.addEventListener("click", () => { welcome.getAnimations({ subtree: true }).forEach(a => { try { a.finish(); } catch (e) { a.cancel(); } }); serenade.pause(); np.hidden = true; finish(); });
 };
 document.getElementById("welcome-start").onclick = () => { serenade.play().catch(() => {}); np.hidden = false;
   welcome.classList.add("playing");
