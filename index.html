@@ -100,7 +100,9 @@ section { padding-block: 56px 8px; }
 .team-head { grid-column: 1 / -1; font: 700 1.35rem/1 var(--f-hand); color: var(--red, #c8102e); margin: 6px 0 -4px; }
 .group-head h3 { font: 400 1.7rem/1 var(--f-head); text-transform: uppercase; margin: 0; }
 .group-head span { font: 700 1.7rem/1 var(--f-hand); color: var(--blue); }
-.star { min-width: 0; display: grid; gap: 12px; align-content: start; }
+.star { min-width: 0; display: grid; gap: 12px; align-content: start; border-top: 3px solid var(--ink); padding-top: 12px; }
+.star.secret-card { border-top: 0; }
+.star .who { padding-bottom: 2px; }
 .star .pic { position: relative; aspect-ratio: 4/3; max-width: 100%; background: linear-gradient(140deg, var(--ph-a), var(--ph-b)); display: grid; place-items: end start; padding: 10px; }
 .star .pic span { font: 600 .7rem/1.2 var(--f-body); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
 .star .pic .count { position: absolute; top: 10px; left: 10px; background: var(--yellow); color: #141114; font: 700 .72rem/1 var(--f-body); padding: 5px 8px; }
@@ -109,7 +111,7 @@ section { padding-block: 56px 8px; }
 .thumbs button { aspect-ratio: 1; border: 0; padding: 0; background: center / cover no-repeat; cursor: pointer; opacity: .6; outline-offset: 2px; }
 .thumbs button[aria-pressed="true"] { opacity: 1; outline: 2px solid var(--red); }
 .star .clip { width: 100%; max-height: 420px; background: #000; display: block; }
-.post-title { margin: -4px 0 0; font: 700 .8rem/1.2 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+.post-title { margin: -6px 0 2px; font: 700 .8rem/1.2 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
 .facts { margin: 0; display: grid; gap: 6px; border-left: 3px solid var(--yellow); padding-left: 12px; }
 .facts dt { font: 600 .72rem/1.2 var(--f-body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .facts dd { margin: 0 0 4px; font: 700 1.5rem/1.05 var(--f-hand); color: var(--blue); }
@@ -323,7 +325,7 @@ section { padding-block: 56px 8px; }
   .sticker { width: 92px; top: 12px; right: 12px; } .sticker b { font-size: 2.1rem; } .sticker small { font-size: .5rem; letter-spacing: .06em; }
   .cover-photo .hl { bottom: 12px; font-size: 1.75rem; }
   .legs { gap: 10px; }
-  .stars { grid-template-columns: 1fr; }
+  .stars { grid-template-columns: 1fr; gap: 34px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
@@ -483,11 +485,11 @@ const esc = t => String(t).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", 
 const media = k => `media/${k}`;
 const label = f => [f.photos ? `${f.photos} photo${f.photos > 1 ? "s" : ""}` : "", f.clip ? "Video" : "", f.audio ? "Voice" : ""].filter(Boolean).join(" · ");
 const card = f => `<article class="star">
+  <div class="who"><span class="name">${esc(f.name)}</span>${f.city ? `<span class="postmark">${esc(f.city)}</span>` : ""}</div>
+  ${f.title ? `<h4 class="post-title">${esc(f.title)}</h4>` : ""}
   ${f.imgs ? `<div class="pic has-img" style="background-image:url('${img(f.imgs[0])}')"><span class="count">${label(f)}</span></div>` : ""}
   ${f.imgs && f.imgs.length > 1 ? `<div class="thumbs">${f.imgs.map((k, j) => `<button type="button" aria-label="Show photo ${j + 1} from ${esc(f.name)}" aria-pressed="${j === 0}" data-src="${img(k)}" style="background-image:url('${img(k)}')"></button>`).join("")}</div>` : ""}
   ${f.clip ? `<video class="clip" src="${media(f.clip)}.mp4" poster="${media(f.clip)}.jpg" controls playsinline preload="none"></video>` : ""}
-  <div class="who"><span class="name">${esc(f.name)}</span>${f.city ? `<span class="postmark">${esc(f.city)}</span>` : ""}</div>
-  ${f.title ? `<h4 class="post-title">${esc(f.title)}</h4>` : ""}
   ${f.note ? (f.note.length > 100 ? `<div class="letter">${esc(f.note)}</div>` : `<blockquote>${esc(f.note)}</blockquote>`) : ""}
   ${f.isFor || f.moment || f.wish ? `<dl class="facts">${[["Nici is for me …", f.isFor], ["My special moment with her …", f.moment], ["I wish Nici …", f.wish]].filter(x => x[1]).map(([t, v]) => `<dt>${t}</dt><dd>${esc(v)}</dd>`).join("")}</dl>` : ""}
   ${f.audio ? voice(f) : ""}
