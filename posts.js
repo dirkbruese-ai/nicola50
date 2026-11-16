@@ -9,7 +9,15 @@ const friends = [
   "isFor": "eine ganz besondere Tochter, die wir über alles lieben",
   "moment": "Blumenverkäuferin am Hochfelln - on a hops op sleigh\n- hau rungsi bungsi",
   "wish": "für das zweite halbe Jahrhundert alles Glück dieser Welt",
-  "city": "Krefeld"
+  "city": "Krefeld",
+  "imgs": [
+   "p50-1",
+   "p50-2",
+   "p50-3",
+   "p50-4",
+   "p50-5",
+   "p50-6"
+  ]
  },
  {
   "n": 53,
@@ -19,7 +27,15 @@ const friends = [
   "isFor": "die beste, erste, liebste, charmanteste, coolste Schwester, Schwägerin und Patentante",
   "moment": "'- die gemeinsamen Weihnachts- und Familienfeiern\n- die gemeinsame Zeit in Münster, besonders der lustige Moment des Abendessens mit Erbsen und Kartoffelpüree, das den Teller verließ und seine Bleibe im Bett suchte und fand\n- unsere Hochzeit mit Dir als Trauzeugin\n- der gemeinsame Skiurlaub in St. Johann mit Alex' ersten Skiversuche\n- und, und, und ...",
   "wish": "'- eine unvergesslich schöne Geburtstagsfeier, \n- ein kommendes weiterhin aktives, ein gesundes, glückliches zweites halbes Jahrhundert, das keine Wünsche offen lässt.",
-  "city": "Krefeld"
+  "city": "Krefeld",
+  "imgs": [
+   "p53-1",
+   "p53-2",
+   "p53-3",
+   "p53-4",
+   "p53-5",
+   "p53-6"
+  ]
  },
  {
   "n": 12,
@@ -117,7 +133,11 @@ const friends = [
   "name": "Ainsley",
   "group": "aus",
   "note": "Happy 50th Nicola!\n\nIt’s actually very hard to reconcile the number 50 with someone who has quite as much energy, enthusiasm and zest for life as you do. I’m not entirely convinced there hasn’t been an administrative error somewhere!\n\nI’m so glad our paths crossed through the boys, but even happier that along the way their friendship led to one of our own. I have loved playing Padel with you and getting to know you over wine &amp; cheese, but look forward to sharing some adventures with you too!\n\nYou are such a warm, generous and genuinely fun person to be around, and I feel very lucky to call you my friend. Here’s to 50, to the adventures still to come, and hopefully to this being only the beginning of a very long and beautiful friendship.\n\nAlles Liebe zum Geburtstag Nicola!\nLove Ains xx",
-  "team": "School"
+  "team": "School",
+  "imgs": [
+   "p41-1",
+   "p41-2"
+  ]
  },
  {
   "n": 23,
@@ -307,13 +327,26 @@ const friends = [
   "note": "Meine liebe Nici 💖,\n\n30 von 50 Jahren mit Dir und so viel erlebt: Münster, London, Berlin, Düsseldorf, Mallorca, Sylt, Klosters, Schliersee, Tegernsee, Saalbach, Rheingau, Ostsee, Starnberg, Lermoos …. Der Post in zu klein, um ihn mit all den gemeinsamen Fotos und Erinnerungen zu füllen, die ich aus diesen Jahren gefunden habe. Ich wünsche Dir von ganzem Herzen alles Liebe, Gesundheit und Freude zu Deinem 50.Geburtstag! Du bist eine Seele von Mensch. Ich liebe unsere tiefgründigen Gespräche und die Wärme, die du mitbringst. Du hörst wirklich zu, bist für andere da und findest selbst dann die richtigen Worte, wenn die eigenen fehlen. Bei dir bekommt man das Gefühl, einfach, sein zu dürfen, wer man ist. Das bedeutet mir viel, und ich bin so froh, dich als Freundin zu haben. Lots of Kisses from the other side of the world 😘",
   "isFor": "Ein Fels in der Brandung🗻 🌊… ich werde dir nie vergessen, wie sehr du mir in meinen dunkelsten Stunden beigestanden hast.",
   "moment": "Jeder Moment mit dir ist besonders. Und jede Begegnung, wenn auch manchmal nur 1x Mal im Jahr ist, als wäre es gestern, dass wir uns das letzte Mal gesehen haben. Du strahlst heller als jeder Stern 🌟.",
-  "wish": "Ich freue mich von Herzen, dass du dir deinen Traum erfüllt hast und nach Australien gegangen bist! Ich wünsche dir weiterhin eine wunderbare Zeit mit deinen Liebsten, neuen Begegnungen, vielen kleinen Abenteuern und Momenten, in denen du denkst: Wie schön, dass ich das wirklich gemacht habe. Du bist der Wahnsinn 🥳🥰🥂🍀"
+  "wish": "Ich freue mich von Herzen, dass du dir deinen Traum erfüllt hast und nach Australien gegangen bist! Ich wünsche dir weiterhin eine wunderbare Zeit mit deinen Liebsten, neuen Begegnungen, vielen kleinen Abenteuern und Momenten, in denen du denkst: Wie schön, dass ich das wirklich gemacht habe. Du bist der Wahnsinn 🥳🥰🥂🍀",
+  "imgs": [
+   "p47-1",
+   "p47-2",
+   "p47-3",
+   "p47-4",
+   "p47-5",
+   "p47-6"
+  ]
  },
  {
   "n": 49,
   "name": "Verena",
   "group": "old",
-  "note": "Liebe Nici,\nich wünsche dir von ganzem Herzen alles Liebe zu deinem besonderen Geburtstag! Wie wunderbar, dass du diesen Tag zusammen mit Dirk, deinen Jungs und sicher vielen Freunden in dem wunderbaren Land feiern darfst! Genieß' deinen Ehrentag auf vollem Herzen.\nIch drücke dich aus der Ferne und hoffe, dass wir bald mal wieder den einen oder anderen Sauren in der Dille zusammen trinken, in Köln oder Düsseldorf frühstücken oder auch an das tolle Paddelevent vor eurem Abschied anknüpfen. Bleib' gesund und genauso, wie du bist und ich dich seit bald 30 Jahren kenne! ❤️"
+  "note": "Liebe Nici,\nich wünsche dir von ganzem Herzen alles Liebe zu deinem besonderen Geburtstag! Wie wunderbar, dass du diesen Tag zusammen mit Dirk, deinen Jungs und sicher vielen Freunden in dem wunderbaren Land feiern darfst! Genieß' deinen Ehrentag auf vollem Herzen.\nIch drücke dich aus der Ferne und hoffe, dass wir bald mal wieder den einen oder anderen Sauren in der Dille zusammen trinken, in Köln oder Düsseldorf frühstücken oder auch an das tolle Paddelevent vor eurem Abschied anknüpfen. Bleib' gesund und genauso, wie du bist und ich dich seit bald 30 Jahren kenne! ❤️",
+  "imgs": [
+   "p49-1",
+   "p49-2",
+   "p49-3"
+  ]
  },
  {
   "n": 54,
@@ -383,7 +416,11 @@ const friends = [
   "note": "Liebe Nici,\nMarc und ich waren neulich in Oberkassel essen und haben an Dich gedacht! Wir vermissen Euch sehr! Alles Liebe und Gute zum Geburtstag und nur das Beste für Dein neues Lebensjahr mit ganz vielen großartigen Erlebnissen! Wir hoffen auf ein baldiges Wiedersehen! Fühl Dich ganz fest gedrückt 🥳🥂🍾🎁🥰!",
   "isFor": "A fantastic and very reliable friend 👯‍♂️",
   "moment": "Münster, Waldfest, Karneval, Tegernsee, Muggel, Salzburg, Venedig, Wellness, etc. ❤️",
-  "wish": "Love, health and great experiences all around the world 🌎"
+  "wish": "Love, health and great experiences all around the world 🌎",
+  "imgs": [
+   "p52-1",
+   "p52-2"
+  ]
  },
  {
   "n": 44,
@@ -442,7 +479,14 @@ const friends = [
   "name": "Corinna",
   "group": "close",
   "note": "Liebe Nicola\nseit der Geburt unserer großen Jungs sind wir gemeinsam schon durch so wunderbare, aber auch einige herausfordernde, bewegende Momente unserer Leben gemeinsam gegangen.\nObwohl wir nicht jeden Tag Kontakt haben, ist da immer eine besondere Vertrautheit, wenn wir uns sehen oder sprechen: Du bist für mich ein echter Herzensmensch.\n \nZu Deinem 50. Geburtstag wünsche ich Dir alles erdenklich Liebe, Gesundheit, Glück, viele unvergessliche Momente und vor allem die Gewissheit, wie sehr Du von den Menschen geschätzt wirst, die Dich begleiten.\nDanke, dass es Dich gibt!\nAlles Liebe zum Geburtstag",
-  "isFor": "Ein Herzensmensch"
+  "isFor": "Ein Herzensmensch",
+  "imgs": [
+   "p62-1",
+   "p62-2",
+   "p62-3",
+   "p62-4",
+   "p62-5"
+  ]
  },
  {
   "n": 26,
@@ -478,7 +522,14 @@ const friends = [
   "n": 64,
   "name": "Carla",
   "group": "close",
-  "note": "Du fehlst uns, meine Liebe! ❤️ Manchmal sind es einfach die kleinen Momente, die wir gerne mit dir teilen würde - oder ein Abenteuer - oder ein Glas Wein 😅 Vergiss nicht, dass du hier sehr vermisst wirst! 🥰"
+  "note": "Du fehlst uns, meine Liebe! ❤️ Manchmal sind es einfach die kleinen Momente, die wir gerne mit dir teilen würde - oder ein Abenteuer - oder ein Glas Wein 😅 Vergiss nicht, dass du hier sehr vermisst wirst! 🥰",
+  "imgs": [
+   "p64-1",
+   "p64-2",
+   "p64-3",
+   "p64-4",
+   "p64-5"
+  ]
  },
  {
   "n": 19,
@@ -543,7 +594,15 @@ const friends = [
   "name": "Ane und Marc",
   "group": "new",
   "title": "Alles Gute in die Ferne",
-  "note": "Liebe Nicola, wir gratulieren Dir herzlichst zu Deinem runden und jungen Geburtstag und wünschen Dir in die Ferne nur das Beste, viel Freunde und Freude und eine traumhafte Feier mit Deiner Familie und allen neuen Lebensgefährten.\nWir vermissen Dich hier sehr, beim Sport, beim Feiern und natürlich am allermeisten als treue und unersetzbare tolle Freundin und Wegbegleiterin.\nWir denken häufig und gerne an Euch und hoffen sehr, dass sich die große Entfernung bald erheblich reduziert. Bis dahin gönnen wir Euch aber jede Sekunde des neuen Lifestyles, der aufregenden Umgebung und der vielen neuen Freunde.\nNoch ein paar persönliche Worte von mir:\nMir fehlen besonders unsere Gespräche, Dein Humor in den kleinen Dingen des Lebens, die Telefonate, der Sport mit Philipp und die gemeinsamen Essen mit Steffi und Nicole. Dein scharfer Verstand, Deine treffenden Analysen und Deine ganz eigene Art, die Dinge zu sehen. Ich könnte diese Liste endlos fortsetzen.\nMarc hat eigentlich schon alles gesagt. Es ist einfach schön zu wissen, dass Ihr glücklich seid, Euer Ding macht und dieses neue Kapitel so genießt. Und bei aller Sehnsucht nach Dir freue ich mich von Herzen für Euch.\nBleib wie Du bist, denk an uns und komm bald zurück\nDicke Umarmung\nChristiane und Marc"
+  "note": "Liebe Nicola, wir gratulieren Dir herzlichst zu Deinem runden und jungen Geburtstag und wünschen Dir in die Ferne nur das Beste, viel Freunde und Freude und eine traumhafte Feier mit Deiner Familie und allen neuen Lebensgefährten.\nWir vermissen Dich hier sehr, beim Sport, beim Feiern und natürlich am allermeisten als treue und unersetzbare tolle Freundin und Wegbegleiterin.\nWir denken häufig und gerne an Euch und hoffen sehr, dass sich die große Entfernung bald erheblich reduziert. Bis dahin gönnen wir Euch aber jede Sekunde des neuen Lifestyles, der aufregenden Umgebung und der vielen neuen Freunde.\nNoch ein paar persönliche Worte von mir:\nMir fehlen besonders unsere Gespräche, Dein Humor in den kleinen Dingen des Lebens, die Telefonate, der Sport mit Philipp und die gemeinsamen Essen mit Steffi und Nicole. Dein scharfer Verstand, Deine treffenden Analysen und Deine ganz eigene Art, die Dinge zu sehen. Ich könnte diese Liste endlos fortsetzen.\nMarc hat eigentlich schon alles gesagt. Es ist einfach schön zu wissen, dass Ihr glücklich seid, Euer Ding macht und dieses neue Kapitel so genießt. Und bei aller Sehnsucht nach Dir freue ich mich von Herzen für Euch.\nBleib wie Du bist, denk an uns und komm bald zurück\nDicke Umarmung\nChristiane und Marc",
+  "imgs": [
+   "p42-1",
+   "p42-2",
+   "p42-3",
+   "p42-4",
+   "p42-5",
+   "p42-6"
+  ]
  },
  {
   "n": 43,
@@ -552,7 +611,14 @@ const friends = [
   "note": "Dein offenes Ohr, dein herzliches Zuhören,\nkann trösten, verbinden und Trübsal zerstören.\nDu bist für alle da, mit viel Herz und Verstand,\nund bringst gute Stimmung ins ganze Land.\n \nOb Hockeyplatz, Weihnachten im Schnee,\nob Feiern, Lachen und Après-Ski-Juchhee.\nSo viele schöne Momente, die bleiben bestehen,\nund viele weitere wollen wir gemeinsam begehen.\n \nNun bist du mit deinen Lieben in Down Under am Strand,\ndie Jungs beim Hockey, du mit dem Padel-Schläger in der Hand.\nDoch auch wenn Australien gerade dein Zuhause ist,\ndu fehlst uns hier – und wirst sehr vermisst!\n\nDrum wünschen wir Glück, Gesundheit und viel Sonnenschein,\nund hoffen, du fliegst bald wieder in Düsseldorf ein.\n\nLiebe Nici,\nNur das Allerbeste zur Big 5 ! Enjoy life und wir freuen uns auf viele gemeinsame Momente. We miss u 😘",
   "isFor": "Too far away",
   "moment": "Lately.. Zeitreise im Schnee…🎶 Apres-Ski im Mooserwirt 🎼💃 ❄️",
-  "wish": "Dass du immer DEINE Entscheidungen triffst auch wenn sie manchmal vom „Standardweg“ abweichen 🦘☀️"
+  "wish": "Dass du immer DEINE Entscheidungen triffst auch wenn sie manchmal vom „Standardweg“ abweichen 🦘☀️",
+  "imgs": [
+   "p43-1",
+   "p43-2",
+   "p43-3",
+   "p43-4",
+   "p43-5"
+  ]
  },
  {
   "n": 38,
@@ -569,7 +635,11 @@ const friends = [
   "group": "new",
   "title": "Happy Birthday",
   "note": "Liebe Nicola, mit unseren allerbesten Glückwünschen und lieben Grüßen aus der Düsseldorfer Heimat gratulieren wir dir sehr herzlich. Zum Geburtstag mögen Dankbarkeit für die vergangenen Jahre, Vorfreude auf das Kommende, Glück und Gelassenheit dich begleiten. Mögest du noch viele Gipfel erreichen.",
-  "city": "Düsseldorf"
+  "city": "Düsseldorf",
+  "imgs": [
+   "p45-1",
+   "p45-2"
+  ]
  },
  {
   "n": 39,
@@ -606,7 +676,15 @@ const friends = [
   "name": "Fee",
   "group": "new",
   "title": "Schönste Woche an der GC😍",
-  "note": "Ich bin dir so dankbar, dass ich diese wunderschöne Woche mit euch verbringen durfte❤️. Ich habe mich direkt wie Zuhause gefühlt (geht ja auch kaum anders bei deiner herzlichen Art) und denke wirklich oft an die Zeit zurück. In der Woche habe ich wirklich nochmal gemerkt, was du für ein unglaublich toller Mensch bist und habe einfach jeden Moment mit dir genossen☺️. Acai Bowls, Kängurus füttern, Mega leckere Dinners, Paddlen, Spiele Abend, mein erster Koala, und einfach ganz ganz tolle Gespräche🫶🏼. Besonders toll war auch ein gemütliches Bettchen und leckeres Essen nach den ganzen Hostels😍😅. Ihr wart ein ganz besonderer Teil meiner Australien Reise!!! Auf ein Wiedersehen, hoffentlich in Australien🙏"
+  "note": "Ich bin dir so dankbar, dass ich diese wunderschöne Woche mit euch verbringen durfte❤️. Ich habe mich direkt wie Zuhause gefühlt (geht ja auch kaum anders bei deiner herzlichen Art) und denke wirklich oft an die Zeit zurück. In der Woche habe ich wirklich nochmal gemerkt, was du für ein unglaublich toller Mensch bist und habe einfach jeden Moment mit dir genossen☺️. Acai Bowls, Kängurus füttern, Mega leckere Dinners, Paddlen, Spiele Abend, mein erster Koala, und einfach ganz ganz tolle Gespräche🫶🏼. Besonders toll war auch ein gemütliches Bettchen und leckeres Essen nach den ganzen Hostels😍😅. Ihr wart ein ganz besonderer Teil meiner Australien Reise!!! Auf ein Wiedersehen, hoffentlich in Australien🙏",
+  "imgs": [
+   "p46-1",
+   "p46-2",
+   "p46-3",
+   "p46-4",
+   "p46-5",
+   "p46-6"
+  ]
  },
  {
   "n": 65,
@@ -615,6 +693,10 @@ const friends = [
   "title": "Happy Birthday 🥳🎉🥂🍾🎁😘",
   "note": "Happy Birthday 🎁",
   "city": "Bonn",
+  "imgs": [
+   "p65-1",
+   "p65-2"
+  ],
   "clip": "v65",
   "video": "2:16"
  },
@@ -710,7 +792,11 @@ const friends = [
   "isFor": "radiant smile, sports ace, full of love and energy, cool mom, well organized (juggles many balls at once), best host ever (together with Dirk), family person, authentic, a generous and empathetic friend, funny, resilient and sometimes determined, creative, great questioner and idea generator",
   "moment": "anything from walks with our strollers when the boys were little to joined family celebrations and parties together to a boat cruise around Whitsundays 6 months ago",
   "wish": "fullfillment and happiness",
-  "city": "Christchurch"
+  "city": "Christchurch",
+  "imgs": [
+   "p63-1",
+   "p63-2"
+  ]
  },
  {
   "n": 32,
