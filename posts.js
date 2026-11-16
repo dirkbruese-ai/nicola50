@@ -431,6 +431,15 @@ const friends = [
   "video": "1:02"
  },
  {
+  "n": 67,
+  "name": "Steffi & Hendrik",
+  "group": "close",
+  "note": "Liebe Nicola! \n\nZu deinem Geburtstag schicken wir dir heute unsere kleine Liebeserklärung - an eine einfach fantastische Frau, die mit ihrer wunderbaren Art, ihren einzigartigen Charaktereigenschaften und ihrem großen Herzen, sowohl mein, als auch unser Leben auf ganz besondere Weise bereichert. \n\nSchön, dass es dich gibt! 💚\n\nGenieße deinen Ehrentag in vollen Zügen, umgeben von deiner Familie und deinen Freunden. Lass dich feiern, verwöhnen und ordentlich hochleben! Auch wenn wir heute nicht persönlich bei dir sein können, sind wir in Gedanken bei dir und stoßen aus der Ferne auf dich an! 🥂\n\nWe miss you! \nLiebe Grüße, \nHendrik und Steffi",
+  "isFor": "Eine Granate! 🚀",
+  "clip": "v67",
+  "video": "4:49"
+ },
+ {
   "n": 28,
   "name": "Eva&eve&carla",
   "group": "close",
@@ -806,5 +815,17 @@ const friends = [
   "city": "Munich · Christchurch",
   "clip": "v32",
   "video": "4:11"
+ },
+ {
+  "n": 66,
+  "name": "Katrin & Tim",
+  "group": "close",
+  "title": "Happy happy Birthday🎈",
+  "note": "Liebe Nicola, zu Deinem Geburtstag wünschen wir Dir alles Liebe, Gesundheit und nur das Allerbeste.\nGenieße diesen besonderen Tag unter\nschönstem\nSonnenschein. Wir stoßen heute auf Dich an und schicken Dir eine dicke Umarmung.\nDie Gold Coast kann sich sehr glücklich schätzen, einen so liebenswerten, humorvollen und wunderbaren Menschen zu ihren Mitbürgern zu zahlen (aber nur ausgeliehen, ist klar;)). Alles Liebe aus Düsseldorf😘💕😘🎈",
+  "imgs": [
+   "p66-1",
+   "p66-2",
+   "p66-3"
+  ]
  }
 ];
