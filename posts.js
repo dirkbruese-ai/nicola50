@@ -135,8 +135,8 @@ const friends = [
   "note": "Happy 50th Nicola!\n\nIt’s actually very hard to reconcile the number 50 with someone who has quite as much energy, enthusiasm and zest for life as you do. I’m not entirely convinced there hasn’t been an administrative error somewhere!\n\nI’m so glad our paths crossed through the boys, but even happier that along the way their friendship led to one of our own. I have loved playing Padel with you and getting to know you over wine &amp; cheese, but look forward to sharing some adventures with you too!\n\nYou are such a warm, generous and genuinely fun person to be around, and I feel very lucky to call you my friend. Here’s to 50, to the adventures still to come, and hopefully to this being only the beginning of a very long and beautiful friendship.\n\nAlles Liebe zum Geburtstag Nicola!\nLove Ains xx",
   "team": "School",
   "imgs": [
-   "p41-1",
-   "p41-2"
+   "p41-2",
+   "p41-1"
   ]
  },
  {
@@ -300,11 +300,11 @@ const friends = [
   "wish": "Gesundheit, Liebe, Zufriedenheit und ganz ganz viel wunderbare Zeit mit den Menschen und Dingen die Du liebst! Auf das die nächsten 50 Jahre noch unfassbar viele Glücksmomente bringen ✨",
   "city": "Hamburg",
   "imgs": [
+   "p22-5",
    "p22-1",
    "p22-2",
    "p22-3",
    "p22-4",
-   "p22-5",
    "p22-6"
   ]
  },
@@ -343,8 +343,8 @@ const friends = [
   "group": "old",
   "note": "Liebe Nici,\nich wünsche dir von ganzem Herzen alles Liebe zu deinem besonderen Geburtstag! Wie wunderbar, dass du diesen Tag zusammen mit Dirk, deinen Jungs und sicher vielen Freunden in dem wunderbaren Land feiern darfst! Genieß' deinen Ehrentag auf vollem Herzen.\nIch drücke dich aus der Ferne und hoffe, dass wir bald mal wieder den einen oder anderen Sauren in der Dille zusammen trinken, in Köln oder Düsseldorf frühstücken oder auch an das tolle Paddelevent vor eurem Abschied anknüpfen. Bleib' gesund und genauso, wie du bist und ich dich seit bald 30 Jahren kenne! ❤️",
   "imgs": [
-   "p49-1",
    "p49-2",
+   "p49-1",
    "p49-3"
   ]
  },
@@ -383,9 +383,9 @@ const friends = [
   "wish": "Bleib wie Du bist, Du Herzensmensch und dabei gesund.",
   "city": "Düsseldorf",
   "imgs": [
+   "p31-3",
    "p31-1",
    "p31-2",
-   "p31-3",
    "p31-4",
    "p31-5",
    "p31-6"
@@ -418,8 +418,8 @@ const friends = [
   "moment": "Münster, Waldfest, Karneval, Tegernsee, Muggel, Salzburg, Venedig, Wellness, etc. ❤️",
   "wish": "Love, health and great experiences all around the world 🌎",
   "imgs": [
-   "p52-1",
-   "p52-2"
+   "p52-2",
+   "p52-1"
   ]
  },
  {
@@ -537,8 +537,8 @@ const friends = [
   "group": "close",
   "note": "🎈Happy Birthday und alles Liebe und Gute zu Deinem 50. Geburtstag🎈\n\n\nDu fehlst - \n• beim Eierlikör\nDas letzte mal gemeinsam am zugefrorenen Hochwasser-Rhein, einmalig! 🧊\nMein letztes Mal bei der Zwischenrunde in HH mit den Jungs, erst in der Bahn mit Mitreisenden, dann mit den Mädels beim Ausklang nach dem Spiel - ich bin mir sicher, Du wärst dabei gewesen und hättest es in vollen Zügen genauso genossen, es wäre eine Freude gewesen! \n• beim Anfeuern an der Seite\nNicht immer nur Spaß, aber zusammen mit ganz viel Freude und Elan dabei, wir haben aufgerüstet, Du wärst begeistert 🤩\n• beim Feiern in geselliger Runde\nDas geht immer: nach dem Spiel, vor dem Spiel oder auch ohne Spiel, wir finden einen Anlass. Wenn Du wieder einmal dabei wärst, wäre das Anlass genug 😍🥂 \n• im Karneval\nHerrlich unsere gemeinsamen Kostüme, immer ein Spaß und große Freude, Du darfst jederzeit wieder einsteigen, wir erwarten Dich! 🤡\n• und überhaupt! ❤️\n\n\n\nWir freuen uns sehr auf neue Gelegenheiten! Jetzt wünsche ich Dir einen unvergesslichen Geburtstag. Lass Dich ordentlich feiern und genieße Deinen Tag!",
   "imgs": [
-   "p19-1",
    "p19-2",
+   "p19-1",
    "p19-3",
    "p19-4",
    "p19-5"
@@ -678,9 +678,9 @@ const friends = [
   "title": "Schönste Woche an der GC😍",
   "note": "Ich bin dir so dankbar, dass ich diese wunderschöne Woche mit euch verbringen durfte❤️. Ich habe mich direkt wie Zuhause gefühlt (geht ja auch kaum anders bei deiner herzlichen Art) und denke wirklich oft an die Zeit zurück. In der Woche habe ich wirklich nochmal gemerkt, was du für ein unglaublich toller Mensch bist und habe einfach jeden Moment mit dir genossen☺️. Acai Bowls, Kängurus füttern, Mega leckere Dinners, Paddlen, Spiele Abend, mein erster Koala, und einfach ganz ganz tolle Gespräche🫶🏼. Besonders toll war auch ein gemütliches Bettchen und leckeres Essen nach den ganzen Hostels😍😅. Ihr wart ein ganz besonderer Teil meiner Australien Reise!!! Auf ein Wiedersehen, hoffentlich in Australien🙏",
   "imgs": [
+   "p46-3",
    "p46-1",
    "p46-2",
-   "p46-3",
    "p46-4",
    "p46-5",
    "p46-6"
@@ -794,8 +794,8 @@ const friends = [
   "wish": "fullfillment and happiness",
   "city": "Christchurch",
   "imgs": [
-   "p63-1",
-   "p63-2"
+   "p63-2",
+   "p63-1"
   ]
  },
  {
