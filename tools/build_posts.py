@@ -17,7 +17,7 @@ ORDER = [50, 53, 12, 13, 55,
          17, 21, 11, 3, 41, 23, 10, 30, 16, 36, 35, 40,
          37, 14, 15, 2, 22, 33, 47, 49, 54, 25,
          31, 18, 20, 52, 44, 6, 62, 28, 24, 27, 26, 29, 64, 19, 34, 8, 9, 38, 39]
-LAST = [4, 57, 7, 5, 32, 63]
+LAST = [4, 57, 7, 5, 48, 32, 63]
 NAME = {10: "Lieke", 16: "Candice & Brent", 30: "Alex & Lex", 36: "Jess G", 2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",
         26: "Nicola (DEHNS)", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs",

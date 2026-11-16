@@ -570,16 +570,6 @@ const friends = [
   "city": "Düsseldorf"
  },
  {
-  "n": 48,
-  "name": "Andrea & Friedel",
-  "group": "new",
-  "title": "Happy Birthday wünschen Andrea und Friedel",
-  "note": "Liebe Nicola,\n\nwenn Lebensfreude einen Koffer packen könnte, würde sie vermutlich mit Dir verreisen. Ob an die Gold Coast, nach Kärnten (danke dafür ) oder ins Rheinland – wo Du bist, scheint die Sonne!\n\nDeine fröhliche Art, Dein hinreißendes Lachen und Dein ansteckender Optimismus machen Dich zu einem ganz besonderen Menschen. Wir wünschen Dir, dass Du Dir all das bewahrst – und natürlich die Lust auf alles, was das Leben noch an Überraschungen und Abenteuern bereithält.\n\nHab einen richtig schönen Geburtstag, lass es ordentlich krachen und genieß das Leben – ganz egal, wohin es Dich gerade verschlägt! \nKeep on rockin'",
-  "imgs": [
-   "p48-1"
-  ]
- },
- {
   "n": 51,
   "name": "Jürgen & Tina",
   "group": "new",
@@ -707,6 +697,16 @@ const friends = [
   "wish": "Only the best😊🍀",
   "audio": "a5",
   "voice": "0:37"
+ },
+ {
+  "n": 48,
+  "name": "Andrea & Friedel",
+  "group": "new",
+  "title": "Happy Birthday wünschen Andrea und Friedel",
+  "note": "Liebe Nicola,\n\nwenn Lebensfreude einen Koffer packen könnte, würde sie vermutlich mit Dir verreisen. Ob an die Gold Coast, nach Kärnten (danke dafür ) oder ins Rheinland – wo Du bist, scheint die Sonne!\n\nDeine fröhliche Art, Dein hinreißendes Lachen und Dein ansteckender Optimismus machen Dich zu einem ganz besonderen Menschen. Wir wünschen Dir, dass Du Dir all das bewahrst – und natürlich die Lust auf alles, was das Leben noch an Überraschungen und Abenteuern bereithält.\n\nHab einen richtig schönen Geburtstag, lass es ordentlich krachen und genieß das Leben – ganz egal, wohin es Dich gerade verschlägt! \nKeep on rockin'",
+  "imgs": [
+   "p48-1"
+  ]
  },
  {
   "n": 32,
