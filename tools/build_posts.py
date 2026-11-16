@@ -54,6 +54,17 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     if os.path.exists(v): p["clip"] = f"v{n}"; p["video"] = mmss(dur(v))
     if os.path.exists(a): p["audio"] = f"a{n}"; p["voice"] = mmss(dur(a))
     out.append(p)
+# Beiträge zusammenlegen: Quelle -> Ziel (Texte angehängt, Fotos/Medien übernommen)
+MERGE = {20: 18}
+byn = {p["n"]: p for p in out}
+for src, dst in MERGE.items():
+    a, b = byn.get(src), byn.get(dst)
+    if not a or not b: continue
+    for k in ("note", "isFor", "moment", "wish"):
+        if a.get(k) and a[k] != b.get(k): b[k] = (b[k] + ("\n\n" if k == "note" else " · ") + a[k]) if b.get(k) else a[k]
+    for k in ("imgs", "clip", "video", "audio", "voice", "city", "title"):
+        if a.get(k) and not b.get(k): b[k] = a[k]
+    out.remove(a)
 BEFORE = {46: 65}  # Fee direkt vor Lisa & Stefan
 key = lambda n: ORDER.index(n) if n in ORDER else 1000 + LAST.index(n) if n in LAST else 100 + n
 out.sort(key=lambda p: key(BEFORE[p["n"]]) - 0.5 if p["n"] in BEFORE else key(p["n"]))

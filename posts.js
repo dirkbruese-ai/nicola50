@@ -362,18 +362,11 @@ const friends = [
   "n": 18,
   "name": "Susi & Corinna",
   "group": "close",
-  "note": "Liebe Nici! \nWe miss u! Happy Birthday zum Geburtstag! Auf weitere glorreiche 50 Jahre! \nxoxo Susi &amp; Corinna",
-  "isFor": "Eine Sportskanone, mit der man Pferde stehlen kann",
+  "note": "Liebe Nici! \nWe miss u! Happy Birthday zum Geburtstag! Auf weitere glorreiche 50 Jahre! \nxoxo Susi &amp; Corinna\n\nVenedig, Salzburg, Berge… mit Dir ist es immer schön!",
+  "isFor": "Eine Sportskanone, mit der man Pferde stehlen kann · eine tolle Freundin",
   "wish": "Nur das Beste für die nächsten 50 Jahre! Gesundheit, Liebe und ganz viel Glück!",
   "audio": "a18",
-  "voice": "0:50"
- },
- {
-  "n": 20,
-  "name": "Susi & Corinna",
-  "group": "close",
-  "note": "Venedig, Salzburg, Berge… mit Dir ist es immer schön!",
-  "isFor": "eine tolle Freundin",
+  "voice": "0:50",
   "imgs": [
    "p20-1",
    "p20-2",
