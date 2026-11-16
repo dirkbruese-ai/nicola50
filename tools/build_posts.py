@@ -3,21 +3,29 @@ Aufruf: python3 tools/build_posts.py <posts.csv> <photos.json> <media-dir>"""
 import csv, json, os, sys
 
 # Gruppe pro Padlet-Beitragsnummer: family, old (Münster Girls), new (From home), aus (Gold Coast)
-GROUP = {12: "family", 13: "family",
-         37: "old", 14: "old", 15: "old", 2: "old", 22: "old", 33: "old",
-         31: "close", 18: "close", 20: "close", 6: "close", 29: "close", 24: "close", 26: "close", 27: "close", 28: "close", 19: "close",
-         3: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 21: "aus", 23: "aus", 30: "aus",
-         35: "aus", 36: "aus", 40: "aus"}
+GROUP = {50: "family", 53: "family", 12: "family", 13: "family", 21: "family", 55: "family",
+         37: "old", 14: "old", 15: "old", 2: "old", 22: "old", 33: "old", 47: "old", 49: "old",
+         31: "close", 18: "close", 20: "close", 52: "close", 6: "close", 62: "close", 29: "close", 64: "close",
+         24: "close", 26: "close", 27: "close", 28: "close", 19: "close",
+         3: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 23: "aus", 30: "aus",
+         35: "aus", 36: "aus", 40: "aus", 41: "aus", 46: "aus"}
 # Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang, LAST ganz ans Ende
-ORDER = [37, 14, 15, 2, 22, 33, 31, 18, 20, 6, 28, 24, 27, 26, 29, 19, 25, 34, 8, 9]
-LAST = [4, 7, 5, 32]
+ORDER = [50, 53, 12, 13, 21, 55,
+         37, 14, 15, 2, 22, 33, 47, 49,
+         31, 18, 20, 52, 6, 62, 28, 24, 27, 26, 29, 64, 19, 25, 34, 8, 9, 38, 39]
+LAST = [4, 57, 7, 5, 32, 63]
 NAME = {2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",
-        26: "Nicola (DEHNS)", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs"}
-SKIP = {1}
+        26: "Nicola (DEHNS)", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs",
+        47: "K-Ro", 49: "Verena", 50: "Mami & Papi", 53: "Katja, Christian, Julia & Alexander",
+        52: "Corinna & Marc", 54: "Suse", 55: "Viersen Brüses", 58: "Andrea & Geo", 59: "Nina",
+        61: "Séchés & Kleins", 63: "Claudi", 65: "Lisa & Stefan"}
+SKIP = {1, 66}  # 66: Fotos von Lisa & Stefan, gehören zu 65
 CITY = {2: "Gerresheim", 12: "Viersen", 13: "Viersen", 14: "Olching", 15: "Olching", 22: "Hamburg",
         24: "Oberkassel", 26: "Oberkassel", 27: "Oberkassel", 32: "Munich · Christchurch", 34: "Düsseldorf",
-        8: "Cologne", 9: "Cologne", 37: "Hamburg", 31: "Düsseldorf", 29: "Düsseldorf", 6: "Düsseldorf"}
+        8: "Cologne", 9: "Cologne", 37: "Hamburg", 31: "Düsseldorf", 29: "Düsseldorf", 6: "Düsseldorf",
+        21: "Viersen", 55: "Viersen", 50: "Krefeld", 53: "Krefeld", 45: "Düsseldorf", 60: "Düsseldorf",
+        63: "Christchurch", 65: "Bonn"}
 
 csv_path, photos_path, media = sys.argv[1:4]
 photos = json.load(open(photos_path))
