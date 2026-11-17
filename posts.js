@@ -442,22 +442,13 @@ const friends = [
   "n": 24,
   "name": "DEHNS",
   "group": "close",
-  "note": "…. FROM OBK TO DOWN UNDER!!!\n\nHappiest, happy Birthday!!!",
-  "moment": "… sehr viele unvergessliche Momente und Erinnerungen und hoffentlich noch unendliche viele, die dazu kommen! Werde nie vergessen, wie wir nach meinem Ring im Ossiacher See gefischt haben  … er liegt wahrscheinlich immer noch in den Tiefen des Sees, da müssen wir irgendwann nochmal hin :-)",
-  "wish": "… nur das Beste und all das Glück dieser Welt! Danke dass es dich gibt, alles Liebe Deine Nicola",
+  "note": "…. FROM OBK TO DOWN UNDER!!!",
+  "moment": "…. always funny, special and amazing!",
+  "wish": "… all the best!!!",
   "city": "Oberkassel",
   "clip": "v-dehns",
   "video": "1:12",
-  "title": "From OBK to Down Under",
-  "isFor": "Beste Zuhörerin, Macherin, ehrlich, Sonnenschein und voller Lebensfreude!",
-  "imgs": [
-   "p26-1",
-   "p26-2",
-   "p26-3",
-   "p26-4",
-   "p26-5",
-   "p26-6"
-  ]
+  "title": "From OBK to Down Under"
  },
  {
   "n": 6,
@@ -483,6 +474,24 @@ const friends = [
    "p62-3",
    "p62-4",
    "p62-5"
+  ]
+ },
+ {
+  "n": 26,
+  "name": "Nicola",
+  "group": "close",
+  "note": "Happiest, happy Birthday!!!",
+  "isFor": "Beste Zuhörerin, Macherin, ehrlich, Sonnenschein und voller Lebensfreude!",
+  "moment": "… sehr viele unvergessliche Momente und Erinnerungen und hoffentlich noch unendliche viele, die dazu kommen! Werde nie vergessen, wie wir nach meinem Ring im Ossiacher See gefischt haben  … er liegt wahrscheinlich immer noch in den Tiefen des Sees, da müssen wir irgendwann nochmal hin :-)",
+  "wish": "… nur das Beste und all das Glück dieser Welt! Danke dass es dich gibt, alles Liebe Deine Nicola",
+  "city": "Oberkassel",
+  "imgs": [
+   "p26-1",
+   "p26-2",
+   "p26-3",
+   "p26-4",
+   "p26-5",
+   "p26-6"
   ]
  },
  {

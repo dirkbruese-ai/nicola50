@@ -22,7 +22,7 @@ ORDER = [50, 53, 12, 13, 55,
 LAST = []
 NAME = {10: "Lieke", 16: "Candice & Brent", 30: "Alex & Lex", 36: "Jess G", 2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",
-        26: "Nicola (DEHNS)", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs",
+        26: "Nicola", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs",
         47: "K-Ro", 49: "Verena", 50: "Mami & Papi", 53: "Katja, Christian, Julia & Alexander",
         54: "Suse", 55: "Viersen Brüses", 58: "Andrea & Geo", 59: "Nina",
         61: "Séchés & Kleins", 63: "Claudi", 65: "Lisa & Stefan", 66: "Katrin & Tim", 67: "Steffi & Hendrik"}
@@ -58,7 +58,7 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     out.append(p)
 # Beiträge zusammenlegen: Quelle -> Ziel (Texte angehängt, Fotos/Medien übernommen)
 # KEEP_TEXT: Ziel behält nur seine eigenen Texte (Dirk 17.11.)
-MERGE = {20: 18, 15: 14, 33: 22, 27: 24, 26: 24}
+MERGE = {20: 18, 15: 14, 33: 22, 27: 24}
 KEEP_TEXT = {15, 33, 27}
 byn = {p["n"]: p for p in out}
 for src, dst in MERGE.items():
@@ -74,8 +74,6 @@ for src, dst in MERGE.items():
 FIX = {14: {"name": "Ena & Esa"}, 24: {"title": "From OBK to Down Under", "clip": "v-dehns", "video": mmss(dur(f"{media}/v-dehns.mp4"))}, 59: {"name": "Nina & Lars"}}
 for n, f in FIX.items():
     if n in byn: byn[n].update(f)
-if 24 in byn:  # bei DEHNS die ausführlicheren Texte von Nicola behalten
-    for k in ("moment", "wish"): byn[24][k] = byn[24][k].split(" · ")[-1]
 # Eigene Beiträge außerhalb des Padlets (Dirk 17.11.: Strandvideo als letzter Family-Beitrag, danach nur die Herz-Karte)
 EXTRA = [{"n": "dirk", "name": "Dirk", "group": "family", "city": "Gold Coast", "clip": "v-dirk", "video": "0:19"}]
 BEFORE = {}
