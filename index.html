@@ -295,6 +295,14 @@ section { padding-block: 56px 8px; }
 
 /* Fotoalbum: Kapitel als Collage in Bildzeilen, Tippen öffnet die große Ansicht */
 .chapters { display: grid; gap: 44px; margin-top: 44px; }
+.fam-unlock { margin-top: 40px; display: flex; gap: 14px 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; border: 1.5px dashed var(--red); border-radius: 12px; padding: 18px; background: linear-gradient(150deg, #fff, #ffeef0); }
+.fam-unlock b { display: block; font: 400 1.5rem/1 var(--f-head); text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+.fam-unlock span { color: var(--muted); font-size: .92rem; }
+.fam-unlock > div { min-width: 0; flex: 1 1 260px; }
+.fam-unlock form { display: flex; gap: 8px; flex-wrap: wrap; }
+.fam-unlock input { font: 1rem var(--f-body); padding: 11px 14px; border-radius: 999px; border: 2px solid var(--red); width: 180px; max-width: 100%; text-align: center; }
+.fam-unlock .shake { animation: shake .4s; }
+.fam-ok { margin: 0; font: 700 1.3rem/1.2 var(--f-hand); color: var(--red); }
 .chap-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; border-top: 3px solid var(--ink); padding-top: 10px; margin-bottom: 14px; }
 .chap-head h3 { font: 400 clamp(1.6rem, 4.4vw, 2.6rem)/1 var(--f-head); text-transform: uppercase; margin: 0; }
 .chap-head p { margin: 0; font: italic 500 1.05rem/1.2 var(--f-mast); color: var(--red); }
@@ -432,6 +440,8 @@ section { padding-block: 56px 8px; }
   <section id="fotos" aria-labelledby="h-fotos">
     <div class="sec-head"><h2 id="h-fotos">The Photo Album</h2><span class="tag">Photo Special</span></div>
     <div class="chapters" id="chapters"></div>
+    <div class="fam-unlock" id="fam-unlock" hidden><div><b>Family edition</b><span>Lots more photos for the family. Enter the family password to see them all.</span></div>
+      <form action="#"><input type="text" name="username" value="Family" autocomplete="username" hidden><input id="fam-word" name="password" type="password" placeholder="Password" aria-label="Family password" autocomplete="current-password" autocapitalize="off" spellcheck="false"><button class="btn" type="submit">Unlock ♥</button></form></div>
   </section>
 
   <section id="who" aria-labelledby="h-who">
@@ -495,6 +505,7 @@ section { padding-block: 56px 8px; }
 
 <script src="posts.js"></script>
 <script src="album.js"></script>
+<script src="fam.js"></script>
 <script src="poem.js"></script>
 <script src="love.js"></script>
 <script src="intro.js"></script>
@@ -718,23 +729,42 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
   const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
   let cur = [], at = 0, title = "";
   // Fotos aus den Padlet-Beiträgen (mit Absender) stehen vorne im Kapitel
-  const byN = Object.fromEntries(ALBUM.map(p => [p.n, p]));
+  let byN = {};
   const featOf = k => (FEAT[k] ? FEAT[k][1] : []).map(([n]) => byN[n]).filter(p => p && p.c === k);
   // Rest: Beitragsfotos vorne
   const restOf = k => { const f = new Set(featOf(k)), r = ALBUM.filter(p => p.c === k && !f.has(p));
     return r.sort((a, b) => !!b.by - !!a.by); };
   const chap = k => [...featOf(k), ...restOf(k)];
-  const big = p => p.by ? `img/posts/${p.n}.jpg` : `img/album/${p.n}.jpg`;
-  const tile = p => `<button class="tile" type="button" data-n="${p.n}" style="--r:${p.r}"><img src="img/album/${p.n}s.jpg" alt="" loading="lazy" decoding="async">${capOf[p.n] ? `<span class="tcap">${capOf[p.n]}</span>` : ""}</button>`;
+  const big = p => p.by ? `img/posts/${p.n}.jpg` : `${p.d || "img/album"}/${p.n}.jpg`;
+  const tile = p => `<button class="tile" type="button" data-n="${p.n}" style="--r:${p.r}"><img src="${p.d || "img/album"}/${p.n}s.jpg" alt="" loading="lazy" decoding="async">${capOf[p.n] ? `<span class="tcap">${capOf[p.n]}</span>` : ""}</button>`;
   const from = p => p.by ? `<small>from ${p.by}</small>` : "";
   const ROT = ["-3deg", "2deg", "-1.5deg", "2.5deg", "-2deg"];
   const feat = k => { const fs = featOf(k); if (!fs.length) return ""; const lay = FEAT[k][0];
     if (lay === "pola") return `<div class="feat pola">${fs.map((p, i) => `<button class="ft pol" type="button" data-n="${p.n}" style="--rot:${ROT[i % 5]}"><img src="${big(p)}" alt="" loading="lazy" decoding="async"><span>${capOf[p.n]}</span>${from(p)}</button>`).join("")}</div>`;
     return `<div class="feat ${lay}">${fs.map(p => `<button class="ft ph has-img" type="button" data-n="${p.n}" style="background-image:url('${big(p)}')">${from(p)}<span>${capOf[p.n]}</span></button>`).join("")}</div>`; };
+  const render = () => { byN = Object.fromEntries(ALBUM.map(p => [p.n, p]));
   box.innerHTML = CH.map(([k, t, sub]) => { const ps = chap(k), rest = restOf(k); if (!ps.length) return "";
     return `<div class="chap" data-c="${k}"><div class="chap-head"><h3>${t}</h3><p>${sub}</p><small>${ps.length} photos</small></div>
       ${feat(k)}<div class="collage">${rest.slice(0, FIRST).map(tile).join("")}</div>
-      ${rest.length > FIRST ? `<button class="btn ghost more" type="button">Show all ${ps.length}</button>` : ""}</div>`; }).join("");
+      ${rest.length > FIRST ? `<button class="btn ghost more" type="button">Show all ${ps.length}</button>` : ""}</div>`; }).join(""); };
+  render();
+  // Familien-Ausgabe: weitere Fotos liegen verschlüsselt in fam.js (tools/split_album.py)
+  const famBox = document.getElementById("fam-unlock");
+  if (typeof FAMALBUM !== "undefined" && famBox && window.crypto && crypto.subtle) {
+    const b64 = t => Uint8Array.from(atob(t), c => c.charCodeAt(0)), norm = t => t.toLowerCase().replace(/\s+/g, "").normalize("NFC");
+    const unlock = async w => { const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(norm(w)), "PBKDF2", false, ["deriveKey"]);
+      const key = await crypto.subtle.deriveKey({ name: "PBKDF2", salt: b64(FAMALBUM.salt), iterations: FAMALBUM.it, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+      const d = JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(FAMALBUM.iv) }, key, b64(FAMALBUM.ct))));
+      d.items.forEach(p => { p.d = d.dir; ALBUM.push(p); }); render();
+      famBox.innerHTML = `<p class="fam-ok">♥ Family edition: all ${ALBUM.length} photos unlocked</p>`; };
+    const form = famBox.querySelector("form"), inp = famBox.querySelector("input[type=password]");
+    famBox.hidden = false;
+    let saved = null; try { saved = localStorage.getItem("nicola50-family"); } catch (_) {}
+    if (saved) unlock(saved).catch(() => { try { localStorage.removeItem("nicola50-family"); } catch (_) {} });
+    form.addEventListener("submit", async e => { e.preventDefault(); const w = inp.value;
+      try { await unlock(w); try { localStorage.setItem("nicola50-family", w); } catch (_) {} }
+      catch (_) { form.classList.remove("shake"); void form.offsetWidth; form.classList.add("shake"); inp.select(); } });
+  }
   const showAt = j => { at = (j + cur.length) % cur.length; lbImg.src = big(cur[at]); lbCap.textContent = `${capOf[cur[at].n] ? capOf[cur[at].n] + " · " : ""}${title}${cur[at].by ? " · from " + cur[at].by : ""} · ${at + 1} / ${cur.length}`;
     const nx = cur[(at + 1) % cur.length]; if (nx) new Image().src = big(nx); };
   box.addEventListener("click", e => { const ch = e.target.closest(".chap"); if (!ch) return;
