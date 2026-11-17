@@ -1,14 +1,6 @@
 // Erzeugt mit tools/build_posts.py aus dem Padlet-Export
 const friends = [
  {
-  "n": "dirk",
-  "name": "Dirk",
-  "group": "family",
-  "city": "Gold Coast",
-  "clip": "v-dirk",
-  "video": "0:19"
- },
- {
   "n": 50,
   "name": "Mami & Papi",
   "group": "family",
@@ -79,6 +71,14 @@ const friends = [
   "city": "Viersen",
   "clip": "v55",
   "video": "0:39"
+ },
+ {
+  "n": "dirk",
+  "name": "Dirk",
+  "group": "family",
+  "city": "Gold Coast",
+  "clip": "v-dirk",
+  "video": "0:19"
  },
  {
   "n": 17,
