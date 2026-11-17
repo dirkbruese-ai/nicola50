@@ -67,9 +67,12 @@ for src, dst in MERGE.items():
     for k in ("imgs", "clip", "video", "audio", "voice", "city", "title"):
         if a.get(k) and not b.get(k): b[k] = a[k]
     out.remove(a)
+# Eigene Beiträge außerhalb des Padlets (Dirk 17.11.: Strandvideo in Family, ganz vorn)
+EXTRA = [{"n": "dirk", "name": "Dirk", "group": "family", "city": "Gold Coast", "clip": "v-dirk", "video": "0:19"}]
 BEFORE = {}
 key = lambda n: ORDER.index(n) if n in ORDER else 1000 + LAST.index(n) if n in LAST else 100 + n
 out.sort(key=lambda p: key(BEFORE[p["n"]]) - 0.5 if p["n"] in BEFORE else key(p["n"]))
+out = EXTRA + out
 open("posts.js", "w").write("// Erzeugt mit tools/build_posts.py aus dem Padlet-Export\nconst friends = " +
                             json.dumps(out, ensure_ascii=False, indent=1) + ";\n")
 print(len(out), "Beiträge")
