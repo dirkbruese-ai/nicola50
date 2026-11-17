@@ -103,8 +103,6 @@ section { padding-block: 56px 8px; }
 .star { min-width: 0; display: grid; gap: 12px; align-content: start; }
 .star .pic { position: relative; aspect-ratio: 4/3; max-width: 100%; background: linear-gradient(140deg, var(--ph-a), var(--ph-b)); display: grid; place-items: end start; padding: 10px; }
 .star .pic span { font: 600 .7rem/1.2 var(--f-body); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
-.star .pic.vid { aspect-ratio: 3/4; padding: 0; background: #000; display: block; overflow: hidden; }
-.star .pic.vid video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .star .pic .count { position: absolute; top: 10px; left: 10px; background: var(--yellow); color: #141114; font: 700 .72rem/1 var(--f-body); padding: 5px 8px; }
 .star .who { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
 .star .name { font: 700 2rem/1 var(--f-hand); color: var(--blue); }
@@ -253,7 +251,6 @@ section { padding-block: 56px 8px; }
 <script>
 const DUS = [51.2277, 6.7735], GOLD = [-28.0167, 153.4000];
 const friends = [
-  { name: "Dirk", city: "Gold Coast", family: true, photos: 0, video: "0:19", src: "media/dirk-beach.mp4", poster: "media/dirk-beach.jpg" },
   { name: "Anna", city: "Oberkassel", dus: true, photos: 5, note: "Our first Altbier night in the Old Town: from then on we knew we’d be friends for life!", voice: "0:42" },
   { name: "Markus & Steffi", city: "Pempelfort", dus: true, photos: 3, video: "1:35", note: "Helau and happy birthday! We miss you every Carnival Monday." },
   { name: "The Webers", city: "Benrath", dus: true, photos: 2, letter: "Dear Nicola, our garden fence has been far too quiet since you moved away …" },
@@ -270,7 +267,7 @@ const fmt = n => n.toLocaleString("en-GB");
 const km = ([a,b],[c,d]) => { const r = Math.PI/180;
   const h = Math.sin((c-a)*r/2)**2 + Math.cos(a*r)*Math.cos(c*r)*Math.sin((d-b)*r/2)**2;
   return Math.round(2*6371*Math.asin(Math.sqrt(h))); };
-friends.forEach(f => { f.kinds = f.photos ? ["Photos"] : []; if (f.video) f.kinds.push("Videos"); if (f.voice) f.kinds.push("Voice messages"); if (f.letter) f.kinds.push("Letters"); });
+friends.forEach(f => { f.kinds = ["Photos"]; if (f.video) f.kinds.push("Videos"); if (f.voice) f.kinds.push("Voice messages"); if (f.letter) f.kinds.push("Letters"); });
 
 const dusCount = friends.filter(f => f.dus).length;
 document.getElementById("stats").innerHTML =
@@ -281,8 +278,7 @@ document.getElementById("stats").innerHTML =
 
 const wave = () => Array.from({length: 36}, () => `<i style="height:${20 + Math.random()*80}%"></i>`).join("");
 const card = f => `<article class="star">
-  ${f.src ? `<div class="pic vid"><video src="${f.src}" poster="${f.poster || ""}" controls playsinline preload="metadata" aria-label="Video from ${f.name}"></video><span class="count">Video ${f.video}</span></div>`
-    : `<div class="pic"><span class="count">${f.photos} photo${f.photos > 1 ? "s" : ""}${f.video ? " · Video " + f.video : ""}</span><span>Photo from ${f.name}</span></div>`}
+  <div class="pic"><span class="count">${f.photos} photo${f.photos > 1 ? "s" : ""}${f.video ? " · Video " + f.video : ""}</span><span>Photo from ${f.name}</span></div>
   <div class="who"><span class="name">${f.name}</span><span class="postmark">${f.city}</span></div>
   ${f.note ? `<blockquote>${f.note}</blockquote>` : ""}
   ${f.letter ? `<div class="letter">${f.letter}</div>` : ""}
@@ -290,7 +286,7 @@ const card = f => `<article class="star">
 </article>`;
 const kinds = ["All", "Photos", "Videos", "Voice messages", "Letters"];
 const chips = document.getElementById("chips"), list = document.getElementById("star-list");
-const groups = [["Family", "with love", f => f.family], ["From home", "Düsseldorf & beyond", f => !f.gc && !f.bff && !f.family], ["Best friends", "from Hamburg & Munich", f => f.bff], ["New friends", "from the Gold Coast", f => f.gc]];
+const groups = [["From home", "Düsseldorf & beyond", f => !f.gc && !f.bff], ["Best friends", "from Hamburg & Munich", f => f.bff], ["New friends", "from the Gold Coast", f => f.gc]];
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG]) => { const g = shown.filter(inG);
     return g.length ? `<div class="group-head"><h3>${h}</h3><span>${sub}</span></div>` + g.map(card).join("") : ""; }).join("");
