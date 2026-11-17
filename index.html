@@ -65,6 +65,16 @@ a.bubble { display: block; text-decoration: none; }
 .line h3 { font: 400 clamp(1.4rem, 2.6vw, 1.95rem)/1.05 var(--f-head); text-transform: uppercase; margin: 6px 0 0; text-wrap: balance; }
 .line p { margin: 4px 0 0; color: var(--muted); font-size: .92rem; }
 .bubble { background: var(--yellow); color: #141114; padding: 14px 16px; font: 700 1rem/1.3 var(--f-body); transform: rotate(-1.5deg); }
+.love-teaser { position: relative; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; align-items: center; text-decoration: none; color: #2a1a1a; background: linear-gradient(150deg, #fff 0%, #ffeef0 60%, #ffdfe3 100%); border: 1.5px dashed var(--red); border-radius: 14px; padding: 16px 16px 14px; box-shadow: 0 8px 24px rgba(209,16,31,.14); transform: rotate(-1deg); overflow: hidden; transition: transform .2s; }
+.love-teaser:hover, .love-teaser:focus-visible { transform: rotate(0) scale(1.01); }
+.lt-seal { width: 50px; height: 50px; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(209,16,31,.35), inset 0 0 0 3px rgba(255,255,255,.35); animation: lovebeat 2.4s ease-in-out infinite; }
+.lt-txt small { display: block; font: 700 .7rem/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+.lt-txt b { display: block; font: 700 1.35rem/1.1 var(--f-hand); color: #2a1a1a; }
+.lt-go { grid-column: 2; justify-self: start; font: 700 .8rem/1 var(--f-body); color: #fff; background: var(--red); border-radius: 999px; padding: 7px 12px; margin-top: 2px; }
+.lt-h { position: absolute; font-style: normal; color: var(--red); opacity: .18; pointer-events: none; }
+.lt-h.h1 { right: 12px; top: 6px; font-size: 2.2rem; transform: rotate(14deg); }
+.lt-h.h2 { right: 54px; bottom: 6px; font-size: 1.2rem; transform: rotate(-12deg); opacity: .25; }
+.lt-h.h3 { right: 18px; bottom: 26px; font-size: .9rem; opacity: .3; }
 .cover-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
 
 /* Luftpost-Band */
@@ -343,7 +353,6 @@ section { padding-block: 56px 8px; }
   .stars { grid-template-columns: 1fr; gap: 34px; }
   .cover { padding-bottom: 8px; }
   .lines { gap: 14px; }
-  .bubble { font-size: .9rem; padding: 12px 14px; transform: rotate(-1deg); }
   .cover-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
   .cover-actions .btn { min-width: 0; box-sizing: border-box; text-decoration: none; width: 100%; justify-content: center; text-align: center; padding-inline: 10px; font-size: .9rem; line-height: 1.15; }
   .airmail { margin-top: 24px; }
@@ -372,7 +381,7 @@ section { padding-block: 56px 8px; }
       <a class="line" href="#g-home"><div class="kicker">Home Sweet Home</div><h3>Düsseldorf Misses You!</h3><p>Love letters from the Rhine, Oberkassel and beyond</p></a>
       <a class="line" href="#g-aus"><div class="kicker">G’day from Down Under</div><h3>The Gold Coast Crew Spills the Tea</h3><p>Padel, hockey and the beach club crowd</p></a>
       <a class="line" href="#g-family"><div class="kicker">Family Affair</div><h3>Krefeld &amp; Viersen Raise a Glass to You</h3><p>Mum, Dad, Katja and the whole clan cheer you on</p></a>
-      <a class="bubble love-open" href="#love">Just for you, Nici ♥ A few personal words from Dirk, Moritz &amp; Philip</a>
+      <a class="love-teaser love-open" href="#love"><span class="lt-seal" aria-hidden="true">♥</span><span class="lt-txt"><small>Just for you, Nici</small><b>A few personal words from Dirk, Moritz &amp; Philip</b></span><span class="lt-go" aria-hidden="true">Open ♥</span><i class="lt-h h1" aria-hidden="true">♥</i><i class="lt-h h2" aria-hidden="true">♥</i><i class="lt-h h3" aria-hidden="true">♥</i></a>
       <div class="cover-actions">
         <button class="btn" id="start-show" type="button">Start slideshow</button>
         <a class="btn ghost" href="#stars">Read the messages</a>
