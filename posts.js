@@ -253,7 +253,7 @@ const friends = [
  },
  {
   "n": 14,
-  "name": "Ena + Esa",
+  "name": "Ena & Esa",
   "group": "old",
   "title": "From Olching with Love",
   "note": "Beste!!!",
@@ -262,18 +262,7 @@ const friends = [
   "wish": "... dass sie sehr viele schöne Momente erlebt. Sich an ihren Söhnen mehr erfreuen als die Zähne ausbeißen kann und von Dirk so gehegt und gepflegt wird, wie es ihr gebührt!!! Ganz besonders einen unvergesslichen 50. Geburtstag mit vielen Menschen, die nur für Nici da sind!",
   "city": "Olching",
   "clip": "v14",
-  "video": "0:55"
- },
- {
-  "n": 15,
-  "name": "Ena",
-  "group": "old",
-  "title": "From Olching with Love... II",
-  "note": "auf die guten alten Zeiten!!! Ich würde jeden Urlaub wieder mit Dir machen. Jede WG wieder mit Dir erleben!! Jede Hochzeit mit Dir erleben!",
-  "isFor": "Vertrautes Ohr, helfende Hand, liebevolle Freundin",
-  "moment": "siehe anderer Post... und noch so viele mehr!!",
-  "wish": "to see me again soon. :-)",
-  "city": "Olching",
+  "video": "0:55",
   "imgs": [
    "p15-1",
    "p15-2",
@@ -314,16 +303,7 @@ const friends = [
    "p22-3",
    "p22-4",
    "p22-6"
-  ]
- },
- {
-  "n": 33,
-  "name": "Catherine",
-  "group": "old",
-  "note": "So schief wie der Hut, aber von Herzen ♥️ : happy Birthday liebe Nici  🥳",
-  "isFor": "🩷",
-  "moment": "☀️",
-  "wish": "🍀",
+  ],
   "clip": "v33",
   "video": "0:26"
  },
@@ -462,22 +442,22 @@ const friends = [
   "n": 24,
   "name": "DEHNS",
   "group": "close",
-  "note": "…. FROM OBK TO DOWN UNDER!!!",
-  "moment": "…. always funny, special and amazing!",
-  "wish": "… all the best!!!",
+  "note": "…. FROM OBK TO DOWN UNDER!!!\n\nHappiest, happy Birthday!!!",
+  "moment": "… sehr viele unvergessliche Momente und Erinnerungen und hoffentlich noch unendliche viele, die dazu kommen! Werde nie vergessen, wie wir nach meinem Ring im Ossiacher See gefischt haben  … er liegt wahrscheinlich immer noch in den Tiefen des Sees, da müssen wir irgendwann nochmal hin :-)",
+  "wish": "… nur das Beste und all das Glück dieser Welt! Danke dass es dich gibt, alles Liebe Deine Nicola",
   "city": "Oberkassel",
-  "clip": "v24",
-  "video": "0:34"
- },
- {
-  "n": 27,
-  "name": "DEHNS",
-  "group": "close",
-  "title": "From OBK to DOWN UNDER part 2",
-  "note": "Happy Birthday!",
-  "city": "Oberkassel",
-  "clip": "v27",
-  "video": "0:38"
+  "clip": "v-dehns",
+  "video": "1:12",
+  "title": "From OBK to Down Under",
+  "isFor": "Beste Zuhörerin, Macherin, ehrlich, Sonnenschein und voller Lebensfreude!",
+  "imgs": [
+   "p26-1",
+   "p26-2",
+   "p26-3",
+   "p26-4",
+   "p26-5",
+   "p26-6"
+  ]
  },
  {
   "n": 6,
@@ -503,24 +483,6 @@ const friends = [
    "p62-3",
    "p62-4",
    "p62-5"
-  ]
- },
- {
-  "n": 26,
-  "name": "Nicola (DEHNS)",
-  "group": "close",
-  "note": "Happiest, happy Birthday!!!",
-  "isFor": "Beste Zuhörerin, Macherin, ehrlich, Sonnenschein und voller Lebensfreude!",
-  "moment": "… sehr viele unvergessliche Momente und Erinnerungen und hoffentlich noch unendliche viele, die dazu kommen! Werde nie vergessen, wie wir nach meinem Ring im Ossiacher See gefischt haben  … er liegt wahrscheinlich immer noch in den Tiefen des Sees, da müssen wir irgendwann nochmal hin :-)",
-  "wish": "… nur das Beste und all das Glück dieser Welt! Danke dass es dich gibt, alles Liebe Deine Nicola",
-  "city": "Oberkassel",
-  "imgs": [
-   "p26-1",
-   "p26-2",
-   "p26-3",
-   "p26-4",
-   "p26-5",
-   "p26-6"
   ]
  },
  {
@@ -576,7 +538,7 @@ const friends = [
  },
  {
   "n": 59,
-  "name": "Nina",
+  "name": "Nina & Lars",
   "group": "new",
   "title": "HIP HIP HURRAY LIEBE NICOLA",
   "note": "Wir hören uns sehr selten und sehen uns noch seltener!\nUnd trotzdem ist jeder Austausch sehr wertvoll und besonders,  und dafür bin ich sehr dankbar!",

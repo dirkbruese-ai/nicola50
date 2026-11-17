@@ -57,16 +57,25 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     if os.path.exists(a): p["audio"] = f"a{n}"; p["voice"] = mmss(dur(a))
     out.append(p)
 # Beiträge zusammenlegen: Quelle -> Ziel (Texte angehängt, Fotos/Medien übernommen)
-MERGE = {20: 18}
+# KEEP_TEXT: Ziel behält nur seine eigenen Texte (Dirk 17.11.)
+MERGE = {20: 18, 15: 14, 33: 22, 27: 24, 26: 24}
+KEEP_TEXT = {15, 33, 27}
 byn = {p["n"]: p for p in out}
 for src, dst in MERGE.items():
     a, b = byn.get(src), byn.get(dst)
     if not a or not b: continue
     for k in ("note", "isFor", "moment", "wish"):
+        if src in KEEP_TEXT: break
         if a.get(k) and a[k] != b.get(k): b[k] = (b[k] + ("\n\n" if k == "note" else " · ") + a[k]) if b.get(k) else a[k]
     for k in ("imgs", "clip", "video", "audio", "voice", "city", "title"):
         if a.get(k) and not b.get(k): b[k] = a[k]
     out.remove(a)
+# Nach dem Zusammenlegen (Dirk 17.11.): DEHNS-Videos 24+27 hintereinander geschnitten
+FIX = {14: {"name": "Ena & Esa"}, 24: {"title": "From OBK to Down Under", "clip": "v-dehns", "video": mmss(dur(f"{media}/v-dehns.mp4"))}, 59: {"name": "Nina & Lars"}}
+for n, f in FIX.items():
+    if n in byn: byn[n].update(f)
+if 24 in byn:  # bei DEHNS die ausführlicheren Texte von Nicola behalten
+    for k in ("moment", "wish"): byn[24][k] = byn[24][k].split(" · ")[-1]
 # Eigene Beiträge außerhalb des Padlets (Dirk 17.11.: Strandvideo als letzter Family-Beitrag, danach nur die Herz-Karte)
 EXTRA = [{"n": "dirk", "name": "Dirk", "group": "family", "city": "Gold Coast", "clip": "v-dirk", "video": "0:19"}]
 BEFORE = {}
