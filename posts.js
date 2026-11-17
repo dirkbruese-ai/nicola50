@@ -429,7 +429,7 @@ const friends = [
  },
  {
   "n": 28,
-  "name": "Eva&eve&carla",
+  "name": "Eva + Eve + Carla & the Men",
   "group": "close",
   "note": "Alles Gute für Dich liebe Nicola",
   "isFor": "Eine ganz besondere Freundin",

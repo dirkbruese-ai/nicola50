@@ -22,7 +22,7 @@ ORDER = [50, 53, 12, 13, 55,
 LAST = []
 NAME = {10: "Lieke", 16: "Candice & Brent", 30: "Alex & Lex", 36: "Jess G", 2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",
         18: "Susi & Corinna", 20: "Susi & Corinna", 22: "Catherine", 23: "Kate", 24: "DEHNS",
-        26: "Nicola", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs",
+        26: "Nicola", 28: "Eva + Eve + Carla & the Men", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs",
         47: "K-Ro", 49: "Verena", 50: "Mami & Papi", 53: "Katja, Christian, Julia & Alexander",
         54: "Suse", 55: "Viersen Brüses", 58: "Andrea & Geo", 59: "Nina",
         61: "Séchés & Kleins", 63: "Claudi", 65: "Lisa & Stefan", 66: "Katrin & Tim", 67: "Steffi & Hendrik"}
