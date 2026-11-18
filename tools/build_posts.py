@@ -6,7 +6,7 @@ import csv, json, os, sys
 GROUP = {50: "family", 53: "family", 12: "family", 13: "family", 55: "family",
          37: "old", 14: "old", 15: "old", 2: "old", 22: "old", 33: "old", 47: "old", 49: "old", 54: "old", 25: "old",
          31: "close", 18: "close", 20: "close", 52: "close", 6: "close", 62: "close", 29: "close", 64: "close",
-         24: "close", 26: "close", 27: "close", 28: "close", 19: "close", 66: "close", 67: "close",
+         24: "close", 26: "close", 27: "close", 28: "close", 19: "close", 66: "close", 67: "close", 68: "close",
          3: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 23: "aus", 30: "aus",
          35: "aus", 36: "aus", 40: "aus", 41: "aus", 21: "aus"}
 # Gold Coast unterteilt (Dirk 16.11.)
@@ -17,7 +17,7 @@ ORDER = [50, 53, 12, 13, 55,
          17, 21, 11, 3, 41, 23, 10, 36, 30, 16, 35, 40,
          37, 14, 15, 2, 22, 33, 47, 49, 54, 25,
          # From home (Dirks Liste 16.11.); Platzhalter: Steffi & Hendrik Rinsche, Nicole & Jens Ritter nach 44
-         31, 18, 52, 44, 67, 28, 24, 27, 6, 62, 26, 29, 64, 19, 56, 59, 34, 51, 42, 43, 38, 45, 66, 39, 60, 61,
+         31, 18, 52, 44, 67, 68, 28, 24, 27, 6, 62, 26, 29, 64, 19, 56, 59, 34, 51, 42, 43, 38, 45, 66, 39, 60, 61,
          46, 65, 58, 4, 57, 7, 5, 48, 8, 9, 63, 32]
 LAST = []
 NAME = {10: "Lieke", 16: "Candice & Brent", 30: "Alex & Lex", 36: "Jess G", 2: "Sonja & Christian", 5: "Uwe", 12: "Die Viersener", 13: "Die Viersener", 15: "Ena",

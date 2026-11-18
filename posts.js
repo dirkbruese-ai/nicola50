@@ -428,6 +428,15 @@ const friends = [
   "video": "4:49"
  },
  {
+  "n": 68,
+  "name": "Nicole",
+  "group": "close",
+  "note": "Happy Birthday liebe Nicola! 🥂❤️\nHip hip hooray 🎉 zum 50. Geburtstag 🎂 was für ein besonderer Geburtstag und man sieht es dir natürlich kein Stück an, wie machst du das bloß? 🤷‍♀️\n\n\nLiebste Nicola,\nich wünsche dir von ganzem Herzen alles, alles erdenklich Liebe zu deinem besonderen Ehrentag &amp; wo ließe sich das besser feiern als im Beach Club in Australien 🇦🇺 mit guter Musik, mit lieben Menschen um dich herum, einer bunt gemischten Runde aus Freunden, Familie und vielleicht dem einen oder anderen, der extra für dich angereist ist. Also genau der richtigen Mischung aus Feiern, Lachen, Leichtigkeit &amp; Anstoßen! Was für ein schöner Rahmen für deinen besonderen Tag!\nMeine Liebe, du bist eine Frau, die man einfach mögen und bewundern muss: unglaublich taff, voller Energie &amp; Tatendrang! Du bist eine meeega Sportskanone mit ansteckender Lebensfreude, also mehr als kompatibel in jeglicher Hinsicht. Du gehst zielstrebig deinen Weg, packst das Leben an und hast dabei immer ein gaaaanz großes Herz für die Menschen um dich herum. Du hast stets ein offenes Ohr (egal wie viel Zeitverschiebung zwischen uns liegt!), gibst Halt, Unterstützung und bist jemand, auf den man sich zu 100%  verlassen kann.\n\n\nDu hast in den vergangenen fünf Jahrzehnten einiges erlebt, bewegt und auf die Beine gestellt, du Powerfrau! \nUnd trotzdem fühlt sich 50 bei dir eher wie eine neue Etappe an, als wie ein Ziel!!! \n\n\nDu bist  immer für eine Überraschung gut, legst immer noch ein Schüppchen drauf.... so kennen &amp; schätzen wir dich, liebe Nicola!\n\n\nFür dein neues Lebensjahrzehnt wünsche ich dir von Herzen vor allem Gesundheit, Liebe, manchmal auch die nötige Kraft &amp; viele unbeschwerte Momente! Bewahre dir all deine Energie, dein unverwechselbares Lachen sowie deinen Optimismus und gehe bitte weiterhin auch achtsam mit dir um und erinnere dich immer wieder daran , dass du selbst genauso wichtig bist wie alles, was du für andere tust.\n\n\nHab einen großartigen Geburtstag, liebste Nicola und lass es ordentlich krachen, aber dafür wird Dirk sicherlich sorgen 🍾 🍾 🍾 \n\n\nEine feste Umarmung aus Deutschland 🇩🇪\nDeine Nicole",
+  "isFor": "ein absoluter Herzensmensch ❣️",
+  "moment": "Es gibt einfach zu viele, um genau diesen „special moment“ auf den Punkt zu bringen…",
+  "wish": "Siehe oben 👆"
+ },
+ {
   "n": 28,
   "name": "Eva + Eve + Carla & the Men",
   "group": "close",
