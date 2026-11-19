@@ -187,6 +187,13 @@ section { padding-block: 56px 8px; }
 .poem p { font: 600 clamp(1.3rem, 3.6vw, 1.7rem)/1.3 var(--f-hand); margin: 0 0 18px; white-space: pre-line; }
 .poem small { color: var(--muted); }
 /* Video-Wand */
+.fold > summary { list-style: none; cursor: pointer; }
+.fold > summary::-webkit-details-marker { display: none; }
+.fold > summary .tag::after { content: " ▾"; }
+.fold[open] > summary .tag::after { content: " ▴"; }
+.fold .f-c, .fold[open] .f-o { display: none; }
+.fold[open] .f-c { display: inline; }
+.fold:not([open]) > summary { margin-bottom: 0; }
 .songs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 40px; }
 .song { background: var(--paper); border-top: 4px solid var(--red); padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 10px; }
 .song .no { font: 400 .8rem/1 var(--f-head); letter-spacing: .14em; color: var(--red); text-transform: uppercase; }
@@ -489,8 +496,10 @@ section { padding-block: 56px 8px; }
   </section>
 
   <section id="podcast" aria-labelledby="h-podcast">
-    <div class="sec-head"><h2 id="h-podcast">Happy Birthday on Air <em>videos</em></h2><span class="tag">Watch</span></div>
-    <div class="vwall" id="vwall"></div>
+    <details class="fold">
+      <summary class="sec-head"><h2 id="h-podcast">Happy Birthday on Air <em>videos</em></h2><span class="tag"><span class="f-o">Show all</span><span class="f-c">Hide</span></span></summary>
+      <div class="vwall" id="vwall"></div>
+    </details>
   </section>
   <section id="songs" aria-labelledby="h-songs">
     <div class="sec-head"><h2 id="h-songs">Songs for Nicki <em>press play</em></h2><span class="tag">Listen</span></div>
