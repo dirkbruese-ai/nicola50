@@ -627,8 +627,8 @@ const playIntro = done => {
   const W = innerWidth, H = innerHeight, T = 190, Bot = H - 96, Z = Bot - T, size = Math.min(W * .9, Z * .9, 540), cell = size / INTRO.cols;
   const x0 = (W - size) / 2, y0 = T + (Z - size) / 2;
   const heartBox = document.createElement("div"); heartBox.className = "intro-heart"; stage.appendChild(heartBox);
-  const OUT = 76800, END = 78200, n = INTRO.cells.length, LAST = 73500, step = (LAST - 400) / (n - 1);
-  const big = Math.min(W * .8 / (900 / 1070), Z * .94) / cell, HOLD = 1300, FLY = 1700;
+  const big = Math.min(W * .8 / (900 / 1070), Z * .94) / cell, HOLD = 1300, FLY = 1700, FIRST = 3000;  // 1. Bild 3 s stehen lassen (Ladezeit)
+  const OUT = 76800, END = 78200, n = INTRO.cells.length, LAST = 73500, EXTRA = FIRST - HOLD, step = (LAST - 400 - EXTRA) / (n - 1);
   const cellOrder = INTRO.cells.map((_, i) => i).sort(() => Math.random() - .5);
   cellOrder.forEach((ci, j) => {
     const [c, r] = INTRO.cells[ci], [src, name, th] = INTRO.pool[j % INTRO.pool.length], pol = !name;
@@ -641,8 +641,8 @@ const playIntro = done => {
     if (pol) { t.alt = ""; t.src = src; } else { t.style.backgroundImage = `url('${th}')`;
       const cap = document.createElement("div"); cap.className = "intro-cap"; cap.innerHTML = `<small>With love from</small>${esc(name)}`; t.appendChild(cap); }
     heartBox.appendChild(t);
-    if (!pol) setTimeout(() => { const im = new Image(); im.onload = () => { t.style.backgroundImage = `url('${src}')`; }; im.src = src; }, Math.max(0, 400 + j * step - 8000));
-    const delay = 400 + j * step, total = END - delay, hold = HOLD;
+    if (!pol) setTimeout(() => { const im = new Image(); im.onload = () => { t.style.backgroundImage = `url('${src}')`; }; im.src = src; }, Math.max(0, 400 + (j ? EXTRA : 0) + j * step - 8000));
+    const delay = 400 + (j ? EXTRA : 0) + j * step, total = END - delay, hold = j ? HOLD : FIRST;
     const ox = rnd(-W * .04, W * .04), oy = rnd(-Z * .02, Z * .02);
     const sx = W / 2 + ox - txo - Bw / 2, sy = T + Z / 2 + oy - ty - Bh / 2, home = `scale(${sc})`;
     const from = `translate(${sx}px, ${sy}px) rotate(${rnd(-6, 6)}deg) scale(1)`;
