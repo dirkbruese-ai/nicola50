@@ -255,7 +255,7 @@ section { padding-block: 56px 8px; }
 .love-boy { margin-top: 32px; background: #fff; border-radius: 6px; padding: 22px 24px; box-shadow: 0 10px 40px rgba(209,16,31,.08); }
 .love-boy h3 { font: 400 1.6rem/1 var(--f-head); text-transform: uppercase; margin: 0 0 12px; }
 .love-boy p { font: 400 1.35rem/1.45 var(--f-hand); margin: 0 0 .8em; }
-.love-boy video { width: 100%; border-radius: 6px; background: #000; }
+.love-boy video { display: block; width: 100%; max-width: 380px; margin: 0 auto; border-radius: 6px; background: #000; }
 .love-pic { display: block; width: min(260px, 80%); margin: 4px auto 18px; padding: 8px 8px 26px; background: #fff; box-shadow: 0 6px 20px rgba(0,0,0,.15); transform: rotate(-2deg); }
 .love-sec { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; color: var(--red); font: 400 1.5rem/1 var(--f-head); text-transform: uppercase; letter-spacing: .06em; }
 .love-sec::before, .love-sec::after { content: ""; flex: 1; height: 2px; background: var(--red); opacity: .5; }
@@ -613,13 +613,15 @@ const INTRO = (() => {
   return { cells, cols, rows, pool };
 })();
 const rnd = (a, b) => a + Math.random() * (b - a);
-// Ablauf passt zum Medley media/glueckwuensche.mp3 (ca. 78 s): erst Gesang, dann gesprochene Grüße.
+// Ablauf passt zum Medley media/glueckwuensche.mp3: erst Gesang, dann gesprochene Grüße, ab 78 s die drei Männer (bis ca. 99 s);
+// danach läuft im Hintergrund noch der Song von Britta, Thorben & Charlotte (ab 100,7 s).
 // Zu jeder Stimme fliegt genau in dem Moment ihr eigenes Bild herein (img/intro/…), sonst Beitragsfotos mit Absender.
 const CUES = [[0.3, "Singing for you", "Séchés & Kleins", "seches"], [12.9, "Singing for you", "DEHNS", "dehns"], [17.5, "Singing for you", "Eva + Eve + Carla & the Men", "eva"],
   [22.2, "Singing for you", "Die Buddenbergs", "buddenbergs"], [25.9, "Singing for you", "Birgit, Caro, Olli & Uli", "birgit"], [30.5, "Singing for you", "Catherine", "catherine-sing"],
   [33.8, "Grand finale", "Séchés & Kleins", "seches"], [38.6, "Yodelling for you", "Sonja & Basti", "sonja-basti"], [47.1, "Wishes from", "Die Viersener", "viersener"],
   [50.5, "Wishes from", "Susi & Corinna", "susi"], [53.4, "Wishes from", "Ena & Esa", "ena"], [57.3, "Wishes from", "Jo", "jo"], [59.0, "Wishes from", "Catherine", "catherine"],
-  [61.2, "Wishes from", "Nina", "nina"], [64.3, "Wishes from", "Andrea & Geo", "andrea-geo"], [71.4, "Wishes from", "Evchen", "evchen"], [74.5, "Wishes from", "Lisa & Stefan", "lisa-stefan"]];
+  [61.2, "Wishes from", "Nina", "nina"], [64.3, "Wishes from", "Andrea & Geo", "andrea-geo"], [71.4, "Wishes from", "Evchen", "evchen"], [74.5, "Wishes from", "Lisa & Stefan", "lisa-stefan"],
+  [78.05, "Singing for you", "Your three men", "men"], [90.87, "Wishes from", "Your three men", "men-best"], [95.29, "Wishes from", "Dirk", "dirk-sun"]];
 const playIntro = done => {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches || !INTRO.pool.length) return done();
   const stage = document.createElement("div"); stage.className = "intro"; welcome.appendChild(stage);
@@ -628,7 +630,7 @@ const playIntro = done => {
   const x0 = (W - size) / 2, y0 = T + (Z - size) / 2;
   const heartBox = document.createElement("div"); heartBox.className = "intro-heart"; stage.appendChild(heartBox);
   const big = Math.min(W * .8 / (900 / 1070), Z * .94) / cell, HOLD = 1300, FLY = 1700, FIRST = 3000;  // 1. Bild 3 s stehen lassen (Ladezeit)
-  const OUT = 76800, END = 78200, n = INTRO.cells.length, LAST = 73500, EXTRA = FIRST - HOLD, step = (LAST - 400 - EXTRA) / (n - 1);
+  const OUT = 99000, END = 100500, n = INTRO.cells.length, LAST = 95000, EXTRA = FIRST - HOLD, step = (LAST - 400 - EXTRA) / (n - 1);
   const cellOrder = INTRO.cells.map((_, i) => i).sort(() => Math.random() - .5);
   cellOrder.forEach((ci, j) => {
     const [c, r] = INTRO.cells[ci], [src, name, th] = INTRO.pool[j % INTRO.pool.length], pol = !name;
@@ -817,7 +819,7 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
     box.appendChild(b); setTimeout(() => b.remove(), 2200);
   }
   function show(d) {
-    const boys = (d.boys || []).filter(b => b.text || b.video).map(b => `<div class="love-div" aria-hidden="true">♥ ♥ ♥</div><section class="love-boy"><h3>From ${esc2(b.name)}</h3>${b.video ? `<video src="${esc2(b.video)}" controls playsinline preload="metadata"></video>` : ""}${b.text ? paras(b.text) : ""}</section>`).join("")
+    const boys = (d.boys || []).filter(b => b.text || b.video).map(b => `<div class="love-div" aria-hidden="true">♥ ♥ ♥</div><section class="love-boy"><h3>From ${esc2(b.name)}</h3>${b.video ? `<video src="${esc2(b.video)}"${b.poster ? ` poster="${esc2(b.poster)}"` : ""} controls playsinline preload="metadata"></video>` : ""}${b.text ? paras(b.text) : ""}</section>`).join("")
 ;
     const special = (d.friends || []).map(f => `<section class="love-special"><div class="ls-head"><span class="ls-stamp" aria-hidden="true">✉</span><div><small>Special greeting</small><h3>From ${esc2(f.name)}</h3></div></div>${f.img ? `<img class="love-pic" src="${esc2(f.img)}" alt="">` : ""}<div class="ls-text">${paras(f.text)}</div>${f.sign ? `<p class="ls-sign">${esc2(f.sign)}</p>` : ""}</section>`).join("");
     const vid = d.video ? `<figure class="love-video"><video src="${esc2(d.video)}" poster="${esc2(d.poster || "")}" controls playsinline preload="metadata"></video><figcaption>${esc2(d.videoTitle || "")}</figcaption></figure><div class="love-div" aria-hidden="true">♥ ♥ ♥</div>` : "";
