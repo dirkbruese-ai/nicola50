@@ -76,7 +76,7 @@ for n, f in FIX.items():
     if n in byn: byn[n].update(f)
 # Eigene Beiträge außerhalb des Padlets (Dirk 17.11.: Strandvideo als letzter Family-Beitrag, danach nur die Herz-Karte)
 EXTRA = [{"n": "dirk", "name": "Dirk", "group": "family", "city": "Gold Coast", "clip": "v-dirk", "video": "0:19"},
-         {"n": "outtakes", "name": "Moritz, Philip & Dirk", "group": "family", "after": True, "city": "Gold Coast", "title": "Outtakes: Happy Birthday, Mama! (Take 1 to 8)", "clip": "v-outtakes", "video": "0:45"}]
+         {"n": "outtakes", "name": "Moritz, Philip & Dirk", "group": "family", "after": True, "city": "Gold Coast", "title": "Outtakes: Happy Birthday, Mama! (Take 1 to 8)", "clip": "v-outtakes", "video": "0:44"}]
 BEFORE = {}
 key = lambda n: ORDER.index(n) if n in ORDER else 1000 + LAST.index(n) if n in LAST else 100 + n
 out.sort(key=lambda p: key(BEFORE[p["n"]]) - 0.5 if p["n"] in BEFORE else key(p["n"]))

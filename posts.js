@@ -88,7 +88,7 @@ const friends = [
   "city": "Gold Coast",
   "title": "Outtakes: Happy Birthday, Mama! (Take 1 to 8)",
   "clip": "v-outtakes",
-  "video": "0:45"
+  "video": "0:44"
  },
  {
   "n": 17,
@@ -484,7 +484,7 @@ const friends = [
   "moment": "Tauchen in Thailand & Apres Ski an Silvester",
   "wish": "Glück Gesundheit Liebe !",
   "clip": "v28",
-  "video": "0:45"
+  "video": "0:44"
  },
  {
   "n": 24,
