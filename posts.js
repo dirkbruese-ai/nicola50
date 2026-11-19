@@ -501,6 +501,18 @@ const friends = [
   "video": "3:41"
  },
  {
+  "n": 70,
+  "name": "Britta, Thorben & Charlotte",
+  "group": "new",
+  "note": "Hör Dir das mal an",
+  "imgs": [
+   "p70-1"
+  ],
+  "audio": "a70",
+  "voice": "3:58",
+  "title": "Mit Hecheln fing es an – für Nicola"
+ },
+ {
   "n": 62,
   "name": "Corinna",
   "group": "close",
@@ -820,15 +832,6 @@ const friends = [
   "city": "Cologne",
   "clip": "v9",
   "video": "0:26"
- },
- {
-  "n": 70,
-  "name": "Britta, Thorben & Charlotte",
-  "group": "new",
-  "note": "Hör Dir das mal an",
-  "audio": "a70",
-  "voice": "3:58",
-  "title": "Mit Hecheln fing es an – für Nicola"
  },
  {
   "n": 63,
