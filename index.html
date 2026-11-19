@@ -628,16 +628,16 @@ const INTRO = (() => {
   return { cells, cols, rows, pool };
 })();
 const rnd = (a, b) => a + Math.random() * (b - a);
-// Ablauf passt zum Medley media/glueckwuensche.mp3 (Stimmen bis ca. 72 s, gebaut mit Überblendungen): erst Gesang, dann gesprochene Grüße;
-// danach läuft im Hintergrund der Song von Britta, Thorben & Charlotte (ab ca. 73 s).
+// Ablauf passt zum Medley media/glueckwuensche.mp3 (Stimmen bis ca. 70,5 s, gebaut mit Überblendungen): erst Gesang, dann gesprochene Grüße;
+// danach läuft im Hintergrund der Song von Britta, Thorben & Charlotte (ab ca. 71,8 s).
 // Zu jeder Stimme fliegt genau in dem Moment ihr eigenes Bild herein (img/intro/…), sonst Beitragsfotos mit Absender.
-const CUES = [[0.4, "Singing for you", "Séchés & Kleins", "seches"], [11.0, "Singing for you", "DEHNS", "dehns"], [15.1, "Singing for you", "Eva + Eve + Carla & the Men", "eva"],
-  [19.4, "Singing for you", "Die Buddenbergs", "buddenbergs"], [22.7, "Singing for you", "Birgit, Caro, Olli & Uli", "birgit"], [26.6, "Singing for you", "Catherine", "catherine-sing"],
-  [29.4, "Singing for you", "Your three men", "men"], [32.3, "Grand finale", "Séchés & Kleins", "seches"], [36.2, "Yodelling for you", "Sonja & Basti", "sonja-basti"],
-  [43.8, "Wishes from", "Die Viersener", "viersener"], [46.5, "Wishes from", "Susi & Corinna", "susi"], [48.6, "Wishes from", "Ena & Esa", "ena"],
-  [51.6, "Wishes from", "Jo", "jo"], [52.6, "Wishes from", "Catherine", "catherine"], [54.1, "Wishes from", "Nina & Lars", "nina"],
-  [56.4, "Wishes from", "Andrea & Geo", "andrea-geo"], [62.6, "Wishes from", "Evchen", "evchen"], [64.9, "Wishes from", "Lisa & Stefan", "lisa-stefan"],
-  [67.5, "Wishes from", "Your three men", "men-best"], [70.1, "Wishes from", "Dirk", "dirk-sun"]];
+const CUES = [[0.4, "Singing for you", "Séchés & Kleins", "seches"], [10.95, "Singing for you", "DEHNS", "dehns"], [14.28, "Singing for you", "Eva + Eve + Carla & the Men", "eva"],
+  [18.58, "Singing for you", "Die Buddenbergs", "buddenbergs"], [21.26, "Singing for you", "Birgit, Caro, Olli & Uli", "birgit"], [25.12, "Singing for you", "Catherine", "catherine-sing"],
+  [28.0, "Singing for you", "Your three men", "men"], [30.88, "Grand finale", "Séchés & Kleins", "seches"], [34.73, "Yodelling for you", "Sonja & Basti", "sonja-basti"],
+  [42.33, "Wishes from", "Die Viersener", "viersener"], [45.03, "Wishes from", "Susi & Corinna", "susi"], [47.13, "Wishes from", "Ena & Esa", "ena"],
+  [50.2, "Wishes from", "Jo", "jo"], [51.21, "Wishes from", "Catherine", "catherine"], [52.63, "Wishes from", "Nina & Lars", "nina"],
+  [54.97, "Wishes from", "Andrea & Geo", "andrea-geo"], [61.16, "Wishes from", "Evchen", "evchen"], [63.46, "Wishes from", "Lisa & Stefan", "lisa-stefan"],
+  [66.11, "Wishes from", "Your three men", "men-best"], [68.62, "Wishes from", "Dirk", "dirk-sun"]];
 const playIntro = done => {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches || !INTRO.pool.length) return done();
   const stage = document.createElement("div"); stage.className = "intro"; welcome.appendChild(stage);
@@ -646,10 +646,25 @@ const playIntro = done => {
   const x0 = (W - size) / 2, y0 = T + (Z - size) / 2;
   const heartBox = document.createElement("div"); heartBox.className = "intro-heart"; stage.appendChild(heartBox);
   const big = Math.min(W * .8 / (900 / 1070), Z * .94) / cell, HOLD = 1300, FLY = 1700, FIRST = 3000;  // 1. Bild 3 s stehen lassen (Ladezeit)
-  const OUT = 72300, END = 73700, n = INTRO.cells.length, LAST = 68800, EXTRA = FIRST - HOLD, step = (LAST - 400 - EXTRA) / (n - 1);
+  const OUT = 70860, END = 72260, n = INTRO.cells.length, VID = 5000;
+  // Ablaufplan: Die Kachel jeder Stimme fliegt genau mit ihrem Einsatz im Medley ein (INTRO_CUE_TILE aus tools/build_intro.py),
+  // die übrigen Kacheln verteilen sich gleichmäßig in die Lücken dazwischen. Sonja & Basti: 5 s ihr Jodel-Video in der Kachel.
+  const CT = typeof INTRO_CUE_TILE !== "undefined" ? INTRO_CUE_TILE : {}, used = new Set(), sched = [];
+  CUES.forEach(c => { const k = CT[c[3]]; if (k === undefined || used.has(k) || k >= INTRO.pool.length) return; used.add(k);
+    const t = c[0] * 1000, hold = !sched.length ? FIRST : c[3] === "sonja-basti" ? VID + 500 : Math.max(400, Math.min(HOLD, OUT - FLY - 200 - t));
+    sched.push({ k, t, hold, cue: c[3] }); });
+  if (!sched.length) sched.push({ k: 0, t: 400, hold: FIRST });
+  const rest = INTRO.pool.map((_, i) => i).filter(i => !used.has(i));
+  for (let i = 0; sched.length + rest.length < n; i++) rest.push(rest[i] ?? 0);
+  rest.length = Math.max(0, n - sched.length);
+  const gaps = sched.slice(0, -1).map((c, i) => { const s0 = c.t + Math.max(c.hold - 300, 1000), s1 = sched[i + 1].t - 800; return { s0, len: Math.max(0, s1 - s0), m: 0 }; });
+  for (let r = rest.length; r > 0 && gaps.length; r--) gaps.reduce((b, g) => (g.len + 1) / (g.m + 1) > (b.len + 1) / (b.m + 1) ? g : b).m++;
+  let ri = 0; gaps.forEach(g => { for (let i = 0; i < g.m; i++) sched.push({ k: rest[ri++], t: g.s0 + (g.m > 1 ? i * g.len / (g.m - 1) : g.len / 2), hold: HOLD }); });
+  sched.sort((x, y) => x.t - y.t);
+  const LAST = sched[sched.length - 1].t;
   const cellOrder = INTRO.cells.map((_, i) => i).sort(() => Math.random() - .5);
-  cellOrder.forEach((ci, j) => {
-    const [c, r] = INTRO.cells[ci], [src, name, th] = INTRO.pool[j % INTRO.pool.length], pol = !name;
+  sched.slice(0, n).forEach((sc0, j) => {
+    const ci = cellOrder[j], [c, r] = INTRO.cells[ci], [src, name, th] = INTRO.pool[sc0.k], pol = !name;
     // Kachel wird in voller Größe gebaut und fürs Herz nur verkleinert, damit sie groß gestochen scharf ist
     const t = document.createElement(pol ? "img" : "div"); t.className = "intro-tile";
     const tx = x0 + c * cell, ty = y0 + r * cell, ar = pol ? 900 / 1070 : 1;
@@ -659,8 +674,13 @@ const playIntro = done => {
     if (pol) { t.alt = ""; t.src = src; } else { t.style.backgroundImage = `url('${th}')`;
       const cap = document.createElement("div"); cap.className = "intro-cap"; cap.innerHTML = `<small>With love from</small>${esc(name)}`; t.appendChild(cap); }
     heartBox.appendChild(t);
-    if (!pol) setTimeout(() => { const im = new Image(); im.onload = () => { t.style.backgroundImage = `url('${src}')`; }; im.src = src; }, Math.max(0, 400 + (j ? EXTRA : 0) + j * step - 8000));
-    const delay = 400 + (j ? EXTRA : 0) + j * step, total = END - delay, hold = j ? HOLD : FIRST;
+    const delay = sc0.t, total = END - delay, hold = sc0.hold;
+    if (!pol) setTimeout(() => { const im = new Image(); im.onload = () => { t.style.backgroundImage = `url('${src}')`; }; im.src = src; }, Math.max(0, delay - 8000));
+    if (sc0.cue === "sonja-basti") { // Jodel-Video (stumm, der Ton kommt aus dem Medley) liegt genau auf dem Fotofeld der Polaroid-Kachel
+      const v = document.createElement("video"); v.className = "intro-tile intro-vid"; v.muted = true; v.playsInline = true; v.preload = "auto"; v.innerHTML = `<source src="media/intro-jodel.mp4" type="video/mp4"><source src="media/intro-jodel.webm" type="video/webm">`;
+      v.style.cssText = `left:${txo + Bw * 34 / 900}px;top:${ty + Bh * 34 / 1070}px;width:${Bw * 832 / 900}px;height:${Bh * 832 / 1070}px;z-index:${j};box-shadow:none;border-radius:0`;
+      heartBox.appendChild(v); v.load(); setTimeout(() => { v.currentTime = 0; v.play().catch(() => {}); }, delay + 200);
+      t.vid = v; t.vo = [Bw * 34 / 900, Bh * 34 / 1070]; }
     const ox = rnd(-W * .04, W * .04), oy = rnd(-Z * .02, Z * .02);
     const sx = W / 2 + ox - txo - Bw / 2, sy = T + Z / 2 + oy - ty - Bh / 2, home = `scale(${sc})`;
     const from = `translate(${sx}px, ${sy}px) rotate(${rnd(-6, 6)}deg) scale(1)`;
@@ -670,6 +690,10 @@ const playIntro = done => {
       { transform: from, opacity: 1, offset: f(hold), easing: "cubic-bezier(.45,0,.2,1)" },
       { transform: home, opacity: 1, offset: f(hold + FLY) }, { transform: home, opacity: 1, offset: Math.max(f(hold + FLY), f(OUT - delay)), easing: "cubic-bezier(.5,0,.8,.4)" },
       { transform: away, opacity: 0 }], { duration: total, delay, fill: "both" });
+    if (t.vid) { const inv = `translate(${t.vo[0]}px, ${t.vo[1]}px)`, m = `translate(${-t.vo[0]}px, ${-t.vo[1]}px)`;
+      t.vid.animate([{ transform: `${m} ${from} ${inv}`, opacity: 0 }, { transform: `${m} ${from} ${inv}`, opacity: 1, offset: f(250) },
+        { transform: `${m} ${from} ${inv}`, opacity: 1, offset: f(hold - 250) }, { transform: `${m} ${from} ${inv}`, opacity: 0, offset: f(hold) }, { transform: `${m} ${from} ${inv}`, opacity: 0 }],
+        { duration: total, delay, fill: "both" }); }
     if (!pol) t.firstChild.animate([{ opacity: 1 }, { opacity: 1, offset: .55 }, { opacity: 0 }], { duration: hold + FLY, delay, fill: "both" });
   });
   // Kleine Kachel unten: wer gerade singt oder spricht, mit eigenem Bild
@@ -683,16 +707,16 @@ const playIntro = done => {
       { opacity: 1, transform: "none", offset: Math.max(1 - 250 / d, .6) }, { opacity: 0, transform: "translateY(-8px)" }], { duration: d, delay: from, fill: "both" });
   });
   // Herzschlag am Ende des Liedes und wenn das Herz fertig ist
-  [37000, LAST + FLY + 300].forEach(d => heartBox.animate([{ transform: "scale(1)" }, { transform: "scale(1.07)" }, { transform: "scale(1)" }, { transform: "scale(1.07)" }, { transform: "scale(1)" }],
+  [35560, LAST + FLY + 300].forEach(d => heartBox.animate([{ transform: "scale(1)" }, { transform: "scale(1.07)" }, { transform: "scale(1)" }, { transform: "scale(1.07)" }, { transform: "scale(1)" }],
     { duration: 1200, delay: d, easing: "ease-in-out" }));
   // Sonne geht nach dem Lied hinter dem Herz auf und bleibt während der Grüße
   const sun = document.createElement("div"); sun.className = "intro-sun"; sun.style.cssText = `left:${W / 2}px;top:${y0 + size * .46}px;width:${size * 2.4}px;height:${size * 2.4}px`;
   stage.insertBefore(sun, heartBox);
   sun.animate([{ opacity: 0, transform: "translate(-50%,-50%) scale(.2) rotate(0deg)" }, { opacity: 1, transform: "translate(-50%,-50%) scale(1) rotate(30deg)", offset: .1 },
     { opacity: 1, transform: "translate(-50%,-50%) scale(1.05) rotate(200deg)", offset: .95 }, { opacity: 0, transform: "translate(-50%,-50%) scale(1.6) rotate(220deg)" }],
-    { duration: END - 36000, delay: 36000, easing: "linear", fill: "both" });
+    { duration: END - 34560, delay: 34560, easing: "linear", fill: "both" });
   const msg = document.createElement("div"); msg.className = "intro-msg"; msg.innerHTML = "You’re the <mark>sunshine</mark><br>of our world<small>Happy 50th, Nici</small>"; msg.style.top = `${T - 126}px`; stage.appendChild(msg);
-  msg.animate([{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "none", offset: .06 }, { opacity: 1, offset: .94 }, { opacity: 0 }], { duration: OUT - 38000, delay: 38000, fill: "both" });
+  msg.animate([{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "none", offset: .06 }, { opacity: 1, offset: .94 }, { opacity: 0 }], { duration: OUT - 36560, delay: 36560, fill: "both" });
   let ended = false; const finish = () => { if (ended) return; ended = true; done(); };
   welcome.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 900, delay: END - 600, fill: "forwards" }).onfinish = finish;
   stage.addEventListener("click", () => { welcome.getAnimations({ subtree: true }).forEach(a => { try { a.finish(); } catch (e) { a.cancel(); } }); serenade.pause(); np.hidden = true; finish(); });

@@ -12,7 +12,9 @@ os.makedirs(R + "img/intro/t", exist_ok=True)
 for f in os.listdir(R + "img/intro/t"): os.remove(R + "img/intro/t/" + f)
 small = ImageFont.truetype(F + "InstrumentSans.ttf", 25)
 out = []
-for i, (src, by) in enumerate(sel, 1):
+cue = {}
+for i, (src, by, *k) in enumerate(sel, 1):
+    if k: cue[k[0]] = i - 1
     im = ImageOps.exif_transpose(Image.open(os.path.join(R, src))).convert("RGB")
     side = W - 2 * P
     im = ImageOps.fit(im, (side, side), Image.LANCZOS, centering=(.5, .42))
@@ -27,5 +29,5 @@ for i, (src, by) in enumerate(sel, 1):
     d.text((P + 2, y + 34), by, font=big, fill="#22508f")
     name = f"img/intro/t/{i:02d}.jpg"; card.save(R + name, quality=84, optimize=True, progressive=True)
     out.append(name)
-open(R + "intro.js", "w").write("// erzeugt von tools/build_intro.py\nconst INTRO_TILES = " + json.dumps(out) + ";\n")
+open(R + "intro.js", "w").write("// erzeugt von tools/build_intro.py\nconst INTRO_TILES = " + json.dumps(out) + ";\n// Kachel, die genau dann einfliegt, wenn diese Stimme im Medley startet\nconst INTRO_CUE_TILE = " + json.dumps(cue) + ";\n")
 print(len(out), "Kacheln")

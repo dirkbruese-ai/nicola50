@@ -1,7 +1,8 @@
 [
  [
   "tools/intro-stills/v61.jpg",
-  "Séchés & Kleins"
+  "Séchés & Kleins",
+  "seches"
  ],
  [
   "img/posts/p15-1.jpg",
@@ -21,7 +22,8 @@
  ],
  [
   "tools/intro-stills/v33.jpg",
-  "Catherine"
+  "Catherine",
+  "catherine-sing"
  ],
  [
   "img/posts/p51-1.jpg",
@@ -41,7 +43,8 @@
  ],
  [
   "tools/intro-stills/v38.jpg",
-  "Die Buddenbergs"
+  "Die Buddenbergs",
+  "buddenbergs"
  ],
  [
   "img/posts/p17-1.jpg",
@@ -69,7 +72,8 @@
  ],
  [
   "tools/intro-stills/v44.jpg",
-  "Sonja & Basti"
+  "Sonja & Basti",
+  "sonja-basti"
  ],
  [
   "img/posts/p11-1.jpg",
@@ -77,7 +81,8 @@
  ],
  [
   "tools/intro-stills/v13.jpg",
-  "Die Viersener"
+  "Die Viersener",
+  "viersener"
  ],
  [
   "img/posts/p3-1.jpg",
@@ -97,11 +102,13 @@
  ],
  [
   "img/album/444.jpg",
-  "Moritz & Philip"
+  "Moritz & Philip",
+  "men"
  ],
  [
   "tools/intro-stills/v39.jpg",
-  "Birgit, Caro, Olli & Uli"
+  "Birgit, Caro, Olli & Uli",
+  "birgit"
  ],
  [
   "img/posts/p26-2.jpg",
@@ -109,7 +116,8 @@
  ],
  [
   "tools/intro-stills/v58.jpg",
-  "Andrea & Geo"
+  "Andrea & Geo",
+  "andrea-geo"
  ],
  [
   "tools/intro-stills/v55.jpg",
@@ -133,7 +141,8 @@
  ],
  [
   "tools/intro-stills/v65.jpg",
-  "Lisa & Stefan"
+  "Lisa & Stefan",
+  "lisa-stefan"
  ],
  [
   "tools/intro-stills/v8.jpg",
@@ -141,7 +150,8 @@
  ],
  [
   "tools/intro-stills/v28.jpg",
-  "Eva, Eve & Carla & Männer"
+  "Eva, Eve & Carla & Männer",
+  "eva"
  ],
  [
   "tools/intro-stills/v6.jpg",
@@ -153,11 +163,13 @@
  ],
  [
   "tools/intro-stills/v14.jpg",
-  "Ena & Esa"
+  "Ena & Esa",
+  "ena"
  ],
  [
   "tools/intro-stills/v59.jpg",
-  "Nina & Lars"
+  "Nina & Lars",
+  "nina"
  ],
  [
   "img/posts/p10-1.jpg",
@@ -165,7 +177,8 @@
  ],
  [
   "tools/intro-stills/v57.jpg",
-  "Evchen & Otto"
+  "Evchen & Otto",
+  "evchen"
  ],
  [
   "img/posts/p50-2.jpg",
@@ -185,7 +198,8 @@
  ],
  [
   "img/posts/p20-4.jpg",
-  "Susi & Corinna"
+  "Susi & Corinna",
+  "susi"
  ],
  [
   "img/posts/p43-2.jpg",
@@ -245,6 +259,17 @@
  ],
  [
   "img/album/352.jpg",
-  "Dirk"
+  "Dirk",
+  "dirk-sun"
+ ],
+ [
+  "tools/intro-stills/v24.jpg",
+  "DEHNS",
+  "dehns"
+ ],
+ [
+  "tools/intro-stills/v32.jpg",
+  "Jo",
+  "jo"
  ]
 ]
