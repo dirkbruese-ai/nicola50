@@ -604,7 +604,7 @@ document.addEventListener("click", e => { const b = e.target.closest(".play"); i
   document.querySelectorAll(".play[aria-pressed]").forEach(x => { x.setAttribute("aria-pressed", "false"); x.textContent = "▶"; });
   if (on) { a.play(); b.setAttribute("aria-pressed", "true"); b.textContent = "❚❚"; } else a.pause();
   a.onended = () => { b.setAttribute("aria-pressed", "false"); b.textContent = "▶"; }; });
-document.addEventListener("play", e => { if (e.target.tagName === "VIDEO") document.querySelectorAll("video, audio").forEach(x => { if (x !== e.target) x.pause(); }); }, true);
+document.addEventListener("play", e => { if (e.target.tagName === "VIDEO" && !e.target.muted) document.querySelectorAll("video, audio").forEach(x => { if (x !== e.target) x.pause(); }); }, true);
 
 // Startseite: NICOLA 50 mit Play-Knopf, nach Tippen läuft das Ständchen und das Magazin erscheint (Autoplay mit Ton geht nur nach Tippen)
 const welcome = document.getElementById("welcome"), serenade = document.getElementById("serenade"), np = document.getElementById("now-playing");
