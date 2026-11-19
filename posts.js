@@ -122,6 +122,27 @@ const friends = [
   ]
  },
  {
+  "n": 69,
+  "name": "Conor & Nicky",
+  "group": "aus",
+  "title": "Happy 50th Birthday!!!",
+  "note": "So happy to be celebrating your 50 years! Congratulations and have the best time, with many more to come.",
+  "isFor": "In the short time we’ve been friends we have shared many coffees, wines, nachos and chats over hockey Friday night games!",
+  "moment": "Lots of special cheese and wine nights at tournaments and hopefully many more to come.",
+  "wish": "All the best of health, love and fun filled next 50 years!",
+  "team": "Hockey"
+ },
+ {
+  "n": 71,
+  "name": "Dale & Suzie",
+  "group": "aus",
+  "note": "50 &amp; Fabulous!!",
+  "isFor": "A genuinely loving, kind and bubbly person who has such a warm nature. Someone I’ve only known for a short time but feel a lovely connection with already.",
+  "moment": "From the hockey sidelines to sharing a glass….or two 🤭…of wine and chatting about everything….the craziness of busy motherhood, navigating life as women and all the little things in between that somehow turn into big meaningful conversations. It’s those easy, honest  chats and laughs that make you feel like you have known someone much longer than you actually have.",
+  "wish": "A fabulous 50th birthday and a year ahead filled with happiness, love, laughter, wonderful friendships and plenty of fun. I hope you get thoroughly spoilt and enjoy every minute of this next chapter. 💕",
+  "team": "Hockey"
+ },
+ {
   "n": 3,
   "name": "Vicky Stirling",
   "group": "aus",
@@ -799,6 +820,15 @@ const friends = [
   "city": "Cologne",
   "clip": "v9",
   "video": "0:26"
+ },
+ {
+  "n": 70,
+  "name": "Britta, Thorben & Charlotte",
+  "group": "new",
+  "note": "Hör Dir das mal an",
+  "audio": "a70",
+  "voice": "3:58",
+  "title": "Mit Hecheln fing es an – für Nicola"
  },
  {
   "n": 63,
