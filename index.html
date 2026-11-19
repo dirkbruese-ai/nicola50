@@ -187,6 +187,14 @@ section { padding-block: 56px 8px; }
 .poem p { font: 600 clamp(1.3rem, 3.6vw, 1.7rem)/1.3 var(--f-hand); margin: 0 0 18px; white-space: pre-line; }
 .poem small { color: var(--muted); }
 /* Video-Wand */
+.songs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 40px; }
+.song { background: var(--paper); border-top: 4px solid var(--red); padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 10px; }
+.song .no { font: 400 .8rem/1 var(--f-head); letter-spacing: .14em; color: var(--red); text-transform: uppercase; }
+.song h3 { font: italic 600 1.45rem/1.15 var(--f-mast); margin: 0; }
+.song p { margin: 0; color: var(--muted); font-size: .92rem; }
+.song audio { width: 100%; margin-top: auto; }
+.song.soon { border-top-color: var(--yellow); }
+.song .wait { font: 500 1.25rem/1.2 var(--f-hand); color: var(--ink); margin-top: auto; }
 .vwall { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-bottom: 40px; }
 .vwall figure { margin: 0; min-width: 0; }
 .vwall video { width: 100%; aspect-ratio: 9/12; object-fit: cover; background: #000; display: block; }
@@ -484,6 +492,14 @@ section { padding-block: 56px 8px; }
     <div class="sec-head"><h2 id="h-podcast">Happy Birthday on Air <em>videos</em></h2><span class="tag">Watch</span></div>
     <div class="vwall" id="vwall"></div>
   </section>
+  <section id="songs" aria-labelledby="h-songs">
+    <div class="sec-head"><h2 id="h-songs">Songs for Nicki <em>press play</em></h2><span class="tag">Listen</span></div>
+    <div class="songs">
+      <article class="song"><span class="no">Track 1</span><h3>Sunshine of Our World</h3><p>Your song, from all of us</p><audio controls preload="none" src="media/song-sunshine.mp3"></audio></article>
+      <article class="song soon"><span class="no">Track 2</span><h3>Sunshine of Our World <small>(Party Version)</small></h3><p>Turn it up</p><span class="wait">Coming soon …</span></article>
+      <article class="song"><span class="no">Track 3</span><h3>Mit Hecheln fing es an</h3><p>From Britta, Thorben &amp; Charlotte</p><audio controls preload="none" src="media/a70.mp3"></audio></article>
+    </div>
+  </section>
 </main>
 
 <footer class="imprint">
@@ -604,7 +620,7 @@ document.addEventListener("click", e => { const b = e.target.closest(".play"); i
   document.querySelectorAll(".play[aria-pressed]").forEach(x => { x.setAttribute("aria-pressed", "false"); x.textContent = "▶"; });
   if (on) { a.play(); b.setAttribute("aria-pressed", "true"); b.textContent = "❚❚"; } else a.pause();
   a.onended = () => { b.setAttribute("aria-pressed", "false"); b.textContent = "▶"; }; });
-document.addEventListener("play", e => { if (e.target.tagName === "VIDEO" && !e.target.muted) document.querySelectorAll("video, audio").forEach(x => { if (x !== e.target) x.pause(); }); }, true);
+document.addEventListener("play", e => { if ((e.target.tagName === "VIDEO" && !e.target.muted) || e.target.closest(".songs")) document.querySelectorAll("video, audio").forEach(x => { if (x !== e.target) x.pause(); }); }, true);
 
 // Startseite: NICOLA 50 mit Play-Knopf, nach Tippen läuft das Ständchen und das Magazin erscheint (Autoplay mit Ton geht nur nach Tippen)
 const welcome = document.getElementById("welcome"), serenade = document.getElementById("serenade"), np = document.getElementById("now-playing");
@@ -629,7 +645,7 @@ const INTRO = (() => {
 })();
 const rnd = (a, b) => a + Math.random() * (b - a);
 // Ablauf passt zum Medley media/glueckwuensche.mp3 (Stimmen bis ca. 70,5 s, gebaut mit Überblendungen): erst Gesang, dann gesprochene Grüße;
-// danach läuft im Hintergrund der Song von Britta, Thorben & Charlotte (ab ca. 71,8 s).
+// danach laufen im Hintergrund "Our Nicki" / Sunshine of Our World (ab ca. 71,8 s) und der Song von Britta, Thorben & Charlotte (ab ca. 293,7 s).
 // Zu jeder Stimme fliegt genau in dem Moment ihr eigenes Bild herein (img/intro/…), sonst Beitragsfotos mit Absender.
 const CUES = [[0.4, "Singing for you", "Séchés & Kleins", "seches"], [10.95, "Singing for you", "DEHNS", "dehns"], [14.28, "Singing for you", "Eva + Eve + Carla & the Men", "eva"],
   [18.58, "Singing for you", "Die Buddenbergs", "buddenbergs"], [21.26, "Singing for you", "Birgit, Caro, Olli & Uli", "birgit"], [25.12, "Singing for you", "Catherine", "catherine-sing"],
