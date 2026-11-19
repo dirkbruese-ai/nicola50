@@ -251,6 +251,17 @@ section { padding-block: 56px 8px; }
 .love-body h2 { font: 400 clamp(2.2rem, 9vw, 3.6rem)/.95 var(--f-head); text-transform: uppercase; color: var(--red); margin: 0 0 28px; text-align: center; }
 .love-letter { background: #fff; border-radius: 6px; box-shadow: 0 10px 40px rgba(209,16,31,.12); padding: 28px 24px; font: 400 1.45rem/1.45 var(--f-hand); }
 .love-letter p { margin: 0 0 1em; }
+.love-letter summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 14px; font: 600 1rem/1.2 var(--f-body); color: var(--red); text-align: left; }
+.love-letter summary::-webkit-details-marker { display: none; }
+.love-letter .ll-env { font-size: 2.4rem; line-height: 1; transition: transform .3s; }
+.love-letter[open] .ll-env { transform: rotate(-8deg) scale(.8); }
+.love-letter .ll-lbl b { display: block; font: 700 1.9rem/1.1 var(--f-hand); }
+.love-letter .ll-lbl small { display: block; color: var(--muted, #6f5c60); letter-spacing: .04em; }
+.love-letter .ll-lbl .ll-c, .love-letter[open] .ll-lbl .ll-o { display: none; }
+.love-letter[open] .ll-lbl .ll-c { display: block; }
+.love-letter[open] summary { margin-bottom: 22px; }
+.love-letter[open] .ll-body { animation: llin .5s ease; }
+@keyframes llin { from { opacity: 0; transform: translateY(-8px); } }
 .love-letter .sign { text-align: right; font-size: 1.8rem; color: var(--red); margin: 0; }
 .love-boy { margin-top: 32px; background: #fff; border-radius: 6px; padding: 22px 24px; box-shadow: 0 10px 40px rgba(209,16,31,.08); }
 .love-boy h3 { font: 400 1.6rem/1 var(--f-head); text-transform: uppercase; margin: 0 0 12px; }
@@ -274,6 +285,9 @@ section { padding-block: 56px 8px; }
 .love-video video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 6px; background: #000; }
 .love-video figcaption { font: 700 1.35rem/1.2 var(--f-hand); text-align: center; color: var(--red); padding: 10px 0 2px; }
 .love-div { text-align: center; color: var(--red); letter-spacing: .6em; font-size: 1.1rem; margin: 26px 0; opacity: .85; }
+.love-rule { display: flex; align-items: center; gap: 14px; margin: 56px 0 0; color: var(--red); }
+.love-rule::before, .love-rule::after { content: ""; flex: 1; border-top: 2px solid currentColor; opacity: .6; }
+.love-rule + .love-special { margin-top: 28px; }
 .love-end { text-align: center; margin: 36px 0 0; font: 700 2rem/1.15 var(--f-hand); color: var(--red); }
 .love-end span { display: block; font-size: 2.6rem; animation: lovebeat 2.4s ease-in-out infinite; }
 .love-burst { position: fixed; inset: 0; pointer-events: none; z-index: 4; overflow: hidden; }
@@ -820,11 +834,11 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
     box.appendChild(b); setTimeout(() => b.remove(), 2200);
   }
   function show(d) {
-    const boys = (d.boys || []).filter(b => b.text || b.video).map(b => `<div class="love-div" aria-hidden="true">♥ ♥ ♥</div><section class="love-boy"><h3>From ${esc2(b.name)}</h3>${b.video ? `<video src="${esc2(b.video)}"${b.poster ? ` poster="${esc2(b.poster)}"` : ""} controls playsinline preload="metadata"></video>` : ""}${b.text ? paras(b.text) : ""}</section>`).join("")
+    const boys = (d.boys || []).filter(b => b.text || b.video || b.img).map(b => `<div class="love-div" aria-hidden="true">♥ ♥ ♥</div><section class="love-boy"><h3>From ${esc2(b.name)}</h3>${b.img ? `<img class="love-pic" src="${esc2(b.img)}" alt="">` : ""}${b.video ? `<video src="${esc2(b.video)}"${b.poster ? ` poster="${esc2(b.poster)}"` : ""} controls playsinline preload="metadata"></video>` : ""}${b.text ? paras(b.text) : ""}</section>`).join("")
 ;
     const special = (d.friends || []).map(f => `<section class="love-special"><div class="ls-head"><span class="ls-stamp" aria-hidden="true">✉</span><div><small>Special greeting</small><h3>From ${esc2(f.name)}</h3></div></div>${f.img ? `<img class="love-pic" src="${esc2(f.img)}" alt="">` : ""}<div class="ls-text">${paras(f.text)}</div>${f.sign ? `<p class="ls-sign">${esc2(f.sign)}</p>` : ""}</section>`).join("");
     const vid = d.video ? `<figure class="love-video"><video src="${esc2(d.video)}" poster="${esc2(d.poster || "")}" controls playsinline preload="metadata"></video><figcaption>${esc2(d.videoTitle || "")}</figcaption></figure><div class="love-div" aria-hidden="true">♥ ♥ ♥</div>` : "";
-    body.innerHTML = `<header class="love-hero"><span class="big-heart" aria-hidden="true">♥</span><div class="kicker">${esc2(d.kicker || "")}</div><h2>${esc2(d.title)}</h2></header><div class="love-sec"><span>♥ Family ♥</span></div>${vid}<article class="love-letter">${paras(d.letter)}<p class="sign">${esc2(d.sign)} ♥</p></article>${boys}<p class="love-end"><span aria-hidden="true">♥</span>${esc2(d.end || "")}</p>${special}`;
+    body.innerHTML = `<header class="love-hero"><span class="big-heart" aria-hidden="true">♥</span><div class="kicker">${esc2(d.kicker || "")}</div><h2>${esc2(d.title)}</h2></header><div class="love-sec"><span>♥ Family ♥</span></div>${vid}<details class="love-letter"><summary><span class="ll-env" aria-hidden="true">✉</span><span class="ll-lbl"><b>A letter for you</b><small class="ll-o">Tap to open</small><small class="ll-c">Tap to close</small></span></summary><div class="ll-body">${paras(d.letter)}<p class="sign">${esc2(d.sign)} ♥</p></div></details>${boys}<p class="love-end"><span aria-hidden="true">♥</span>${esc2(d.end || "")}</p>${special ? `<div class="love-rule" aria-hidden="true"><span>✉</span></div>` : ""}${special}`;
     lock.hidden = true; body.hidden = false; box.scrollTop = 0; burst();
   }
   hearts.innerHTML = Array.from({ length: 34 }, (_, i) => `<span style="left:${(i * 53) % 100}%;font-size:${14 + (i * 7) % 26}px;color:${["#d1101f", "#ff7a8a", "#e8495a"][i % 3]};animation-duration:${9 + (i * 5) % 9}s;animation-delay:-${(i * 3.1) % 14}s">♥</span>`).join("");
