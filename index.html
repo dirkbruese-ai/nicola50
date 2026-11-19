@@ -505,8 +505,9 @@ section { padding-block: 56px 8px; }
     <div class="sec-head"><h2 id="h-songs">Songs for Nicki <em>press play</em></h2><span class="tag">Listen</span></div>
     <div class="songs">
       <article class="song"><span class="no">Track 1</span><h3>Sunshine of Our World</h3><p>Your song, from all of us</p><audio controls preload="none" src="media/song-sunshine.mp3"></audio></article>
-      <article class="song"><span class="no">Track 2</span><h3>Sunshine of Our World <small>(Party Version)</small></h3><p>Turn it up!</p><audio controls preload="none" src="media/song-party.mp3"></audio></article>
-      <article class="song"><span class="no">Track 3</span><h3>Mit Hecheln fing es an</h3><p>From Britta, Thorben &amp; Charlotte</p><audio controls preload="none" src="media/a70.mp3"></audio></article>
+      <article class="song"><span class="no">Track 2</span><h3>Sunshine of Our World <small>(Jazz Version)</small></h3><p>Smooth, swinging, just for you</p><audio controls preload="none" src="media/song-jazz.mp3"></audio></article>
+      <article class="song"><span class="no">Track 3</span><h3>Sunshine of Our World <small>(Party Version)</small></h3><p>Turn it up!</p><audio controls preload="none" src="media/song-party.mp3"></audio></article>
+      <article class="song"><span class="no">Track 4</span><h3>Mit Hecheln fing es an</h3><p>From Britta, Thorben &amp; Charlotte</p><audio controls preload="none" src="media/a70.mp3"></audio></article>
     </div>
   </section>
 </main>
@@ -654,7 +655,7 @@ const INTRO = (() => {
 })();
 const rnd = (a, b) => a + Math.random() * (b - a);
 // Ablauf passt zum Medley media/glueckwuensche.mp3 (Stimmen bis ca. 70,5 s, gebaut mit Überblendungen): erst Gesang, dann gesprochene Grüße;
-// danach laufen im Hintergrund "Our Nicki" / Sunshine of Our World (ab ca. 71,8 s) und der Song von Britta, Thorben & Charlotte (ab ca. 293,7 s).
+// danach laufen im Hintergrund "Our Nicki" / Sunshine of Our World (ab ca. 71,8 s) und der Song von Britta, Thorben & Charlotte (ab ca. 326,2 s).
 // Zu jeder Stimme fliegt genau in dem Moment ihr eigenes Bild herein (img/intro/…), sonst Beitragsfotos mit Absender.
 const CUES = [[0.4, "Singing for you", "Séchés & Kleins", "seches"], [10.95, "Singing for you", "DEHNS", "dehns"], [14.28, "Singing for you", "Eva + Eve + Carla & the Men", "eva"],
   [18.58, "Singing for you", "Die Buddenbergs", "buddenbergs"], [21.26, "Singing for you", "Birgit, Caro, Olli & Uli", "birgit"], [25.12, "Singing for you", "Catherine", "catherine-sing"],
