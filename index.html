@@ -576,7 +576,7 @@ const TEAMS = { Hockey: "On the hockey field", School: "At the school gate", Pad
 const SECRET = `<article class="star secret-card"><div class="seal" aria-hidden="true">♥</div><div class="kicker">Just for you, Nici</div><h4>Dirk, Moritz &amp; Philip</h4><p>A few personal words from your three boys.</p><a class="btn love-open" href="#love">Open ♥</a></article>`;
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG, id]) => { const g = shown.filter(inG);
-    return g.length ? `<div class="group-head" id="${id}"><h3>${h}</h3><span>${sub}</span></div>` + g.map((f, i) => (f.team && f.team !== (g[i - 1] || {}).team ? `<div class="team-head">${TEAMS[f.team] || f.team}</div>` : "") + card(f)).join("") + (id === "g-family" ? SECRET : "") : ""; }).join("");
+    return g.length ? `<div class="group-head" id="${id}"><h3>${h}</h3><span>${sub}</span></div>` + g.filter(f => !f.after).map((f, i, gg) => (f.team && f.team !== (gg[i - 1] || {}).team ? `<div class="team-head">${TEAMS[f.team] || f.team}</div>` : "") + card(f)).join("") + (id === "g-family" ? SECRET : "") + g.filter(f => f.after).map(card).join("") : ""; }).join("");
   chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.k === k)); };
 chips.innerHTML = kinds.map(k => `<button class="chip" type="button" data-k="${k}">${k}</button>`).join("");
 chips.addEventListener("click", e => { const c = e.target.closest(".chip"); if (c) render(c.dataset.k); });

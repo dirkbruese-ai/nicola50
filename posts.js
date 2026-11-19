@@ -81,6 +81,16 @@ const friends = [
   "video": "0:19"
  },
  {
+  "n": "outtakes",
+  "name": "Moritz, Philip & Dirk",
+  "group": "family",
+  "after": true,
+  "city": "Gold Coast",
+  "title": "Outtakes: Happy Birthday, Mama! (Take 1 to 8)",
+  "clip": "v-outtakes",
+  "video": "0:45"
+ },
+ {
   "n": 17,
   "name": "Sylvia",
   "group": "aus",
