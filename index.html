@@ -613,15 +613,16 @@ const INTRO = (() => {
   return { cells, cols, rows, pool };
 })();
 const rnd = (a, b) => a + Math.random() * (b - a);
-// Ablauf passt zum Medley media/glueckwuensche.mp3: erst Gesang, dann gesprochene Grüße, ab 78 s die drei Männer (bis ca. 99 s);
-// danach läuft im Hintergrund noch der Song von Britta, Thorben & Charlotte (ab 100,7 s).
+// Ablauf passt zum Medley media/glueckwuensche.mp3 (Stimmen bis ca. 74 s, gebaut mit Überblendungen): erst Gesang, dann gesprochene Grüße;
+// danach läuft im Hintergrund der Song von Britta, Thorben & Charlotte (ab ca. 75 s).
 // Zu jeder Stimme fliegt genau in dem Moment ihr eigenes Bild herein (img/intro/…), sonst Beitragsfotos mit Absender.
-const CUES = [[0.3, "Singing for you", "Séchés & Kleins", "seches"], [12.9, "Singing for you", "DEHNS", "dehns"], [17.5, "Singing for you", "Eva + Eve + Carla & the Men", "eva"],
-  [22.2, "Singing for you", "Die Buddenbergs", "buddenbergs"], [25.9, "Singing for you", "Birgit, Caro, Olli & Uli", "birgit"], [30.5, "Singing for you", "Catherine", "catherine-sing"],
-  [33.8, "Grand finale", "Séchés & Kleins", "seches"], [38.6, "Yodelling for you", "Sonja & Basti", "sonja-basti"], [47.1, "Wishes from", "Die Viersener", "viersener"],
-  [50.5, "Wishes from", "Susi & Corinna", "susi"], [53.4, "Wishes from", "Ena & Esa", "ena"], [57.3, "Wishes from", "Jo", "jo"], [59.0, "Wishes from", "Catherine", "catherine"],
-  [61.2, "Wishes from", "Nina", "nina"], [64.3, "Wishes from", "Andrea & Geo", "andrea-geo"], [71.4, "Wishes from", "Evchen", "evchen"], [74.5, "Wishes from", "Lisa & Stefan", "lisa-stefan"],
-  [78.05, "Singing for you", "Your three men", "men"], [90.87, "Wishes from", "Your three men", "men-best"], [95.29, "Wishes from", "Dirk", "dirk-sun"]];
+const CUES = [[0.4, "Singing for you", "Séchés & Kleins", "seches"], [11.1, "Singing for you", "DEHNS", "dehns"], [15.2, "Singing for you", "Eva + Eve + Carla & the Men", "eva"],
+  [19.6, "Singing for you", "Die Buddenbergs", "buddenbergs"], [22.9, "Singing for you", "Birgit, Caro, Olli & Uli", "birgit"], [26.9, "Singing for you", "Catherine", "catherine-sing"],
+  [29.8, "Singing for you", "Your three men", "men"], [32.7, "Grand finale", "Séchés & Kleins", "seches"], [36.6, "Yodelling for you", "Sonja & Basti", "sonja-basti"],
+  [44.3, "Wishes from", "Die Viersener", "viersener"], [47.0, "Wishes from", "Susi & Corinna", "susi"], [49.2, "Wishes from", "Ena & Esa", "ena"],
+  [52.3, "Wishes from", "Jo", "jo"], [53.4, "Wishes from", "Catherine", "catherine"], [54.8, "Wishes from", "Nina & Lars", "nina"],
+  [57.2, "Wishes from", "Andrea & Geo", "andrea-geo"], [63.5, "Wishes from", "Evchen", "evchen"], [65.8, "Wishes from", "Lisa & Stefan", "lisa-stefan"],
+  [68.6, "Wishes from", "Your three men", "men-best"], [72.1, "Wishes from", "Dirk", "dirk-sun"]];
 const playIntro = done => {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches || !INTRO.pool.length) return done();
   const stage = document.createElement("div"); stage.className = "intro"; welcome.appendChild(stage);
@@ -630,7 +631,7 @@ const playIntro = done => {
   const x0 = (W - size) / 2, y0 = T + (Z - size) / 2;
   const heartBox = document.createElement("div"); heartBox.className = "intro-heart"; stage.appendChild(heartBox);
   const big = Math.min(W * .8 / (900 / 1070), Z * .94) / cell, HOLD = 1300, FLY = 1700, FIRST = 3000;  // 1. Bild 3 s stehen lassen (Ladezeit)
-  const OUT = 99000, END = 100500, n = INTRO.cells.length, LAST = 95000, EXTRA = FIRST - HOLD, step = (LAST - 400 - EXTRA) / (n - 1);
+  const OUT = 74300, END = 75700, n = INTRO.cells.length, LAST = 70800, EXTRA = FIRST - HOLD, step = (LAST - 400 - EXTRA) / (n - 1);
   const cellOrder = INTRO.cells.map((_, i) => i).sort(() => Math.random() - .5);
   cellOrder.forEach((ci, j) => {
     const [c, r] = INTRO.cells[ci], [src, name, th] = INTRO.pool[j % INTRO.pool.length], pol = !name;
