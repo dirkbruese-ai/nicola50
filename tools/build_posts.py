@@ -8,13 +8,14 @@ GROUP = {50: "family", 53: "family", 12: "family", 13: "family", 55: "family",
          31: "close", 18: "close", 20: "close", 52: "close", 6: "close", 62: "close", 29: "close", 64: "close",
          24: "close", 26: "close", 27: "close", 28: "close", 19: "close", 66: "close", 67: "close", 68: "close",
          3: "aus", 69: "aus", 71: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 23: "aus", 30: "aus",
-         35: "aus", 36: "aus", 40: "aus", 41: "aus", 21: "aus", 72: "aus", 73: "aus"}
+         35: "aus", 36: "aus", 40: "aus", 41: "aus", 21: "aus", 72: "aus", 73: "aus", 74: "aus", 75: "aus", 76: "aus", 77: "aus"}
 # Gold Coast unterteilt (Dirk 16.11.)
 TEAM = {72: "Hockey", 17: "Hockey", 21: "Hockey", 11: "Hockey", 69: "Hockey", 71: "Hockey", 3: "School", 41: "School", 23: "School",
-        10: "Padel", 30: "Padel", 16: "Padel", 36: "Padel", 35: "Padel", 40: "Padel", 73: "Friends"}  # 72 Angie vorne bei Hockey, 73 Sim einfach Freundin (Dirk 20.11.)
+        10: "Padel", 30: "Padel", 16: "Padel", 36: "Padel", 35: "Padel", 40: "Padel", 73: "Friends",
+        74: "School", 75: "School", 76: "Hockey", 77: "Hockey"}  # 72 Angie vorne bei Hockey, 73 Sim einfach Freundin (Dirk 20.11.)
 # Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang, LAST ganz ans Ende
 ORDER = [50, 53, 12, 13, 55,
-         72, 17, 21, 11, 69, 71, 3, 41, 23, 10, 36, 30, 16, 35, 40, 73,
+         72, 17, 21, 11, 69, 71, 76, 77, 3, 41, 23, 74, 75, 10, 36, 30, 16, 35, 40, 73,
          37, 14, 15, 2, 22, 33, 47, 49, 54, 25,
          # From home (Dirks Liste 16.11.); Platzhalter: Steffi & Hendrik Rinsche, Nicole & Jens Ritter nach 44
          31, 18, 52, 44, 67, 68, 28, 24, 27, 6, 70, 62, 26, 29, 64, 19, 56, 59, 34, 51, 42, 43, 38, 45, 66, 39, 60, 61,
@@ -25,7 +26,7 @@ NAME = {10: "Lieke", 16: "Candice & Brent", 30: "Alex & Lex", 36: "Jess G", 2: "
         26: "Nicola", 28: "Eva + Eve + Carla & the Men", 33: "Catherine", 34: "Anna-Maria", 38: "Die Buddenbergs",
         47: "K-Ro", 49: "Verena", 50: "Mami & Papi", 53: "Katja, Christian, Julia & Alexander",
         54: "Suse", 55: "Viersen Brüses", 58: "Andrea & Geo", 59: "Nina",
-        61: "Séchés & Kleins", 63: "Claudi", 65: "Lisa & Stefan", 66: "Katrin & Tim", 67: "Steffi & Hendrik", 69: "Conor & Nicky", 70: "Britta, Thorben & Charlotte", 73: "Sim"}
+        61: "Séchés & Kleins", 63: "Claudi", 65: "Lisa & Stefan", 66: "Katrin & Tim", 67: "Steffi & Hendrik", 69: "Conor & Nicky", 70: "Britta, Thorben & Charlotte", 73: "Sim", 74: "Kat & the Pearsons", 75: "Annie & John", 76: "Kerry", 77: "Camilla & Nic"}
 SKIP = {1}  # Export 17.11.: alter Beitrag 66 (Fotos Lisa & Stefan) gelöscht, Fotos liegen bei 65; 66 = Katrin & Tim
 CITY = {2: "Gerresheim", 12: "Viersen", 13: "Viersen", 14: "Olching", 15: "Olching", 22: "Hamburg",
         24: "Oberkassel", 26: "Oberkassel", 27: "Oberkassel", 32: "Munich · Christchurch", 34: "Düsseldorf",

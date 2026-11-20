@@ -164,6 +164,29 @@ const friends = [
   "team": "Hockey"
  },
  {
+  "n": 76,
+  "name": "Kerry",
+  "group": "aus",
+  "note": "Happy 50th Birthday Nic 🥂🎂❤️\nWishing you a truly beautiful birthday filled with love, laughter and special memories. Although our friendship is still new, I’m so grateful our paths have crossed. It’s lovely to meet someone who brings such warmth and kindness into life.\nMay this wonderful milestone mark the beginning of an amazing new chapter, filled with happiness, good health, exciting adventures and many reasons to smile.\nSending you warmest wishes and a big birthday hug. Here’s to 50 fabulous years and many more wonderful ones ahead! ❤️🥂",
+  "isFor": "Out-of-this-world!",
+  "moment": "Supporting our jockey kids together",
+  "wish": "Every treasure in the world as someone as beautiful, kind, and inspirational as you deserves every❤️",
+  "team": "Hockey",
+  "imgs": [
+   "p76-1"
+  ]
+ },
+ {
+  "n": 77,
+  "name": "Camilla & Nic",
+  "group": "aus",
+  "note": "Wishing you a very happy 50th birthday Nicola and we look forward to celebrating it with you!",
+  "isFor": "Inspirational, energetic and incredibly generous with a natural ability to have deep conversations on all matters of life, big and small. So very genuine, caring and compassionate in everything you do. Love that we can laugh about still not knowing all of the rules of hockey.",
+  "moment": "We have enjoyed dinners and hockey tournaments with you and the many laughs along the way.",
+  "wish": "For the future we wish you every happiness, health and wellness, lots of love and laughter and many new memories and experiences yet to be discovered and achieved. I also look forward to locking in our sour dough lessons.",
+  "team": "Hockey"
+ },
+ {
   "n": 3,
   "name": "Vicky Stirling",
   "group": "aus",
@@ -201,6 +224,27 @@ const friends = [
   "imgs": [
    "p23-1"
   ]
+ },
+ {
+  "n": 74,
+  "name": "Kat & the Pearsons",
+  "group": "aus",
+  "title": "Kokoda Queens!",
+  "note": "Happy birthday to you, you incredible lady! We have loved getting to know you all and I can’t wait to see what challenges you take on next! Have a wonderful birthday!",
+  "team": "School",
+  "imgs": [
+   "p74-1"
+  ]
+ },
+ {
+  "n": 75,
+  "name": "Annie & John",
+  "group": "aus",
+  "title": "Happy Birthday Nicola!! Lots of love Annie and John X",
+  "note": "Happy Birthday Nicola!!!\nLots of love Annie  and John XXX",
+  "team": "School",
+  "clip": "v75",
+  "video": "1:40"
  },
  {
   "n": 10,
