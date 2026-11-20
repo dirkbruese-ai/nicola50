@@ -91,6 +91,17 @@ const friends = [
   "video": "0:44"
  },
  {
+  "n": 72,
+  "name": "Angie",
+  "group": "aus",
+  "note": "Happy birthday to the most beautiful woman, inside and out",
+  "isFor": "A confidant, an adventure seeker and someone I love spending time with",
+  "moment": "Nici has been so supportive and a voice of calm reason for me this year. I am so grateful for all our dinners and conversations over glasses of wine",
+  "team": "Hockey",
+  "clip": "v72",
+  "video": "0:51"
+ },
+ {
   "n": 17,
   "name": "Sylvia",
   "group": "aus",
@@ -265,6 +276,18 @@ const friends = [
    "p40-4",
    "p40-5"
   ]
+ },
+ {
+  "n": 73,
+  "name": "Sim",
+  "group": "aus",
+  "note": "Happy birthday to my dearest friend! Getting to know you has been an absolute joy and you have brought such sunshine and strength to my life. Thank you for being born! I wish you a year of happiness, success, health and peace. You deserve only the best.",
+  "isFor": "A precious confidant and dear friend",
+  "moment": "Learning Padel from her at KDV!",
+  "wish": "So much joy, peace and happiness in the years ahead. You deserve only the best my friend",
+  "team": "Friends",
+  "audio": "a73",
+  "voice": "0:46"
  },
  {
   "n": 37,
@@ -484,7 +507,7 @@ const friends = [
   "moment": "Tauchen in Thailand & Apres Ski an Silvester",
   "wish": "Glück Gesundheit Liebe !",
   "clip": "v28",
-  "video": "0:44"
+  "video": "0:45"
  },
  {
   "n": 24,

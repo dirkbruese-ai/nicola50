@@ -598,7 +598,7 @@ const groups = [["Family", "where it all began", f => f.group === "family", "g-f
   ["The Münster Girls", "from Krefeld and Münster to Düsseldorf, Hamburg and Munich, still close as ever, and reunited at every year’s revival", f => f.group === "old", "g-old"],
   ["From home", "Düsseldorf & beyond", f => f.group === "close" || f.group === "new", "g-home"],
   ["G’day, Gold Coast", "your Australian crew", f => f.group === "aus", "g-aus"]];
-const TEAMS = { Hockey: "On the hockey field", School: "At the school gate", Padel: "On the padel court", Visiting: "Just passing through" };
+const TEAMS = { Hockey: "On the hockey field", School: "At the school gate", Padel: "On the padel court", Visiting: "Just passing through", Friends: "Simply a dear friend" };
 const SECRET = `<article class="star secret-card"><div class="seal" aria-hidden="true">♥</div><div class="kicker">Just for you, Nici</div><h4>Dirk, Moritz &amp; Philip</h4><p>A few personal words from your three boys.</p><a class="btn love-open" href="#love">Open ♥</a></article>`;
 const render = k => { const shown = friends.filter(f => k === "All" || f.kinds.includes(k));
   list.innerHTML = groups.map(([h, sub, inG, id]) => { const g = shown.filter(inG);
