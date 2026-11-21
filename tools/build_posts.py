@@ -4,7 +4,7 @@ import csv, json, os, sys
 
 # Gruppe pro Padlet-Beitragsnummer: family, old (Münster Girls), new (From home), aus (Gold Coast)
 GROUP = {50: "family", 53: "family", 12: "family", 13: "family", 55: "family",
-         37: "old", 14: "old", 15: "old", 2: "old", 22: "old", 33: "old", 47: "old", 49: "old", 54: "old", 25: "old",
+         37: "old", 81: "old", 82: "old", 14: "old", 15: "old", 2: "old", 22: "old", 33: "old", 47: "old", 49: "old", 54: "old", 25: "old",
          31: "close", 18: "close", 20: "close", 52: "close", 6: "close", 62: "close", 29: "close", 64: "close",
          24: "close", 26: "close", 27: "close", 28: "close", 19: "close", 66: "close", 67: "close", 68: "close",
          3: "aus", 69: "aus", 71: "aus", 10: "aus", 11: "aus", 16: "aus", 17: "aus", 23: "aus", 30: "aus",
@@ -16,7 +16,7 @@ TEAM = {72: "Hockey", 17: "Hockey", 21: "Hockey", 11: "Hockey", 69: "Hockey", 71
 # Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang, LAST ganz ans Ende
 ORDER = [50, 53, 12, 13, 55,
          72, 17, 21, 11, 69, 71, 76, 77, 3, 41, 23, 74, 75, 80, 10, 36, 30, 16, 35, 40, 73, 79,
-         37, 14, 15, 2, 22, 33, 47, 49, 54, 25,
+         37, 14, 15, 2, 22, 33, 47, 49, 54, 25, 81,
          # From home (Dirks Liste 16.11.); Platzhalter: Steffi & Hendrik Rinsche, Nicole & Jens Ritter nach 44
          31, 18, 52, 44, 67, 68, 28, 24, 27, 6, 70, 62, 26, 29, 64, 19, 56, 59, 34, 51, 42, 43, 38, 45, 66, 39, 60, 61,
          46, 65, 58, 4, 57, 7, 5, 48, 8, 9, 63, 32]
@@ -36,7 +36,7 @@ CITY = {2: "Gerresheim", 12: "Viersen", 13: "Viersen", 14: "Olching", 15: "Olchi
 
 
 # Orte (Dirk 21.11.)
-CITY.update({47: "Munich", 49: "Bonn", 54: "Stuttgart", 25: "Neuss", 31: "Meerbusch", 18: "Meerbusch", 52: "Düsseldorf", 62: "Benrath",
+CITY.update({81: "Hamburg", 47: "Munich", 49: "Bonn", 54: "Stuttgart", 25: "Neuss", 31: "Meerbusch", 18: "Meerbusch", 52: "Düsseldorf", 62: "Benrath",
              44: "Düsseldorf", 67: "Düsseldorf", 68: "Meerbusch", 28: "Düsseldorf", 24: "Düsseldorf", 26: "Düsseldorf", 29: "Düsseldorf",
              64: "Düsseldorf", 19: "Düsseldorf", 59: "Düsseldorf", 51: "Düsseldorf", 42: "Düsseldorf", 43: "Düsseldorf", 38: "Düsseldorf",
              39: "Düsseldorf", 61: "Düsseldorf", 58: "Düsseldorf", 4: "Düsseldorf", 7: "Düsseldorf", 5: "Düsseldorf", 48: "Euskirchen",
@@ -68,7 +68,7 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     out.append(p)
 # Beiträge zusammenlegen: Quelle -> Ziel (Texte angehängt, Fotos/Medien übernommen)
 # KEEP_TEXT: Ziel behält nur seine eigenen Texte (Dirk 17.11.)
-MERGE = {20: 18, 15: 14, 33: 22, 27: 24, 78: 37}  # 78: Video von Elisa & Sylvie zu Sylvie (Dirk 21.11.)
+MERGE = {20: 18, 15: 14, 33: 22, 27: 24, 78: 37, 82: 81}  # 78: Video von Elisa & Sylvie zu Sylvie (Dirk 21.11.)
 KEEP_TEXT = {15, 33, 27, 78}
 byn = {p["n"]: p for p in out}
 for src, dst in MERGE.items():
