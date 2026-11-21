@@ -59,8 +59,8 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     out.append(p)
 # Beiträge zusammenlegen: Quelle -> Ziel (Texte angehängt, Fotos/Medien übernommen)
 # KEEP_TEXT: Ziel behält nur seine eigenen Texte (Dirk 17.11.)
-MERGE = {20: 18, 15: 14, 33: 22, 27: 24}
-KEEP_TEXT = {15, 33, 27}
+MERGE = {20: 18, 15: 14, 33: 22, 27: 24, 78: 37}  # 78: Video von Elisa & Sylvie zu Sylvie (Dirk 21.11.)
+KEEP_TEXT = {15, 33, 27, 78}
 byn = {p["n"]: p for p in out}
 for src, dst in MERGE.items():
     a, b = byn.get(src), byn.get(dst)
