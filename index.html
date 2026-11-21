@@ -661,16 +661,16 @@ const INTRO = (() => {
   return { cells, cols, rows, pool };
 })();
 const rnd = (a, b) => a + Math.random() * (b - a);
-// Ablauf passt zum Medley media/glueckwuensche.mp3 (Stimmen bis ca. 70,5 s, gebaut mit Überblendungen): erst Gesang, dann gesprochene Grüße;
-// danach laufen im Hintergrund "Our Nicki" / Sunshine of Our World (ab ca. 71,8 s) und der Song von Britta, Thorben & Charlotte (ab ca. 326,2 s).
+// Ablauf passt zum Medley media/glueckwuensche.mp3 (Stimmen bis ca. 67,9 s; 21.11.: bei Evchen "Grüße aus HH" und bei den Jungs "you are the best" rausgeschnitten, gebaut mit Überblendungen): erst Gesang, dann gesprochene Grüße;
+// danach laufen im Hintergrund "Our Nicki" / Sunshine of Our World (ab ca. 69,1 s) und der Song von Britta, Thorben & Charlotte (ab ca. 323,5 s).
 // Zu jeder Stimme fliegt genau in dem Moment ihr eigenes Bild herein (img/intro/…), sonst Beitragsfotos mit Absender.
 const CUES = [[0.4, "Singing for you", "Séchés & Kleins", "seches"], [10.95, "Singing for you", "DEHNS", "dehns"], [14.28, "Singing for you", "Eva + Eve + Carla & the Men", "eva"],
   [18.58, "Singing for you", "Die Buddenbergs", "buddenbergs"], [21.26, "Singing for you", "Birgit, Caro, Olli & Uli", "birgit"], [25.12, "Singing for you", "Catherine", "catherine-sing"],
   [28.0, "Singing for you", "Your three men", "men"], [30.88, "Grand finale", "Séchés & Kleins", "seches"], [34.73, "Yodelling for you", "Sonja & Basti", "sonja-basti"],
   [42.33, "Wishes from", "Die Viersener", "viersener"], [45.03, "Wishes from", "Susi & Corinna", "susi"], [47.13, "Wishes from", "Ena & Esa", "ena"],
   [50.2, "Wishes from", "Jo", "jo"], [51.21, "Wishes from", "Catherine", "catherine"], [52.63, "Wishes from", "Nina & Lars", "nina"],
-  [54.97, "Wishes from", "Andrea & Geo", "andrea-geo"], [61.16, "Wishes from", "Evchen", "evchen"], [63.46, "Wishes from", "Lisa & Stefan", "lisa-stefan"],
-  [66.11, "Wishes from", "Your three men", "men-best"], [68.62, "Wishes from", "Dirk", "dirk-sun"]];
+  [54.97, "Wishes from", "Andrea & Geo", "andrea-geo"], [61.16, "Wishes from", "Evchen", "evchen"], [62.2, "Wishes from", "Lisa & Stefan", "lisa-stefan"],
+  [64.57, "Wishes from", "Your three men", "men-best"], [66.2, "Wishes from", "Dirk", "dirk-sun"]];
 const playIntro = done => {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches || !INTRO.pool.length) return done();
   const stage = document.createElement("div"); stage.className = "intro"; welcome.appendChild(stage);
@@ -679,7 +679,7 @@ const playIntro = done => {
   const x0 = (W - size) / 2, y0 = T + (Z - size) / 2;
   const heartBox = document.createElement("div"); heartBox.className = "intro-heart"; stage.appendChild(heartBox);
   const big = Math.min(W * .8 / (900 / 1070), Z * .94) / cell, HOLD = 1300, FLY = 1700, FIRST = 3000;  // 1. Bild 3 s stehen lassen (Ladezeit)
-  const OUT = 70860, END = 72260, n = INTRO.cells.length, VID = 5000;
+  const OUT = 68160, END = 69560, n = INTRO.cells.length, VID = 5000;
   // Ablaufplan: Die Kachel jeder Stimme fliegt genau mit ihrem Einsatz im Medley ein (INTRO_CUE_TILE aus tools/build_intro.py),
   // die übrigen Kacheln verteilen sich gleichmäßig in die Lücken dazwischen. Sonja & Basti: 5 s ihr Jodel-Video in der Kachel.
   const CT = typeof INTRO_CUE_TILE !== "undefined" ? INTRO_CUE_TILE : {}, used = new Set(), sched = [];
