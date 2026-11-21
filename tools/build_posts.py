@@ -34,6 +34,14 @@ CITY = {2: "Gerresheim", 12: "Viersen", 13: "Viersen", 14: "Olching", 15: "Olchi
         55: "Viersen", 50: "Krefeld", 53: "Krefeld", 45: "Düsseldorf", 60: "Düsseldorf",
         63: "Christchurch", 65: "Bonn"}
 
+
+# Orte (Dirk 21.11.)
+CITY.update({47: "Munich", 49: "Bonn", 54: "Stuttgart", 25: "Neuss", 31: "Meerbusch", 18: "Meerbusch", 52: "Düsseldorf", 62: "Benrath",
+             44: "Düsseldorf", 67: "Düsseldorf", 68: "Meerbusch", 28: "Düsseldorf", 24: "Düsseldorf", 26: "Düsseldorf", 29: "Düsseldorf",
+             64: "Düsseldorf", 19: "Düsseldorf", 59: "Düsseldorf", 51: "Düsseldorf", 42: "Düsseldorf", 43: "Düsseldorf", 38: "Düsseldorf",
+             39: "Düsseldorf", 61: "Düsseldorf", 58: "Düsseldorf", 4: "Düsseldorf", 7: "Düsseldorf", 5: "Düsseldorf", 48: "Euskirchen",
+             57: "Hamburg", 46: "Bonn", 66: "Meerbusch", 56: "Meerbusch", 70: "Meerbusch"})
+
 csv_path, photos_path, media = sys.argv[1:4]
 photos = json.load(open(photos_path))
 dur = lambda f: os.path.exists(f) and float(os.popen(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{f}"').read() or 0)
@@ -51,6 +59,7 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     if p.get("title") == p.get("note"): p.pop("title")
     if n == 5: p.pop("note", None)
     if n in CITY: p["city"] = CITY[n]
+    elif p["group"] == "aus": p["city"] = "Gold Coast"
     if n in TEAM: p["team"] = TEAM[n]
     if str(n) in photos: p["imgs"] = photos[str(n)]
     v, a = f"{media}/v{n}.mp4", f"{media}/a{n}.mp3"
@@ -75,6 +84,9 @@ for src, dst in MERGE.items():
 FIX = {14: {"name": "Ena & Esa"}, 24: {"title": "From OBK to Down Under", "clip": "v-dehns", "video": mmss(dur(f"{media}/v-dehns.mp4"))}, 59: {"name": "Nina & Lars"}, 70: {"title": "Mit Hecheln fing es an – für Nicola"}}
 for n, f in FIX.items():
     if n in byn: byn[n].update(f)
+# Startbild (Dirk 21.11.): bei Nicole das 6. Foto zuerst
+for n, k in {68: 6}.items():
+    if n in byn and len(byn[n].get("imgs", [])) >= k: im = byn[n]["imgs"]; im.insert(0, im.pop(k - 1))
 # Eigene Beiträge außerhalb des Padlets (Dirk 17.11.: Strandvideo als letzter Family-Beitrag, danach nur die Herz-Karte)
 EXTRA = [{"n": "dirk", "name": "Dirk", "group": "family", "city": "Gold Coast", "clip": "v-dirk", "video": "0:19"},
          {"n": "outtakes", "name": "Moritz, Philip & Dirk", "group": "family", "after": True, "city": "Gold Coast", "title": "Outtakes: Happy Birthday, Mama! (Take 1 to 8)", "clip": "v-outtakes", "video": "0:44"}]

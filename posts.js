@@ -97,6 +97,7 @@ const friends = [
   "note": "Happy birthday to the most beautiful woman, inside and out",
   "isFor": "A confidant, an adventure seeker and someone I love spending time with",
   "moment": "Nici has been so supportive and a voice of calm reason for me this year. I am so grateful for all our dinners and conversations over glasses of wine",
+  "city": "Gold Coast",
   "team": "Hockey",
   "clip": "v72",
   "video": "0:51"
@@ -110,6 +111,7 @@ const friends = [
   "isFor": "A ray of sunshine",
   "moment": "Hockey tours are more fun with you!",
   "wish": "Good health, happiness and excellent wine",
+  "city": "Gold Coast",
   "team": "Hockey",
   "imgs": [
    "p17-1"
@@ -123,6 +125,7 @@ const friends = [
   "isFor": "A ray of sunshine wherever she goes",
   "moment": "Many hours on the side of a hockey field 🤪. Piano Duels, dinners out, Gala balls and trail runs they all add up to fun times.",
   "wish": "Another 50 years of fun, laughter and good health",
+  "city": "Gold Coast",
   "team": "Hockey",
   "imgs": [
    "p21-1"
@@ -137,6 +140,7 @@ const friends = [
   "isFor": "You’re one of the kindest, most generous people we know. You’ve welcomed us with open arms & every moment with you is a warm embrace! Your hospitality is effortless & determination to conquer any challenge speaks volumes. You’re a wonderful wife & mom, your family is so blessed to have you!",
   "moment": "From hockey sidelines, to dinners together - each occasion is always met with a bright smile & kind eyes.",
   "wish": "May all of your comings & goings over the next few decades be blessed!",
+  "city": "Gold Coast",
   "team": "Hockey",
   "imgs": [
    "p11-1"
@@ -151,6 +155,7 @@ const friends = [
   "isFor": "In the short time we’ve been friends we have shared many coffees, wines, nachos and chats over hockey Friday night games!",
   "moment": "Lots of special cheese and wine nights at tournaments and hopefully many more to come.",
   "wish": "All the best of health, love and fun filled next 50 years!",
+  "city": "Gold Coast",
   "team": "Hockey"
  },
  {
@@ -161,6 +166,7 @@ const friends = [
   "isFor": "A genuinely loving, kind and bubbly person who has such a warm nature. Someone I’ve only known for a short time but feel a lovely connection with already.",
   "moment": "From the hockey sidelines to sharing a glass….or two 🤭…of wine and chatting about everything….the craziness of busy motherhood, navigating life as women and all the little things in between that somehow turn into big meaningful conversations. It’s those easy, honest  chats and laughs that make you feel like you have known someone much longer than you actually have.",
   "wish": "A fabulous 50th birthday and a year ahead filled with happiness, love, laughter, wonderful friendships and plenty of fun. I hope you get thoroughly spoilt and enjoy every minute of this next chapter. 💕",
+  "city": "Gold Coast",
   "team": "Hockey"
  },
  {
@@ -171,6 +177,7 @@ const friends = [
   "isFor": "Out-of-this-world!",
   "moment": "Supporting our jockey kids together",
   "wish": "Every treasure in the world as someone as beautiful, kind, and inspirational as you deserves every❤️",
+  "city": "Gold Coast",
   "team": "Hockey",
   "imgs": [
    "p76-1"
@@ -184,6 +191,7 @@ const friends = [
   "isFor": "Inspirational, energetic and incredibly generous with a natural ability to have deep conversations on all matters of life, big and small. So very genuine, caring and compassionate in everything you do. Love that we can laugh about still not knowing all of the rules of hockey.",
   "moment": "We have enjoyed dinners and hockey tournaments with you and the many laughs along the way.",
   "wish": "For the future we wish you every happiness, health and wellness, lots of love and laughter and many new memories and experiences yet to be discovered and achieved. I also look forward to locking in our sour dough lessons.",
+  "city": "Gold Coast",
   "team": "Hockey"
  },
  {
@@ -195,6 +203,7 @@ const friends = [
   "isFor": "Such a genuine person and such a great listenner (she lets me talk too much) 😅.",
   "moment": "Is anytime I spend with her, which is not often enough!",
   "wish": "The happiest birthday and hope she knows how special she is xxx.",
+  "city": "Gold Coast",
   "team": "School",
   "imgs": [
    "p3-1",
@@ -206,6 +215,7 @@ const friends = [
   "name": "Ainsley",
   "group": "aus",
   "note": "Happy 50th Nicola!\n\nIt’s actually very hard to reconcile the number 50 with someone who has quite as much energy, enthusiasm and zest for life as you do. I’m not entirely convinced there hasn’t been an administrative error somewhere!\n\nI’m so glad our paths crossed through the boys, but even happier that along the way their friendship led to one of our own. I have loved playing Padel with you and getting to know you over wine &amp; cheese, but look forward to sharing some adventures with you too!\n\nYou are such a warm, generous and genuinely fun person to be around, and I feel very lucky to call you my friend. Here’s to 50, to the adventures still to come, and hopefully to this being only the beginning of a very long and beautiful friendship.\n\nAlles Liebe zum Geburtstag Nicola!\nLove Ains xx",
+  "city": "Gold Coast",
   "team": "School",
   "imgs": [
    "p41-2",
@@ -220,6 +230,7 @@ const friends = [
   "isFor": "The warmest magnetic soul … the true meaning of radiant … someone you’re drawn to and immediately must be friends with …",
   "moment": "So far .. hmm, it’s running .. but I think we need more wine and dancing together.",
   "wish": "The very best of birthdays!  The very best of years!  And a long happy stay in Australia!  But I’m guessing her German friends are wishing her home too!",
+  "city": "Gold Coast",
   "team": "School",
   "imgs": [
    "p23-1"
@@ -231,6 +242,7 @@ const friends = [
   "group": "aus",
   "title": "Kokoda Queens!",
   "note": "Happy birthday to you, you incredible lady! We have loved getting to know you all and I can’t wait to see what challenges you take on next! Have a wonderful birthday!",
+  "city": "Gold Coast",
   "team": "School",
   "imgs": [
    "p74-1"
@@ -242,6 +254,7 @@ const friends = [
   "group": "aus",
   "title": "Happy Birthday Nicola!! Lots of love Annie and John X",
   "note": "Happy Birthday Nicola!!!\nLots of love Annie  and John XXX",
+  "city": "Gold Coast",
   "team": "School",
   "clip": "v75",
   "video": "1:40"
@@ -252,6 +265,7 @@ const friends = [
   "group": "aus",
   "title": "Best Padel Partner Ever 🏆",
   "note": "Happy 50th Birthday, dear Nicola! \n\nOh jongens, I am so happy that padel brought us together! You are the best padel partner I could ever wish for. Your bright smile and positive energy makes every game more enjoyable!\n\nBut beyond being an amazing padel partner, you have also become a special friend. Someone who always listens and who is so easy to talk to.\n\nI feel very lucky to have you in my life and look forward to many more laughs, games, chats, dinners and hidden bar moments together.\n\nWishing you an amazing 50th birthday filled with love, laughter and everything that makes you happy. ❤️",
+  "city": "Gold Coast",
   "team": "Padel",
   "imgs": [
    "p10-1",
@@ -267,6 +281,7 @@ const friends = [
   "title": "The Gold Coast Gained a Supermodel",
   "note": "And I gained a friend!\n\n\nI never thought a random Intro to Padel 18 months ago would bring such a wonderful group of people into my life. And Nicola, you are most definitely one of the best things to come out of it!\n\n\nNot only are you an absolute stunner, but you're an even more beautiful human on the inside. You're full of knowledge and wisdom, hilariously funny, and just one of those people I could happily sit and talk to for hours.\n\n\nI love our coffees and chats, and I love that when we get on the padel court, we're usually having just as much fun laughing as we are playing. There's something so lovely about having friends you can just be yourself with, have a laugh and not take life too seriously.\n\n\nI'm so glad that random game of padel brought you into my life. I feel very lucky to call you my friend, and I look forward to many more coffees, laughs and games together (maybe in NZ 🤔)\n\n\nHappy 50th birthday, Nic! Here's to a fabulous next chapter and plenty more fun along the way! ❤️🥂",
   "isFor": "Padel Queen",
+  "city": "Gold Coast",
   "team": "Padel",
   "imgs": [
    "p36-1"
@@ -280,6 +295,7 @@ const friends = [
   "isFor": "Padel pal and beautiful friend. 🌸🌸",
   "moment": "I’m so lucky to have met Nicola. The most thoughtful and kind lady who has cemented her beautiful friendship from padel and beyond.  \nThe most beautiful and stylish 50 year old! Happy birthday Nic xxx",
   "wish": "Absolute health and happiness (and a solid visa!)",
+  "city": "Gold Coast",
   "team": "Padel",
   "imgs": [
    "p30-1"
@@ -294,6 +310,7 @@ const friends = [
   "isFor": "Nicky Noo or Nic Nack",
   "moment": "Every moment is special",
   "wish": "The best of everything - you deserve it",
+  "city": "Gold Coast",
   "team": "Padel",
   "imgs": [
    "p16-1"
@@ -305,6 +322,7 @@ const friends = [
   "group": "aus",
   "title": "Happy 50th birthday to our beautiful friend 🩷🩷",
   "note": "When our little padel girl gang came together  eighteen months ago, you’ve become one of those rare friends who makes everything feel brighter.\n\n Every catch-up with you is so wonderful and grounding.  You’re a beautiful reminder in life of what is good. Your generosity, your kindness, and the genuine way you care and show up for people, always inspire me. I’m so grateful to celebrate your 50th with you and be a part of your wonderful GC Circle.  \n\nHappy birthday my dear friend.  xxxx",
+  "city": "Gold Coast",
   "team": "Padel"
  },
  {
@@ -312,6 +330,7 @@ const friends = [
   "name": "Rach Saunders",
   "group": "aus",
   "note": "Nicola!!!! So grateful to have padel bring you into my life. Without a doubt one of the most caring, compassionate and considerate people I have ever met. You are always so positive and such a special person! Happy 50th - wishing you the best of the best 🤍🤍",
+  "city": "Gold Coast",
   "team": "Padel",
   "imgs": [
    "p40-1",
@@ -329,6 +348,7 @@ const friends = [
   "isFor": "A precious confidant and dear friend",
   "moment": "Learning Padel from her at KDV!",
   "wish": "So much joy, peace and happiness in the years ahead. You deserve only the best my friend",
+  "city": "Gold Coast",
   "team": "Friends",
   "audio": "a73",
   "voice": "0:46"
@@ -416,6 +436,7 @@ const friends = [
   "isFor": "Ein Fels in der Brandung🗻 🌊… ich werde dir nie vergessen, wie sehr du mir in meinen dunkelsten Stunden beigestanden hast.",
   "moment": "Jeder Moment mit dir ist besonders. Und jede Begegnung, wenn auch manchmal nur 1x Mal im Jahr ist, als wäre es gestern, dass wir uns das letzte Mal gesehen haben. Du strahlst heller als jeder Stern 🌟.",
   "wish": "Ich freue mich von Herzen, dass du dir deinen Traum erfüllt hast und nach Australien gegangen bist! Ich wünsche dir weiterhin eine wunderbare Zeit mit deinen Liebsten, neuen Begegnungen, vielen kleinen Abenteuern und Momenten, in denen du denkst: Wie schön, dass ich das wirklich gemacht habe. Du bist der Wahnsinn 🥳🥰🥂🍀",
+  "city": "Munich",
   "imgs": [
    "p47-1",
    "p47-2",
@@ -430,6 +451,7 @@ const friends = [
   "name": "Verena",
   "group": "old",
   "note": "Liebe Nici,\nich wünsche dir von ganzem Herzen alles Liebe zu deinem besonderen Geburtstag! Wie wunderbar, dass du diesen Tag zusammen mit Dirk, deinen Jungs und sicher vielen Freunden in dem wunderbaren Land feiern darfst! Genieß' deinen Ehrentag auf vollem Herzen.\nIch drücke dich aus der Ferne und hoffe, dass wir bald mal wieder den einen oder anderen Sauren in der Dille zusammen trinken, in Köln oder Düsseldorf frühstücken oder auch an das tolle Paddelevent vor eurem Abschied anknüpfen. Bleib' gesund und genauso, wie du bist und ich dich seit bald 30 Jahren kenne! ❤️",
+  "city": "Bonn",
   "imgs": [
    "p49-2",
    "p49-1",
@@ -444,6 +466,7 @@ const friends = [
   "isFor": "Ein Mensch, der Spuren hinterlässt",
   "moment": "Unsere Münstermädels-Hühnerhaufentreffen",
   "wish": "Liebe Nici, happy Birthday zu deinem 50. Geburtstag 🥂🍾! Ich wünsche dir für dein neues Lebensjahrzehnt ganz viele schöne Momente, spannende Erlebnisse, Gesundheit und Menschen an deiner Seite mit denen du lachen und das Leben genießen kannst ❤️. Wie schön, dass es dich gibt! Lass dich feiern und genieße deinen besonderen Tag! Bis hoffentlich bald mal wieder, viele liebe Grüße, Suse 🫶",
+  "city": "Stuttgart",
   "imgs": [
    "p54-1"
   ]
@@ -456,6 +479,7 @@ const friends = [
   "isFor": "Eine visionäre Macherin und beste Zuhörerin",
   "moment": "Münster Mädels Treffen in Düsseldorf",
   "wish": "eine phantastische Zeit an der Gold Coast mit Deinen Lieben",
+  "city": "Neuss",
   "imgs": [
    "p25-1"
   ]
@@ -469,7 +493,7 @@ const friends = [
   "isFor": "Personal VIP",
   "moment": "Wo soll ich anfangen? Es waren so viele und werden hoffentlich noch weitere. Für jeden einzelnen bin ich dankbar, u.a. \nUni Münster, Skifahren inkl. lustiger Bekanntschaften, Karneval in Köln und Düsseldorf ( live bei Brings im Abendkleid 🥳), Waldfeste, Muggel, Hochzeiten (unvergessen und dafür bin ich Dir auf ewig dankbar: Euer Kommen zur Schneehochzeit in Laax), Reisen, Rotwein, philosophische Abende, Telefonate, Umarmungen…",
   "wish": "Bleib wie Du bist, Du Herzensmensch und dabei gesund.",
-  "city": "Düsseldorf",
+  "city": "Meerbusch",
   "imgs": [
    "p31-3",
    "p31-1",
@@ -486,6 +510,7 @@ const friends = [
   "note": "Liebe Nici! \nWe miss u! Happy Birthday zum Geburtstag! Auf weitere glorreiche 50 Jahre! \nxoxo Susi &amp; Corinna\n\nVenedig, Salzburg, Berge… mit Dir ist es immer schön!",
   "isFor": "Eine Sportskanone, mit der man Pferde stehlen kann · eine tolle Freundin",
   "wish": "Nur das Beste für die nächsten 50 Jahre! Gesundheit, Liebe und ganz viel Glück!",
+  "city": "Meerbusch",
   "audio": "a18",
   "voice": "0:50",
   "imgs": [
@@ -505,6 +530,7 @@ const friends = [
   "isFor": "A fantastic and very reliable friend 👯‍♂️",
   "moment": "Münster, Waldfest, Karneval, Tegernsee, Muggel, Salzburg, Venedig, Wellness, etc. ❤️",
   "wish": "Love, health and great experiences all around the world 🌎",
+  "city": "Düsseldorf",
   "imgs": [
    "p52-2",
    "p52-1"
@@ -515,6 +541,7 @@ const friends = [
   "name": "Sonja & Basti",
   "group": "new",
   "note": "Liebste Nici,\nwir senden dir von Herzen unseren Familien-Geburtstags-Jodler aus der Heimat nach Down Under.\nWir vermissen dich und denken an deinem Ehrentag ganz besonders an dich.\nFühl dich dolle gedrückt ❤️",
+  "city": "Düsseldorf",
   "clip": "v44",
   "video": "1:02"
  },
@@ -524,6 +551,7 @@ const friends = [
   "group": "close",
   "note": "Liebe Nicola! \n\nZu deinem Geburtstag schicken wir dir heute unsere kleine Liebeserklärung - an eine einfach fantastische Frau, die mit ihrer wunderbaren Art, ihren einzigartigen Charaktereigenschaften und ihrem großen Herzen, sowohl mein, als auch unser Leben auf ganz besondere Weise bereichert. \n\nSchön, dass es dich gibt! 💚\n\nGenieße deinen Ehrentag in vollen Zügen, umgeben von deiner Familie und deinen Freunden. Lass dich feiern, verwöhnen und ordentlich hochleben! Auch wenn wir heute nicht persönlich bei dir sein können, sind wir in Gedanken bei dir und stoßen aus der Ferne auf dich an! 🥂\n\nWe miss you! \nLiebe Grüße, \nHendrik und Steffi",
   "isFor": "Eine Granate! 🚀",
+  "city": "Düsseldorf",
   "clip": "v67",
   "video": "4:49"
  },
@@ -535,13 +563,14 @@ const friends = [
   "isFor": "ein absoluter Herzensmensch ❣️",
   "moment": "Es gibt einfach zu viele, um genau diesen „special moment“ auf den Punkt zu bringen…",
   "wish": "Siehe oben 👆",
+  "city": "Meerbusch",
   "imgs": [
+   "p68-6",
    "p68-1",
    "p68-2",
    "p68-3",
    "p68-4",
-   "p68-5",
-   "p68-6"
+   "p68-5"
   ]
  },
  {
@@ -552,6 +581,7 @@ const friends = [
   "isFor": "Eine ganz besondere Freundin",
   "moment": "Tauchen in Thailand & Apres Ski an Silvester",
   "wish": "Glück Gesundheit Liebe !",
+  "city": "Düsseldorf",
   "clip": "v28",
   "video": "0:45"
  },
@@ -562,7 +592,7 @@ const friends = [
   "note": "…. FROM OBK TO DOWN UNDER!!!",
   "moment": "…. always funny, special and amazing!",
   "wish": "… all the best!!!",
-  "city": "Oberkassel",
+  "city": "Düsseldorf",
   "clip": "v-dehns",
   "video": "1:12",
   "title": "From OBK to Down Under"
@@ -584,6 +614,7 @@ const friends = [
   "name": "Britta, Thorben & Charlotte",
   "group": "new",
   "note": "Hör Dir das mal an",
+  "city": "Meerbusch",
   "imgs": [
    "p70-1"
   ],
@@ -597,6 +628,7 @@ const friends = [
   "group": "close",
   "note": "Liebe Nicola\nseit der Geburt unserer großen Jungs sind wir gemeinsam schon durch so wunderbare, aber auch einige herausfordernde, bewegende Momente unserer Leben gemeinsam gegangen.\nObwohl wir nicht jeden Tag Kontakt haben, ist da immer eine besondere Vertrautheit, wenn wir uns sehen oder sprechen: Du bist für mich ein echter Herzensmensch.\n \nZu Deinem 50. Geburtstag wünsche ich Dir alles erdenklich Liebe, Gesundheit, Glück, viele unvergessliche Momente und vor allem die Gewissheit, wie sehr Du von den Menschen geschätzt wirst, die Dich begleiten.\nDanke, dass es Dich gibt!\nAlles Liebe zum Geburtstag",
   "isFor": "Ein Herzensmensch",
+  "city": "Benrath",
   "imgs": [
    "p62-1",
    "p62-2",
@@ -613,7 +645,7 @@ const friends = [
   "isFor": "Beste Zuhörerin, Macherin, ehrlich, Sonnenschein und voller Lebensfreude!",
   "moment": "… sehr viele unvergessliche Momente und Erinnerungen und hoffentlich noch unendliche viele, die dazu kommen! Werde nie vergessen, wie wir nach meinem Ring im Ossiacher See gefischt haben  … er liegt wahrscheinlich immer noch in den Tiefen des Sees, da müssen wir irgendwann nochmal hin :-)",
   "wish": "… nur das Beste und all das Glück dieser Welt! Danke dass es dich gibt, alles Liebe Deine Nicola",
-  "city": "Oberkassel",
+  "city": "Düsseldorf",
   "imgs": [
    "p26-1",
    "p26-2",
@@ -640,6 +672,7 @@ const friends = [
   "name": "Carla",
   "group": "close",
   "note": "Du fehlst uns, meine Liebe! ❤️ Manchmal sind es einfach die kleinen Momente, die wir gerne mit dir teilen würde - oder ein Abenteuer - oder ein Glas Wein 😅 Vergiss nicht, dass du hier sehr vermisst wirst! 🥰",
+  "city": "Düsseldorf",
   "imgs": [
    "p64-1",
    "p64-2",
@@ -653,6 +686,7 @@ const friends = [
   "name": "Sandra",
   "group": "close",
   "note": "🎈Happy Birthday und alles Liebe und Gute zu Deinem 50. Geburtstag🎈\n\n\nDu fehlst - \n• beim Eierlikör\nDas letzte mal gemeinsam am zugefrorenen Hochwasser-Rhein, einmalig! 🧊\nMein letztes Mal bei der Zwischenrunde in HH mit den Jungs, erst in der Bahn mit Mitreisenden, dann mit den Mädels beim Ausklang nach dem Spiel - ich bin mir sicher, Du wärst dabei gewesen und hättest es in vollen Zügen genauso genossen, es wäre eine Freude gewesen! \n• beim Anfeuern an der Seite\nNicht immer nur Spaß, aber zusammen mit ganz viel Freude und Elan dabei, wir haben aufgerüstet, Du wärst begeistert 🤩\n• beim Feiern in geselliger Runde\nDas geht immer: nach dem Spiel, vor dem Spiel oder auch ohne Spiel, wir finden einen Anlass. Wenn Du wieder einmal dabei wärst, wäre das Anlass genug 😍🥂 \n• im Karneval\nHerrlich unsere gemeinsamen Kostüme, immer ein Spaß und große Freude, Du darfst jederzeit wieder einsteigen, wir erwarten Dich! 🤡\n• und überhaupt! ❤️\n\n\n\nWir freuen uns sehr auf neue Gelegenheiten! Jetzt wünsche ich Dir einen unvergesslichen Geburtstag. Lass Dich ordentlich feiern und genieße Deinen Tag!",
+  "city": "Düsseldorf",
   "imgs": [
    "p19-2",
    "p19-1",
@@ -670,6 +704,7 @@ const friends = [
   "isFor": "Ganz viel, aber zum Beispiel  meine allerliebste Hülsmann-Begleitung 🍾🍽️🍷🍨☕️ . Ich vermisse unsere Mittagessen 🤗.",
   "moment": "Mein schönster Tag mit dir war natürlich deine und Dirks Hochzeit 😍!",
   "wish": "Weiterhin alles Liebe und Gute Down Under. \nMöge es euch in jeglicher Hinsicht gut gehen. \nUnd dass du zwischendurch auch immer wieder mal Zeit ganz für DICH findest . \nUnd dass ihr trotzdem irgendwann wieder hier seid - bitte wenigstens auf Stippvisite - und wir euch dann mal wieder sehen - ehrlicherweise wünsche ich das natürlich auch mir ☺️. \nUnd noch so viel mehr..",
+  "city": "Meerbusch",
   "imgs": [
    "p56-1"
   ]
@@ -683,6 +718,7 @@ const friends = [
   "isFor": "a bright smile",
   "moment": "every single conversation",
   "wish": "simply all the best and lots of special moments more with her three boys",
+  "city": "Düsseldorf",
   "clip": "v59",
   "video": "0:35"
  },
@@ -702,6 +738,7 @@ const friends = [
   "note": "Liebe Nicola,\n\nzu Deinem 50. Geburtstag gratulieren wir Dir von ganzem Herzen ♥️ und wünschen Dir vor allem Gesundheit 💪, viel Glück 🍀, wenn Du es brauchst, noch viele schöne Reisen und viele unvergessliche Momente mit Deiner Familie und mit Euren Freunden!! 🥰 💖\n\nWir haben uns überlegt, wie ein gemeinsamer Geburtstagsabend mit Dir in Zukunft aussehen könnte: zum Beispiel auf unserer Terrasse in Kanada bei Sonnenuntergang, mit leckeren Getränken 🍾🥂, viel Hummer 🦞 und viel Lachen und Zeit für schöne Gespräche...  😎🥳\n\nAuf Dein nächstes Jahrzehnt – in dem wir hoffentlich wirklich eines Tag gemeinsam so sitzen!!! Ob in Kanada 🇨🇦 oder Australien 🇦🇺 oder sonstwo auf der Welt. 🫶\n\nAlles Liebe, Jürgen &amp; Tina ❤️",
   "isFor": "purer Sonnenschein ☀️",
   "wish": "Nur das Beste!!! ❤️❤️❤️",
+  "city": "Düsseldorf",
   "imgs": [
    "p51-1"
   ]
@@ -712,6 +749,7 @@ const friends = [
   "group": "new",
   "title": "Alles Gute in die Ferne",
   "note": "Liebe Nicola, wir gratulieren Dir herzlichst zu Deinem runden und jungen Geburtstag und wünschen Dir in die Ferne nur das Beste, viel Freunde und Freude und eine traumhafte Feier mit Deiner Familie und allen neuen Lebensgefährten.\nWir vermissen Dich hier sehr, beim Sport, beim Feiern und natürlich am allermeisten als treue und unersetzbare tolle Freundin und Wegbegleiterin.\nWir denken häufig und gerne an Euch und hoffen sehr, dass sich die große Entfernung bald erheblich reduziert. Bis dahin gönnen wir Euch aber jede Sekunde des neuen Lifestyles, der aufregenden Umgebung und der vielen neuen Freunde.\nNoch ein paar persönliche Worte von mir:\nMir fehlen besonders unsere Gespräche, Dein Humor in den kleinen Dingen des Lebens, die Telefonate, der Sport mit Philipp und die gemeinsamen Essen mit Steffi und Nicole. Dein scharfer Verstand, Deine treffenden Analysen und Deine ganz eigene Art, die Dinge zu sehen. Ich könnte diese Liste endlos fortsetzen.\nMarc hat eigentlich schon alles gesagt. Es ist einfach schön zu wissen, dass Ihr glücklich seid, Euer Ding macht und dieses neue Kapitel so genießt. Und bei aller Sehnsucht nach Dir freue ich mich von Herzen für Euch.\nBleib wie Du bist, denk an uns und komm bald zurück\nDicke Umarmung\nChristiane und Marc",
+  "city": "Düsseldorf",
   "imgs": [
    "p42-1",
    "p42-2",
@@ -729,6 +767,7 @@ const friends = [
   "isFor": "Too far away",
   "moment": "Lately.. Zeitreise im Schnee…🎶 Apres-Ski im Mooserwirt 🎼💃 ❄️",
   "wish": "Dass du immer DEINE Entscheidungen triffst auch wenn sie manchmal vom „Standardweg“ abweichen 🦘☀️",
+  "city": "Düsseldorf",
   "imgs": [
    "p43-1",
    "p43-2",
@@ -743,6 +782,7 @@ const friends = [
   "group": "new",
   "note": "Liebe Nicola,\nZu Deinem runden Geburtstag alles Liebe und Gute,\nviel lieber würden wir persönlich mit Dir feiern, aber umso herzlicher der Glückwunsch Deiner Buddenbergs",
   "isFor": "die beste Läuferin!",
+  "city": "Düsseldorf",
   "clip": "v38",
   "video": "0:44"
  },
@@ -764,6 +804,7 @@ const friends = [
   "group": "close",
   "title": "Happy happy Birthday🎈",
   "note": "Liebe Nicola, zu Deinem Geburtstag wünschen wir Dir alles Liebe, Gesundheit und nur das Allerbeste.\nGenieße diesen besonderen Tag unter\nschönstem\nSonnenschein. Wir stoßen heute auf Dich an und schicken Dir eine dicke Umarmung.\nDie Gold Coast kann sich sehr glücklich schätzen, einen so liebenswerten, humorvollen und wunderbaren Menschen zu ihren Mitbürgern zu zahlen (aber nur ausgeliehen, ist klar;)). Alles Liebe aus Düsseldorf😘💕😘🎈",
+  "city": "Meerbusch",
   "imgs": [
    "p66-1",
    "p66-2",
@@ -776,6 +817,7 @@ const friends = [
   "group": "new",
   "title": "Happy Birthday",
   "note": "Liebe Nicola, zu Deinem Geburtstag gratulieren wir ganz herzlich und wünschen Dir einen wunderbaren Geburtstag und eine tolle Feier!🥳🚀🎁🤩",
+  "city": "Düsseldorf",
   "clip": "v39",
   "video": "0:26"
  },
@@ -797,6 +839,7 @@ const friends = [
   "name": "Séchés & Kleins",
   "group": "new",
   "note": "Mit den allerbesten Grüßen von Séchés und Kleins❤️ ❤️",
+  "city": "Düsseldorf",
   "clip": "v61",
   "video": "1:29"
  },
@@ -806,6 +849,7 @@ const friends = [
   "group": "new",
   "title": "Schönste Woche an der GC😍",
   "note": "Ich bin dir so dankbar, dass ich diese wunderschöne Woche mit euch verbringen durfte❤️. Ich habe mich direkt wie Zuhause gefühlt (geht ja auch kaum anders bei deiner herzlichen Art) und denke wirklich oft an die Zeit zurück. In der Woche habe ich wirklich nochmal gemerkt, was du für ein unglaublich toller Mensch bist und habe einfach jeden Moment mit dir genossen☺️. Acai Bowls, Kängurus füttern, Mega leckere Dinners, Paddlen, Spiele Abend, mein erster Koala, und einfach ganz ganz tolle Gespräche🫶🏼. Besonders toll war auch ein gemütliches Bettchen und leckeres Essen nach den ganzen Hostels😍😅. Ihr wart ein ganz besonderer Teil meiner Australien Reise!!! Auf ein Wiedersehen, hoffentlich in Australien🙏",
+  "city": "Bonn",
   "imgs": [
    "p46-3",
    "p46-1",
@@ -834,6 +878,7 @@ const friends = [
   "name": "Andrea & Geo",
   "group": "new",
   "note": "Happy happy Birthday liebe Nici! \n🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾",
+  "city": "Düsseldorf",
   "clip": "v58",
   "video": "0:17"
  },
@@ -846,6 +891,7 @@ const friends = [
   "isFor": "A lovely smile and a heart of gold. 💛 looking like being in the thirties",
   "moment": "Es ist gar nicht so leicht, die richtigen Worte für einen so besonderen Menschen und eine so besondere Zeit zu finden.\n\nUnsere Verbindung ist vor allem durch die enge Freundschaft zwischen Ole und Dirk gewachsen. Was Dirk in den vergangenen Monaten für uns getan hat und wie er Ole durch diese schwierige Zeit begleitet hat, werde ich nie vergessen.\n\nSeine Verlässlichkeit, sein Dasein und die Selbstverständlichkeit, mit der er immer an Oles Seite war, haben Ole unglaublich viel Halt gegeben. Gerade in einer Zeit, in der vieles ungewiss war, war es für Ole von unschätzbarem Wert, einen guten Freund zu haben, mit dem er auch über seine Ängste und Gedanken sprechen konnte.\n\nDu hast diese Freundschaft mit so viel Herz und Präsenz gelebt. Und obwohl uns eine unfassbar große Entfernung getrennt hat, war immer spürbar, wie nah du uns mental warst und wie sehr du mit uns durch diese Zeit gegangen bist.\n\nDafür möchte ich dir von Herzen danken. Für deine Freundschaft, deine Kraft und dafür, dass du einfach da warst und bestimmt Dirk in dieser schweren Zeit eine Stütze warst",
   "wish": "dass sie weiterhin eine richtig geile Zeit in Australien hat, die Jungs happy sind und im Feldhockey ordentlich abräumen. Dass sie diesen ganz besonderen Gold-Coast-Vibe genießt, tolle Leute kennenlernt und richtig gute Freundschaften entstehen. Und natürlich, dass ganz viele von uns aus Düsseldorf immer wieder bei ihr einfallen, damit wir gemeinsam eine gute Zeit haben, die Sonne genießen und ein bisschen australisches Lebensgefühl mit nach Hause nehmen können. \nMeine eigene Erfahrung mit der 50+ ist: Es ist eine megacoole Zeit! Die besten Voraussetzungen dafür habt ihr ja schon. Also macht das Beste draus, genießt das Leben und lasst die Sonne nicht nur an der Gold Coast, sondern auch in euren Herzen scheinen! ☀️💛",
+  "city": "Düsseldorf",
   "imgs": [
    "p4-1",
    "p4-2"
@@ -859,6 +905,7 @@ const friends = [
   "isFor": "Happiness",
   "moment": "Nocky Bahn",
   "wish": "All the best😘",
+  "city": "Hamburg",
   "clip": "v57",
   "video": "0:52"
  },
@@ -870,6 +917,7 @@ const friends = [
   "isFor": "the Super-Woman aus der “Nachbarschaft“",
   "moment": "28.10.2023 und einige Momente… z.B. Noa‘s und mein Besuch am Ossiacher See",
   "wish": "simply THE BEST gepaart mit Leichtigkeit voller Gesundheit, Leidenschaft und Liebe‼️",
+  "city": "Düsseldorf",
   "audio": "a7",
   "voice": "2:33"
  },
@@ -880,6 +928,7 @@ const friends = [
   "isFor": "Friend",
   "moment": "Medical Treatments",
   "wish": "Only the best😊🍀",
+  "city": "Düsseldorf",
   "audio": "a5",
   "voice": "0:37"
  },
@@ -889,6 +938,7 @@ const friends = [
   "group": "new",
   "title": "Happy Birthday wünschen Andrea und Friedel",
   "note": "Liebe Nicola,\n\nwenn Lebensfreude einen Koffer packen könnte, würde sie vermutlich mit Dir verreisen. Ob an die Gold Coast, nach Kärnten (danke dafür ) oder ins Rheinland – wo Du bist, scheint die Sonne!\n\nDeine fröhliche Art, Dein hinreißendes Lachen und Dein ansteckender Optimismus machen Dich zu einem ganz besonderen Menschen. Wir wünschen Dir, dass Du Dir all das bewahrst – und natürlich die Lust auf alles, was das Leben noch an Überraschungen und Abenteuern bereithält.\n\nHab einen richtig schönen Geburtstag, lass es ordentlich krachen und genieß das Leben – ganz egal, wohin es Dich gerade verschlägt! \nKeep on rockin'",
+  "city": "Euskirchen",
   "imgs": [
    "p48-1"
   ]

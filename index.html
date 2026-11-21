@@ -867,7 +867,8 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
   const ROT = ["-3deg", "2deg", "-1.5deg", "2.5deg", "-2deg"];
   const feat = k => { const fs = featOf(k); if (!fs.length) return ""; const lay = FEAT[k][0];
     if (lay === "pola") return `<div class="feat pola">${fs.map((p, i) => `<button class="ft pol" type="button" data-n="${p.n}" style="--rot:${ROT[i % 5]}"><img src="${big(p)}" alt="" loading="lazy" decoding="async"><span>${capOf[p.n]}</span>${from(p)}</button>`).join("")}</div>`;
-    return `<div class="feat ${lay}">${fs.map(p => `<button class="ft ph has-img" type="button" data-n="${p.n}" data-bg="${big(p)}">${from(p)}<span>${capOf[p.n]}</span></button>`).join("")}</div>`; };
+    const FPOS = { 50: "50% 12%" };  // Bildausschnitt in der Vorschau (Dirk 21.11.: Sunday best, Köpfe nicht abschneiden)
+    return `<div class="feat ${lay}">${fs.map(p => `<button class="ft ph has-img" type="button" data-n="${p.n}" data-bg="${big(p)}"${FPOS[p.n] ? ` style="background-position:${FPOS[p.n]}"` : ""}>${from(p)}<span>${capOf[p.n]}</span></button>`).join("")}</div>`; };
   const render = () => { byN = Object.fromEntries(ALBUM.map(p => [p.n, p]));
   box.innerHTML = CH.map(([k, t, sub]) => { const ps = chap(k), rest = restOf(k); if (!ps.length) return "";
     return `<div class="chap" data-c="${k}"><div class="chap-head"><h3>${t}</h3><p>${sub}</p><small>${ps.length} photos</small></div>
