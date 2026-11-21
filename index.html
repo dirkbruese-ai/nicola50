@@ -221,6 +221,12 @@ section { padding-block: 56px 8px; }
 .welcome .play:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .welcome small { margin-top: 16px; padding-left: .2em; font: 700 .78rem/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
 .welcome.playing > div:first-child { transition: opacity .4s, transform .4s; opacity: 0; transform: scale(.9); pointer-events: none; }
+.intro-cake { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 18px; z-index: 5; pointer-events: none; }
+.intro-cake img { width: min(78vw, 56vh, 460px); height: auto; filter: drop-shadow(0 18px 30px rgba(0,0,0,.18)); animation: cakein .9s cubic-bezier(.2,.8,.2,1.2) both, cakepulse 2.4s ease-in-out .9s infinite; }
+.intro-cake span { font: 700 .78rem/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; color: var(--ink); opacity: .7; }
+@keyframes cakein { from { opacity: 0; transform: scale(.4) rotate(-12deg); } to { opacity: 1; transform: none; } }
+@keyframes cakepulse { 50% { transform: scale(1.04); } }
+.intro-cake.go { transition: opacity .7s, transform .7s cubic-bezier(.5,0,.8,.4); opacity: 0; transform: scale(1.5); }
 .intro { position: absolute; inset: 0; overflow: hidden; cursor: pointer; }
 .intro-heart { position: absolute; inset: 0; transform-origin: 50% 46%; }
 .intro-tile { position: absolute; background: var(--paper) center / cover; transform-origin: 0 0; display: block; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
@@ -411,6 +417,7 @@ section { padding-block: 56px 8px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
+<link rel="preload" as="image" href="img/intro/cake.webp">
 </head>
 <body>
 
@@ -583,9 +590,9 @@ const label = f => [f.photos ? `${f.photos} photo${f.photos > 1 ? "s" : ""}` : "
 const card = f => `<article class="star">
   <div class="who"><span class="name">${esc(f.name)}</span>${f.city ? `<span class="postmark">${esc(f.city)}</span>` : ""}</div>
   ${f.title ? `<h4 class="post-title">${esc(f.title)}</h4>` : ""}
-  ${f.imgs ? `<div class="pic has-img" style="background-image:url('${img(f.imgs[0])}')"><span class="count">${label(f)}</span></div>` : ""}
-  ${f.imgs && f.imgs.length > 1 ? `<div class="thumbs">${f.imgs.map((k, j) => `<button type="button" aria-label="Show photo ${j + 1} from ${esc(f.name)}" aria-pressed="${j === 0}" data-src="${img(k)}" style="background-image:url('${img(k)}')"></button>`).join("")}</div>` : ""}
-  ${f.clip ? `<video class="clip" src="${media(f.clip)}.mp4" poster="${media(f.clip)}.jpg" controls playsinline preload="none"></video>` : ""}
+  ${f.imgs ? `<div class="pic has-img" data-bg="${img(f.imgs[0])}"><span class="count">${label(f)}</span></div>` : ""}
+  ${f.imgs && f.imgs.length > 1 ? `<div class="thumbs">${f.imgs.map((k, j) => `<button type="button" aria-label="Show photo ${j + 1} from ${esc(f.name)}" aria-pressed="${j === 0}" data-src="${img(k)}" data-bg="${img(k)}"></button>`).join("")}</div>` : ""}
+  ${f.clip ? `<video class="clip" src="${media(f.clip)}.mp4" data-poster="${media(f.clip)}.jpg" controls playsinline preload="none"></video>` : ""}
   ${f.note ? (f.note.length > 100 ? `<div class="letter">${esc(f.note)}</div>` : `<blockquote>${esc(f.note)}</blockquote>`) : ""}
   ${f.isFor || f.moment || f.wish ? `<dl class="facts">${[["Nici is for me …", f.isFor], ["My special moment with her …", f.moment], ["I wish Nici …", f.wish]].filter(x => x[1]).map(([t, v]) => `<dt>${t}</dt><dd>${esc(v)}</dd>`).join("")}</dl>` : ""}
   ${f.audio ? voice(f) : ""}
@@ -620,7 +627,7 @@ if (typeof POEM !== "undefined") pb.innerHTML = `<h3>${esc(POEM.title)}</h3>` + 
 else pb.closest("section").hidden = true;
 
 // Videos & Voice
-document.getElementById("vwall").innerHTML = friends.filter(f => f.clip).map(f => `<figure><video src="${media(f.clip)}.mp4" poster="${media(f.clip)}.jpg" controls playsinline preload="none"></video><figcaption>${esc(f.name)}<small>${esc(f.title || f.city || "")}${f.video ? " · " + f.video : ""}</small></figcaption></figure>`).join("");
+document.getElementById("vwall").innerHTML = friends.filter(f => f.clip).map(f => `<figure><video src="${media(f.clip)}.mp4" data-poster="${media(f.clip)}.jpg" controls playsinline preload="none"></video><figcaption>${esc(f.name)}<small>${esc(f.title || f.city || "")}${f.video ? " · " + f.video : ""}</small></figcaption></figure>`).join("");
 // Sprachnachrichten stecken in den Beiträgen, keine eigene Liste mehr am Ende
 // Ein Player für alle Sprachnachrichten: Start stoppt die anderen
 document.addEventListener("click", e => { const b = e.target.closest(".play"); if (!b || b.id) return;
@@ -747,9 +754,50 @@ const playIntro = done => {
   welcome.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 900, delay: END - 600, fill: "forwards" }).onfinish = finish;
   stage.addEventListener("click", () => { welcome.getAnimations({ subtree: true }).forEach(a => { try { a.finish(); } catch (e) { a.cancel(); } }); serenade.pause(); np.hidden = true; finish(); });
 };
-document.getElementById("welcome-start").onclick = () => { serenade.play().catch(() => {}); np.hidden = false;
+// Vorladen (Dirk 21.11.: bei schlechter Verbindung kamen die Polaroids leer und die Musik spät):
+// Kacheln (in Ablauf-Reihenfolge), Namenskärtchen und Medley laden schon ab Seitenaufruf; nach "Play" steht erst die Torte da,
+// bis Musik, Kärtchen und die ersten Kacheln da sind (höchstens 25 s), dann starten Musik und Animation gemeinsam.
+// Vorschaubilder der Beiträge erst nach dem Intro laden, damit sie dem Intro keine Bandbreite wegnehmen
+let mediaAwake = false;
+const sweepMedia = () => {
+  document.querySelectorAll("video[data-poster]").forEach(v => { v.poster = v.dataset.poster; v.removeAttribute("data-poster"); });
+  document.querySelectorAll("[data-bg]").forEach(d => { d.style.backgroundImage = `url('${d.dataset.bg}')`; d.removeAttribute("data-bg"); }); };
+const wakeMedia = () => { if (mediaAwake) return; mediaAwake = true; sweepMedia();
+  new MutationObserver(sweepMedia).observe(document.body, { childList: true, subtree: true }); };  // auch für später neu gezeichnete Karten (Filter)
+const introReady = (() => {
+  // Reihenfolge wie im Ablauf: zuerst die Kacheln der ersten Stimmen und die ersten Füllkacheln, dann der Rest (je 4 gleichzeitig)
+  const CT = typeof INTRO_CUE_TILE !== "undefined" ? INTRO_CUE_TILE : {}, cueK = CUES.map(c => CT[c[3]]).filter(k => k !== undefined && k < INTRO.pool.length);
+  const rest = INTRO.pool.map((_, i) => i).filter(i => !cueK.includes(i));
+  const first = [...new Set([...cueK.slice(0, 5), ...rest.slice(0, 10)])];
+  const order = [...new Set([...first, ...cueK, ...rest])].map(k => INTRO.pool[k][0]);
+  const cards = [...new Set(CUES.map(c => `img/intro/${c[3]}.jpg`))];
+  const need = new Set([...first.map(k => INTRO.pool[k][0]), ...cards]);
+  const queue = [...cards, ...order]; let n = 0, onProgress = () => {}; const all = need.size + 1;
+  const waits = {}; queue.forEach(src => { waits[src] = waits[src] || (() => { let r; const pr = new Promise(x => r = x); return { pr, r }; })(); });
+  const next = () => { const src = queue.shift(); if (!src) return; const im = new Image(); im.onload = im.onerror = () => { if (need.has(src)) { n++; onProgress(n / all); } waits[src].r(); next(); }; im.src = src; };
+  for (let i = 0; i < 4; i++) next();
+  const audio = new Promise(r => { if (serenade.readyState >= 4) return r(); serenade.addEventListener("canplaythrough", r, { once: true }); serenade.addEventListener("error", r, { once: true }); }).then(() => { n++; onProgress(n / all); });
+  const p = Promise.all([...[...need].map(s => waits[s].pr), audio]);
+  return { p, progress: f => { onProgress = f; f(n / all); } };
+})();
+document.getElementById("welcome-start").onclick = () => {
+  // Ton im Klick freischalten (iOS), aber stumm, bis alles geladen ist
+  let go = false;
+  serenade.muted = true; serenade.play().then(() => { if (!go) serenade.pause(); }).catch(() => {});
   welcome.classList.add("playing");
-  playIntro(() => { welcome.hidden = true; document.documentElement.style.overflow = ""; scrollTo(0, 0); }); };
+  const cake = document.createElement("div"); cake.className = "intro-cake";
+  cake.innerHTML = `<img src="img/intro/cake.webp" alt="Birthday cake: Happy 50th Birthday Nicola"><span>Loading … <b>0</b> %</span>`; welcome.appendChild(cake);
+  introReady.progress(f => { cake.querySelector("b").textContent = Math.round(f * 100); });
+  const t0 = Date.now();
+  Promise.race([introReady.p, new Promise(r => setTimeout(r, 25000))]).then(() => setTimeout(() => {
+    go = true; cake.querySelector("span").style.visibility = "hidden";
+    serenade.pause(); serenade.currentTime = 0; serenade.muted = false;
+    const start = () => { cake.classList.add("go"); setTimeout(() => cake.remove(), 800); np.hidden = false;
+      playIntro(() => { welcome.hidden = true; document.documentElement.style.overflow = ""; scrollTo(0, 0); wakeMedia(); }); setTimeout(wakeMedia, 45000); };
+    let started = false; const once = () => { if (!started) { started = true; start(); } };
+    serenade.addEventListener("playing", once, { once: true }); serenade.play().catch(once); setTimeout(once, 4000);
+  }, Math.max(0, 2200 - (Date.now() - t0))));
+};
 document.getElementById("np-stop").onclick = () => { serenade.pause(); np.hidden = true; };
 serenade.onended = () => { np.hidden = true; };
 
@@ -819,7 +867,7 @@ document.addEventListener("keydown", e => { if (show.hidden) return;
   const ROT = ["-3deg", "2deg", "-1.5deg", "2.5deg", "-2deg"];
   const feat = k => { const fs = featOf(k); if (!fs.length) return ""; const lay = FEAT[k][0];
     if (lay === "pola") return `<div class="feat pola">${fs.map((p, i) => `<button class="ft pol" type="button" data-n="${p.n}" style="--rot:${ROT[i % 5]}"><img src="${big(p)}" alt="" loading="lazy" decoding="async"><span>${capOf[p.n]}</span>${from(p)}</button>`).join("")}</div>`;
-    return `<div class="feat ${lay}">${fs.map(p => `<button class="ft ph has-img" type="button" data-n="${p.n}" style="background-image:url('${big(p)}')">${from(p)}<span>${capOf[p.n]}</span></button>`).join("")}</div>`; };
+    return `<div class="feat ${lay}">${fs.map(p => `<button class="ft ph has-img" type="button" data-n="${p.n}" data-bg="${big(p)}">${from(p)}<span>${capOf[p.n]}</span></button>`).join("")}</div>`; };
   const render = () => { byN = Object.fromEntries(ALBUM.map(p => [p.n, p]));
   box.innerHTML = CH.map(([k, t, sub]) => { const ps = chap(k), rest = restOf(k); if (!ps.length) return "";
     return `<div class="chap" data-c="${k}"><div class="chap-head"><h3>${t}</h3><p>${sub}</p><small>${ps.length} photos</small></div>
