@@ -187,6 +187,15 @@ const friends = [
   "team": "Hockey"
  },
  {
+  "n": 901,
+  "name": "Claire",
+  "group": "aus",
+  "city": "Gold Coast",
+  "team": "Hockey",
+  "title": "Ode to Nicola",
+  "note": "Nicola – Origin and Meaning\nA feminine form of Nicholas, from the ancient Greek Nikólaos. Nikē means victory; laós means people: \"victory of the people\". The name shares the tradition of Saint Nicholas, remembered for generosity. In Germany, his kindness is celebrated on Nikolaustag, 6 December.\n\nNiveauvoll. Nice, next level Nice!\nIdeenreich. Intelligent. Intriguing.\nCharmant. Calm. Caring. Collected.\nOriginelle. In a league of her own.\nLebensfroh. Lean, fit machine. Listener of note.\nAnmutig. Altruistic, Amazing mother."
+ },
+ {
   "n": 3,
   "name": "Vicky Stirling",
   "group": "aus",

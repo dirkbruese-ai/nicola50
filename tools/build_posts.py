@@ -15,7 +15,7 @@ TEAM = {72: "Hockey", 17: "Hockey", 21: "Hockey", 11: "Hockey", 69: "Hockey", 71
         74: "School", 75: "School", 76: "Hockey", 77: "Hockey", 79: "Friends", 80: "School"}  # 72 Angie vorne bei Hockey, 73 Sim einfach Freundin (Dirk 20.11.)
 # Reihenfolge innerhalb der Gruppen: Beitragsnummern zuerst in dieser Folge, Rest nach Eingang, LAST ganz ans Ende
 ORDER = [50, 53, 12, 13, 55,
-         72, 17, 21, 11, 69, 71, 76, 77, 3, 41, 23, 74, 75, 80, 10, 36, 30, 16, 35, 40, 73, 79,
+         72, 17, 21, 11, 69, 71, 76, 77, 901, 3, 41, 23, 74, 75, 80, 10, 36, 30, 16, 35, 40, 73, 79,
          37, 14, 15, 2, 22, 33, 47, 49, 54, 25, 81,
          # From home (Dirks Liste 16.11.); Platzhalter: Steffi & Hendrik Rinsche, Nicole & Jens Ritter nach 44
          31, 18, 52, 44, 67, 68, 28, 24, 27, 6, 70, 62, 26, 29, 64, 19, 56, 59, 34, 51, 42, 43, 38, 45, 66, 39, 60, 61,
@@ -66,6 +66,9 @@ for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     if os.path.exists(v): p["clip"] = f"v{n}"; p["video"] = mmss(dur(v))
     if os.path.exists(a): p["audio"] = f"a{n}"; p["voice"] = mmss(dur(a))
     out.append(p)
+# Beitrag außerhalb des Padlets (Dirk 21.11.): Claire, Hockey, Text vom Foto abgeschrieben
+out.append({"n": 901, "name": "Claire", "group": "aus", "city": "Gold Coast", "team": "Hockey", "title": "Ode to Nicola",
+            "note": open("tools/letter-claire.txt", encoding="utf-8").read().strip()})
 # Beiträge zusammenlegen: Quelle -> Ziel (Texte angehängt, Fotos/Medien übernommen)
 # KEEP_TEXT: Ziel behält nur seine eigenen Texte (Dirk 17.11.)
 MERGE = {20: 18, 15: 14, 33: 22, 27: 24, 78: 37, 82: 81}  # 78: Video von Elisa & Sylvie zu Sylvie (Dirk 21.11.)
