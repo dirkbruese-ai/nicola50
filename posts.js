@@ -628,7 +628,7 @@ const friends = [
    "p70-1"
   ],
   "audio": "a70",
-  "voice": "3:58",
+  "voice": "3:49",
   "title": "Mit Hecheln fing es an – für Nicola"
  },
  {
