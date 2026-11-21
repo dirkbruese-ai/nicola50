@@ -73,14 +73,6 @@ const friends = [
   "video": "0:39"
  },
  {
-  "n": "dirk",
-  "name": "Dirk",
-  "group": "family",
-  "city": "Gold Coast",
-  "clip": "v-dirk",
-  "video": "0:19"
- },
- {
   "n": "outtakes",
   "name": "Moritz, Philip & Dirk",
   "group": "family",
