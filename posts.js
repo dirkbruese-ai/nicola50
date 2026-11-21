@@ -346,6 +346,23 @@ const friends = [
   "voice": "0:46"
  },
  {
+  "n": 79,
+  "name": "Henrike & Masoud",
+  "group": "aus",
+  "title": "Happy birthday from Ashmore 🥳💐",
+  "note": "We are so happy to have you close by",
+  "isFor": "An unexpected new German bestie, far from home",
+  "moment": "Every dinner, every laugh and our couple dates",
+  "wish": "More than anything, health & happiness, a permanent Aussie visa, and another fabulous 50+ years!!",
+  "city": "Gold Coast",
+  "team": "Friends",
+  "imgs": [
+   "p79-1"
+  ],
+  "clip": "v79",
+  "video": "0:46"
+ },
+ {
   "n": 37,
   "name": "Sylvie",
   "group": "old",
