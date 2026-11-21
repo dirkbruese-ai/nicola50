@@ -252,6 +252,18 @@ const friends = [
   "video": "1:40"
  },
  {
+  "n": 80,
+  "name": "Cheree",
+  "group": "aus",
+  "title": "For Nicola - With love on your 50th ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️",
+  "note": "We can't wait to celebrate 50 with you today 🍸🥂🍾",
+  "city": "Gold Coast",
+  "team": "School",
+  "imgs": [
+   "p80-1"
+  ]
+ },
+ {
   "n": 10,
   "name": "Lieke",
   "group": "aus",
