@@ -81,7 +81,7 @@ for src, dst in MERGE.items():
         if a.get(k) and not b.get(k): b[k] = a[k]
     out.remove(a)
 # Nach dem Zusammenlegen (Dirk 17.11.): DEHNS-Videos 24+27 hintereinander geschnitten
-FIX = {14: {"name": "Ena & Esa"}, 24: {"title": "From OBK to Down Under", "clip": "v-dehns", "video": mmss(dur(f"{media}/v-dehns.mp4"))}, 59: {"name": "Nina & Lars"}, 70: {"title": "Mit Hecheln fing es an – für Nicola"}}
+FIX = {14: {"name": "Ena & Esa"}, 24: {"title": "From OBK to Down Under", "clip": "v-dehns", "video": mmss(dur(f"{media}/v-dehns.mp4"))}, 59: {"name": "Nina & Lars"}, 70: {"title": "Mit Hecheln fing es an – für Nicola"}, 80: {"note": open("tools/letter-80.txt", encoding="utf-8").read().strip()}}
 for n, f in FIX.items():
     if n in byn: byn[n].update(f)
 # Startbild (Dirk 21.11.): bei Nicole das 6. Foto zuerst
