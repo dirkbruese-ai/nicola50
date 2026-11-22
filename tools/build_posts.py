@@ -1,6 +1,6 @@
 """Erzeugt posts.js aus dem Padlet-CSV-Export.
 Aufruf: python3 tools/build_posts.py <posts.csv> <photos.json> <media-dir>"""
-import csv, json, os, sys
+import csv, html, json, os, sys
 
 # Gruppe pro Padlet-Beitragsnummer: family, old (Münster Girls), new (From home), aus (Gold Coast)
 GROUP = {50: "family", 53: "family", 12: "family", 13: "family", 55: "family",
@@ -50,7 +50,7 @@ out = []
 for r in csv.DictReader(open(csv_path, encoding="utf-8-sig")):
     n = int(r["Post number"])
     if n in SKIP: continue
-    clean = lambda k: r[k].strip()
+    clean = lambda k: html.unescape(r[k]).strip()
     p = {"n": n, "name": NAME.get(n) or clean("Your (Nick-) Name:") or clean("Author"),
          "group": GROUP.get(n, "new")}
     for key, col in [("title", "Subject"), ("note", "Body"), ("isFor", "Nici is for me..."),
